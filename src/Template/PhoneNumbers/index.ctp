@@ -17,6 +17,7 @@
             <tr>
                 <th scope="col"><?= $this->Paginator->sort('id') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('number') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('users_id') ?></th>
                 <th scope="col" class="actions"><?= __('Actions') ?></th>
             </tr>
         </thead>
@@ -25,6 +26,7 @@
             <tr>
                 <td><?= $this->Number->format($phoneNumber->id) ?></td>
                 <td><?= $this->Number->format($phoneNumber->number) ?></td>
+                <td><?= $this->Number->format($phoneNumber->users_id) ?></td>
                 <td class="actions">
                     <?= $this->Html->link(__('View'), ['action' => 'view', $phoneNumber->id]) ?>
                     <?= $this->Html->link(__('Edit'), ['action' => 'edit', $phoneNumber->id]) ?>

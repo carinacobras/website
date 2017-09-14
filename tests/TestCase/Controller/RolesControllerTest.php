@@ -18,6 +18,25 @@ class RolesControllerTest extends IntegrationTestCase
     public $fixtures = [
         'app.roles',
         'app.users',
+        'app.contacts',
+        'app.phone_numbers',
+        'app.emails',
+        'app.relationships',
+        'app.players',
+        'app.ladders',
+        'app.competitions',
+        'app.teams',
+        'app.uniforms',
+        'app.uniform_colours',
+        'app.coaches',
+        'app.teams_coaches',
+        'app.courts',
+        'app.locations',
+        'app.training',
+        'app.fees',
+        'app.fees_types',
+        'app.players_fees',
+        'app.managers',
         'app.users_roles'
     ];
 

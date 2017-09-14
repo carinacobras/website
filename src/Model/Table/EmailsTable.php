@@ -9,6 +9,8 @@ use Cake\Validation\Validator;
 /**
  * Emails Model
  *
+ * @property |\Cake\ORM\Association\BelongsTo $Users
+ *
  * @method \App\Model\Entity\Email get($primaryKey, $options = [])
  * @method \App\Model\Entity\Email newEntity($data = null, array $options = [])
  * @method \App\Model\Entity\Email[] newEntities(array $data, array $options = [])
@@ -33,6 +35,11 @@ class EmailsTable extends Table
         $this->setTable('emails');
         $this->setDisplayField('id');
         $this->setPrimaryKey('id');
+
+        $this->belongsTo('Users', [
+            'foreignKey' => 'users_id',
+            'joinType' => 'INNER'
+        ]);
     }
 
     /**
@@ -53,5 +60,19 @@ class EmailsTable extends Table
             ->notEmpty('address');
 
         return $validator;
+    }
+
+    /**
+     * Returns a rules checker object that will be used for validating
+     * application integrity.
+     *
+     * @param \Cake\ORM\RulesChecker $rules The rules object to be modified.
+     * @return \Cake\ORM\RulesChecker
+     */
+    public function buildRules(RulesChecker $rules)
+    {
+        $rules->add($rules->existsIn(['users_id'], 'Users'));
+
+        return $rules;
     }
 }

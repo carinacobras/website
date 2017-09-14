@@ -29,12 +29,23 @@ class PlayersFeesTableTest extends TestCase
         'app.fees_types',
         'app.players',
         'app.users',
-        'app.ladders',
-        'app.competitions',
+        'app.contacts',
+        'app.phone_numbers',
+        'app.emails',
+        'app.relationships',
+        'app.coaches',
         'app.teams',
+        'app.competitions',
+        'app.ladders',
         'app.courts',
         'app.locations',
-        'app.training'
+        'app.training',
+        'app.uniforms',
+        'app.uniform_colours',
+        'app.teams_coaches',
+        'app.managers',
+        'app.roles',
+        'app.users_roles'
     ];
 
     /**

@@ -24,5 +24,9 @@
             <th scope="row"><?= __('Number') ?></th>
             <td><?= $this->Number->format($phoneNumber->number) ?></td>
         </tr>
+        <tr>
+            <th scope="row"><?= __('Users Id') ?></th>
+            <td><?= $this->Number->format($phoneNumber->users_id) ?></td>
+        </tr>
     </table>
 </div>

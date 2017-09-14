@@ -4,13 +4,18 @@ namespace App\Model\Entity;
 use Cake\ORM\Entity;
 
 /**
- * Email Entity
+ * Transaction Entity
  *
  * @property int $id
- * @property string $address
- * @property int $users_id
+ * @property \Cake\I18n\FrozenTime $date
+ * @property int $amount
+ * @property int $fees_id
+ * @property int $players_id
+ *
+ * @property \App\Model\Entity\Fee $fee
+ * @property \App\Model\Entity\Player $player
  */
-class Email extends Entity
+class Transaction extends Entity
 {
 
     /**

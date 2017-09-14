@@ -29,6 +29,15 @@ class TeamsTableTest extends TestCase
         'app.ladders',
         'app.players',
         'app.users',
+        'app.contacts',
+        'app.phone_numbers',
+        'app.emails',
+        'app.relationships',
+        'app.coaches',
+        'app.teams_coaches',
+        'app.managers',
+        'app.roles',
+        'app.users_roles',
         'app.fees',
         'app.fees_types',
         'app.players_fees',
@@ -36,8 +45,7 @@ class TeamsTableTest extends TestCase
         'app.locations',
         'app.training',
         'app.uniforms',
-        'app.coaches',
-        'app.teams_coaches'
+        'app.uniform_colours'
     ];
 
     /**

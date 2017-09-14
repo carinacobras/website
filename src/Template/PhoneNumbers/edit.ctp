@@ -21,6 +21,7 @@
         <legend><?= __('Edit Phone Number') ?></legend>
         <?php
             echo $this->Form->control('number');
+            echo $this->Form->control('users_id');
         ?>
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>

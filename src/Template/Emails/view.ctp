@@ -24,5 +24,9 @@
             <th scope="row"><?= __('Id') ?></th>
             <td><?= $this->Number->format($email->id) ?></td>
         </tr>
+        <tr>
+            <th scope="row"><?= __('Users Id') ?></th>
+            <td><?= $this->Number->format($email->users_id) ?></td>
+        </tr>
     </table>
 </div>

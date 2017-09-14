@@ -17,7 +17,7 @@ class CompetitionsFixture extends TestFixture
      */
     // @codingStandardsIgnoreStart
     public $fields = [
-        'id' => ['type' => 'integer', 'length' => 11, 'unsigned' => false, 'null' => false, 'default' => null, 'comment' => '', 'precision' => null, 'autoIncrement' => null],
+        'id' => ['type' => 'integer', 'length' => 11, 'unsigned' => false, 'null' => false, 'default' => null, 'comment' => '', 'autoIncrement' => true, 'precision' => null],
         'name' => ['type' => 'string', 'length' => 45, 'null' => false, 'default' => null, 'collate' => 'utf8_general_ci', 'comment' => '', 'precision' => null, 'fixed' => null],
         'year' => ['type' => 'datetime', 'length' => null, 'null' => false, 'default' => null, 'comment' => '', 'precision' => null],
         'time' => ['type' => 'datetime', 'length' => null, 'null' => false, 'default' => null, 'comment' => '', 'precision' => null],
@@ -56,9 +56,9 @@ class CompetitionsFixture extends TestFixture
     public $records = [
         [
             'id' => 1,
-            'name' => 'ed19bd70-b3a0-482c-be4e-f18a8ec9edce',
-            'year' => '2017-09-14 09:57:01',
-            'time' => '2017-09-14 09:57:01',
+            'name' => 'e403c68c-6ef7-4ad6-8bd6-cd841ed04217',
+            'year' => '2017-09-14 11:17:50',
+            'time' => '2017-09-14 11:17:50',
             'comments' => 'Lorem ipsum dolor sit amet',
             'team_id' => 1,
             'ladder_id' => 1,

@@ -17,6 +17,7 @@ use Cake\ORM\Entity;
  * @property \App\Model\Entity\PhoneNumber $phone_number
  * @property \App\Model\Entity\Email $email
  * @property \App\Model\Entity\Relationship $relationship
+ * @property \App\Model\Entity\Player $player
  */
 class Contact extends Entity
 {
