@@ -9,11 +9,6 @@ use Cake\Validation\Validator;
 /**
  * Competitions Model
  *
- * @property \App\Model\Table\TeamsTable|\Cake\ORM\Association\BelongsTo $Teams
- * @property \App\Model\Table\LaddersTable|\Cake\ORM\Association\BelongsTo $Ladders
- * @property \App\Model\Table\CourtsTable|\Cake\ORM\Association\BelongsTo $Courts
- * @property \App\Model\Table\TrainingTable|\Cake\ORM\Association\BelongsTo $Training
- *
  * @method \App\Model\Entity\Competition get($primaryKey, $options = [])
  * @method \App\Model\Entity\Competition newEntity($data = null, array $options = [])
  * @method \App\Model\Entity\Competition[] newEntities(array $data, array $options = [])
@@ -38,23 +33,6 @@ class CompetitionsTable extends Table
         $this->setTable('competitions');
         $this->setDisplayField('name');
         $this->setPrimaryKey(['id', 'name', 'year']);
-
-        $this->belongsTo('Teams', [
-            'foreignKey' => 'team_id',
-            'joinType' => 'INNER'
-        ]);
-        $this->belongsTo('Ladders', [
-            'foreignKey' => 'ladder_id',
-            'joinType' => 'INNER'
-        ]);
-        $this->belongsTo('Courts', [
-            'foreignKey' => 'court_id',
-            'joinType' => 'INNER'
-        ]);
-        $this->belongsTo('Training', [
-            'foreignKey' => 'training_id',
-            'joinType' => 'INNER'
-        ]);
     }
 
     /**
@@ -101,10 +79,6 @@ class CompetitionsTable extends Table
     {
         $rules->add($rules->isUnique(['name']));
         $rules->add($rules->isUnique(['year']));
-        $rules->add($rules->existsIn(['team_id'], 'Teams'));
-        $rules->add($rules->existsIn(['ladder_id'], 'Ladders'));
-        $rules->add($rules->existsIn(['court_id'], 'Courts'));
-        $rules->add($rules->existsIn(['training_id'], 'Training'));
 
         return $rules;
     }

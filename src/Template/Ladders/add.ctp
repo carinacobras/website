@@ -18,7 +18,7 @@
     <fieldset>
         <legend><?= __('Add Ladder') ?></legend>
         <?php
-            echo $this->Form->control('rank');
+            echo $this->Form->control('competition_id');
             echo $this->Form->control('player_id', ['options' => $players]);
         ?>
     </fieldset>

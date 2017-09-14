@@ -19,6 +19,7 @@ class UniformsControllerTest extends IntegrationTestCase
         'app.uniforms',
         'app.uniform_colours',
         'app.teams',
+        'app.competitions',
         'app.coaches',
         'app.users',
         'app.emails',
@@ -28,14 +29,7 @@ class UniformsControllerTest extends IntegrationTestCase
         'app.relationships',
         'app.players',
         'app.absences',
-        'app.competitions',
         'app.ladders',
-        'app.courts',
-        'app.locations',
-        'app.training',
-        'app.transactions',
-        'app.fees',
-        'app.fees_types',
         'app.roles',
         'app.teams_jerseys'
     ];

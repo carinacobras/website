@@ -39,7 +39,7 @@ class ContactsController extends AppController
     public function view($id = null)
     {
         $contact = $this->Contacts->get($id, [
-            'contain' => ['PhoneNumbers', 'Emails', 'Relationships']
+            'contain' => ['PhoneNumbers', 'Emails', 'Relationships', 'Players']
         ]);
 
         $this->set('contact', $contact);

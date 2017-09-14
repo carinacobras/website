@@ -19,6 +19,7 @@
         <legend><?= __('Add Training') ?></legend>
         <?php
             echo $this->Form->control('time', ['empty' => true]);
+            echo $this->Form->control('competition_id');
         ?>
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>

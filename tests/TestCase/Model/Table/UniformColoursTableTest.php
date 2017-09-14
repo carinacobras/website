@@ -25,7 +25,26 @@ class UniformColoursTableTest extends TestCase
      */
     public $fixtures = [
         'app.uniform_colours',
-        'app.uniforms'
+        'app.uniforms',
+        'app.teams',
+        'app.coaches',
+        'app.users',
+        'app.emails',
+        'app.managers',
+        'app.phone_numbers',
+        'app.contacts',
+        'app.relationships',
+        'app.players',
+        'app.absences',
+        'app.competitions',
+        'app.ladders',
+        'app.courts',
+        'app.locations',
+        'app.training',
+        'app.transactions',
+        'app.fees',
+        'app.roles',
+        'app.teams_jerseys'
     ];
 
     /**

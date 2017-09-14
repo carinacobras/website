@@ -21,10 +21,6 @@ class PlayersControllerTest extends IntegrationTestCase
         'app.coaches',
         'app.teams',
         'app.competitions',
-        'app.ladders',
-        'app.courts',
-        'app.locations',
-        'app.training',
         'app.managers',
         'app.teams_jerseys',
         'app.uniforms',
@@ -35,9 +31,7 @@ class PlayersControllerTest extends IntegrationTestCase
         'app.relationships',
         'app.roles',
         'app.absences',
-        'app.transactions',
-        'app.fees',
-        'app.fees_types'
+        'app.ladders'
     ];
 
     /**

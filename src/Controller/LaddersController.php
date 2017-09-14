@@ -21,7 +21,7 @@ class LaddersController extends AppController
     public function index()
     {
         $this->paginate = [
-            'contain' => ['Players']
+            'contain' => ['Competitions', 'Players']
         ];
         $ladders = $this->paginate($this->Ladders);
 
@@ -39,7 +39,7 @@ class LaddersController extends AppController
     public function view($id = null)
     {
         $ladder = $this->Ladders->get($id, [
-            'contain' => ['Players', 'Competitions']
+            'contain' => ['Competitions', 'Players']
         ]);
 
         $this->set('ladder', $ladder);
@@ -63,8 +63,9 @@ class LaddersController extends AppController
             }
             $this->Flash->error(__('The ladder could not be saved. Please, try again.'));
         }
+        $competitions = $this->Ladders->Competitions->find('list', ['limit' => 200]);
         $players = $this->Ladders->Players->find('list', ['limit' => 200]);
-        $this->set(compact('ladder', 'players'));
+        $this->set(compact('ladder', 'competitions', 'players'));
         $this->set('_serialize', ['ladder']);
     }
 
@@ -89,8 +90,9 @@ class LaddersController extends AppController
             }
             $this->Flash->error(__('The ladder could not be saved. Please, try again.'));
         }
+        $competitions = $this->Ladders->Competitions->find('list', ['limit' => 200]);
         $players = $this->Ladders->Players->find('list', ['limit' => 200]);
-        $this->set(compact('ladder', 'players'));
+        $this->set(compact('ladder', 'competitions', 'players'));
         $this->set('_serialize', ['ladder']);
     }
 

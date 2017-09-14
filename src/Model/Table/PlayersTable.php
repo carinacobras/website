@@ -11,9 +11,9 @@ use Cake\Validation\Validator;
  *
  * @property \App\Model\Table\UsersTable|\Cake\ORM\Association\BelongsTo $Users
  * @property \App\Model\Table\TeamsTable|\Cake\ORM\Association\BelongsTo $Teams
+ * @property |\Cake\ORM\Association\BelongsTo $Contacts
  * @property \App\Model\Table\AbsencesTable|\Cake\ORM\Association\HasMany $Absences
  * @property \App\Model\Table\LaddersTable|\Cake\ORM\Association\HasMany $Ladders
- * @property \App\Model\Table\TransactionsTable|\Cake\ORM\Association\HasMany $Transactions
  *
  * @method \App\Model\Entity\Player get($primaryKey, $options = [])
  * @method \App\Model\Entity\Player newEntity($data = null, array $options = [])
@@ -47,13 +47,13 @@ class PlayersTable extends Table
         $this->belongsTo('Teams', [
             'foreignKey' => 'team_id'
         ]);
+        $this->belongsTo('Contacts', [
+            'foreignKey' => 'contact_id'
+        ]);
         $this->hasMany('Absences', [
             'foreignKey' => 'player_id'
         ]);
         $this->hasMany('Ladders', [
-            'foreignKey' => 'player_id'
-        ]);
-        $this->hasMany('Transactions', [
             'foreignKey' => 'player_id'
         ]);
     }
@@ -84,6 +84,7 @@ class PlayersTable extends Table
     {
         $rules->add($rules->existsIn(['user_id'], 'Users'));
         $rules->add($rules->existsIn(['team_id'], 'Teams'));
+        $rules->add($rules->existsIn(['contact_id'], 'Contacts'));
 
         return $rules;
     }

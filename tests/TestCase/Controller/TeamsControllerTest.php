@@ -17,6 +17,7 @@ class TeamsControllerTest extends IntegrationTestCase
      */
     public $fixtures = [
         'app.teams',
+        'app.competitions',
         'app.coaches',
         'app.users',
         'app.emails',
@@ -26,14 +27,7 @@ class TeamsControllerTest extends IntegrationTestCase
         'app.relationships',
         'app.players',
         'app.absences',
-        'app.competitions',
         'app.ladders',
-        'app.courts',
-        'app.locations',
-        'app.training',
-        'app.transactions',
-        'app.fees',
-        'app.fees_types',
         'app.roles',
         'app.teams_jerseys',
         'app.uniforms',

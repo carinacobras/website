@@ -21,8 +21,6 @@
         <li><?= $this->Html->link(__('New Absence'), ['controller' => 'Absences', 'action' => 'add']) ?></li>
         <li><?= $this->Html->link(__('List Ladders'), ['controller' => 'Ladders', 'action' => 'index']) ?></li>
         <li><?= $this->Html->link(__('New Ladder'), ['controller' => 'Ladders', 'action' => 'add']) ?></li>
-        <li><?= $this->Html->link(__('List Transactions'), ['controller' => 'Transactions', 'action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('New Transaction'), ['controller' => 'Transactions', 'action' => 'add']) ?></li>
     </ul>
 </nav>
 <div class="players form large-9 medium-8 columns content">
@@ -32,6 +30,7 @@
         <?php
             echo $this->Form->control('user_id', ['options' => $users]);
             echo $this->Form->control('team_id', ['options' => $teams, 'empty' => true]);
+            echo $this->Form->control('contact_id');
         ?>
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>

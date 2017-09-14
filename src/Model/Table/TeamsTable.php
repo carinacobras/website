@@ -9,8 +9,8 @@ use Cake\Validation\Validator;
 /**
  * Teams Model
  *
+ * @property \App\Model\Table\CompetitionsTable|\Cake\ORM\Association\BelongsTo $Competitions
  * @property \App\Model\Table\CoachesTable|\Cake\ORM\Association\HasMany $Coaches
- * @property \App\Model\Table\CompetitionsTable|\Cake\ORM\Association\HasMany $Competitions
  * @property \App\Model\Table\ManagersTable|\Cake\ORM\Association\HasMany $Managers
  * @property \App\Model\Table\PlayersTable|\Cake\ORM\Association\HasMany $Players
  * @property \App\Model\Table\TeamsJerseysTable|\Cake\ORM\Association\HasMany $TeamsJerseys
@@ -41,10 +41,10 @@ class TeamsTable extends Table
         $this->setDisplayField('name');
         $this->setPrimaryKey('id');
 
-        $this->hasMany('Coaches', [
-            'foreignKey' => 'team_id'
+        $this->belongsTo('Competitions', [
+            'foreignKey' => 'competition_id'
         ]);
-        $this->hasMany('Competitions', [
+        $this->hasMany('Coaches', [
             'foreignKey' => 'team_id'
         ]);
         $this->hasMany('Managers', [
@@ -78,5 +78,19 @@ class TeamsTable extends Table
             ->allowEmpty('name');
 
         return $validator;
+    }
+
+    /**
+     * Returns a rules checker object that will be used for validating
+     * application integrity.
+     *
+     * @param \Cake\ORM\RulesChecker $rules The rules object to be modified.
+     * @return \Cake\ORM\RulesChecker
+     */
+    public function buildRules(RulesChecker $rules)
+    {
+        $rules->add($rules->existsIn(['competition_id'], 'Competitions'));
+
+        return $rules;
     }
 }

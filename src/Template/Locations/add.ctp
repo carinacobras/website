@@ -18,6 +18,7 @@
     <fieldset>
         <legend><?= __('Add Location') ?></legend>
         <?php
+            echo $this->Form->control('name');
             echo $this->Form->control('training_id', ['options' => $training, 'empty' => true]);
             echo $this->Form->control('court_id', ['options' => $courts, 'empty' => true]);
         ?>

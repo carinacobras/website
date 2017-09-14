@@ -33,7 +33,6 @@ class UsersTableTest extends TestCase
         'app.absences',
         'app.transactions',
         'app.fees',
-        'app.fees_types',
         'app.courts',
         'app.locations',
         'app.training',

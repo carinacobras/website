@@ -20,6 +20,7 @@
         <thead>
             <tr>
                 <th scope="col"><?= $this->Paginator->sort('id') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('name') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('training_id') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('court_id') ?></th>
                 <th scope="col" class="actions"><?= __('Actions') ?></th>
@@ -29,6 +30,7 @@
             <?php foreach ($locations as $location): ?>
             <tr>
                 <td><?= $this->Number->format($location->id) ?></td>
+                <td><?= h($location->name) ?></td>
                 <td><?= $location->has('training') ? $this->Html->link($location->training->id, ['controller' => 'Training', 'action' => 'view', $location->training->id]) : '' ?></td>
                 <td><?= $location->has('court') ? $this->Html->link($location->court->id, ['controller' => 'Courts', 'action' => 'view', $location->court->id]) : '' ?></td>
                 <td class="actions">

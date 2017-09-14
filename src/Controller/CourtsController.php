@@ -20,6 +20,9 @@ class CourtsController extends AppController
      */
     public function index()
     {
+        $this->paginate = [
+            'contain' => ['Competitions']
+        ];
         $courts = $this->paginate($this->Courts);
 
         $this->set(compact('courts'));
@@ -60,7 +63,8 @@ class CourtsController extends AppController
             }
             $this->Flash->error(__('The court could not be saved. Please, try again.'));
         }
-        $this->set(compact('court'));
+        $competitions = $this->Courts->Competitions->find('list', ['limit' => 200]);
+        $this->set(compact('court', 'competitions'));
         $this->set('_serialize', ['court']);
     }
 
@@ -85,7 +89,8 @@ class CourtsController extends AppController
             }
             $this->Flash->error(__('The court could not be saved. Please, try again.'));
         }
-        $this->set(compact('court'));
+        $competitions = $this->Courts->Competitions->find('list', ['limit' => 200]);
+        $this->set(compact('court', 'competitions'));
         $this->set('_serialize', ['court']);
     }
 

@@ -20,9 +20,6 @@ class CompetitionsController extends AppController
      */
     public function index()
     {
-        $this->paginate = [
-            'contain' => ['Teams', 'Ladders', 'Courts', 'Training']
-        ];
         $competitions = $this->paginate($this->Competitions);
 
         $this->set(compact('competitions'));
@@ -39,7 +36,7 @@ class CompetitionsController extends AppController
     public function view($id = null)
     {
         $competition = $this->Competitions->get($id, [
-            'contain' => ['Teams', 'Ladders', 'Courts', 'Training']
+            'contain' => []
         ]);
 
         $this->set('competition', $competition);
@@ -63,11 +60,7 @@ class CompetitionsController extends AppController
             }
             $this->Flash->error(__('The competition could not be saved. Please, try again.'));
         }
-        $teams = $this->Competitions->Teams->find('list', ['limit' => 200]);
-        $ladders = $this->Competitions->Ladders->find('list', ['limit' => 200]);
-        $courts = $this->Competitions->Courts->find('list', ['limit' => 200]);
-        $training = $this->Competitions->Training->find('list', ['limit' => 200]);
-        $this->set(compact('competition', 'teams', 'ladders', 'courts', 'training'));
+        $this->set(compact('competition'));
         $this->set('_serialize', ['competition']);
     }
 
@@ -92,11 +85,7 @@ class CompetitionsController extends AppController
             }
             $this->Flash->error(__('The competition could not be saved. Please, try again.'));
         }
-        $teams = $this->Competitions->Teams->find('list', ['limit' => 200]);
-        $ladders = $this->Competitions->Ladders->find('list', ['limit' => 200]);
-        $courts = $this->Competitions->Courts->find('list', ['limit' => 200]);
-        $training = $this->Competitions->Training->find('list', ['limit' => 200]);
-        $this->set(compact('competition', 'teams', 'ladders', 'courts', 'training'));
+        $this->set(compact('competition'));
         $this->set('_serialize', ['competition']);
     }
 

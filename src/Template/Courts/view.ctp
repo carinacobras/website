@@ -28,6 +28,10 @@
             <th scope="row"><?= __('Number') ?></th>
             <td><?= $this->Number->format($court->number) ?></td>
         </tr>
+        <tr>
+            <th scope="row"><?= __('Competition Id') ?></th>
+            <td><?= $this->Number->format($court->competition_id) ?></td>
+        </tr>
     </table>
     <div class="related">
         <h4><?= __('Related Competitions') ?></h4>
@@ -39,10 +43,6 @@
                 <th scope="col"><?= __('Year') ?></th>
                 <th scope="col"><?= __('Time') ?></th>
                 <th scope="col"><?= __('Comments') ?></th>
-                <th scope="col"><?= __('Team Id') ?></th>
-                <th scope="col"><?= __('Ladder Id') ?></th>
-                <th scope="col"><?= __('Court Id') ?></th>
-                <th scope="col"><?= __('Training Id') ?></th>
                 <th scope="col" class="actions"><?= __('Actions') ?></th>
             </tr>
             <?php foreach ($court->competitions as $competitions): ?>
@@ -52,10 +52,6 @@
                 <td><?= h($competitions->year) ?></td>
                 <td><?= h($competitions->time) ?></td>
                 <td><?= h($competitions->comments) ?></td>
-                <td><?= h($competitions->team_id) ?></td>
-                <td><?= h($competitions->ladder_id) ?></td>
-                <td><?= h($competitions->court_id) ?></td>
-                <td><?= h($competitions->training_id) ?></td>
                 <td class="actions">
                     <?= $this->Html->link(__('View'), ['controller' => 'Competitions', 'action' => 'view', $competitions->id]) ?>
                     <?= $this->Html->link(__('Edit'), ['controller' => 'Competitions', 'action' => 'edit', $competitions->id]) ?>
@@ -72,6 +68,7 @@
         <table cellpadding="0" cellspacing="0">
             <tr>
                 <th scope="col"><?= __('Id') ?></th>
+                <th scope="col"><?= __('Name') ?></th>
                 <th scope="col"><?= __('Training Id') ?></th>
                 <th scope="col"><?= __('Court Id') ?></th>
                 <th scope="col" class="actions"><?= __('Actions') ?></th>
@@ -79,6 +76,7 @@
             <?php foreach ($court->locations as $locations): ?>
             <tr>
                 <td><?= h($locations->id) ?></td>
+                <td><?= h($locations->name) ?></td>
                 <td><?= h($locations->training_id) ?></td>
                 <td><?= h($locations->court_id) ?></td>
                 <td class="actions">

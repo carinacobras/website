@@ -7,7 +7,7 @@ use Cake\ORM\Entity;
  * Ladder Entity
  *
  * @property int $id
- * @property int $rank
+ * @property int $competition_id
  * @property int $player_id
  *
  * @property \App\Model\Entity\Player $player

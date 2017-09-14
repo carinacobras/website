@@ -7,6 +7,7 @@ use Cake\ORM\Entity;
  * Location Entity
  *
  * @property int $id
+ * @property string $name
  * @property int $training_id
  * @property int $court_id
  *

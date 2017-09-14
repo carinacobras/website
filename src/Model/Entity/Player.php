@@ -9,6 +9,7 @@ use Cake\ORM\Entity;
  * @property int $id
  * @property int $user_id
  * @property int $team_id
+ * @property int $contact_id
  *
  * @property \App\Model\Entity\User $user
  * @property \App\Model\Entity\Team $team

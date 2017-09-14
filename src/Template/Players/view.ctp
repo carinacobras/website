@@ -19,8 +19,6 @@
         <li><?= $this->Html->link(__('New Absence'), ['controller' => 'Absences', 'action' => 'add']) ?> </li>
         <li><?= $this->Html->link(__('List Ladders'), ['controller' => 'Ladders', 'action' => 'index']) ?> </li>
         <li><?= $this->Html->link(__('New Ladder'), ['controller' => 'Ladders', 'action' => 'add']) ?> </li>
-        <li><?= $this->Html->link(__('List Transactions'), ['controller' => 'Transactions', 'action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('New Transaction'), ['controller' => 'Transactions', 'action' => 'add']) ?> </li>
     </ul>
 </nav>
 <div class="players view large-9 medium-8 columns content">
@@ -37,6 +35,10 @@
         <tr>
             <th scope="row"><?= __('Id') ?></th>
             <td><?= $this->Number->format($player->id) ?></td>
+        </tr>
+        <tr>
+            <th scope="row"><?= __('Contact Id') ?></th>
+            <td><?= $this->Number->format($player->contact_id) ?></td>
         </tr>
     </table>
     <div class="related">
@@ -72,48 +74,19 @@
         <table cellpadding="0" cellspacing="0">
             <tr>
                 <th scope="col"><?= __('Id') ?></th>
-                <th scope="col"><?= __('Rank') ?></th>
+                <th scope="col"><?= __('Competition Id') ?></th>
                 <th scope="col"><?= __('Player Id') ?></th>
                 <th scope="col" class="actions"><?= __('Actions') ?></th>
             </tr>
             <?php foreach ($player->ladders as $ladders): ?>
             <tr>
                 <td><?= h($ladders->id) ?></td>
-                <td><?= h($ladders->rank) ?></td>
+                <td><?= h($ladders->competition_id) ?></td>
                 <td><?= h($ladders->player_id) ?></td>
                 <td class="actions">
                     <?= $this->Html->link(__('View'), ['controller' => 'Ladders', 'action' => 'view', $ladders->id]) ?>
                     <?= $this->Html->link(__('Edit'), ['controller' => 'Ladders', 'action' => 'edit', $ladders->id]) ?>
                     <?= $this->Form->postLink(__('Delete'), ['controller' => 'Ladders', 'action' => 'delete', $ladders->id], ['confirm' => __('Are you sure you want to delete # {0}?', $ladders->id)]) ?>
-                </td>
-            </tr>
-            <?php endforeach; ?>
-        </table>
-        <?php endif; ?>
-    </div>
-    <div class="related">
-        <h4><?= __('Related Transactions') ?></h4>
-        <?php if (!empty($player->transactions)): ?>
-        <table cellpadding="0" cellspacing="0">
-            <tr>
-                <th scope="col"><?= __('Id') ?></th>
-                <th scope="col"><?= __('Date') ?></th>
-                <th scope="col"><?= __('Amount') ?></th>
-                <th scope="col"><?= __('Fee Id') ?></th>
-                <th scope="col"><?= __('Player Id') ?></th>
-                <th scope="col" class="actions"><?= __('Actions') ?></th>
-            </tr>
-            <?php foreach ($player->transactions as $transactions): ?>
-            <tr>
-                <td><?= h($transactions->id) ?></td>
-                <td><?= h($transactions->date) ?></td>
-                <td><?= h($transactions->amount) ?></td>
-                <td><?= h($transactions->fee_id) ?></td>
-                <td><?= h($transactions->player_id) ?></td>
-                <td class="actions">
-                    <?= $this->Html->link(__('View'), ['controller' => 'Transactions', 'action' => 'view', $transactions->id]) ?>
-                    <?= $this->Html->link(__('Edit'), ['controller' => 'Transactions', 'action' => 'edit', $transactions->id]) ?>
-                    <?= $this->Form->postLink(__('Delete'), ['controller' => 'Transactions', 'action' => 'delete', $transactions->id], ['confirm' => __('Are you sure you want to delete # {0}?', $transactions->id)]) ?>
                 </td>
             </tr>
             <?php endforeach; ?>

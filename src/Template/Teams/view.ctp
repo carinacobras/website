@@ -36,6 +36,10 @@
             <th scope="row"><?= __('Id') ?></th>
             <td><?= $this->Number->format($team->id) ?></td>
         </tr>
+        <tr>
+            <th scope="row"><?= __('Competition Id') ?></th>
+            <td><?= $this->Number->format($team->competition_id) ?></td>
+        </tr>
     </table>
     <div class="related">
         <h4><?= __('Related Coaches') ?></h4>
@@ -72,10 +76,6 @@
                 <th scope="col"><?= __('Year') ?></th>
                 <th scope="col"><?= __('Time') ?></th>
                 <th scope="col"><?= __('Comments') ?></th>
-                <th scope="col"><?= __('Team Id') ?></th>
-                <th scope="col"><?= __('Ladder Id') ?></th>
-                <th scope="col"><?= __('Court Id') ?></th>
-                <th scope="col"><?= __('Training Id') ?></th>
                 <th scope="col" class="actions"><?= __('Actions') ?></th>
             </tr>
             <?php foreach ($team->competitions as $competitions): ?>
@@ -85,10 +85,6 @@
                 <td><?= h($competitions->year) ?></td>
                 <td><?= h($competitions->time) ?></td>
                 <td><?= h($competitions->comments) ?></td>
-                <td><?= h($competitions->team_id) ?></td>
-                <td><?= h($competitions->ladder_id) ?></td>
-                <td><?= h($competitions->court_id) ?></td>
-                <td><?= h($competitions->training_id) ?></td>
                 <td class="actions">
                     <?= $this->Html->link(__('View'), ['controller' => 'Competitions', 'action' => 'view', $competitions->id]) ?>
                     <?= $this->Html->link(__('Edit'), ['controller' => 'Competitions', 'action' => 'edit', $competitions->id]) ?>
@@ -132,6 +128,7 @@
                 <th scope="col"><?= __('Id') ?></th>
                 <th scope="col"><?= __('User Id') ?></th>
                 <th scope="col"><?= __('Team Id') ?></th>
+                <th scope="col"><?= __('Contact Id') ?></th>
                 <th scope="col" class="actions"><?= __('Actions') ?></th>
             </tr>
             <?php foreach ($team->players as $players): ?>
@@ -139,6 +136,7 @@
                 <td><?= h($players->id) ?></td>
                 <td><?= h($players->user_id) ?></td>
                 <td><?= h($players->team_id) ?></td>
+                <td><?= h($players->contact_id) ?></td>
                 <td class="actions">
                     <?= $this->Html->link(__('View'), ['controller' => 'Players', 'action' => 'view', $players->id]) ?>
                     <?= $this->Html->link(__('Edit'), ['controller' => 'Players', 'action' => 'edit', $players->id]) ?>

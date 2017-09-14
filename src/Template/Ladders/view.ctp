@@ -29,8 +29,8 @@
             <td><?= $this->Number->format($ladder->id) ?></td>
         </tr>
         <tr>
-            <th scope="row"><?= __('Rank') ?></th>
-            <td><?= $this->Number->format($ladder->rank) ?></td>
+            <th scope="row"><?= __('Competition Id') ?></th>
+            <td><?= $this->Number->format($ladder->competition_id) ?></td>
         </tr>
     </table>
     <div class="related">
@@ -43,10 +43,6 @@
                 <th scope="col"><?= __('Year') ?></th>
                 <th scope="col"><?= __('Time') ?></th>
                 <th scope="col"><?= __('Comments') ?></th>
-                <th scope="col"><?= __('Team Id') ?></th>
-                <th scope="col"><?= __('Ladder Id') ?></th>
-                <th scope="col"><?= __('Court Id') ?></th>
-                <th scope="col"><?= __('Training Id') ?></th>
                 <th scope="col" class="actions"><?= __('Actions') ?></th>
             </tr>
             <?php foreach ($ladder->competitions as $competitions): ?>
@@ -56,10 +52,6 @@
                 <td><?= h($competitions->year) ?></td>
                 <td><?= h($competitions->time) ?></td>
                 <td><?= h($competitions->comments) ?></td>
-                <td><?= h($competitions->team_id) ?></td>
-                <td><?= h($competitions->ladder_id) ?></td>
-                <td><?= h($competitions->court_id) ?></td>
-                <td><?= h($competitions->training_id) ?></td>
                 <td class="actions">
                     <?= $this->Html->link(__('View'), ['controller' => 'Competitions', 'action' => 'view', $competitions->id]) ?>
                     <?= $this->Html->link(__('Edit'), ['controller' => 'Competitions', 'action' => 'edit', $competitions->id]) ?>

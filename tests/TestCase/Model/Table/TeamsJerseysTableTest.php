@@ -28,16 +28,23 @@ class TeamsJerseysTableTest extends TestCase
         'app.teams',
         'app.coaches',
         'app.users',
-        'app.competitions',
-        'app.ladders',
+        'app.emails',
+        'app.managers',
+        'app.phone_numbers',
+        'app.contacts',
+        'app.relationships',
         'app.players',
         'app.absences',
-        'app.transactions',
+        'app.competitions',
+        'app.ladders',
         'app.courts',
         'app.locations',
         'app.training',
-        'app.managers',
-        'app.uniforms'
+        'app.transactions',
+        'app.fees',
+        'app.roles',
+        'app.uniforms',
+        'app.uniform_colours'
     ];
 
     /**

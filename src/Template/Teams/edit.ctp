@@ -33,6 +33,7 @@
         <legend><?= __('Edit Team') ?></legend>
         <?php
             echo $this->Form->control('name');
+            echo $this->Form->control('competition_id');
         ?>
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>

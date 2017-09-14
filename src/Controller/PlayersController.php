@@ -21,7 +21,7 @@ class PlayersController extends AppController
     public function index()
     {
         $this->paginate = [
-            'contain' => ['Users', 'Teams']
+            'contain' => ['Users', 'Teams', 'Contacts']
         ];
         $players = $this->paginate($this->Players);
 
@@ -39,7 +39,7 @@ class PlayersController extends AppController
     public function view($id = null)
     {
         $player = $this->Players->get($id, [
-            'contain' => ['Users', 'Teams', 'Absences', 'Ladders', 'Transactions']
+            'contain' => ['Users', 'Teams', 'Contacts', 'Absences', 'Ladders']
         ]);
 
         $this->set('player', $player);
@@ -65,7 +65,8 @@ class PlayersController extends AppController
         }
         $users = $this->Players->Users->find('list', ['limit' => 200]);
         $teams = $this->Players->Teams->find('list', ['limit' => 200]);
-        $this->set(compact('player', 'users', 'teams'));
+        $contacts = $this->Players->Contacts->find('list', ['limit' => 200]);
+        $this->set(compact('player', 'users', 'teams', 'contacts'));
         $this->set('_serialize', ['player']);
     }
 
@@ -92,7 +93,8 @@ class PlayersController extends AppController
         }
         $users = $this->Players->Users->find('list', ['limit' => 200]);
         $teams = $this->Players->Teams->find('list', ['limit' => 200]);
-        $this->set(compact('player', 'users', 'teams'));
+        $contacts = $this->Players->Contacts->find('list', ['limit' => 200]);
+        $this->set(compact('player', 'users', 'teams', 'contacts'));
         $this->set('_serialize', ['player']);
     }
 

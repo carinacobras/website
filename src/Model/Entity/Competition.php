@@ -11,10 +11,6 @@ use Cake\ORM\Entity;
  * @property \Cake\I18n\FrozenTime $year
  * @property \Cake\I18n\FrozenTime $time
  * @property string $comments
- * @property int $team_id
- * @property int $ladder_id
- * @property int $court_id
- * @property int $training_id
  *
  * @property \App\Model\Entity\Team $team
  * @property \App\Model\Entity\Ladder $ladder

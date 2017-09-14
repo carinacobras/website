@@ -20,7 +20,7 @@
         <thead>
             <tr>
                 <th scope="col"><?= $this->Paginator->sort('id') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('rank') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('competition_id') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('player_id') ?></th>
                 <th scope="col" class="actions"><?= __('Actions') ?></th>
             </tr>
@@ -29,7 +29,7 @@
             <?php foreach ($ladders as $ladder): ?>
             <tr>
                 <td><?= $this->Number->format($ladder->id) ?></td>
-                <td><?= $this->Number->format($ladder->rank) ?></td>
+                <td><?= $this->Number->format($ladder->competition_id) ?></td>
                 <td><?= $ladder->has('player') ? $this->Html->link($ladder->player->id, ['controller' => 'Players', 'action' => 'view', $ladder->player->id]) : '' ?></td>
                 <td class="actions">
                     <?= $this->Html->link(__('View'), ['action' => 'view', $ladder->id]) ?>

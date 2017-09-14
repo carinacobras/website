@@ -28,10 +28,6 @@
                 <th scope="col"><?= $this->Paginator->sort('year') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('time') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('comments') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('team_id') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('ladder_id') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('court_id') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('training_id') ?></th>
                 <th scope="col" class="actions"><?= __('Actions') ?></th>
             </tr>
         </thead>
@@ -43,10 +39,6 @@
                 <td><?= h($competition->year) ?></td>
                 <td><?= h($competition->time) ?></td>
                 <td><?= h($competition->comments) ?></td>
-                <td><?= $competition->has('team') ? $this->Html->link($competition->team->name, ['controller' => 'Teams', 'action' => 'view', $competition->team->id]) : '' ?></td>
-                <td><?= $competition->has('ladder') ? $this->Html->link($competition->ladder->id, ['controller' => 'Ladders', 'action' => 'view', $competition->ladder->id]) : '' ?></td>
-                <td><?= $competition->has('court') ? $this->Html->link($competition->court->id, ['controller' => 'Courts', 'action' => 'view', $competition->court->id]) : '' ?></td>
-                <td><?= $competition->has('training') ? $this->Html->link($competition->training->id, ['controller' => 'Training', 'action' => 'view', $competition->training->id]) : '' ?></td>
                 <td class="actions">
                     <?= $this->Html->link(__('View'), ['action' => 'view', $competition->id]) ?>
                     <?= $this->Html->link(__('Edit'), ['action' => 'edit', $competition->id]) ?>

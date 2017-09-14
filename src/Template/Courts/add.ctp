@@ -19,6 +19,7 @@
         <legend><?= __('Add Court') ?></legend>
         <?php
             echo $this->Form->control('number');
+            echo $this->Form->control('competition_id');
         ?>
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>

@@ -36,7 +36,7 @@ class FeesTypesController extends AppController
     public function view($id = null)
     {
         $feesType = $this->FeesTypes->get($id, [
-            'contain' => ['Fees']
+            'contain' => []
         ]);
 
         $this->set('feesType', $feesType);

@@ -21,6 +21,7 @@
             <tr>
                 <th scope="col"><?= $this->Paginator->sort('id') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('number') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('competition_id') ?></th>
                 <th scope="col" class="actions"><?= __('Actions') ?></th>
             </tr>
         </thead>
@@ -29,6 +30,7 @@
             <tr>
                 <td><?= $this->Number->format($court->id) ?></td>
                 <td><?= $this->Number->format($court->number) ?></td>
+                <td><?= $this->Number->format($court->competition_id) ?></td>
                 <td class="actions">
                     <?= $this->Html->link(__('View'), ['action' => 'view', $court->id]) ?>
                     <?= $this->Html->link(__('Edit'), ['action' => 'edit', $court->id]) ?>

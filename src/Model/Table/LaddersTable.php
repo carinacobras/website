@@ -9,8 +9,8 @@ use Cake\Validation\Validator;
 /**
  * Ladders Model
  *
+ * @property \App\Model\Table\CompetitionsTable|\Cake\ORM\Association\BelongsTo $Competitions
  * @property \App\Model\Table\PlayersTable|\Cake\ORM\Association\BelongsTo $Players
- * @property \App\Model\Table\CompetitionsTable|\Cake\ORM\Association\HasMany $Competitions
  *
  * @method \App\Model\Entity\Ladder get($primaryKey, $options = [])
  * @method \App\Model\Entity\Ladder newEntity($data = null, array $options = [])
@@ -37,12 +37,13 @@ class LaddersTable extends Table
         $this->setDisplayField('id');
         $this->setPrimaryKey('id');
 
+        $this->belongsTo('Competitions', [
+            'foreignKey' => 'competition_id',
+            'joinType' => 'INNER'
+        ]);
         $this->belongsTo('Players', [
             'foreignKey' => 'player_id',
             'joinType' => 'INNER'
-        ]);
-        $this->hasMany('Competitions', [
-            'foreignKey' => 'ladder_id'
         ]);
     }
 
@@ -58,12 +59,6 @@ class LaddersTable extends Table
             ->integer('id')
             ->allowEmpty('id', 'create');
 
-        $validator
-            ->integer('rank')
-            ->requirePresence('rank', 'create')
-            ->notEmpty('rank')
-            ->add('rank', 'unique', ['rule' => 'validateUnique', 'provider' => 'table']);
-
         return $validator;
     }
 
@@ -76,7 +71,7 @@ class LaddersTable extends Table
      */
     public function buildRules(RulesChecker $rules)
     {
-        $rules->add($rules->isUnique(['rank']));
+        $rules->add($rules->existsIn(['competition_id'], 'Competitions'));
         $rules->add($rules->existsIn(['player_id'], 'Players'));
 
         return $rules;

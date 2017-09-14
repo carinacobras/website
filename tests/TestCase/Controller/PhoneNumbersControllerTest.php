@@ -21,23 +21,17 @@ class PhoneNumbersControllerTest extends IntegrationTestCase
         'app.coaches',
         'app.teams',
         'app.competitions',
-        'app.ladders',
-        'app.players',
-        'app.absences',
-        'app.transactions',
-        'app.fees',
-        'app.fees_types',
-        'app.courts',
-        'app.locations',
-        'app.training',
         'app.managers',
+        'app.players',
+        'app.contacts',
+        'app.emails',
+        'app.relationships',
+        'app.absences',
+        'app.ladders',
         'app.teams_jerseys',
         'app.uniforms',
         'app.uniform_colours',
-        'app.emails',
-        'app.roles',
-        'app.contacts',
-        'app.relationships'
+        'app.roles'
     ];
 
     /**

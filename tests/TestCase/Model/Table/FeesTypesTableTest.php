@@ -25,8 +25,7 @@ class FeesTypesTableTest extends TestCase
      */
     public $fixtures = [
         'app.fees_types',
-        'app.fees',
-        'app.transactions'
+        'app.fees'
     ];
 
     /**

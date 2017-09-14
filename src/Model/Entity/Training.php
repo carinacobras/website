@@ -8,6 +8,7 @@ use Cake\ORM\Entity;
  *
  * @property int $id
  * @property \Cake\I18n\FrozenTime $time
+ * @property int $competition_id
  *
  * @property \App\Model\Entity\Competition[] $competitions
  * @property \App\Model\Entity\Location[] $locations

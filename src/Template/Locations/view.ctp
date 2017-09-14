@@ -21,6 +21,10 @@
     <h3><?= h($location->id) ?></h3>
     <table class="vertical-table">
         <tr>
+            <th scope="row"><?= __('Name') ?></th>
+            <td><?= h($location->name) ?></td>
+        </tr>
+        <tr>
             <th scope="row"><?= __('Training') ?></th>
             <td><?= $location->has('training') ? $this->Html->link($location->training->id, ['controller' => 'Training', 'action' => 'view', $location->training->id]) : '' ?></td>
         </tr>

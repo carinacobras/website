@@ -9,7 +9,7 @@ use Cake\Validation\Validator;
 /**
  * Training Model
  *
- * @property \App\Model\Table\CompetitionsTable|\Cake\ORM\Association\HasMany $Competitions
+ * @property \App\Model\Table\CompetitionsTable|\Cake\ORM\Association\BelongsTo $Competitions
  * @property \App\Model\Table\LocationsTable|\Cake\ORM\Association\HasMany $Locations
  *
  * @method \App\Model\Entity\Training get($primaryKey, $options = [])
@@ -37,8 +37,8 @@ class TrainingTable extends Table
         $this->setDisplayField('id');
         $this->setPrimaryKey('id');
 
-        $this->hasMany('Competitions', [
-            'foreignKey' => 'training_id'
+        $this->belongsTo('Competitions', [
+            'foreignKey' => 'competition_id'
         ]);
         $this->hasMany('Locations', [
             'foreignKey' => 'training_id'
@@ -62,5 +62,19 @@ class TrainingTable extends Table
             ->allowEmpty('time');
 
         return $validator;
+    }
+
+    /**
+     * Returns a rules checker object that will be used for validating
+     * application integrity.
+     *
+     * @param \Cake\ORM\RulesChecker $rules The rules object to be modified.
+     * @return \Cake\ORM\RulesChecker
+     */
+    public function buildRules(RulesChecker $rules)
+    {
+        $rules->add($rules->existsIn(['competition_id'], 'Competitions'));
+
+        return $rules;
     }
 }

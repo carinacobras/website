@@ -33,22 +33,6 @@
             <td><?= h($competition->comments) ?></td>
         </tr>
         <tr>
-            <th scope="row"><?= __('Team') ?></th>
-            <td><?= $competition->has('team') ? $this->Html->link($competition->team->name, ['controller' => 'Teams', 'action' => 'view', $competition->team->id]) : '' ?></td>
-        </tr>
-        <tr>
-            <th scope="row"><?= __('Ladder') ?></th>
-            <td><?= $competition->has('ladder') ? $this->Html->link($competition->ladder->id, ['controller' => 'Ladders', 'action' => 'view', $competition->ladder->id]) : '' ?></td>
-        </tr>
-        <tr>
-            <th scope="row"><?= __('Court') ?></th>
-            <td><?= $competition->has('court') ? $this->Html->link($competition->court->id, ['controller' => 'Courts', 'action' => 'view', $competition->court->id]) : '' ?></td>
-        </tr>
-        <tr>
-            <th scope="row"><?= __('Training') ?></th>
-            <td><?= $competition->has('training') ? $this->Html->link($competition->training->id, ['controller' => 'Training', 'action' => 'view', $competition->training->id]) : '' ?></td>
-        </tr>
-        <tr>
             <th scope="row"><?= __('Id') ?></th>
             <td><?= $this->Number->format($competition->id) ?></td>
         </tr>
