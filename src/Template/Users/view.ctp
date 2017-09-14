@@ -13,6 +13,8 @@
         <li><?= $this->Html->link(__('New User'), ['action' => 'add']) ?> </li>
         <li><?= $this->Html->link(__('List Phone Numbers'), ['controller' => 'PhoneNumbers', 'action' => 'index']) ?> </li>
         <li><?= $this->Html->link(__('New Phone Number'), ['controller' => 'PhoneNumbers', 'action' => 'add']) ?> </li>
+        <li><?= $this->Html->link(__('List Emails'), ['controller' => 'Emails', 'action' => 'index']) ?> </li>
+        <li><?= $this->Html->link(__('New Email'), ['controller' => 'Emails', 'action' => 'add']) ?> </li>
         <li><?= $this->Html->link(__('List Coaches'), ['controller' => 'Coaches', 'action' => 'index']) ?> </li>
         <li><?= $this->Html->link(__('New Coach'), ['controller' => 'Coaches', 'action' => 'add']) ?> </li>
         <li><?= $this->Html->link(__('List Managers'), ['controller' => 'Managers', 'action' => 'index']) ?> </li>
@@ -35,16 +37,16 @@
             <td><?= h($user->last_name) ?></td>
         </tr>
         <tr>
-            <th scope="row"><?= __('Phone Number') ?></th>
-            <td><?= $user->has('phone_number') ? $this->Html->link($user->phone_number->id, ['controller' => 'PhoneNumbers', 'action' => 'view', $user->phone_number->id]) : '' ?></td>
-        </tr>
-        <tr>
             <th scope="row"><?= __('Id') ?></th>
             <td><?= $this->Number->format($user->id) ?></td>
         </tr>
         <tr>
-            <th scope="row"><?= __('Emails Id') ?></th>
-            <td><?= $this->Number->format($user->emails_id) ?></td>
+            <th scope="row"><?= __('Phone Number Id') ?></th>
+            <td><?= $this->Number->format($user->phone_number_id) ?></td>
+        </tr>
+        <tr>
+            <th scope="row"><?= __('Email Id') ?></th>
+            <td><?= $this->Number->format($user->email_id) ?></td>
         </tr>
         <tr>
             <th scope="row"><?= __('Dob') ?></th>

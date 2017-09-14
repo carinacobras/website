@@ -23,12 +23,12 @@
             <td><?= h($email->address) ?></td>
         </tr>
         <tr>
-            <th scope="row"><?= __('User') ?></th>
-            <td><?= $email->has('user') ? $this->Html->link($email->user->id, ['controller' => 'Users', 'action' => 'view', $email->user->id]) : '' ?></td>
-        </tr>
-        <tr>
             <th scope="row"><?= __('Id') ?></th>
             <td><?= $this->Number->format($email->id) ?></td>
+        </tr>
+        <tr>
+            <th scope="row"><?= __('User Id') ?></th>
+            <td><?= $this->Number->format($email->user_id) ?></td>
         </tr>
     </table>
 </div>

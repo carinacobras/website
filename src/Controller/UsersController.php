@@ -21,7 +21,7 @@ class UsersController extends AppController
     public function index()
     {
         $this->paginate = [
-            'contain' => ['PhoneNumbers']
+            'contain' => ['PhoneNumbers', 'Emails']
         ];
         $users = $this->paginate($this->Users);
 
@@ -39,7 +39,7 @@ class UsersController extends AppController
     public function view($id = null)
     {
         $user = $this->Users->get($id, [
-            'contain' => ['PhoneNumbers', 'Roles', 'Coaches', 'Managers', 'Players']
+            'contain' => ['PhoneNumbers', 'Emails', 'Roles', 'Coaches', 'Managers', 'Players']
         ]);
 
         $this->set('user', $user);
@@ -64,8 +64,9 @@ class UsersController extends AppController
             $this->Flash->error(__('The user could not be saved. Please, try again.'));
         }
         $phoneNumbers = $this->Users->PhoneNumbers->find('list', ['limit' => 200]);
+        $emails = $this->Users->Emails->find('list', ['limit' => 200]);
         $roles = $this->Users->Roles->find('list', ['limit' => 200]);
-        $this->set(compact('user', 'phoneNumbers', 'roles'));
+        $this->set(compact('user', 'phoneNumbers', 'emails', 'roles'));
         $this->set('_serialize', ['user']);
     }
 
@@ -91,8 +92,9 @@ class UsersController extends AppController
             $this->Flash->error(__('The user could not be saved. Please, try again.'));
         }
         $phoneNumbers = $this->Users->PhoneNumbers->find('list', ['limit' => 200]);
+        $emails = $this->Users->Emails->find('list', ['limit' => 200]);
         $roles = $this->Users->Roles->find('list', ['limit' => 200]);
-        $this->set(compact('user', 'phoneNumbers', 'roles'));
+        $this->set(compact('user', 'phoneNumbers', 'emails', 'roles'));
         $this->set('_serialize', ['user']);
     }
 

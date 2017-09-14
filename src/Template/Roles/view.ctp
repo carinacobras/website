@@ -38,6 +38,8 @@
                 <th scope="col"><?= __('Dob') ?></th>
                 <th scope="col"><?= __('Created') ?></th>
                 <th scope="col"><?= __('Modified') ?></th>
+                <th scope="col"><?= __('Phone Number Id') ?></th>
+                <th scope="col"><?= __('Email Id') ?></th>
                 <th scope="col" class="actions"><?= __('Actions') ?></th>
             </tr>
             <?php foreach ($role->users as $users): ?>
@@ -48,6 +50,8 @@
                 <td><?= h($users->dob) ?></td>
                 <td><?= h($users->created) ?></td>
                 <td><?= h($users->modified) ?></td>
+                <td><?= h($users->phone_number_id) ?></td>
+                <td><?= h($users->email_id) ?></td>
                 <td class="actions">
                     <?= $this->Html->link(__('View'), ['controller' => 'Users', 'action' => 'view', $users->id]) ?>
                     <?= $this->Html->link(__('Edit'), ['controller' => 'Users', 'action' => 'edit', $users->id]) ?>

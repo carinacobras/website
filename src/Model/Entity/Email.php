@@ -8,7 +8,7 @@ use Cake\ORM\Entity;
  *
  * @property int $id
  * @property string $address
- * @property int $users_id
+ * @property int $user_id
  *
  * @property \App\Model\Entity\User $user
  */

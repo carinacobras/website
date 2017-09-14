@@ -9,6 +9,8 @@
         <li><?= $this->Html->link(__('List Users'), ['action' => 'index']) ?></li>
         <li><?= $this->Html->link(__('List Phone Numbers'), ['controller' => 'PhoneNumbers', 'action' => 'index']) ?></li>
         <li><?= $this->Html->link(__('New Phone Number'), ['controller' => 'PhoneNumbers', 'action' => 'add']) ?></li>
+        <li><?= $this->Html->link(__('List Emails'), ['controller' => 'Emails', 'action' => 'index']) ?></li>
+        <li><?= $this->Html->link(__('New Email'), ['controller' => 'Emails', 'action' => 'add']) ?></li>
         <li><?= $this->Html->link(__('List Coaches'), ['controller' => 'Coaches', 'action' => 'index']) ?></li>
         <li><?= $this->Html->link(__('New Coach'), ['controller' => 'Coaches', 'action' => 'add']) ?></li>
         <li><?= $this->Html->link(__('List Managers'), ['controller' => 'Managers', 'action' => 'index']) ?></li>
@@ -27,8 +29,8 @@
             echo $this->Form->control('first_name');
             echo $this->Form->control('last_name');
             echo $this->Form->control('dob');
-            echo $this->Form->control('phone_numbers_id', ['options' => $phoneNumbers, 'empty' => true]);
-            echo $this->Form->control('emails_id');
+            echo $this->Form->control('phone_number_id');
+            echo $this->Form->control('email_id');
             echo $this->Form->control('roles._ids', ['options' => $roles]);
         ?>
     </fieldset>

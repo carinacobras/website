@@ -19,16 +19,16 @@
     <h3><?= h($phoneNumber->id) ?></h3>
     <table class="vertical-table">
         <tr>
-            <th scope="row"><?= __('User') ?></th>
-            <td><?= $phoneNumber->has('user') ? $this->Html->link($phoneNumber->user->id, ['controller' => 'Users', 'action' => 'view', $phoneNumber->user->id]) : '' ?></td>
-        </tr>
-        <tr>
             <th scope="row"><?= __('Id') ?></th>
             <td><?= $this->Number->format($phoneNumber->id) ?></td>
         </tr>
         <tr>
             <th scope="row"><?= __('Number') ?></th>
             <td><?= $this->Number->format($phoneNumber->number) ?></td>
+        </tr>
+        <tr>
+            <th scope="row"><?= __('User Id') ?></th>
+            <td><?= $this->Number->format($phoneNumber->user_id) ?></td>
         </tr>
     </table>
 </div>
