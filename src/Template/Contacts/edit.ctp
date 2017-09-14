@@ -31,6 +31,7 @@
             echo $this->Form->control('first_name');
             echo $this->Form->control('last_name');
             echo $this->Form->control('relationships_id', ['options' => $relationships]);
+            echo $this->Form->control('players_id');
         ?>
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>

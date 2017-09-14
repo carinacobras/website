@@ -46,5 +46,9 @@
             <th scope="row"><?= __('Id') ?></th>
             <td><?= $this->Number->format($contact->id) ?></td>
         </tr>
+        <tr>
+            <th scope="row"><?= __('Players Id') ?></th>
+            <td><?= $this->Number->format($contact->players_id) ?></td>
+        </tr>
     </table>
 </div>

@@ -12,6 +12,7 @@ use Cake\ORM\Entity;
  * @property string $first_name
  * @property string $last_name
  * @property int $relationships_id
+ * @property int $players_id
  *
  * @property \App\Model\Entity\PhoneNumber $phone_number
  * @property \App\Model\Entity\Email $email
