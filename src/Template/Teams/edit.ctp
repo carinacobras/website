@@ -26,6 +26,7 @@
     <fieldset>
         <legend><?= __('Edit Team') ?></legend>
         <?php
+            echo $this->Form->control('name');
             echo $this->Form->control('competition_id');
             echo $this->Form->control('uniform_id', ['options' => $uniforms]);
             echo $this->Form->control('coaches._ids', ['options' => $coaches]);

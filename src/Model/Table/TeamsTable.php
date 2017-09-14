@@ -69,6 +69,10 @@ class TeamsTable extends Table
             ->integer('id')
             ->allowEmpty('id', 'create');
 
+        $validator
+            ->scalar('name')
+            ->allowEmpty('name');
+
         return $validator;
     }
 

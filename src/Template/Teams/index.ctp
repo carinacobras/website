@@ -22,6 +22,7 @@
         <thead>
             <tr>
                 <th scope="col"><?= $this->Paginator->sort('id') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('name') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('competition_id') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('uniform_id') ?></th>
                 <th scope="col" class="actions"><?= __('Actions') ?></th>
@@ -31,6 +32,7 @@
             <?php foreach ($teams as $team): ?>
             <tr>
                 <td><?= $this->Number->format($team->id) ?></td>
+                <td><?= h($team->name) ?></td>
                 <td><?= $this->Number->format($team->competition_id) ?></td>
                 <td><?= $team->has('uniform') ? $this->Html->link($team->uniform->id, ['controller' => 'Uniforms', 'action' => 'view', $team->uniform->id]) : '' ?></td>
                 <td class="actions">

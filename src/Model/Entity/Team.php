@@ -7,6 +7,7 @@ use Cake\ORM\Entity;
  * Team Entity
  *
  * @property int $id
+ * @property string $name
  * @property int $competition_id
  * @property int $uniform_id
  *

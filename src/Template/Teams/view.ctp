@@ -23,6 +23,10 @@
     <h3><?= h($team->id) ?></h3>
     <table class="vertical-table">
         <tr>
+            <th scope="row"><?= __('Name') ?></th>
+            <td><?= h($team->name) ?></td>
+        </tr>
+        <tr>
             <th scope="row"><?= __('Uniform') ?></th>
             <td><?= $team->has('uniform') ? $this->Html->link($team->uniform->id, ['controller' => 'Uniforms', 'action' => 'view', $team->uniform->id]) : '' ?></td>
         </tr>
