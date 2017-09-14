@@ -28,6 +28,7 @@
             echo $this->Form->control('last_name');
             echo $this->Form->control('dob');
             echo $this->Form->control('phone_numbers_id', ['options' => $phoneNumbers, 'empty' => true]);
+            echo $this->Form->control('emails_id');
             echo $this->Form->control('roles._ids', ['options' => $roles]);
         ?>
     </fieldset>

@@ -32,6 +32,7 @@
                 <th scope="col"><?= $this->Paginator->sort('created') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('modified') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('phone_numbers_id') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('emails_id') ?></th>
                 <th scope="col" class="actions"><?= __('Actions') ?></th>
             </tr>
         </thead>
@@ -45,6 +46,7 @@
                 <td><?= h($user->created) ?></td>
                 <td><?= h($user->modified) ?></td>
                 <td><?= $user->has('phone_number') ? $this->Html->link($user->phone_number->id, ['controller' => 'PhoneNumbers', 'action' => 'view', $user->phone_number->id]) : '' ?></td>
+                <td><?= $this->Number->format($user->emails_id) ?></td>
                 <td class="actions">
                     <?= $this->Html->link(__('View'), ['action' => 'view', $user->id]) ?>
                     <?= $this->Html->link(__('Edit'), ['action' => 'edit', $user->id]) ?>

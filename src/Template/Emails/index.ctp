@@ -8,6 +8,8 @@
     <ul class="side-nav">
         <li class="heading"><?= __('Actions') ?></li>
         <li><?= $this->Html->link(__('New Email'), ['action' => 'add']) ?></li>
+        <li><?= $this->Html->link(__('List Users'), ['controller' => 'Users', 'action' => 'index']) ?></li>
+        <li><?= $this->Html->link(__('New User'), ['controller' => 'Users', 'action' => 'add']) ?></li>
     </ul>
 </nav>
 <div class="emails index large-9 medium-8 columns content">
@@ -26,7 +28,7 @@
             <tr>
                 <td><?= $this->Number->format($email->id) ?></td>
                 <td><?= h($email->address) ?></td>
-                <td><?= $this->Number->format($email->users_id) ?></td>
+                <td><?= $email->has('user') ? $this->Html->link($email->user->id, ['controller' => 'Users', 'action' => 'view', $email->user->id]) : '' ?></td>
                 <td class="actions">
                     <?= $this->Html->link(__('View'), ['action' => 'view', $email->id]) ?>
                     <?= $this->Html->link(__('Edit'), ['action' => 'edit', $email->id]) ?>

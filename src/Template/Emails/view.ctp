@@ -11,6 +11,8 @@
         <li><?= $this->Form->postLink(__('Delete Email'), ['action' => 'delete', $email->id], ['confirm' => __('Are you sure you want to delete # {0}?', $email->id)]) ?> </li>
         <li><?= $this->Html->link(__('List Emails'), ['action' => 'index']) ?> </li>
         <li><?= $this->Html->link(__('New Email'), ['action' => 'add']) ?> </li>
+        <li><?= $this->Html->link(__('List Users'), ['controller' => 'Users', 'action' => 'index']) ?> </li>
+        <li><?= $this->Html->link(__('New User'), ['controller' => 'Users', 'action' => 'add']) ?> </li>
     </ul>
 </nav>
 <div class="emails view large-9 medium-8 columns content">
@@ -21,12 +23,12 @@
             <td><?= h($email->address) ?></td>
         </tr>
         <tr>
-            <th scope="row"><?= __('Id') ?></th>
-            <td><?= $this->Number->format($email->id) ?></td>
+            <th scope="row"><?= __('User') ?></th>
+            <td><?= $email->has('user') ? $this->Html->link($email->user->id, ['controller' => 'Users', 'action' => 'view', $email->user->id]) : '' ?></td>
         </tr>
         <tr>
-            <th scope="row"><?= __('Users Id') ?></th>
-            <td><?= $this->Number->format($email->users_id) ?></td>
+            <th scope="row"><?= __('Id') ?></th>
+            <td><?= $this->Number->format($email->id) ?></td>
         </tr>
     </table>
 </div>

@@ -10,6 +10,7 @@ use Cake\Validation\Validator;
  * Users Model
  *
  * @property \App\Model\Table\PhoneNumbersTable|\Cake\ORM\Association\BelongsTo $PhoneNumbers
+ * @property |\Cake\ORM\Association\BelongsTo $Emails
  * @property \App\Model\Table\CoachesTable|\Cake\ORM\Association\HasMany $Coaches
  * @property \App\Model\Table\ManagersTable|\Cake\ORM\Association\HasMany $Managers
  * @property \App\Model\Table\PlayersTable|\Cake\ORM\Association\HasMany $Players
@@ -46,6 +47,9 @@ class UsersTable extends Table
 
         $this->belongsTo('PhoneNumbers', [
             'foreignKey' => 'phone_numbers_id'
+        ]);
+        $this->belongsTo('Emails', [
+            'foreignKey' => 'emails_id'
         ]);
         $this->hasMany('Coaches', [
             'foreignKey' => 'user_id'
@@ -103,6 +107,7 @@ class UsersTable extends Table
     public function buildRules(RulesChecker $rules)
     {
         $rules->add($rules->existsIn(['phone_numbers_id'], 'PhoneNumbers'));
+        $rules->add($rules->existsIn(['emails_id'], 'Emails'));
 
         return $rules;
     }

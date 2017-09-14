@@ -24,11 +24,14 @@ class UsersFixture extends TestFixture
         'created' => ['type' => 'datetime', 'length' => null, 'null' => true, 'default' => null, 'comment' => '', 'precision' => null],
         'modified' => ['type' => 'datetime', 'length' => null, 'null' => true, 'default' => null, 'comment' => '', 'precision' => null],
         'phone_numbers_id' => ['type' => 'integer', 'length' => 11, 'unsigned' => false, 'null' => true, 'default' => null, 'comment' => '', 'precision' => null, 'autoIncrement' => null],
+        'emails_id' => ['type' => 'integer', 'length' => 11, 'unsigned' => false, 'null' => true, 'default' => null, 'comment' => '', 'precision' => null, 'autoIncrement' => null],
         '_indexes' => [
             'fk_users_phone_numbers1' => ['type' => 'index', 'columns' => ['phone_numbers_id'], 'length' => []],
+            'fk_users_emails1' => ['type' => 'index', 'columns' => ['emails_id'], 'length' => []],
         ],
         '_constraints' => [
             'primary' => ['type' => 'primary', 'columns' => ['id'], 'length' => []],
+            'fk_users_emails1' => ['type' => 'foreign', 'columns' => ['emails_id'], 'references' => ['emails', 'id'], 'update' => 'restrict', 'delete' => 'restrict', 'length' => []],
             'fk_users_phone_numbers1' => ['type' => 'foreign', 'columns' => ['phone_numbers_id'], 'references' => ['phone_numbers', 'id'], 'update' => 'restrict', 'delete' => 'restrict', 'length' => []],
         ],
         '_options' => [
@@ -48,10 +51,11 @@ class UsersFixture extends TestFixture
             'id' => 1,
             'first_name' => 'Lorem ipsum dolor sit amet',
             'last_name' => 'Lorem ipsum dolor sit amet',
-            'dob' => '2017-09-14 11:45:53',
-            'created' => '2017-09-14 11:45:53',
-            'modified' => '2017-09-14 11:45:53',
-            'phone_numbers_id' => 1
+            'dob' => '2017-09-14 11:54:28',
+            'created' => '2017-09-14 11:54:28',
+            'modified' => '2017-09-14 11:54:28',
+            'phone_numbers_id' => 1,
+            'emails_id' => 1
         ],
     ];
 }

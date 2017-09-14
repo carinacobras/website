@@ -43,6 +43,10 @@
             <td><?= $this->Number->format($user->id) ?></td>
         </tr>
         <tr>
+            <th scope="row"><?= __('Emails Id') ?></th>
+            <td><?= $this->Number->format($user->emails_id) ?></td>
+        </tr>
+        <tr>
             <th scope="row"><?= __('Dob') ?></th>
             <td><?= h($user->dob) ?></td>
         </tr>

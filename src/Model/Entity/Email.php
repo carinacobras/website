@@ -9,6 +9,8 @@ use Cake\ORM\Entity;
  * @property int $id
  * @property string $address
  * @property int $users_id
+ *
+ * @property \App\Model\Entity\User $user
  */
 class Email extends Entity
 {
