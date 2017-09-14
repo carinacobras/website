@@ -24,12 +24,12 @@ class CompetitionsFixture extends TestFixture
         'comments' => ['type' => 'string', 'length' => 45, 'null' => true, 'default' => null, 'collate' => 'utf8_general_ci', 'comment' => '', 'precision' => null, 'fixed' => null],
         'team_id' => ['type' => 'integer', 'length' => 11, 'unsigned' => false, 'null' => false, 'default' => null, 'comment' => '', 'precision' => null, 'autoIncrement' => null],
         'ladder_id' => ['type' => 'integer', 'length' => 11, 'unsigned' => false, 'null' => false, 'default' => null, 'comment' => '', 'precision' => null, 'autoIncrement' => null],
-        'courts_id' => ['type' => 'integer', 'length' => 11, 'unsigned' => false, 'null' => false, 'default' => null, 'comment' => '', 'precision' => null, 'autoIncrement' => null],
+        'court_id' => ['type' => 'integer', 'length' => 11, 'unsigned' => false, 'null' => false, 'default' => null, 'comment' => '', 'precision' => null, 'autoIncrement' => null],
         'training_id' => ['type' => 'integer', 'length' => 11, 'unsigned' => false, 'null' => false, 'default' => null, 'comment' => '', 'precision' => null, 'autoIncrement' => null],
         '_indexes' => [
             'fk_team_has_player_team1_idx' => ['type' => 'index', 'columns' => ['team_id'], 'length' => []],
             'fk_competition_ladder1_idx' => ['type' => 'index', 'columns' => ['ladder_id'], 'length' => []],
-            'fk_competitions_courts1_idx' => ['type' => 'index', 'columns' => ['courts_id'], 'length' => []],
+            'fk_competitions_courts1_idx' => ['type' => 'index', 'columns' => ['court_id'], 'length' => []],
             'fk_competitions_training1_idx' => ['type' => 'index', 'columns' => ['training_id'], 'length' => []],
         ],
         '_constraints' => [
@@ -37,7 +37,7 @@ class CompetitionsFixture extends TestFixture
             'name_UNIQUE' => ['type' => 'unique', 'columns' => ['name'], 'length' => []],
             'year_UNIQUE' => ['type' => 'unique', 'columns' => ['year'], 'length' => []],
             'fk_competition_ladder1' => ['type' => 'foreign', 'columns' => ['ladder_id'], 'references' => ['ladders', 'id'], 'update' => 'noAction', 'delete' => 'noAction', 'length' => []],
-            'fk_competitions_courts1' => ['type' => 'foreign', 'columns' => ['courts_id'], 'references' => ['courts', 'id'], 'update' => 'noAction', 'delete' => 'noAction', 'length' => []],
+            'fk_competitions_courts1' => ['type' => 'foreign', 'columns' => ['court_id'], 'references' => ['courts', 'id'], 'update' => 'noAction', 'delete' => 'noAction', 'length' => []],
             'fk_competitions_training1' => ['type' => 'foreign', 'columns' => ['training_id'], 'references' => ['training', 'id'], 'update' => 'noAction', 'delete' => 'noAction', 'length' => []],
             'fk_team_has_player_team1' => ['type' => 'foreign', 'columns' => ['team_id'], 'references' => ['teams', 'id'], 'update' => 'noAction', 'delete' => 'noAction', 'length' => []],
         ],
@@ -56,13 +56,13 @@ class CompetitionsFixture extends TestFixture
     public $records = [
         [
             'id' => 1,
-            'name' => 'e403c68c-6ef7-4ad6-8bd6-cd841ed04217',
-            'year' => '2017-09-14 11:17:50',
-            'time' => '2017-09-14 11:17:50',
+            'name' => '5592a012-11f2-4707-808d-e44c4bc06ea2',
+            'year' => '2017-09-14 12:40:01',
+            'time' => '2017-09-14 12:40:01',
             'comments' => 'Lorem ipsum dolor sit amet',
             'team_id' => 1,
             'ladder_id' => 1,
-            'courts_id' => 1,
+            'court_id' => 1,
             'training_id' => 1
         ],
     ];

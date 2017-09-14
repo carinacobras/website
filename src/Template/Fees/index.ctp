@@ -20,7 +20,7 @@
         <thead>
             <tr>
                 <th scope="col"><?= $this->Paginator->sort('id') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('fees_types_id') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('fees_type_id') ?></th>
                 <th scope="col" class="actions"><?= __('Actions') ?></th>
             </tr>
         </thead>
@@ -28,7 +28,7 @@
             <?php foreach ($fees as $fee): ?>
             <tr>
                 <td><?= $this->Number->format($fee->id) ?></td>
-                <td><?= $fee->has('fees_type') ? $this->Html->link($fee->fees_type->name, ['controller' => 'FeesTypes', 'action' => 'view', $fee->fees_type->id]) : '' ?></td>
+                <td><?= $this->Number->format($fee->fees_type_id) ?></td>
                 <td class="actions">
                     <?= $this->Html->link(__('View'), ['action' => 'view', $fee->id]) ?>
                     <?= $this->Html->link(__('Edit'), ['action' => 'edit', $fee->id]) ?>

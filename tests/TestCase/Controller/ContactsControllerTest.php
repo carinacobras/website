@@ -19,6 +19,7 @@ class ContactsControllerTest extends IntegrationTestCase
         'app.contacts',
         'app.phone_numbers',
         'app.users',
+        'app.emails',
         'app.coaches',
         'app.teams',
         'app.competitions',
@@ -36,7 +37,6 @@ class ContactsControllerTest extends IntegrationTestCase
         'app.managers',
         'app.roles',
         'app.users_roles',
-        'app.emails',
         'app.relationships'
     ];
 

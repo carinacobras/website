@@ -7,12 +7,12 @@ use Cake\ORM\Entity;
  * Contact Entity
  *
  * @property int $id
- * @property int $phone_numbers_id
+ * @property int $phone_number_id
  * @property int $emails_id
  * @property string $first_name
  * @property string $last_name
- * @property int $relationships_id
- * @property int $players_id
+ * @property int $relationship_id
+ * @property int $player_id
  *
  * @property \App\Model\Entity\PhoneNumber $phone_number
  * @property \App\Model\Entity\Email $email

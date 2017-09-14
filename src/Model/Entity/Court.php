@@ -8,7 +8,7 @@ use Cake\ORM\Entity;
  *
  * @property int $id
  * @property int $number
- * @property int $locations_id
+ * @property int $location_id
  *
  * @property \App\Model\Entity\Location $location
  */

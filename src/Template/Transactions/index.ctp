@@ -22,8 +22,8 @@
                 <th scope="col"><?= $this->Paginator->sort('id') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('date') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('amount') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('fees_id') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('players_id') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('fee_id') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('player_id') ?></th>
                 <th scope="col" class="actions"><?= __('Actions') ?></th>
             </tr>
         </thead>
@@ -33,8 +33,8 @@
                 <td><?= $this->Number->format($transaction->id) ?></td>
                 <td><?= h($transaction->date) ?></td>
                 <td><?= $this->Number->format($transaction->amount) ?></td>
-                <td><?= $transaction->has('fee') ? $this->Html->link($transaction->fee->id, ['controller' => 'Fees', 'action' => 'view', $transaction->fee->id]) : '' ?></td>
-                <td><?= $transaction->has('player') ? $this->Html->link($transaction->player->id, ['controller' => 'Players', 'action' => 'view', $transaction->player->id]) : '' ?></td>
+                <td><?= $this->Number->format($transaction->fee_id) ?></td>
+                <td><?= $this->Number->format($transaction->player_id) ?></td>
                 <td class="actions">
                     <?= $this->Html->link(__('View'), ['action' => 'view', $transaction->id]) ?>
                     <?= $this->Html->link(__('Edit'), ['action' => 'edit', $transaction->id]) ?>

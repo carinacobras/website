@@ -10,7 +10,7 @@ use Cake\ORM\Entity;
  * @property string $address
  * @property int $user_id
  *
- * @property \App\Model\Entity\User $user
+ * @property \App\Model\Entity\User[] $users
  */
 class Email extends Entity
 {

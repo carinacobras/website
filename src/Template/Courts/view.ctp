@@ -19,16 +19,16 @@
     <h3><?= h($court->id) ?></h3>
     <table class="vertical-table">
         <tr>
-            <th scope="row"><?= __('Location') ?></th>
-            <td><?= $court->has('location') ? $this->Html->link($court->location->id, ['controller' => 'Locations', 'action' => 'view', $court->location->id]) : '' ?></td>
-        </tr>
-        <tr>
             <th scope="row"><?= __('Id') ?></th>
             <td><?= $this->Number->format($court->id) ?></td>
         </tr>
         <tr>
             <th scope="row"><?= __('Number') ?></th>
             <td><?= $this->Number->format($court->number) ?></td>
+        </tr>
+        <tr>
+            <th scope="row"><?= __('Location Id') ?></th>
+            <td><?= $this->Number->format($court->location_id) ?></td>
         </tr>
     </table>
 </div>

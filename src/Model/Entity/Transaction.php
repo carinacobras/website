@@ -9,8 +9,8 @@ use Cake\ORM\Entity;
  * @property int $id
  * @property \Cake\I18n\FrozenTime $date
  * @property int $amount
- * @property int $fees_id
- * @property int $players_id
+ * @property int $fee_id
+ * @property int $player_id
  *
  * @property \App\Model\Entity\Fee $fee
  * @property \App\Model\Entity\Player $player

@@ -9,6 +9,7 @@ use Cake\Validation\Validator;
 /**
  * Locations Model
  *
+ * @property |\Cake\ORM\Association\HasMany $Courts
  * @property \App\Model\Table\TrainingTable|\Cake\ORM\Association\HasMany $Training
  *
  * @method \App\Model\Entity\Location get($primaryKey, $options = [])
@@ -36,6 +37,9 @@ class LocationsTable extends Table
         $this->setDisplayField('id');
         $this->setPrimaryKey('id');
 
+        $this->hasMany('Courts', [
+            'foreignKey' => 'location_id'
+        ]);
         $this->hasMany('Training', [
             'foreignKey' => 'location_id'
         ]);

@@ -9,6 +9,8 @@ use Cake\Validation\Validator;
 /**
  * FeesTypes Model
  *
+ * @property |\Cake\ORM\Association\HasMany $Fees
+ *
  * @method \App\Model\Entity\FeesType get($primaryKey, $options = [])
  * @method \App\Model\Entity\FeesType newEntity($data = null, array $options = [])
  * @method \App\Model\Entity\FeesType[] newEntities(array $data, array $options = [])
@@ -33,6 +35,10 @@ class FeesTypesTable extends Table
         $this->setTable('fees_types');
         $this->setDisplayField('name');
         $this->setPrimaryKey('id');
+
+        $this->hasMany('Fees', [
+            'foreignKey' => 'fees_type_id'
+        ]);
     }
 
     /**

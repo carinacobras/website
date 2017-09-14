@@ -38,7 +38,7 @@ class UniformsTable extends Table
         $this->setPrimaryKey('id');
 
         $this->belongsTo('UniformColours', [
-            'foreignKey' => 'uniform_colours_id',
+            'foreignKey' => 'uniform_colour_id',
             'joinType' => 'INNER'
         ]);
         $this->hasMany('Teams', [
@@ -75,7 +75,7 @@ class UniformsTable extends Table
      */
     public function buildRules(RulesChecker $rules)
     {
-        $rules->add($rules->existsIn(['uniform_colours_id'], 'UniformColours'));
+        $rules->add($rules->existsIn(['uniform_colour_id'], 'UniformColours'));
 
         return $rules;
     }

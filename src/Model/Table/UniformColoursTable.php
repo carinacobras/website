@@ -9,6 +9,8 @@ use Cake\Validation\Validator;
 /**
  * UniformColours Model
  *
+ * @property |\Cake\ORM\Association\HasMany $Uniforms
+ *
  * @method \App\Model\Entity\UniformColour get($primaryKey, $options = [])
  * @method \App\Model\Entity\UniformColour newEntity($data = null, array $options = [])
  * @method \App\Model\Entity\UniformColour[] newEntities(array $data, array $options = [])
@@ -33,6 +35,10 @@ class UniformColoursTable extends Table
         $this->setTable('uniform_colours');
         $this->setDisplayField('name');
         $this->setPrimaryKey('id');
+
+        $this->hasMany('Uniforms', [
+            'foreignKey' => 'uniform_colour_id'
+        ]);
     }
 
     /**

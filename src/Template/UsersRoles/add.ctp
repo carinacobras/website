@@ -18,8 +18,8 @@
     <fieldset>
         <legend><?= __('Add Users Role') ?></legend>
         <?php
-            echo $this->Form->control('roles_id', ['options' => $roles]);
-            echo $this->Form->control('users_id', ['options' => $users]);
+            echo $this->Form->control('role_id');
+            echo $this->Form->control('user_id');
         ?>
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>

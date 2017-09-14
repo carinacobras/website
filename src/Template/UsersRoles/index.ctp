@@ -20,8 +20,8 @@
         <thead>
             <tr>
                 <th scope="col"><?= $this->Paginator->sort('id') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('roles_id') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('users_id') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('role_id') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('user_id') ?></th>
                 <th scope="col" class="actions"><?= __('Actions') ?></th>
             </tr>
         </thead>
@@ -29,8 +29,8 @@
             <?php foreach ($usersRoles as $usersRole): ?>
             <tr>
                 <td><?= $this->Number->format($usersRole->id) ?></td>
-                <td><?= $usersRole->has('role') ? $this->Html->link($usersRole->role->name, ['controller' => 'Roles', 'action' => 'view', $usersRole->role->id]) : '' ?></td>
-                <td><?= $usersRole->has('user') ? $this->Html->link($usersRole->user->id, ['controller' => 'Users', 'action' => 'view', $usersRole->user->id]) : '' ?></td>
+                <td><?= $this->Number->format($usersRole->role_id) ?></td>
+                <td><?= $this->Number->format($usersRole->user_id) ?></td>
                 <td class="actions">
                     <?= $this->Html->link(__('View'), ['action' => 'view', $usersRole->id]) ?>
                     <?= $this->Html->link(__('Edit'), ['action' => 'edit', $usersRole->id]) ?>

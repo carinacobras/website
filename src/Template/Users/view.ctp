@@ -62,6 +62,56 @@
         </tr>
     </table>
     <div class="related">
+        <h4><?= __('Related Phone Numbers') ?></h4>
+        <?php if (!empty($user->phone_numbers)): ?>
+        <table cellpadding="0" cellspacing="0">
+            <tr>
+                <th scope="col"><?= __('Id') ?></th>
+                <th scope="col"><?= __('Number') ?></th>
+                <th scope="col"><?= __('User Id') ?></th>
+                <th scope="col" class="actions"><?= __('Actions') ?></th>
+            </tr>
+            <?php foreach ($user->phone_numbers as $phoneNumbers): ?>
+            <tr>
+                <td><?= h($phoneNumbers->id) ?></td>
+                <td><?= h($phoneNumbers->number) ?></td>
+                <td><?= h($phoneNumbers->user_id) ?></td>
+                <td class="actions">
+                    <?= $this->Html->link(__('View'), ['controller' => 'PhoneNumbers', 'action' => 'view', $phoneNumbers->id]) ?>
+                    <?= $this->Html->link(__('Edit'), ['controller' => 'PhoneNumbers', 'action' => 'edit', $phoneNumbers->id]) ?>
+                    <?= $this->Form->postLink(__('Delete'), ['controller' => 'PhoneNumbers', 'action' => 'delete', $phoneNumbers->id], ['confirm' => __('Are you sure you want to delete # {0}?', $phoneNumbers->id)]) ?>
+                </td>
+            </tr>
+            <?php endforeach; ?>
+        </table>
+        <?php endif; ?>
+    </div>
+    <div class="related">
+        <h4><?= __('Related Emails') ?></h4>
+        <?php if (!empty($user->emails)): ?>
+        <table cellpadding="0" cellspacing="0">
+            <tr>
+                <th scope="col"><?= __('Id') ?></th>
+                <th scope="col"><?= __('Address') ?></th>
+                <th scope="col"><?= __('User Id') ?></th>
+                <th scope="col" class="actions"><?= __('Actions') ?></th>
+            </tr>
+            <?php foreach ($user->emails as $emails): ?>
+            <tr>
+                <td><?= h($emails->id) ?></td>
+                <td><?= h($emails->address) ?></td>
+                <td><?= h($emails->user_id) ?></td>
+                <td class="actions">
+                    <?= $this->Html->link(__('View'), ['controller' => 'Emails', 'action' => 'view', $emails->id]) ?>
+                    <?= $this->Html->link(__('Edit'), ['controller' => 'Emails', 'action' => 'edit', $emails->id]) ?>
+                    <?= $this->Form->postLink(__('Delete'), ['controller' => 'Emails', 'action' => 'delete', $emails->id], ['confirm' => __('Are you sure you want to delete # {0}?', $emails->id)]) ?>
+                </td>
+            </tr>
+            <?php endforeach; ?>
+        </table>
+        <?php endif; ?>
+    </div>
+    <div class="related">
         <h4><?= __('Related Coaches') ?></h4>
         <?php if (!empty($user->coaches)): ?>
         <table cellpadding="0" cellspacing="0">

@@ -8,7 +8,7 @@ use Cake\ORM\Entity;
  *
  * @property int $id
  * @property int $number
- * @property int $uniform_colours_id
+ * @property int $uniform_colour_id
  *
  * @property \App\Model\Entity\UniformColour $uniform_colour
  * @property \App\Model\Entity\Team[] $teams

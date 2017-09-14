@@ -20,9 +20,6 @@ class EmailsController extends AppController
      */
     public function index()
     {
-        $this->paginate = [
-            'contain' => ['Users']
-        ];
         $emails = $this->paginate($this->Emails);
 
         $this->set(compact('emails'));
@@ -63,8 +60,7 @@ class EmailsController extends AppController
             }
             $this->Flash->error(__('The email could not be saved. Please, try again.'));
         }
-        $users = $this->Emails->Users->find('list', ['limit' => 200]);
-        $this->set(compact('email', 'users'));
+        $this->set(compact('email'));
         $this->set('_serialize', ['email']);
     }
 
@@ -89,8 +85,7 @@ class EmailsController extends AppController
             }
             $this->Flash->error(__('The email could not be saved. Please, try again.'));
         }
-        $users = $this->Emails->Users->find('list', ['limit' => 200]);
-        $this->set(compact('email', 'users'));
+        $this->set(compact('email'));
         $this->set('_serialize', ['email']);
     }
 

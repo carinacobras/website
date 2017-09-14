@@ -21,8 +21,8 @@ class TransactionsControllerTest extends IntegrationTestCase
         'app.fees_types',
         'app.players',
         'app.users',
-        'app.contacts',
         'app.phone_numbers',
+        'app.contacts',
         'app.emails',
         'app.relationships',
         'app.coaches',
@@ -38,6 +38,7 @@ class TransactionsControllerTest extends IntegrationTestCase
         'app.managers',
         'app.roles',
         'app.users_roles',
+        'app.absences',
         'app.players_fees'
     ];
 

@@ -26,6 +26,7 @@ class PhoneNumbersControllerTest extends IntegrationTestCase
         'app.players',
         'app.fees',
         'app.fees_types',
+        'app.transactions',
         'app.players_fees',
         'app.courts',
         'app.locations',

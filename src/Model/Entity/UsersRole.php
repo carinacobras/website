@@ -7,8 +7,8 @@ use Cake\ORM\Entity;
  * UsersRole Entity
  *
  * @property int $id
- * @property int $roles_id
- * @property int $users_id
+ * @property int $role_id
+ * @property int $user_id
  *
  * @property \App\Model\Entity\Role $role
  * @property \App\Model\Entity\User $user

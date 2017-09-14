@@ -38,11 +38,11 @@ class AbsencesTable extends Table
         $this->setPrimaryKey('id');
 
         $this->belongsTo('Players', [
-            'foreignKey' => 'players_id',
+            'foreignKey' => 'player_id',
             'joinType' => 'INNER'
         ]);
         $this->belongsTo('Competitions', [
-            'foreignKey' => 'competitions_id',
+            'foreignKey' => 'competition_id',
             'joinType' => 'INNER'
         ]);
     }
@@ -75,8 +75,8 @@ class AbsencesTable extends Table
      */
     public function buildRules(RulesChecker $rules)
     {
-        $rules->add($rules->existsIn(['players_id'], 'Players'));
-        $rules->add($rules->existsIn(['competitions_id'], 'Competitions'));
+        $rules->add($rules->existsIn(['player_id'], 'Players'));
+        $rules->add($rules->existsIn(['competition_id'], 'Competitions'));
 
         return $rules;
     }

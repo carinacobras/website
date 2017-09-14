@@ -19,7 +19,7 @@
         <legend><?= __('Add Uniform') ?></legend>
         <?php
             echo $this->Form->control('number');
-            echo $this->Form->control('uniform_colours_id', ['options' => $uniformColours]);
+            echo $this->Form->control('uniform_colour_id');
         ?>
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>

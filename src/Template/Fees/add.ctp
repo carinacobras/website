@@ -18,7 +18,7 @@
     <fieldset>
         <legend><?= __('Add Fee') ?></legend>
         <?php
-            echo $this->Form->control('fees_types_id', ['options' => $feesTypes]);
+            echo $this->Form->control('fees_type_id');
             echo $this->Form->control('players._ids', ['options' => $players]);
         ?>
     </fieldset>

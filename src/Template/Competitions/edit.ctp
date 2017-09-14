@@ -32,7 +32,7 @@
             echo $this->Form->control('comments');
             echo $this->Form->control('team_id', ['options' => $teams]);
             echo $this->Form->control('ladder_id', ['options' => $ladders]);
-            echo $this->Form->control('courts_id', ['options' => $courts]);
+            echo $this->Form->control('court_id');
             echo $this->Form->control('training_id', ['options' => $training]);
         ?>
     </fieldset>

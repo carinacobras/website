@@ -9,6 +9,8 @@ use Cake\Validation\Validator;
 /**
  * Relationships Model
  *
+ * @property \App\Model\Table\ContactsTable|\Cake\ORM\Association\HasMany $Contacts
+ *
  * @method \App\Model\Entity\Relationship get($primaryKey, $options = [])
  * @method \App\Model\Entity\Relationship newEntity($data = null, array $options = [])
  * @method \App\Model\Entity\Relationship[] newEntities(array $data, array $options = [])
@@ -33,6 +35,10 @@ class RelationshipsTable extends Table
         $this->setTable('relationships');
         $this->setDisplayField('title');
         $this->setPrimaryKey('id');
+
+        $this->hasMany('Contacts', [
+            'foreignKey' => 'relationship_id'
+        ]);
     }
 
     /**

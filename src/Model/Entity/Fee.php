@@ -7,7 +7,7 @@ use Cake\ORM\Entity;
  * Fee Entity
  *
  * @property int $id
- * @property int $fees_types_id
+ * @property int $fees_type_id
  *
  * @property \App\Model\Entity\FeesType $fees_type
  * @property \App\Model\Entity\Player[] $players

@@ -10,7 +10,10 @@ use Cake\Validation\Validator;
  * Players Model
  *
  * @property \App\Model\Table\UsersTable|\Cake\ORM\Association\BelongsTo $Users
+ * @property |\Cake\ORM\Association\HasMany $Absences
+ * @property |\Cake\ORM\Association\HasMany $Contacts
  * @property \App\Model\Table\LaddersTable|\Cake\ORM\Association\HasMany $Ladders
+ * @property |\Cake\ORM\Association\HasMany $Transactions
  * @property \App\Model\Table\FeesTable|\Cake\ORM\Association\BelongsToMany $Fees
  *
  * @method \App\Model\Entity\Player get($primaryKey, $options = [])
@@ -42,7 +45,16 @@ class PlayersTable extends Table
             'foreignKey' => 'user_id',
             'joinType' => 'INNER'
         ]);
+        $this->hasMany('Absences', [
+            'foreignKey' => 'player_id'
+        ]);
+        $this->hasMany('Contacts', [
+            'foreignKey' => 'player_id'
+        ]);
         $this->hasMany('Ladders', [
+            'foreignKey' => 'player_id'
+        ]);
+        $this->hasMany('Transactions', [
             'foreignKey' => 'player_id'
         ]);
         $this->belongsToMany('Fees', [

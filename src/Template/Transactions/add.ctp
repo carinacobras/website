@@ -20,8 +20,8 @@
         <?php
             echo $this->Form->control('date', ['empty' => true]);
             echo $this->Form->control('amount');
-            echo $this->Form->control('fees_id', ['options' => $fees]);
-            echo $this->Form->control('players_id', ['options' => $players]);
+            echo $this->Form->control('fee_id');
+            echo $this->Form->control('player_id');
         ?>
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>

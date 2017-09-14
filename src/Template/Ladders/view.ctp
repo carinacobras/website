@@ -45,7 +45,7 @@
                 <th scope="col"><?= __('Comments') ?></th>
                 <th scope="col"><?= __('Team Id') ?></th>
                 <th scope="col"><?= __('Ladder Id') ?></th>
-                <th scope="col"><?= __('Courts Id') ?></th>
+                <th scope="col"><?= __('Court Id') ?></th>
                 <th scope="col"><?= __('Training Id') ?></th>
                 <th scope="col" class="actions"><?= __('Actions') ?></th>
             </tr>
@@ -58,7 +58,7 @@
                 <td><?= h($competitions->comments) ?></td>
                 <td><?= h($competitions->team_id) ?></td>
                 <td><?= h($competitions->ladder_id) ?></td>
-                <td><?= h($competitions->courts_id) ?></td>
+                <td><?= h($competitions->court_id) ?></td>
                 <td><?= h($competitions->training_id) ?></td>
                 <td class="actions">
                     <?= $this->Html->link(__('View'), ['controller' => 'Competitions', 'action' => 'view', $competitions->id]) ?>

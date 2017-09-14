@@ -10,7 +10,7 @@ use Cake\ORM\Entity;
  * @property int $number
  * @property int $user_id
  *
- * @property \App\Model\Entity\User $user
+ * @property \App\Model\Entity\User[] $users
  */
 class PhoneNumber extends Entity
 {

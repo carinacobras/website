@@ -25,10 +25,6 @@
     <h3><?= h($contact->id) ?></h3>
     <table class="vertical-table">
         <tr>
-            <th scope="row"><?= __('Phone Number') ?></th>
-            <td><?= $contact->has('phone_number') ? $this->Html->link($contact->phone_number->id, ['controller' => 'PhoneNumbers', 'action' => 'view', $contact->phone_number->id]) : '' ?></td>
-        </tr>
-        <tr>
             <th scope="row"><?= __('Email') ?></th>
             <td><?= $contact->has('email') ? $this->Html->link($contact->email->id, ['controller' => 'Emails', 'action' => 'view', $contact->email->id]) : '' ?></td>
         </tr>
@@ -41,16 +37,20 @@
             <td><?= h($contact->last_name) ?></td>
         </tr>
         <tr>
-            <th scope="row"><?= __('Relationship') ?></th>
-            <td><?= $contact->has('relationship') ? $this->Html->link($contact->relationship->title, ['controller' => 'Relationships', 'action' => 'view', $contact->relationship->id]) : '' ?></td>
-        </tr>
-        <tr>
-            <th scope="row"><?= __('Player') ?></th>
-            <td><?= $contact->has('player') ? $this->Html->link($contact->player->id, ['controller' => 'Players', 'action' => 'view', $contact->player->id]) : '' ?></td>
-        </tr>
-        <tr>
             <th scope="row"><?= __('Id') ?></th>
             <td><?= $this->Number->format($contact->id) ?></td>
+        </tr>
+        <tr>
+            <th scope="row"><?= __('Phone Number Id') ?></th>
+            <td><?= $this->Number->format($contact->phone_number_id) ?></td>
+        </tr>
+        <tr>
+            <th scope="row"><?= __('Relationship Id') ?></th>
+            <td><?= $this->Number->format($contact->relationship_id) ?></td>
+        </tr>
+        <tr>
+            <th scope="row"><?= __('Player Id') ?></th>
+            <td><?= $this->Number->format($contact->player_id) ?></td>
         </tr>
     </table>
 </div>

@@ -36,7 +36,7 @@ class RelationshipsController extends AppController
     public function view($id = null)
     {
         $relationship = $this->Relationships->get($id, [
-            'contain' => []
+            'contain' => ['Contacts']
         ]);
 
         $this->set('relationship', $relationship);

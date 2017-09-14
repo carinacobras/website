@@ -10,6 +10,7 @@ use Cake\Validation\Validator;
  * Courts Model
  *
  * @property \App\Model\Table\LocationsTable|\Cake\ORM\Association\BelongsTo $Locations
+ * @property |\Cake\ORM\Association\HasMany $Competitions
  *
  * @method \App\Model\Entity\Court get($primaryKey, $options = [])
  * @method \App\Model\Entity\Court newEntity($data = null, array $options = [])
@@ -37,8 +38,11 @@ class CourtsTable extends Table
         $this->setPrimaryKey('id');
 
         $this->belongsTo('Locations', [
-            'foreignKey' => 'locations_id',
+            'foreignKey' => 'location_id',
             'joinType' => 'INNER'
+        ]);
+        $this->hasMany('Competitions', [
+            'foreignKey' => 'court_id'
         ]);
     }
 
@@ -71,7 +75,7 @@ class CourtsTable extends Table
      */
     public function buildRules(RulesChecker $rules)
     {
-        $rules->add($rules->existsIn(['locations_id'], 'Locations'));
+        $rules->add($rules->existsIn(['location_id'], 'Locations'));
 
         return $rules;
     }

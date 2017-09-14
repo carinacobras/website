@@ -20,8 +20,8 @@
         <thead>
             <tr>
                 <th scope="col"><?= $this->Paginator->sort('id') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('fees_id') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('players_id') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('fee_id') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('player_id') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('status') ?></th>
                 <th scope="col" class="actions"><?= __('Actions') ?></th>
             </tr>
@@ -30,8 +30,8 @@
             <?php foreach ($playersFees as $playersFee): ?>
             <tr>
                 <td><?= $this->Number->format($playersFee->id) ?></td>
-                <td><?= $playersFee->has('fee') ? $this->Html->link($playersFee->fee->id, ['controller' => 'Fees', 'action' => 'view', $playersFee->fee->id]) : '' ?></td>
-                <td><?= $playersFee->has('player') ? $this->Html->link($playersFee->player->id, ['controller' => 'Players', 'action' => 'view', $playersFee->player->id]) : '' ?></td>
+                <td><?= $this->Number->format($playersFee->fee_id) ?></td>
+                <td><?= $this->Number->format($playersFee->player_id) ?></td>
                 <td><?= h($playersFee->status) ?></td>
                 <td class="actions">
                     <?= $this->Html->link(__('View'), ['action' => 'view', $playersFee->id]) ?>

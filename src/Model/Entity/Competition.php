@@ -13,7 +13,7 @@ use Cake\ORM\Entity;
  * @property string $comments
  * @property int $team_id
  * @property int $ladder_id
- * @property int $courts_id
+ * @property int $court_id
  * @property int $training_id
  *
  * @property \App\Model\Entity\Team $team

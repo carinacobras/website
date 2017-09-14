@@ -48,7 +48,7 @@ class CompetitionsTable extends Table
             'joinType' => 'INNER'
         ]);
         $this->belongsTo('Courts', [
-            'foreignKey' => 'courts_id',
+            'foreignKey' => 'court_id',
             'joinType' => 'INNER'
         ]);
         $this->belongsTo('Training', [
@@ -103,7 +103,7 @@ class CompetitionsTable extends Table
         $rules->add($rules->isUnique(['year']));
         $rules->add($rules->existsIn(['team_id'], 'Teams'));
         $rules->add($rules->existsIn(['ladder_id'], 'Ladders'));
-        $rules->add($rules->existsIn(['courts_id'], 'Courts'));
+        $rules->add($rules->existsIn(['court_id'], 'Courts'));
         $rules->add($rules->existsIn(['training_id'], 'Training'));
 
         return $rules;

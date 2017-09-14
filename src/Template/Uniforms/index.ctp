@@ -21,7 +21,7 @@
             <tr>
                 <th scope="col"><?= $this->Paginator->sort('id') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('number') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('uniform_colours_id') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('uniform_colour_id') ?></th>
                 <th scope="col" class="actions"><?= __('Actions') ?></th>
             </tr>
         </thead>
@@ -30,7 +30,7 @@
             <tr>
                 <td><?= $this->Number->format($uniform->id) ?></td>
                 <td><?= $this->Number->format($uniform->number) ?></td>
-                <td><?= $uniform->has('uniform_colour') ? $this->Html->link($uniform->uniform_colour->name, ['controller' => 'UniformColours', 'action' => 'view', $uniform->uniform_colour->id]) : '' ?></td>
+                <td><?= $this->Number->format($uniform->uniform_colour_id) ?></td>
                 <td class="actions">
                     <?= $this->Html->link(__('View'), ['action' => 'view', $uniform->id]) ?>
                     <?= $this->Html->link(__('Edit'), ['action' => 'edit', $uniform->id]) ?>

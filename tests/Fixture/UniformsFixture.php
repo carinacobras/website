@@ -19,13 +19,13 @@ class UniformsFixture extends TestFixture
     public $fields = [
         'id' => ['type' => 'integer', 'length' => 11, 'unsigned' => false, 'null' => false, 'default' => null, 'comment' => '', 'autoIncrement' => true, 'precision' => null],
         'number' => ['type' => 'integer', 'length' => 11, 'unsigned' => false, 'null' => false, 'default' => null, 'comment' => '', 'precision' => null, 'autoIncrement' => null],
-        'uniform_colours_id' => ['type' => 'integer', 'length' => 11, 'unsigned' => false, 'null' => false, 'default' => null, 'comment' => '', 'precision' => null, 'autoIncrement' => null],
+        'uniform_colour_id' => ['type' => 'integer', 'length' => 11, 'unsigned' => false, 'null' => false, 'default' => null, 'comment' => '', 'precision' => null, 'autoIncrement' => null],
         '_indexes' => [
-            'fk_uniforms_uniform_colours1_idx' => ['type' => 'index', 'columns' => ['uniform_colours_id'], 'length' => []],
+            'fk_uniforms_uniform_colours1_idx' => ['type' => 'index', 'columns' => ['uniform_colour_id'], 'length' => []],
         ],
         '_constraints' => [
             'primary' => ['type' => 'primary', 'columns' => ['id'], 'length' => []],
-            'fk_uniforms_uniform_colours1' => ['type' => 'foreign', 'columns' => ['uniform_colours_id'], 'references' => ['uniform_colours', 'id'], 'update' => 'noAction', 'delete' => 'noAction', 'length' => []],
+            'fk_uniforms_uniform_colours1' => ['type' => 'foreign', 'columns' => ['uniform_colour_id'], 'references' => ['uniform_colours', 'id'], 'update' => 'noAction', 'delete' => 'noAction', 'length' => []],
         ],
         '_options' => [
             'engine' => 'InnoDB',
@@ -43,7 +43,7 @@ class UniformsFixture extends TestFixture
         [
             'id' => 1,
             'number' => 1,
-            'uniform_colours_id' => 1
+            'uniform_colour_id' => 1
         ],
     ];
 }

@@ -22,12 +22,12 @@
     <fieldset>
         <legend><?= __('Add Contact') ?></legend>
         <?php
-            echo $this->Form->control('phone_numbers_id', ['options' => $phoneNumbers]);
+            echo $this->Form->control('phone_number_id');
             echo $this->Form->control('emails_id', ['options' => $emails]);
             echo $this->Form->control('first_name');
             echo $this->Form->control('last_name');
-            echo $this->Form->control('relationships_id', ['options' => $relationships]);
-            echo $this->Form->control('players_id', ['options' => $players]);
+            echo $this->Form->control('relationship_id');
+            echo $this->Form->control('player_id');
         ?>
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>

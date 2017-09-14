@@ -38,11 +38,11 @@ class UsersRolesTable extends Table
         $this->setPrimaryKey('id');
 
         $this->belongsTo('Roles', [
-            'foreignKey' => 'roles_id',
+            'foreignKey' => 'role_id',
             'joinType' => 'INNER'
         ]);
         $this->belongsTo('Users', [
-            'foreignKey' => 'users_id',
+            'foreignKey' => 'user_id',
             'joinType' => 'INNER'
         ]);
     }
@@ -71,8 +71,8 @@ class UsersRolesTable extends Table
      */
     public function buildRules(RulesChecker $rules)
     {
-        $rules->add($rules->existsIn(['roles_id'], 'Roles'));
-        $rules->add($rules->existsIn(['users_id'], 'Users'));
+        $rules->add($rules->existsIn(['role_id'], 'Roles'));
+        $rules->add($rules->existsIn(['user_id'], 'Users'));
 
         return $rules;
     }

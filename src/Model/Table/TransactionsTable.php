@@ -38,11 +38,11 @@ class TransactionsTable extends Table
         $this->setPrimaryKey('id');
 
         $this->belongsTo('Fees', [
-            'foreignKey' => 'fees_id',
+            'foreignKey' => 'fee_id',
             'joinType' => 'INNER'
         ]);
         $this->belongsTo('Players', [
-            'foreignKey' => 'players_id',
+            'foreignKey' => 'player_id',
             'joinType' => 'INNER'
         ]);
     }
@@ -79,8 +79,8 @@ class TransactionsTable extends Table
      */
     public function buildRules(RulesChecker $rules)
     {
-        $rules->add($rules->existsIn(['fees_id'], 'Fees'));
-        $rules->add($rules->existsIn(['players_id'], 'Players'));
+        $rules->add($rules->existsIn(['fee_id'], 'Fees'));
+        $rules->add($rules->existsIn(['player_id'], 'Players'));
 
         return $rules;
     }

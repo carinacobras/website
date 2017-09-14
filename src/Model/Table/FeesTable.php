@@ -10,6 +10,7 @@ use Cake\Validation\Validator;
  * Fees Model
  *
  * @property \App\Model\Table\FeesTypesTable|\Cake\ORM\Association\BelongsTo $FeesTypes
+ * @property |\Cake\ORM\Association\HasMany $Transactions
  * @property \App\Model\Table\PlayersTable|\Cake\ORM\Association\BelongsToMany $Players
  *
  * @method \App\Model\Entity\Fee get($primaryKey, $options = [])
@@ -38,8 +39,11 @@ class FeesTable extends Table
         $this->setPrimaryKey('id');
 
         $this->belongsTo('FeesTypes', [
-            'foreignKey' => 'fees_types_id',
+            'foreignKey' => 'fees_type_id',
             'joinType' => 'INNER'
+        ]);
+        $this->hasMany('Transactions', [
+            'foreignKey' => 'fee_id'
         ]);
         $this->belongsToMany('Players', [
             'foreignKey' => 'fee_id',
@@ -72,7 +76,7 @@ class FeesTable extends Table
      */
     public function buildRules(RulesChecker $rules)
     {
-        $rules->add($rules->existsIn(['fees_types_id'], 'FeesTypes'));
+        $rules->add($rules->existsIn(['fees_type_id'], 'FeesTypes'));
 
         return $rules;
     }

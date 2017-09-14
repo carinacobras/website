@@ -21,12 +21,12 @@
     <h3><?= h($fee->id) ?></h3>
     <table class="vertical-table">
         <tr>
-            <th scope="row"><?= __('Fees Type') ?></th>
-            <td><?= $fee->has('fees_type') ? $this->Html->link($fee->fees_type->name, ['controller' => 'FeesTypes', 'action' => 'view', $fee->fees_type->id]) : '' ?></td>
-        </tr>
-        <tr>
             <th scope="row"><?= __('Id') ?></th>
             <td><?= $this->Number->format($fee->id) ?></td>
+        </tr>
+        <tr>
+            <th scope="row"><?= __('Fees Type Id') ?></th>
+            <td><?= $this->Number->format($fee->fees_type_id) ?></td>
         </tr>
     </table>
     <div class="related">

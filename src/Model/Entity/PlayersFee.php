@@ -7,8 +7,8 @@ use Cake\ORM\Entity;
  * PlayersFee Entity
  *
  * @property int $id
- * @property int $fees_id
- * @property int $players_id
+ * @property int $fee_id
+ * @property int $player_id
  * @property string $status
  *
  * @property \App\Model\Entity\Fee $fee

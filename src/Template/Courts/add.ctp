@@ -17,7 +17,7 @@
         <legend><?= __('Add Court') ?></legend>
         <?php
             echo $this->Form->control('number');
-            echo $this->Form->control('locations_id', ['options' => $locations]);
+            echo $this->Form->control('location_id');
         ?>
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>

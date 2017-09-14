@@ -21,16 +21,16 @@
     <h3><?= h($uniform->id) ?></h3>
     <table class="vertical-table">
         <tr>
-            <th scope="row"><?= __('Uniform Colour') ?></th>
-            <td><?= $uniform->has('uniform_colour') ? $this->Html->link($uniform->uniform_colour->name, ['controller' => 'UniformColours', 'action' => 'view', $uniform->uniform_colour->id]) : '' ?></td>
-        </tr>
-        <tr>
             <th scope="row"><?= __('Id') ?></th>
             <td><?= $this->Number->format($uniform->id) ?></td>
         </tr>
         <tr>
             <th scope="row"><?= __('Number') ?></th>
             <td><?= $this->Number->format($uniform->number) ?></td>
+        </tr>
+        <tr>
+            <th scope="row"><?= __('Uniform Colour Id') ?></th>
+            <td><?= $this->Number->format($uniform->uniform_colour_id) ?></td>
         </tr>
     </table>
     <div class="related">

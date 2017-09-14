@@ -40,7 +40,7 @@ class ContactsTable extends Table
         $this->setPrimaryKey('id');
 
         $this->belongsTo('PhoneNumbers', [
-            'foreignKey' => 'phone_numbers_id',
+            'foreignKey' => 'phone_number_id',
             'joinType' => 'INNER'
         ]);
         $this->belongsTo('Emails', [
@@ -48,11 +48,11 @@ class ContactsTable extends Table
             'joinType' => 'INNER'
         ]);
         $this->belongsTo('Relationships', [
-            'foreignKey' => 'relationships_id',
+            'foreignKey' => 'relationship_id',
             'joinType' => 'INNER'
         ]);
         $this->belongsTo('Players', [
-            'foreignKey' => 'players_id',
+            'foreignKey' => 'player_id',
             'joinType' => 'INNER'
         ]);
     }
@@ -91,10 +91,10 @@ class ContactsTable extends Table
      */
     public function buildRules(RulesChecker $rules)
     {
-        $rules->add($rules->existsIn(['phone_numbers_id'], 'PhoneNumbers'));
+        $rules->add($rules->existsIn(['phone_number_id'], 'PhoneNumbers'));
         $rules->add($rules->existsIn(['emails_id'], 'Emails'));
-        $rules->add($rules->existsIn(['relationships_id'], 'Relationships'));
-        $rules->add($rules->existsIn(['players_id'], 'Players'));
+        $rules->add($rules->existsIn(['relationship_id'], 'Relationships'));
+        $rules->add($rules->existsIn(['player_id'], 'Players'));
 
         return $rules;
     }

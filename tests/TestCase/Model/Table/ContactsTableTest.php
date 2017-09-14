@@ -27,6 +27,7 @@ class ContactsTableTest extends TestCase
         'app.contacts',
         'app.phone_numbers',
         'app.users',
+        'app.emails',
         'app.coaches',
         'app.teams',
         'app.competitions',
@@ -44,7 +45,6 @@ class ContactsTableTest extends TestCase
         'app.managers',
         'app.roles',
         'app.users_roles',
-        'app.emails',
         'app.relationships'
     ];
 

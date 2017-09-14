@@ -29,8 +29,8 @@ class TransactionsTableTest extends TestCase
         'app.fees_types',
         'app.players',
         'app.users',
-        'app.contacts',
         'app.phone_numbers',
+        'app.contacts',
         'app.emails',
         'app.relationships',
         'app.coaches',
@@ -46,6 +46,7 @@ class TransactionsTableTest extends TestCase
         'app.managers',
         'app.roles',
         'app.users_roles',
+        'app.absences',
         'app.players_fees'
     ];
 

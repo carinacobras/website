@@ -26,10 +26,9 @@ class CoachesTableTest extends TestCase
     public $fixtures = [
         'app.coaches',
         'app.users',
-        'app.contacts',
         'app.phone_numbers',
         'app.emails',
-        'app.relationships',
+        'app.managers',
         'app.players',
         'app.ladders',
         'app.competitions',
@@ -43,7 +42,6 @@ class CoachesTableTest extends TestCase
         'app.fees',
         'app.fees_types',
         'app.players_fees',
-        'app.managers',
         'app.roles',
         'app.users_roles'
     ];

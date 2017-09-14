@@ -62,13 +62,13 @@
         <table cellpadding="0" cellspacing="0">
             <tr>
                 <th scope="col"><?= __('Id') ?></th>
-                <th scope="col"><?= __('Fees Types Id') ?></th>
+                <th scope="col"><?= __('Fees Type Id') ?></th>
                 <th scope="col" class="actions"><?= __('Actions') ?></th>
             </tr>
             <?php foreach ($player->fees as $fees): ?>
             <tr>
                 <td><?= h($fees->id) ?></td>
-                <td><?= h($fees->fees_types_id) ?></td>
+                <td><?= h($fees->fees_type_id) ?></td>
                 <td class="actions">
                     <?= $this->Html->link(__('View'), ['controller' => 'Fees', 'action' => 'view', $fees->id]) ?>
                     <?= $this->Html->link(__('Edit'), ['controller' => 'Fees', 'action' => 'edit', $fees->id]) ?>

@@ -10,6 +10,7 @@ use Cake\Validation\Validator;
  * PhoneNumbers Model
  *
  * @property \App\Model\Table\UsersTable|\Cake\ORM\Association\BelongsTo $Users
+ * @property |\Cake\ORM\Association\HasMany $Contacts
  * @property \App\Model\Table\UsersTable|\Cake\ORM\Association\HasMany $Users
  *
  * @method \App\Model\Entity\PhoneNumber get($primaryKey, $options = [])
@@ -40,6 +41,9 @@ class PhoneNumbersTable extends Table
         $this->belongsTo('Users', [
             'foreignKey' => 'user_id',
             'joinType' => 'INNER'
+        ]);
+        $this->hasMany('Contacts', [
+            'foreignKey' => 'phone_number_id'
         ]);
         $this->hasMany('Users', [
             'foreignKey' => 'phone_number_id'
