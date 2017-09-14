@@ -1,22 +1,22 @@
 <?php
 namespace App\Test\TestCase\Model\Table;
 
-use App\Model\Table\CoachesTable;
+use App\Model\Table\TeamsJerseysTable;
 use Cake\ORM\TableRegistry;
 use Cake\TestSuite\TestCase;
 
 /**
- * App\Model\Table\CoachesTable Test Case
+ * App\Model\Table\TeamsJerseysTable Test Case
  */
-class CoachesTableTest extends TestCase
+class TeamsJerseysTableTest extends TestCase
 {
 
     /**
      * Test subject
      *
-     * @var \App\Model\Table\CoachesTable
+     * @var \App\Model\Table\TeamsJerseysTable
      */
-    public $Coaches;
+    public $TeamsJerseys;
 
     /**
      * Fixtures
@@ -24,30 +24,31 @@ class CoachesTableTest extends TestCase
      * @var array
      */
     public $fixtures = [
-        'app.coaches',
+        'app.teams_jerseys',
+        'app.teams',
+        'app.competitions',
+        'app.ladders',
+        'app.players',
         'app.users',
         'app.phone_numbers',
         'app.contacts',
         'app.emails',
         'app.relationships',
-        'app.players',
-        'app.absences',
-        'app.competitions',
-        'app.teams',
-        'app.uniforms',
-        'app.uniform_colours',
+        'app.coaches',
         'app.teams_coaches',
-        'app.ladders',
-        'app.courts',
-        'app.locations',
-        'app.training',
+        'app.managers',
+        'app.roles',
+        'app.users_roles',
+        'app.absences',
         'app.transactions',
         'app.fees',
         'app.fees_types',
         'app.players_fees',
-        'app.managers',
-        'app.roles',
-        'app.users_roles'
+        'app.courts',
+        'app.locations',
+        'app.training',
+        'app.uniforms',
+        'app.uniform_colours'
     ];
 
     /**
@@ -58,8 +59,8 @@ class CoachesTableTest extends TestCase
     public function setUp()
     {
         parent::setUp();
-        $config = TableRegistry::exists('Coaches') ? [] : ['className' => CoachesTable::class];
-        $this->Coaches = TableRegistry::get('Coaches', $config);
+        $config = TableRegistry::exists('TeamsJerseys') ? [] : ['className' => TeamsJerseysTable::class];
+        $this->TeamsJerseys = TableRegistry::get('TeamsJerseys', $config);
     }
 
     /**
@@ -69,7 +70,7 @@ class CoachesTableTest extends TestCase
      */
     public function tearDown()
     {
-        unset($this->Coaches);
+        unset($this->TeamsJerseys);
 
         parent::tearDown();
     }

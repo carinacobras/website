@@ -11,7 +11,10 @@ use Cake\Validation\Validator;
  *
  * @property \App\Model\Table\CompetitionsTable|\Cake\ORM\Association\BelongsTo $Competitions
  * @property \App\Model\Table\UniformsTable|\Cake\ORM\Association\BelongsTo $Uniforms
+ * @property \App\Model\Table\PlayersTable|\Cake\ORM\Association\BelongsTo $Players
  * @property \App\Model\Table\CompetitionsTable|\Cake\ORM\Association\HasMany $Competitions
+ * @property \App\Model\Table\PlayersTable|\Cake\ORM\Association\HasMany $Players
+ * @property \App\Model\Table\TeamsJerseysTable|\Cake\ORM\Association\HasMany $TeamsJerseys
  * @property \App\Model\Table\CoachesTable|\Cake\ORM\Association\BelongsToMany $Coaches
  *
  * @method \App\Model\Entity\Team get($primaryKey, $options = [])
@@ -40,14 +43,21 @@ class TeamsTable extends Table
         $this->setPrimaryKey('id');
 
         $this->belongsTo('Competitions', [
-            'foreignKey' => 'competition_id',
-            'joinType' => 'INNER'
+            'foreignKey' => 'competition_id'
         ]);
         $this->belongsTo('Uniforms', [
-            'foreignKey' => 'uniform_id',
-            'joinType' => 'INNER'
+            'foreignKey' => 'uniform_id'
+        ]);
+        $this->belongsTo('Players', [
+            'foreignKey' => 'player_id'
         ]);
         $this->hasMany('Competitions', [
+            'foreignKey' => 'team_id'
+        ]);
+        $this->hasMany('Players', [
+            'foreignKey' => 'team_id'
+        ]);
+        $this->hasMany('TeamsJerseys', [
             'foreignKey' => 'team_id'
         ]);
         $this->belongsToMany('Coaches', [
@@ -87,6 +97,7 @@ class TeamsTable extends Table
     {
         $rules->add($rules->existsIn(['competition_id'], 'Competitions'));
         $rules->add($rules->existsIn(['uniform_id'], 'Uniforms'));
+        $rules->add($rules->existsIn(['player_id'], 'Players'));
 
         return $rules;
     }

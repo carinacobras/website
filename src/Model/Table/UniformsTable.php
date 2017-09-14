@@ -58,11 +58,6 @@ class UniformsTable extends Table
             ->integer('id')
             ->allowEmpty('id', 'create');
 
-        $validator
-            ->integer('number')
-            ->requirePresence('number', 'create')
-            ->notEmpty('number');
-
         return $validator;
     }
 

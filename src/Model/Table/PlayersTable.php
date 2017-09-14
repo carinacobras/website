@@ -10,10 +10,13 @@ use Cake\Validation\Validator;
  * Players Model
  *
  * @property \App\Model\Table\UsersTable|\Cake\ORM\Association\BelongsTo $Users
- * @property |\Cake\ORM\Association\HasMany $Absences
- * @property |\Cake\ORM\Association\HasMany $Contacts
+ * @property \App\Model\Table\TeamsTable|\Cake\ORM\Association\BelongsTo $Teams
+ * @property \App\Model\Table\TeamsJerseysTable|\Cake\ORM\Association\BelongsTo $TeamsJerseys
+ * @property \App\Model\Table\AbsencesTable|\Cake\ORM\Association\HasMany $Absences
+ * @property \App\Model\Table\ContactsTable|\Cake\ORM\Association\HasMany $Contacts
  * @property \App\Model\Table\LaddersTable|\Cake\ORM\Association\HasMany $Ladders
- * @property |\Cake\ORM\Association\HasMany $Transactions
+ * @property \App\Model\Table\TeamsTable|\Cake\ORM\Association\HasMany $Teams
+ * @property \App\Model\Table\TransactionsTable|\Cake\ORM\Association\HasMany $Transactions
  * @property \App\Model\Table\FeesTable|\Cake\ORM\Association\BelongsToMany $Fees
  *
  * @method \App\Model\Entity\Player get($primaryKey, $options = [])
@@ -45,6 +48,12 @@ class PlayersTable extends Table
             'foreignKey' => 'user_id',
             'joinType' => 'INNER'
         ]);
+        $this->belongsTo('Teams', [
+            'foreignKey' => 'team_id'
+        ]);
+        $this->belongsTo('TeamsJerseys', [
+            'foreignKey' => 'team_jersey_id'
+        ]);
         $this->hasMany('Absences', [
             'foreignKey' => 'player_id'
         ]);
@@ -52,6 +61,9 @@ class PlayersTable extends Table
             'foreignKey' => 'player_id'
         ]);
         $this->hasMany('Ladders', [
+            'foreignKey' => 'player_id'
+        ]);
+        $this->hasMany('Teams', [
             'foreignKey' => 'player_id'
         ]);
         $this->hasMany('Transactions', [
@@ -89,6 +101,8 @@ class PlayersTable extends Table
     public function buildRules(RulesChecker $rules)
     {
         $rules->add($rules->existsIn(['user_id'], 'Users'));
+        $rules->add($rules->existsIn(['team_id'], 'Teams'));
+        $rules->add($rules->existsIn(['team_jersey_id'], 'TeamsJerseys'));
 
         return $rules;
     }

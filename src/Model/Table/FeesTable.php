@@ -10,7 +10,7 @@ use Cake\Validation\Validator;
  * Fees Model
  *
  * @property \App\Model\Table\FeesTypesTable|\Cake\ORM\Association\BelongsTo $FeesTypes
- * @property |\Cake\ORM\Association\HasMany $Transactions
+ * @property \App\Model\Table\TransactionsTable|\Cake\ORM\Association\HasMany $Transactions
  * @property \App\Model\Table\PlayersTable|\Cake\ORM\Association\BelongsToMany $Players
  *
  * @method \App\Model\Entity\Fee get($primaryKey, $options = [])

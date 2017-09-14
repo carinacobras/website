@@ -43,6 +43,7 @@ class PlayersFeesTableTest extends TestCase
         'app.training',
         'app.uniforms',
         'app.uniform_colours',
+        'app.teams_jerseys',
         'app.teams_coaches',
         'app.managers',
         'app.roles',

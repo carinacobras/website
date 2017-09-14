@@ -24,8 +24,8 @@
     <fieldset>
         <legend><?= __('Edit Users Role') ?></legend>
         <?php
-            echo $this->Form->control('role_id');
-            echo $this->Form->control('user_id');
+            echo $this->Form->control('role_id', ['options' => $roles]);
+            echo $this->Form->control('user_id', ['options' => $users]);
         ?>
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>

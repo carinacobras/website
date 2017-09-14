@@ -35,15 +35,19 @@
         <table cellpadding="0" cellspacing="0">
             <tr>
                 <th scope="col"><?= __('Id') ?></th>
+                <th scope="col"><?= __('Name') ?></th>
                 <th scope="col"><?= __('Competition Id') ?></th>
                 <th scope="col"><?= __('Uniform Id') ?></th>
+                <th scope="col"><?= __('Player Id') ?></th>
                 <th scope="col" class="actions"><?= __('Actions') ?></th>
             </tr>
             <?php foreach ($coach->teams as $teams): ?>
             <tr>
                 <td><?= h($teams->id) ?></td>
+                <td><?= h($teams->name) ?></td>
                 <td><?= h($teams->competition_id) ?></td>
                 <td><?= h($teams->uniform_id) ?></td>
+                <td><?= h($teams->player_id) ?></td>
                 <td class="actions">
                     <?= $this->Html->link(__('View'), ['controller' => 'Teams', 'action' => 'view', $teams->id]) ?>
                     <?= $this->Html->link(__('Edit'), ['controller' => 'Teams', 'action' => 'edit', $teams->id]) ?>

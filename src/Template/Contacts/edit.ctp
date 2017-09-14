@@ -28,12 +28,12 @@
     <fieldset>
         <legend><?= __('Edit Contact') ?></legend>
         <?php
-            echo $this->Form->control('phone_number_id');
+            echo $this->Form->control('phone_number_id', ['options' => $phoneNumbers]);
             echo $this->Form->control('emails_id', ['options' => $emails]);
             echo $this->Form->control('first_name');
             echo $this->Form->control('last_name');
-            echo $this->Form->control('relationship_id');
-            echo $this->Form->control('player_id');
+            echo $this->Form->control('relationship_id', ['options' => $relationships]);
+            echo $this->Form->control('player_id', ['options' => $players]);
         ?>
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>

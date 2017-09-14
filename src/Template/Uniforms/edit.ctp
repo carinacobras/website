@@ -24,8 +24,7 @@
     <fieldset>
         <legend><?= __('Edit Uniform') ?></legend>
         <?php
-            echo $this->Form->control('number');
-            echo $this->Form->control('uniform_colour_id');
+            echo $this->Form->control('uniform_colour_id', ['options' => $uniformColours]);
         ?>
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>

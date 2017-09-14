@@ -10,9 +10,12 @@ use Cake\ORM\Entity;
  * @property string $name
  * @property int $competition_id
  * @property int $uniform_id
+ * @property int $player_id
  *
  * @property \App\Model\Entity\Competition[] $competitions
  * @property \App\Model\Entity\Uniform $uniform
+ * @property \App\Model\Entity\Player[] $players
+ * @property \App\Model\Entity\TeamsJersey[] $teams_jerseys
  * @property \App\Model\Entity\Coach[] $coaches
  */
 class Team extends Entity

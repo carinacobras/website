@@ -46,7 +46,7 @@ class TransactionsFixture extends TestFixture
     public $records = [
         [
             'id' => 1,
-            'date' => '2017-09-14 12:42:20',
+            'date' => '2017-09-14 13:26:42',
             'amount' => 1,
             'fee_id' => 1,
             'player_id' => 1

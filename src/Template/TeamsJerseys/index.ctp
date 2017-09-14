@@ -1,38 +1,38 @@
 <?php
 /**
   * @var \App\View\AppView $this
-  * @var \App\Model\Entity\Uniform[]|\Cake\Collection\CollectionInterface $uniforms
+  * @var \App\Model\Entity\TeamsJersey[]|\Cake\Collection\CollectionInterface $teamsJerseys
   */
 ?>
 <nav class="large-3 medium-4 columns" id="actions-sidebar">
     <ul class="side-nav">
         <li class="heading"><?= __('Actions') ?></li>
-        <li><?= $this->Html->link(__('New Uniform'), ['action' => 'add']) ?></li>
-        <li><?= $this->Html->link(__('List Uniform Colours'), ['controller' => 'UniformColours', 'action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('New Uniform Colour'), ['controller' => 'UniformColours', 'action' => 'add']) ?></li>
+        <li><?= $this->Html->link(__('New Teams Jersey'), ['action' => 'add']) ?></li>
         <li><?= $this->Html->link(__('List Teams'), ['controller' => 'Teams', 'action' => 'index']) ?></li>
         <li><?= $this->Html->link(__('New Team'), ['controller' => 'Teams', 'action' => 'add']) ?></li>
     </ul>
 </nav>
-<div class="uniforms index large-9 medium-8 columns content">
-    <h3><?= __('Uniforms') ?></h3>
+<div class="teamsJerseys index large-9 medium-8 columns content">
+    <h3><?= __('Teams Jerseys') ?></h3>
     <table cellpadding="0" cellspacing="0">
         <thead>
             <tr>
                 <th scope="col"><?= $this->Paginator->sort('id') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('uniform_colour_id') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('number') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('team_id') ?></th>
                 <th scope="col" class="actions"><?= __('Actions') ?></th>
             </tr>
         </thead>
         <tbody>
-            <?php foreach ($uniforms as $uniform): ?>
+            <?php foreach ($teamsJerseys as $teamsJersey): ?>
             <tr>
-                <td><?= $this->Number->format($uniform->id) ?></td>
-                <td><?= $uniform->has('uniform_colour') ? $this->Html->link($uniform->uniform_colour->name, ['controller' => 'UniformColours', 'action' => 'view', $uniform->uniform_colour->id]) : '' ?></td>
+                <td><?= $this->Number->format($teamsJersey->id) ?></td>
+                <td><?= $this->Number->format($teamsJersey->number) ?></td>
+                <td><?= $teamsJersey->has('team') ? $this->Html->link($teamsJersey->team->id, ['controller' => 'Teams', 'action' => 'view', $teamsJersey->team->id]) : '' ?></td>
                 <td class="actions">
-                    <?= $this->Html->link(__('View'), ['action' => 'view', $uniform->id]) ?>
-                    <?= $this->Html->link(__('Edit'), ['action' => 'edit', $uniform->id]) ?>
-                    <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $uniform->id], ['confirm' => __('Are you sure you want to delete # {0}?', $uniform->id)]) ?>
+                    <?= $this->Html->link(__('View'), ['action' => 'view', $teamsJersey->id]) ?>
+                    <?= $this->Html->link(__('Edit'), ['action' => 'edit', $teamsJersey->id]) ?>
+                    <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $teamsJersey->id], ['confirm' => __('Are you sure you want to delete # {0}?', $teamsJersey->id)]) ?>
                 </td>
             </tr>
             <?php endforeach; ?>

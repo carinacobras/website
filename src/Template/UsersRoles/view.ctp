@@ -21,16 +21,16 @@
     <h3><?= h($usersRole->id) ?></h3>
     <table class="vertical-table">
         <tr>
+            <th scope="row"><?= __('Role') ?></th>
+            <td><?= $usersRole->has('role') ? $this->Html->link($usersRole->role->name, ['controller' => 'Roles', 'action' => 'view', $usersRole->role->id]) : '' ?></td>
+        </tr>
+        <tr>
+            <th scope="row"><?= __('User') ?></th>
+            <td><?= $usersRole->has('user') ? $this->Html->link($usersRole->user->id, ['controller' => 'Users', 'action' => 'view', $usersRole->user->id]) : '' ?></td>
+        </tr>
+        <tr>
             <th scope="row"><?= __('Id') ?></th>
             <td><?= $this->Number->format($usersRole->id) ?></td>
-        </tr>
-        <tr>
-            <th scope="row"><?= __('Role Id') ?></th>
-            <td><?= $this->Number->format($usersRole->role_id) ?></td>
-        </tr>
-        <tr>
-            <th scope="row"><?= __('User Id') ?></th>
-            <td><?= $this->Number->format($usersRole->user_id) ?></td>
         </tr>
     </table>
 </div>

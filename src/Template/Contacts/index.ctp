@@ -37,12 +37,12 @@
             <?php foreach ($contacts as $contact): ?>
             <tr>
                 <td><?= $this->Number->format($contact->id) ?></td>
-                <td><?= $this->Number->format($contact->phone_number_id) ?></td>
+                <td><?= $contact->has('phone_number') ? $this->Html->link($contact->phone_number->id, ['controller' => 'PhoneNumbers', 'action' => 'view', $contact->phone_number->id]) : '' ?></td>
                 <td><?= $contact->has('email') ? $this->Html->link($contact->email->id, ['controller' => 'Emails', 'action' => 'view', $contact->email->id]) : '' ?></td>
                 <td><?= h($contact->first_name) ?></td>
                 <td><?= h($contact->last_name) ?></td>
-                <td><?= $this->Number->format($contact->relationship_id) ?></td>
-                <td><?= $this->Number->format($contact->player_id) ?></td>
+                <td><?= $contact->has('relationship') ? $this->Html->link($contact->relationship->title, ['controller' => 'Relationships', 'action' => 'view', $contact->relationship->id]) : '' ?></td>
+                <td><?= $contact->has('player') ? $this->Html->link($contact->player->id, ['controller' => 'Players', 'action' => 'view', $contact->player->id]) : '' ?></td>
                 <td class="actions">
                     <?= $this->Html->link(__('View'), ['action' => 'view', $contact->id]) ?>
                     <?= $this->Html->link(__('Edit'), ['action' => 'edit', $contact->id]) ?>

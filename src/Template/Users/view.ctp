@@ -164,12 +164,16 @@
             <tr>
                 <th scope="col"><?= __('Id') ?></th>
                 <th scope="col"><?= __('User Id') ?></th>
+                <th scope="col"><?= __('Team Id') ?></th>
+                <th scope="col"><?= __('Team Jersey Id') ?></th>
                 <th scope="col" class="actions"><?= __('Actions') ?></th>
             </tr>
             <?php foreach ($user->players as $players): ?>
             <tr>
                 <td><?= h($players->id) ?></td>
                 <td><?= h($players->user_id) ?></td>
+                <td><?= h($players->team_id) ?></td>
+                <td><?= h($players->team_jersey_id) ?></td>
                 <td class="actions">
                     <?= $this->Html->link(__('View'), ['controller' => 'Players', 'action' => 'view', $players->id]) ?>
                     <?= $this->Html->link(__('Edit'), ['controller' => 'Players', 'action' => 'edit', $players->id]) ?>

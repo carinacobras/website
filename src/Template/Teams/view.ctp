@@ -15,6 +15,10 @@
         <li><?= $this->Html->link(__('New Uniform'), ['controller' => 'Uniforms', 'action' => 'add']) ?> </li>
         <li><?= $this->Html->link(__('List Competitions'), ['controller' => 'Competitions', 'action' => 'index']) ?> </li>
         <li><?= $this->Html->link(__('New Competition'), ['controller' => 'Competitions', 'action' => 'add']) ?> </li>
+        <li><?= $this->Html->link(__('List Players'), ['controller' => 'Players', 'action' => 'index']) ?> </li>
+        <li><?= $this->Html->link(__('New Player'), ['controller' => 'Players', 'action' => 'add']) ?> </li>
+        <li><?= $this->Html->link(__('List Teams Jerseys'), ['controller' => 'TeamsJerseys', 'action' => 'index']) ?> </li>
+        <li><?= $this->Html->link(__('New Teams Jersey'), ['controller' => 'TeamsJerseys', 'action' => 'add']) ?> </li>
         <li><?= $this->Html->link(__('List Coaches'), ['controller' => 'Coaches', 'action' => 'index']) ?> </li>
         <li><?= $this->Html->link(__('New Coach'), ['controller' => 'Coaches', 'action' => 'add']) ?> </li>
     </ul>
@@ -37,6 +41,10 @@
         <tr>
             <th scope="row"><?= __('Competition Id') ?></th>
             <td><?= $this->Number->format($team->competition_id) ?></td>
+        </tr>
+        <tr>
+            <th scope="row"><?= __('Player Id') ?></th>
+            <td><?= $this->Number->format($team->player_id) ?></td>
         </tr>
     </table>
     <div class="related">
@@ -70,6 +78,58 @@
                     <?= $this->Html->link(__('View'), ['controller' => 'Competitions', 'action' => 'view', $competitions->id]) ?>
                     <?= $this->Html->link(__('Edit'), ['controller' => 'Competitions', 'action' => 'edit', $competitions->id]) ?>
                     <?= $this->Form->postLink(__('Delete'), ['controller' => 'Competitions', 'action' => 'delete', $competitions->id], ['confirm' => __('Are you sure you want to delete # {0}?', $competitions->id)]) ?>
+                </td>
+            </tr>
+            <?php endforeach; ?>
+        </table>
+        <?php endif; ?>
+    </div>
+    <div class="related">
+        <h4><?= __('Related Players') ?></h4>
+        <?php if (!empty($team->players)): ?>
+        <table cellpadding="0" cellspacing="0">
+            <tr>
+                <th scope="col"><?= __('Id') ?></th>
+                <th scope="col"><?= __('User Id') ?></th>
+                <th scope="col"><?= __('Team Id') ?></th>
+                <th scope="col"><?= __('Team Jersey Id') ?></th>
+                <th scope="col" class="actions"><?= __('Actions') ?></th>
+            </tr>
+            <?php foreach ($team->players as $players): ?>
+            <tr>
+                <td><?= h($players->id) ?></td>
+                <td><?= h($players->user_id) ?></td>
+                <td><?= h($players->team_id) ?></td>
+                <td><?= h($players->team_jersey_id) ?></td>
+                <td class="actions">
+                    <?= $this->Html->link(__('View'), ['controller' => 'Players', 'action' => 'view', $players->id]) ?>
+                    <?= $this->Html->link(__('Edit'), ['controller' => 'Players', 'action' => 'edit', $players->id]) ?>
+                    <?= $this->Form->postLink(__('Delete'), ['controller' => 'Players', 'action' => 'delete', $players->id], ['confirm' => __('Are you sure you want to delete # {0}?', $players->id)]) ?>
+                </td>
+            </tr>
+            <?php endforeach; ?>
+        </table>
+        <?php endif; ?>
+    </div>
+    <div class="related">
+        <h4><?= __('Related Teams Jerseys') ?></h4>
+        <?php if (!empty($team->teams_jerseys)): ?>
+        <table cellpadding="0" cellspacing="0">
+            <tr>
+                <th scope="col"><?= __('Id') ?></th>
+                <th scope="col"><?= __('Number') ?></th>
+                <th scope="col"><?= __('Team Id') ?></th>
+                <th scope="col" class="actions"><?= __('Actions') ?></th>
+            </tr>
+            <?php foreach ($team->teams_jerseys as $teamsJerseys): ?>
+            <tr>
+                <td><?= h($teamsJerseys->id) ?></td>
+                <td><?= h($teamsJerseys->number) ?></td>
+                <td><?= h($teamsJerseys->team_id) ?></td>
+                <td class="actions">
+                    <?= $this->Html->link(__('View'), ['controller' => 'TeamsJerseys', 'action' => 'view', $teamsJerseys->id]) ?>
+                    <?= $this->Html->link(__('Edit'), ['controller' => 'TeamsJerseys', 'action' => 'edit', $teamsJerseys->id]) ?>
+                    <?= $this->Form->postLink(__('Delete'), ['controller' => 'TeamsJerseys', 'action' => 'delete', $teamsJerseys->id], ['confirm' => __('Are you sure you want to delete # {0}?', $teamsJerseys->id)]) ?>
                 </td>
             </tr>
             <?php endforeach; ?>

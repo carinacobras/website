@@ -50,7 +50,7 @@ class TrainingFixture extends TestFixture
         [
             'id' => 1,
             'location_id' => 1,
-            'time' => '2017-09-14 12:42:12'
+            'time' => '2017-09-14 13:26:25'
         ],
     ];
 }

@@ -21,20 +21,20 @@
     <h3><?= h($transaction->id) ?></h3>
     <table class="vertical-table">
         <tr>
+            <th scope="row"><?= __('Fee') ?></th>
+            <td><?= $transaction->has('fee') ? $this->Html->link($transaction->fee->id, ['controller' => 'Fees', 'action' => 'view', $transaction->fee->id]) : '' ?></td>
+        </tr>
+        <tr>
+            <th scope="row"><?= __('Player') ?></th>
+            <td><?= $transaction->has('player') ? $this->Html->link($transaction->player->id, ['controller' => 'Players', 'action' => 'view', $transaction->player->id]) : '' ?></td>
+        </tr>
+        <tr>
             <th scope="row"><?= __('Id') ?></th>
             <td><?= $this->Number->format($transaction->id) ?></td>
         </tr>
         <tr>
             <th scope="row"><?= __('Amount') ?></th>
             <td><?= $this->Number->format($transaction->amount) ?></td>
-        </tr>
-        <tr>
-            <th scope="row"><?= __('Fee Id') ?></th>
-            <td><?= $this->Number->format($transaction->fee_id) ?></td>
-        </tr>
-        <tr>
-            <th scope="row"><?= __('Player Id') ?></th>
-            <td><?= $this->Number->format($transaction->player_id) ?></td>
         </tr>
         <tr>
             <th scope="row"><?= __('Date') ?></th>

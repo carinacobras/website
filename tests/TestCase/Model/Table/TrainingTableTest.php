@@ -31,23 +31,24 @@ class TrainingTableTest extends TestCase
         'app.teams',
         'app.uniforms',
         'app.uniform_colours',
-        'app.coaches',
+        'app.players',
         'app.users',
         'app.phone_numbers',
         'app.contacts',
         'app.emails',
         'app.relationships',
-        'app.players',
+        'app.coaches',
+        'app.teams_coaches',
+        'app.managers',
+        'app.roles',
+        'app.users_roles',
+        'app.teams_jerseys',
         'app.absences',
         'app.ladders',
         'app.transactions',
         'app.fees',
         'app.fees_types',
-        'app.players_fees',
-        'app.managers',
-        'app.roles',
-        'app.users_roles',
-        'app.teams_coaches'
+        'app.players_fees'
     ];
 
     /**

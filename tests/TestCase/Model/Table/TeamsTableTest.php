@@ -38,6 +38,7 @@ class TeamsTableTest extends TestCase
         'app.managers',
         'app.roles',
         'app.users_roles',
+        'app.teams_jerseys',
         'app.absences',
         'app.transactions',
         'app.fees',

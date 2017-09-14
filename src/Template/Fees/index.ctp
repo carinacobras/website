@@ -10,6 +10,8 @@
         <li><?= $this->Html->link(__('New Fee'), ['action' => 'add']) ?></li>
         <li><?= $this->Html->link(__('List Fees Types'), ['controller' => 'FeesTypes', 'action' => 'index']) ?></li>
         <li><?= $this->Html->link(__('New Fees Type'), ['controller' => 'FeesTypes', 'action' => 'add']) ?></li>
+        <li><?= $this->Html->link(__('List Transactions'), ['controller' => 'Transactions', 'action' => 'index']) ?></li>
+        <li><?= $this->Html->link(__('New Transaction'), ['controller' => 'Transactions', 'action' => 'add']) ?></li>
         <li><?= $this->Html->link(__('List Players'), ['controller' => 'Players', 'action' => 'index']) ?></li>
         <li><?= $this->Html->link(__('New Player'), ['controller' => 'Players', 'action' => 'add']) ?></li>
     </ul>
@@ -28,7 +30,7 @@
             <?php foreach ($fees as $fee): ?>
             <tr>
                 <td><?= $this->Number->format($fee->id) ?></td>
-                <td><?= $this->Number->format($fee->fees_type_id) ?></td>
+                <td><?= $fee->has('fees_type') ? $this->Html->link($fee->fees_type->name, ['controller' => 'FeesTypes', 'action' => 'view', $fee->fees_type->id]) : '' ?></td>
                 <td class="actions">
                     <?= $this->Html->link(__('View'), ['action' => 'view', $fee->id]) ?>
                     <?= $this->Html->link(__('Edit'), ['action' => 'edit', $fee->id]) ?>

@@ -24,8 +24,8 @@
     <fieldset>
         <legend><?= __('Edit Players Fee') ?></legend>
         <?php
-            echo $this->Form->control('fee_id');
-            echo $this->Form->control('player_id');
+            echo $this->Form->control('fee_id', ['options' => $fees]);
+            echo $this->Form->control('player_id', ['options' => $players]);
             echo $this->Form->control('status');
         ?>
     </fieldset>

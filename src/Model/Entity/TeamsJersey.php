@@ -4,15 +4,15 @@ namespace App\Model\Entity;
 use Cake\ORM\Entity;
 
 /**
- * Uniform Entity
+ * TeamsJersey Entity
  *
  * @property int $id
- * @property int $uniform_colour_id
+ * @property int $number
+ * @property int $team_id
  *
- * @property \App\Model\Entity\UniformColour $uniform_colour
- * @property \App\Model\Entity\Team[] $teams
+ * @property \App\Model\Entity\Team $team
  */
-class Uniform extends Entity
+class TeamsJersey extends Entity
 {
 
     /**

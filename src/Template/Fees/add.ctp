@@ -9,6 +9,8 @@
         <li><?= $this->Html->link(__('List Fees'), ['action' => 'index']) ?></li>
         <li><?= $this->Html->link(__('List Fees Types'), ['controller' => 'FeesTypes', 'action' => 'index']) ?></li>
         <li><?= $this->Html->link(__('New Fees Type'), ['controller' => 'FeesTypes', 'action' => 'add']) ?></li>
+        <li><?= $this->Html->link(__('List Transactions'), ['controller' => 'Transactions', 'action' => 'index']) ?></li>
+        <li><?= $this->Html->link(__('New Transaction'), ['controller' => 'Transactions', 'action' => 'add']) ?></li>
         <li><?= $this->Html->link(__('List Players'), ['controller' => 'Players', 'action' => 'index']) ?></li>
         <li><?= $this->Html->link(__('New Player'), ['controller' => 'Players', 'action' => 'add']) ?></li>
     </ul>
@@ -18,7 +20,7 @@
     <fieldset>
         <legend><?= __('Add Fee') ?></legend>
         <?php
-            echo $this->Form->control('fees_type_id');
+            echo $this->Form->control('fees_type_id', ['options' => $feesTypes]);
             echo $this->Form->control('players._ids', ['options' => $players]);
         ?>
     </fieldset>
