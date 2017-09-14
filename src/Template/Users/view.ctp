@@ -35,10 +35,6 @@
             <td><?= h($user->last_name) ?></td>
         </tr>
         <tr>
-            <th scope="row"><?= __('Contact') ?></th>
-            <td><?= $user->has('contact') ? $this->Html->link($user->contact->id, ['controller' => 'Contacts', 'action' => 'view', $user->contact->id]) : '' ?></td>
-        </tr>
-        <tr>
             <th scope="row"><?= __('Id') ?></th>
             <td><?= $this->Number->format($user->id) ?></td>
         </tr>

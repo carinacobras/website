@@ -9,7 +9,6 @@ use Cake\Validation\Validator;
 /**
  * Users Model
  *
- * @property \App\Model\Table\ContactsTable|\Cake\ORM\Association\BelongsTo $Contacts
  * @property \App\Model\Table\CoachesTable|\Cake\ORM\Association\HasMany $Coaches
  * @property \App\Model\Table\ManagersTable|\Cake\ORM\Association\HasMany $Managers
  * @property \App\Model\Table\PlayersTable|\Cake\ORM\Association\HasMany $Players
@@ -45,10 +44,6 @@ class UsersTable extends Table
 
         $this->addBehavior('Timestamp');
 
-        $this->belongsTo('Contacts', [
-            'foreignKey' => 'contacts_id',
-            'joinType' => 'INNER'
-        ]);
         $this->hasMany('Coaches', [
             'foreignKey' => 'user_id'
         ]);
@@ -96,19 +91,5 @@ class UsersTable extends Table
             ->notEmpty('dob');
 
         return $validator;
-    }
-
-    /**
-     * Returns a rules checker object that will be used for validating
-     * application integrity.
-     *
-     * @param \Cake\ORM\RulesChecker $rules The rules object to be modified.
-     * @return \Cake\ORM\RulesChecker
-     */
-    public function buildRules(RulesChecker $rules)
-    {
-        $rules->add($rules->existsIn(['contacts_id'], 'Contacts'));
-
-        return $rules;
     }
 }

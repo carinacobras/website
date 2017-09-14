@@ -10,7 +10,6 @@ use Cake\ORM\Entity;
  * @property string $first_name
  * @property string $last_name
  * @property \Cake\I18n\FrozenTime $dob
- * @property int $contacts_id
  * @property \Cake\I18n\FrozenTime $created
  * @property \Cake\I18n\FrozenTime $modified
  *

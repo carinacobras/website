@@ -29,7 +29,6 @@
                 <th scope="col"><?= $this->Paginator->sort('first_name') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('last_name') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('dob') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('contacts_id') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('created') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('modified') ?></th>
                 <th scope="col" class="actions"><?= __('Actions') ?></th>
@@ -42,7 +41,6 @@
                 <td><?= h($user->first_name) ?></td>
                 <td><?= h($user->last_name) ?></td>
                 <td><?= h($user->dob) ?></td>
-                <td><?= $user->has('contact') ? $this->Html->link($user->contact->id, ['controller' => 'Contacts', 'action' => 'view', $user->contact->id]) : '' ?></td>
                 <td><?= h($user->created) ?></td>
                 <td><?= h($user->modified) ?></td>
                 <td class="actions">

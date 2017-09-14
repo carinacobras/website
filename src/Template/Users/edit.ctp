@@ -33,7 +33,6 @@
             echo $this->Form->control('first_name');
             echo $this->Form->control('last_name');
             echo $this->Form->control('dob');
-            echo $this->Form->control('contacts_id', ['options' => $contacts]);
             echo $this->Form->control('roles._ids', ['options' => $roles]);
         ?>
     </fieldset>
