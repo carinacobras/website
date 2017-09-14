@@ -26,10 +26,6 @@
             <th scope="row"><?= __('Id') ?></th>
             <td><?= $this->Number->format($role->id) ?></td>
         </tr>
-        <tr>
-            <th scope="row"><?= __('User Id') ?></th>
-            <td><?= $this->Number->format($role->user_id) ?></td>
-        </tr>
     </table>
     <div class="related">
         <h4><?= __('Related Users') ?></h4>
@@ -40,7 +36,6 @@
                 <th scope="col"><?= __('First Name') ?></th>
                 <th scope="col"><?= __('Last Name') ?></th>
                 <th scope="col"><?= __('Dob') ?></th>
-                <th scope="col"><?= __('Contacts Id') ?></th>
                 <th scope="col"><?= __('Created') ?></th>
                 <th scope="col"><?= __('Modified') ?></th>
                 <th scope="col" class="actions"><?= __('Actions') ?></th>
@@ -51,7 +46,6 @@
                 <td><?= h($users->first_name) ?></td>
                 <td><?= h($users->last_name) ?></td>
                 <td><?= h($users->dob) ?></td>
-                <td><?= h($users->contacts_id) ?></td>
                 <td><?= h($users->created) ?></td>
                 <td><?= h($users->modified) ?></td>
                 <td class="actions">

@@ -12,7 +12,6 @@ use Cake\Validation\Validator;
  * @property \App\Model\Table\CoachesTable|\Cake\ORM\Association\HasMany $Coaches
  * @property \App\Model\Table\ManagersTable|\Cake\ORM\Association\HasMany $Managers
  * @property \App\Model\Table\PlayersTable|\Cake\ORM\Association\HasMany $Players
- * @property \App\Model\Table\RolesTable|\Cake\ORM\Association\HasMany $Roles
  * @property \App\Model\Table\RolesTable|\Cake\ORM\Association\BelongsToMany $Roles
  *
  * @method \App\Model\Entity\User get($primaryKey, $options = [])
@@ -51,9 +50,6 @@ class UsersTable extends Table
             'foreignKey' => 'user_id'
         ]);
         $this->hasMany('Players', [
-            'foreignKey' => 'user_id'
-        ]);
-        $this->hasMany('Roles', [
             'foreignKey' => 'user_id'
         ]);
         $this->belongsToMany('Roles', [
