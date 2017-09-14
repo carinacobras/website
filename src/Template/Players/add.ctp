@@ -32,7 +32,7 @@
         <?php
             echo $this->Form->control('user_id', ['options' => $users]);
             echo $this->Form->control('team_id');
-            echo $this->Form->control('team_jersey_id', ['options' => $teamsJerseys, 'empty' => true]);
+            echo $this->Form->control('team_jersey_id', ['options' => $teamsJerseys]);
             echo $this->Form->control('fees._ids', ['options' => $fees]);
         ?>
     </fieldset>

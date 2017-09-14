@@ -46,10 +46,12 @@ class TeamsTable extends Table
             'foreignKey' => 'competition_id'
         ]);
         $this->belongsTo('Uniforms', [
-            'foreignKey' => 'uniform_id'
+            'foreignKey' => 'uniform_id',
+            'joinType' => 'INNER'
         ]);
         $this->belongsTo('Players', [
-            'foreignKey' => 'player_id'
+            'foreignKey' => 'player_id',
+            'joinType' => 'INNER'
         ]);
         $this->hasMany('Competitions', [
             'foreignKey' => 'team_id'

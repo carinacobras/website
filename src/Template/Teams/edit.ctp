@@ -32,7 +32,7 @@
         <?php
             echo $this->Form->control('name');
             echo $this->Form->control('competition_id');
-            echo $this->Form->control('uniform_id', ['options' => $uniforms, 'empty' => true]);
+            echo $this->Form->control('uniform_id', ['options' => $uniforms]);
             echo $this->Form->control('player_id');
             echo $this->Form->control('coaches._ids', ['options' => $coaches]);
         ?>

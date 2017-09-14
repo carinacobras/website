@@ -49,10 +49,12 @@ class PlayersTable extends Table
             'joinType' => 'INNER'
         ]);
         $this->belongsTo('Teams', [
-            'foreignKey' => 'team_id'
+            'foreignKey' => 'team_id',
+            'joinType' => 'INNER'
         ]);
         $this->belongsTo('TeamsJerseys', [
-            'foreignKey' => 'team_jersey_id'
+            'foreignKey' => 'team_jersey_id',
+            'joinType' => 'INNER'
         ]);
         $this->hasMany('Absences', [
             'foreignKey' => 'player_id'
