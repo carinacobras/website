@@ -9,7 +9,7 @@ use Cake\Validation\Validator;
 /**
  * Roles Model
  *
- * @property \App\Model\Table\UsersTable|\Cake\ORM\Association\BelongsToMany $Users
+ * @property \App\Model\Table\UsersTable|\Cake\ORM\Association\BelongsTo $Users
  *
  * @method \App\Model\Entity\Role get($primaryKey, $options = [])
  * @method \App\Model\Entity\Role newEntity($data = null, array $options = [])
@@ -36,10 +36,8 @@ class RolesTable extends Table
         $this->setDisplayField('name');
         $this->setPrimaryKey('id');
 
-        $this->belongsToMany('Users', [
-            'foreignKey' => 'role_id',
-            'targetForeignKey' => 'user_id',
-            'joinTable' => 'users_roles'
+        $this->belongsTo('Users', [
+            'foreignKey' => 'user_id'
         ]);
     }
 
@@ -60,5 +58,19 @@ class RolesTable extends Table
             ->allowEmpty('name');
 
         return $validator;
+    }
+
+    /**
+     * Returns a rules checker object that will be used for validating
+     * application integrity.
+     *
+     * @param \Cake\ORM\RulesChecker $rules The rules object to be modified.
+     * @return \Cake\ORM\RulesChecker
+     */
+    public function buildRules(RulesChecker $rules)
+    {
+        $rules->add($rules->existsIn(['user_id'], 'Users'));
+
+        return $rules;
     }
 }

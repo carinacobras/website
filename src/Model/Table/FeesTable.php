@@ -11,7 +11,6 @@ use Cake\Validation\Validator;
  *
  * @property \App\Model\Table\FeesTypesTable|\Cake\ORM\Association\BelongsTo $FeesTypes
  * @property \App\Model\Table\TransactionsTable|\Cake\ORM\Association\HasMany $Transactions
- * @property \App\Model\Table\PlayersTable|\Cake\ORM\Association\BelongsToMany $Players
  *
  * @method \App\Model\Entity\Fee get($primaryKey, $options = [])
  * @method \App\Model\Entity\Fee newEntity($data = null, array $options = [])
@@ -44,11 +43,6 @@ class FeesTable extends Table
         ]);
         $this->hasMany('Transactions', [
             'foreignKey' => 'fee_id'
-        ]);
-        $this->belongsToMany('Players', [
-            'foreignKey' => 'fee_id',
-            'targetForeignKey' => 'player_id',
-            'joinTable' => 'players_fees'
         ]);
     }
 

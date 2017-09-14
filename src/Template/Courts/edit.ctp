@@ -13,6 +13,8 @@
             )
         ?></li>
         <li><?= $this->Html->link(__('List Courts'), ['action' => 'index']) ?></li>
+        <li><?= $this->Html->link(__('List Competitions'), ['controller' => 'Competitions', 'action' => 'index']) ?></li>
+        <li><?= $this->Html->link(__('New Competition'), ['controller' => 'Competitions', 'action' => 'add']) ?></li>
         <li><?= $this->Html->link(__('List Locations'), ['controller' => 'Locations', 'action' => 'index']) ?></li>
         <li><?= $this->Html->link(__('New Location'), ['controller' => 'Locations', 'action' => 'add']) ?></li>
     </ul>
@@ -23,7 +25,6 @@
         <legend><?= __('Edit Court') ?></legend>
         <?php
             echo $this->Form->control('number');
-            echo $this->Form->control('location_id');
         ?>
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>

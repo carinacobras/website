@@ -20,6 +20,9 @@ class PhoneNumbersController extends AppController
      */
     public function index()
     {
+        $this->paginate = [
+            'contain' => ['Users']
+        ];
         $phoneNumbers = $this->paginate($this->PhoneNumbers);
 
         $this->set(compact('phoneNumbers'));
@@ -60,7 +63,8 @@ class PhoneNumbersController extends AppController
             }
             $this->Flash->error(__('The phone number could not be saved. Please, try again.'));
         }
-        $this->set(compact('phoneNumber'));
+        $users = $this->PhoneNumbers->Users->find('list', ['limit' => 200]);
+        $this->set(compact('phoneNumber', 'users'));
         $this->set('_serialize', ['phoneNumber']);
     }
 
@@ -85,7 +89,8 @@ class PhoneNumbersController extends AppController
             }
             $this->Flash->error(__('The phone number could not be saved. Please, try again.'));
         }
-        $this->set(compact('phoneNumber'));
+        $users = $this->PhoneNumbers->Users->find('list', ['limit' => 200]);
+        $this->set(compact('phoneNumber', 'users'));
         $this->set('_serialize', ['phoneNumber']);
     }
 

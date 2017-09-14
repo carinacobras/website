@@ -12,7 +12,6 @@ use Cake\Validation\Validator;
  * @property \App\Model\Table\PhoneNumbersTable|\Cake\ORM\Association\BelongsTo $PhoneNumbers
  * @property \App\Model\Table\EmailsTable|\Cake\ORM\Association\BelongsTo $Emails
  * @property \App\Model\Table\RelationshipsTable|\Cake\ORM\Association\BelongsTo $Relationships
- * @property \App\Model\Table\PlayersTable|\Cake\ORM\Association\BelongsTo $Players
  *
  * @method \App\Model\Entity\Contact get($primaryKey, $options = [])
  * @method \App\Model\Entity\Contact newEntity($data = null, array $options = [])
@@ -49,10 +48,6 @@ class ContactsTable extends Table
         ]);
         $this->belongsTo('Relationships', [
             'foreignKey' => 'relationship_id',
-            'joinType' => 'INNER'
-        ]);
-        $this->belongsTo('Players', [
-            'foreignKey' => 'player_id',
             'joinType' => 'INNER'
         ]);
     }
@@ -94,7 +89,6 @@ class ContactsTable extends Table
         $rules->add($rules->existsIn(['phone_number_id'], 'PhoneNumbers'));
         $rules->add($rules->existsIn(['emails_id'], 'Emails'));
         $rules->add($rules->existsIn(['relationship_id'], 'Relationships'));
-        $rules->add($rules->existsIn(['player_id'], 'Players'));
 
         return $rules;
     }

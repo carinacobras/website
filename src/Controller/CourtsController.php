@@ -20,9 +20,6 @@ class CourtsController extends AppController
      */
     public function index()
     {
-        $this->paginate = [
-            'contain' => ['Locations']
-        ];
         $courts = $this->paginate($this->Courts);
 
         $this->set(compact('courts'));
@@ -39,7 +36,7 @@ class CourtsController extends AppController
     public function view($id = null)
     {
         $court = $this->Courts->get($id, [
-            'contain' => ['Locations']
+            'contain' => ['Competitions', 'Locations']
         ]);
 
         $this->set('court', $court);
@@ -63,8 +60,7 @@ class CourtsController extends AppController
             }
             $this->Flash->error(__('The court could not be saved. Please, try again.'));
         }
-        $locations = $this->Courts->Locations->find('list', ['limit' => 200]);
-        $this->set(compact('court', 'locations'));
+        $this->set(compact('court'));
         $this->set('_serialize', ['court']);
     }
 
@@ -89,8 +85,7 @@ class CourtsController extends AppController
             }
             $this->Flash->error(__('The court could not be saved. Please, try again.'));
         }
-        $locations = $this->Courts->Locations->find('list', ['limit' => 200]);
-        $this->set(compact('court', 'locations'));
+        $this->set(compact('court'));
         $this->set('_serialize', ['court']);
     }
 

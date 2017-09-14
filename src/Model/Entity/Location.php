@@ -7,8 +7,11 @@ use Cake\ORM\Entity;
  * Location Entity
  *
  * @property int $id
+ * @property int $training_id
+ * @property int $court_id
  *
- * @property \App\Model\Entity\Training[] $training
+ * @property \App\Model\Entity\Training $training
+ * @property \App\Model\Entity\Court $court
  */
 class Location extends Entity
 {

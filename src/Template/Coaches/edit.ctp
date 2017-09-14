@@ -25,7 +25,7 @@
         <legend><?= __('Edit Coach') ?></legend>
         <?php
             echo $this->Form->control('user_id', ['options' => $users]);
-            echo $this->Form->control('teams._ids', ['options' => $teams]);
+            echo $this->Form->control('team_id', ['options' => $teams, 'empty' => true]);
         ?>
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>

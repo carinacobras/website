@@ -36,7 +36,7 @@ class UniformColoursController extends AppController
     public function view($id = null)
     {
         $uniformColour = $this->UniformColours->get($id, [
-            'contain' => []
+            'contain' => ['Uniforms']
         ]);
 
         $this->set('uniformColour', $uniformColour);

@@ -21,6 +21,7 @@
             <tr>
                 <th scope="col"><?= $this->Paginator->sort('id') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('uniform_colour_id') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('team_id') ?></th>
                 <th scope="col" class="actions"><?= __('Actions') ?></th>
             </tr>
         </thead>
@@ -29,6 +30,7 @@
             <tr>
                 <td><?= $this->Number->format($uniform->id) ?></td>
                 <td><?= $uniform->has('uniform_colour') ? $this->Html->link($uniform->uniform_colour->name, ['controller' => 'UniformColours', 'action' => 'view', $uniform->uniform_colour->id]) : '' ?></td>
+                <td><?= $uniform->has('team') ? $this->Html->link($uniform->team->name, ['controller' => 'Teams', 'action' => 'view', $uniform->team->id]) : '' ?></td>
                 <td class="actions">
                     <?= $this->Html->link(__('View'), ['action' => 'view', $uniform->id]) ?>
                     <?= $this->Html->link(__('Edit'), ['action' => 'edit', $uniform->id]) ?>

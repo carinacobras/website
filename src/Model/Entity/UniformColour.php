@@ -8,6 +8,8 @@ use Cake\ORM\Entity;
  *
  * @property int $id
  * @property string $name
+ *
+ * @property \App\Model\Entity\Uniform[] $uniforms
  */
 class UniformColour extends Entity
 {

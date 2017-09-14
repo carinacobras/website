@@ -8,8 +8,9 @@ use Cake\ORM\Entity;
  *
  * @property int $id
  * @property string $name
+ * @property int $user_id
  *
- * @property \App\Model\Entity\User[] $users
+ * @property \App\Model\Entity\User $user
  */
 class Role extends Entity
 {

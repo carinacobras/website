@@ -39,7 +39,7 @@ class FeesController extends AppController
     public function view($id = null)
     {
         $fee = $this->Fees->get($id, [
-            'contain' => ['FeesTypes', 'Players', 'Transactions']
+            'contain' => ['FeesTypes', 'Transactions']
         ]);
 
         $this->set('fee', $fee);
@@ -64,8 +64,7 @@ class FeesController extends AppController
             $this->Flash->error(__('The fee could not be saved. Please, try again.'));
         }
         $feesTypes = $this->Fees->FeesTypes->find('list', ['limit' => 200]);
-        $players = $this->Fees->Players->find('list', ['limit' => 200]);
-        $this->set(compact('fee', 'feesTypes', 'players'));
+        $this->set(compact('fee', 'feesTypes'));
         $this->set('_serialize', ['fee']);
     }
 
@@ -79,7 +78,7 @@ class FeesController extends AppController
     public function edit($id = null)
     {
         $fee = $this->Fees->get($id, [
-            'contain' => ['Players']
+            'contain' => []
         ]);
         if ($this->request->is(['patch', 'post', 'put'])) {
             $fee = $this->Fees->patchEntity($fee, $this->request->getData());
@@ -91,8 +90,7 @@ class FeesController extends AppController
             $this->Flash->error(__('The fee could not be saved. Please, try again.'));
         }
         $feesTypes = $this->Fees->FeesTypes->find('list', ['limit' => 200]);
-        $players = $this->Fees->Players->find('list', ['limit' => 200]);
-        $this->set(compact('fee', 'feesTypes', 'players'));
+        $this->set(compact('fee', 'feesTypes'));
         $this->set('_serialize', ['fee']);
     }
 

@@ -43,9 +43,9 @@
                 <td><?= h($competition->year) ?></td>
                 <td><?= h($competition->time) ?></td>
                 <td><?= h($competition->comments) ?></td>
-                <td><?= $competition->has('team') ? $this->Html->link($competition->team->id, ['controller' => 'Teams', 'action' => 'view', $competition->team->id]) : '' ?></td>
+                <td><?= $competition->has('team') ? $this->Html->link($competition->team->name, ['controller' => 'Teams', 'action' => 'view', $competition->team->id]) : '' ?></td>
                 <td><?= $competition->has('ladder') ? $this->Html->link($competition->ladder->id, ['controller' => 'Ladders', 'action' => 'view', $competition->ladder->id]) : '' ?></td>
-                <td><?= $this->Number->format($competition->court_id) ?></td>
+                <td><?= $competition->has('court') ? $this->Html->link($competition->court->id, ['controller' => 'Courts', 'action' => 'view', $competition->court->id]) : '' ?></td>
                 <td><?= $competition->has('training') ? $this->Html->link($competition->training->id, ['controller' => 'Training', 'action' => 'view', $competition->training->id]) : '' ?></td>
                 <td class="actions">
                     <?= $this->Html->link(__('View'), ['action' => 'view', $competition->id]) ?>

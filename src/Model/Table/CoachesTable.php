@@ -10,7 +10,7 @@ use Cake\Validation\Validator;
  * Coaches Model
  *
  * @property \App\Model\Table\UsersTable|\Cake\ORM\Association\BelongsTo $Users
- * @property \App\Model\Table\TeamsTable|\Cake\ORM\Association\BelongsToMany $Teams
+ * @property \App\Model\Table\TeamsTable|\Cake\ORM\Association\BelongsTo $Teams
  *
  * @method \App\Model\Entity\Coach get($primaryKey, $options = [])
  * @method \App\Model\Entity\Coach newEntity($data = null, array $options = [])
@@ -41,10 +41,8 @@ class CoachesTable extends Table
             'foreignKey' => 'user_id',
             'joinType' => 'INNER'
         ]);
-        $this->belongsToMany('Teams', [
-            'foreignKey' => 'coach_id',
-            'targetForeignKey' => 'team_id',
-            'joinTable' => 'teams_coaches'
+        $this->belongsTo('Teams', [
+            'foreignKey' => 'team_id'
         ]);
     }
 
@@ -73,6 +71,7 @@ class CoachesTable extends Table
     public function buildRules(RulesChecker $rules)
     {
         $rules->add($rules->existsIn(['user_id'], 'Users'));
+        $rules->add($rules->existsIn(['team_id'], 'Teams'));
 
         return $rules;
     }

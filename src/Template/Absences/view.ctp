@@ -21,16 +21,16 @@
     <h3><?= h($absence->id) ?></h3>
     <table class="vertical-table">
         <tr>
+            <th scope="row"><?= __('Player') ?></th>
+            <td><?= $absence->has('player') ? $this->Html->link($absence->player->id, ['controller' => 'Players', 'action' => 'view', $absence->player->id]) : '' ?></td>
+        </tr>
+        <tr>
+            <th scope="row"><?= __('Competition') ?></th>
+            <td><?= $absence->has('competition') ? $this->Html->link($absence->competition->name, ['controller' => 'Competitions', 'action' => 'view', $absence->competition->id]) : '' ?></td>
+        </tr>
+        <tr>
             <th scope="row"><?= __('Id') ?></th>
             <td><?= $this->Number->format($absence->id) ?></td>
-        </tr>
-        <tr>
-            <th scope="row"><?= __('Player Id') ?></th>
-            <td><?= $this->Number->format($absence->player_id) ?></td>
-        </tr>
-        <tr>
-            <th scope="row"><?= __('Competition Id') ?></th>
-            <td><?= $this->Number->format($absence->competition_id) ?></td>
         </tr>
         <tr>
             <th scope="row"><?= __('Date') ?></th>

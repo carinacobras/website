@@ -11,13 +11,9 @@ use Cake\Validation\Validator;
  *
  * @property \App\Model\Table\UsersTable|\Cake\ORM\Association\BelongsTo $Users
  * @property \App\Model\Table\TeamsTable|\Cake\ORM\Association\BelongsTo $Teams
- * @property \App\Model\Table\TeamsJerseysTable|\Cake\ORM\Association\BelongsTo $TeamsJerseys
  * @property \App\Model\Table\AbsencesTable|\Cake\ORM\Association\HasMany $Absences
- * @property \App\Model\Table\ContactsTable|\Cake\ORM\Association\HasMany $Contacts
  * @property \App\Model\Table\LaddersTable|\Cake\ORM\Association\HasMany $Ladders
- * @property \App\Model\Table\TeamsTable|\Cake\ORM\Association\HasMany $Teams
  * @property \App\Model\Table\TransactionsTable|\Cake\ORM\Association\HasMany $Transactions
- * @property \App\Model\Table\FeesTable|\Cake\ORM\Association\BelongsToMany $Fees
  *
  * @method \App\Model\Entity\Player get($primaryKey, $options = [])
  * @method \App\Model\Entity\Player newEntity($data = null, array $options = [])
@@ -49,32 +45,16 @@ class PlayersTable extends Table
             'joinType' => 'INNER'
         ]);
         $this->belongsTo('Teams', [
-            'foreignKey' => 'team_id',
-            'joinType' => 'INNER'
-        ]);
-        $this->belongsTo('TeamsJerseys', [
-            'foreignKey' => 'team_jersey_id',
-            'joinType' => 'INNER'
+            'foreignKey' => 'team_id'
         ]);
         $this->hasMany('Absences', [
-            'foreignKey' => 'player_id'
-        ]);
-        $this->hasMany('Contacts', [
             'foreignKey' => 'player_id'
         ]);
         $this->hasMany('Ladders', [
             'foreignKey' => 'player_id'
         ]);
-        $this->hasMany('Teams', [
-            'foreignKey' => 'player_id'
-        ]);
         $this->hasMany('Transactions', [
             'foreignKey' => 'player_id'
-        ]);
-        $this->belongsToMany('Fees', [
-            'foreignKey' => 'player_id',
-            'targetForeignKey' => 'fee_id',
-            'joinTable' => 'players_fees'
         ]);
     }
 
@@ -104,7 +84,6 @@ class PlayersTable extends Table
     {
         $rules->add($rules->existsIn(['user_id'], 'Users'));
         $rules->add($rules->existsIn(['team_id'], 'Teams'));
-        $rules->add($rules->existsIn(['team_jersey_id'], 'TeamsJerseys'));
 
         return $rules;
     }

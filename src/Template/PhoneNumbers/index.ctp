@@ -30,7 +30,7 @@
             <tr>
                 <td><?= $this->Number->format($phoneNumber->id) ?></td>
                 <td><?= $this->Number->format($phoneNumber->number) ?></td>
-                <td><?= $this->Number->format($phoneNumber->user_id) ?></td>
+                <td><?= $phoneNumber->has('user') ? $this->Html->link($phoneNumber->user->id, ['controller' => 'Users', 'action' => 'view', $phoneNumber->user->id]) : '' ?></td>
                 <td class="actions">
                     <?= $this->Html->link(__('View'), ['action' => 'view', $phoneNumber->id]) ?>
                     <?= $this->Html->link(__('Edit'), ['action' => 'edit', $phoneNumber->id]) ?>

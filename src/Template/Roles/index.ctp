@@ -19,6 +19,7 @@
             <tr>
                 <th scope="col"><?= $this->Paginator->sort('id') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('name') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('user_id') ?></th>
                 <th scope="col" class="actions"><?= __('Actions') ?></th>
             </tr>
         </thead>
@@ -27,6 +28,7 @@
             <tr>
                 <td><?= $this->Number->format($role->id) ?></td>
                 <td><?= h($role->name) ?></td>
+                <td><?= $role->has('user') ? $this->Html->link($role->user->id, ['controller' => 'Users', 'action' => 'view', $role->user->id]) : '' ?></td>
                 <td class="actions">
                     <?= $this->Html->link(__('View'), ['action' => 'view', $role->id]) ?>
                     <?= $this->Html->link(__('Edit'), ['action' => 'edit', $role->id]) ?>

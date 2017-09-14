@@ -8,8 +8,10 @@ use Cake\ORM\Entity;
  *
  * @property int $id
  * @property int $user_id
+ * @property int $team_id
  *
  * @property \App\Model\Entity\User $user
+ * @property \App\Model\Entity\Team $team
  */
 class Manager extends Entity
 {

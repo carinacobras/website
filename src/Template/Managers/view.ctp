@@ -13,6 +13,8 @@
         <li><?= $this->Html->link(__('New Manager'), ['action' => 'add']) ?> </li>
         <li><?= $this->Html->link(__('List Users'), ['controller' => 'Users', 'action' => 'index']) ?> </li>
         <li><?= $this->Html->link(__('New User'), ['controller' => 'Users', 'action' => 'add']) ?> </li>
+        <li><?= $this->Html->link(__('List Teams'), ['controller' => 'Teams', 'action' => 'index']) ?> </li>
+        <li><?= $this->Html->link(__('New Team'), ['controller' => 'Teams', 'action' => 'add']) ?> </li>
     </ul>
 </nav>
 <div class="managers view large-9 medium-8 columns content">
@@ -21,6 +23,10 @@
         <tr>
             <th scope="row"><?= __('User') ?></th>
             <td><?= $manager->has('user') ? $this->Html->link($manager->user->id, ['controller' => 'Users', 'action' => 'view', $manager->user->id]) : '' ?></td>
+        </tr>
+        <tr>
+            <th scope="row"><?= __('Team') ?></th>
+            <td><?= $manager->has('team') ? $this->Html->link($manager->team->name, ['controller' => 'Teams', 'action' => 'view', $manager->team->id]) : '' ?></td>
         </tr>
         <tr>
             <th scope="row"><?= __('Id') ?></th>

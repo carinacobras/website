@@ -31,8 +31,8 @@
             <tr>
                 <td><?= $this->Number->format($absence->id) ?></td>
                 <td><?= h($absence->date) ?></td>
-                <td><?= $this->Number->format($absence->player_id) ?></td>
-                <td><?= $this->Number->format($absence->competition_id) ?></td>
+                <td><?= $absence->has('player') ? $this->Html->link($absence->player->id, ['controller' => 'Players', 'action' => 'view', $absence->player->id]) : '' ?></td>
+                <td><?= $absence->has('competition') ? $this->Html->link($absence->competition->name, ['controller' => 'Competitions', 'action' => 'view', $absence->competition->id]) : '' ?></td>
                 <td class="actions">
                     <?= $this->Html->link(__('View'), ['action' => 'view', $absence->id]) ?>
                     <?= $this->Html->link(__('Edit'), ['action' => 'edit', $absence->id]) ?>

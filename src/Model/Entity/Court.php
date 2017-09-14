@@ -8,9 +8,9 @@ use Cake\ORM\Entity;
  *
  * @property int $id
  * @property int $number
- * @property int $location_id
  *
- * @property \App\Model\Entity\Location $location
+ * @property \App\Model\Entity\Competition[] $competitions
+ * @property \App\Model\Entity\Location[] $locations
  */
 class Court extends Entity
 {

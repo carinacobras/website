@@ -11,7 +11,6 @@ use Cake\ORM\Entity;
  *
  * @property \App\Model\Entity\FeesType $fees_type
  * @property \App\Model\Entity\Transaction[] $transactions
- * @property \App\Model\Entity\Player[] $players
  */
 class Fee extends Entity
 {

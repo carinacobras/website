@@ -9,8 +9,8 @@ use Cake\Validation\Validator;
 /**
  * Locations Model
  *
- * @property |\Cake\ORM\Association\HasMany $Courts
- * @property \App\Model\Table\TrainingTable|\Cake\ORM\Association\HasMany $Training
+ * @property \App\Model\Table\TrainingTable|\Cake\ORM\Association\BelongsTo $Training
+ * @property \App\Model\Table\CourtsTable|\Cake\ORM\Association\BelongsTo $Courts
  *
  * @method \App\Model\Entity\Location get($primaryKey, $options = [])
  * @method \App\Model\Entity\Location newEntity($data = null, array $options = [])
@@ -37,11 +37,11 @@ class LocationsTable extends Table
         $this->setDisplayField('id');
         $this->setPrimaryKey('id');
 
-        $this->hasMany('Courts', [
-            'foreignKey' => 'location_id'
+        $this->belongsTo('Training', [
+            'foreignKey' => 'training_id'
         ]);
-        $this->hasMany('Training', [
-            'foreignKey' => 'location_id'
+        $this->belongsTo('Courts', [
+            'foreignKey' => 'court_id'
         ]);
     }
 
@@ -58,5 +58,20 @@ class LocationsTable extends Table
             ->allowEmpty('id', 'create');
 
         return $validator;
+    }
+
+    /**
+     * Returns a rules checker object that will be used for validating
+     * application integrity.
+     *
+     * @param \Cake\ORM\RulesChecker $rules The rules object to be modified.
+     * @return \Cake\ORM\RulesChecker
+     */
+    public function buildRules(RulesChecker $rules)
+    {
+        $rules->add($rules->existsIn(['training_id'], 'Training'));
+        $rules->add($rules->existsIn(['court_id'], 'Courts'));
+
+        return $rules;
     }
 }

@@ -25,6 +25,7 @@
         <legend><?= __('Edit Uniform') ?></legend>
         <?php
             echo $this->Form->control('uniform_colour_id', ['options' => $uniformColours]);
+            echo $this->Form->control('team_id', ['options' => $teams, 'empty' => true]);
         ?>
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>

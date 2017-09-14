@@ -36,7 +36,7 @@ class UsersController extends AppController
     public function view($id = null)
     {
         $user = $this->Users->get($id, [
-            'contain' => ['Roles', 'PhoneNumbers', 'Emails', 'Coaches', 'Managers', 'Players']
+            'contain' => ['Coaches', 'Emails', 'Managers', 'PhoneNumbers', 'Players', 'Roles']
         ]);
 
         $this->set('user', $user);
@@ -60,8 +60,7 @@ class UsersController extends AppController
             }
             $this->Flash->error(__('The user could not be saved. Please, try again.'));
         }
-        $roles = $this->Users->Roles->find('list', ['limit' => 200]);
-        $this->set(compact('user', 'roles'));
+        $this->set(compact('user'));
         $this->set('_serialize', ['user']);
     }
 
@@ -75,7 +74,7 @@ class UsersController extends AppController
     public function edit($id = null)
     {
         $user = $this->Users->get($id, [
-            'contain' => ['Roles']
+            'contain' => []
         ]);
         if ($this->request->is(['patch', 'post', 'put'])) {
             $user = $this->Users->patchEntity($user, $this->request->getData());
@@ -86,8 +85,7 @@ class UsersController extends AppController
             }
             $this->Flash->error(__('The user could not be saved. Please, try again.'));
         }
-        $roles = $this->Users->Roles->find('list', ['limit' => 200]);
-        $this->set(compact('user', 'roles'));
+        $this->set(compact('user'));
         $this->set('_serialize', ['user']);
     }
 

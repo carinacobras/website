@@ -11,7 +11,6 @@ use Cake\Validation\Validator;
  *
  * @property \App\Model\Table\UsersTable|\Cake\ORM\Association\BelongsTo $Users
  * @property \App\Model\Table\ContactsTable|\Cake\ORM\Association\HasMany $Contacts
- * @property \App\Model\Table\UsersTable|\Cake\ORM\Association\HasMany $Users
  *
  * @method \App\Model\Entity\PhoneNumber get($primaryKey, $options = [])
  * @method \App\Model\Entity\PhoneNumber newEntity($data = null, array $options = [])
@@ -43,9 +42,6 @@ class PhoneNumbersTable extends Table
             'joinType' => 'INNER'
         ]);
         $this->hasMany('Contacts', [
-            'foreignKey' => 'phone_number_id'
-        ]);
-        $this->hasMany('Users', [
             'foreignKey' => 'phone_number_id'
         ]);
     }

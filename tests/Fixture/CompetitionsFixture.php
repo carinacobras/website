@@ -56,9 +56,9 @@ class CompetitionsFixture extends TestFixture
     public $records = [
         [
             'id' => 1,
-            'name' => '5592a012-11f2-4707-808d-e44c4bc06ea2',
-            'year' => '2017-09-14 12:40:01',
-            'time' => '2017-09-14 12:40:01',
+            'name' => '72805aec-7535-46f5-b3b2-f7655d931455',
+            'year' => '2017-09-14 14:21:39',
+            'time' => '2017-09-14 14:21:39',
             'comments' => 'Lorem ipsum dolor sit amet',
             'team_id' => 1,
             'ladder_id' => 1,

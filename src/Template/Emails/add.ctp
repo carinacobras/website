@@ -17,7 +17,7 @@
         <legend><?= __('Add Email') ?></legend>
         <?php
             echo $this->Form->control('address');
-            echo $this->Form->control('user_id');
+            echo $this->Form->control('user_id', ['options' => $users]);
         ?>
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>

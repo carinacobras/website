@@ -16,7 +16,28 @@ class FeesTypesControllerTest extends IntegrationTestCase
      * @var array
      */
     public $fixtures = [
-        'app.fees_types'
+        'app.fees_types',
+        'app.fees',
+        'app.transactions',
+        'app.players',
+        'app.users',
+        'app.coaches',
+        'app.teams',
+        'app.competitions',
+        'app.ladders',
+        'app.courts',
+        'app.locations',
+        'app.training',
+        'app.managers',
+        'app.teams_jerseys',
+        'app.uniforms',
+        'app.uniform_colours',
+        'app.emails',
+        'app.phone_numbers',
+        'app.contacts',
+        'app.relationships',
+        'app.roles',
+        'app.absences'
     ];
 
     /**

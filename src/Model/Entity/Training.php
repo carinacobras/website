@@ -7,11 +7,10 @@ use Cake\ORM\Entity;
  * Training Entity
  *
  * @property int $id
- * @property int $location_id
  * @property \Cake\I18n\FrozenTime $time
  *
- * @property \App\Model\Entity\Location $location
  * @property \App\Model\Entity\Competition[] $competitions
+ * @property \App\Model\Entity\Location[] $locations
  */
 class Training extends Entity
 {

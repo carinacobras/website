@@ -25,8 +25,8 @@
         <legend><?= __('Edit Absence') ?></legend>
         <?php
             echo $this->Form->control('date', ['empty' => true]);
-            echo $this->Form->control('player_id');
-            echo $this->Form->control('competition_id');
+            echo $this->Form->control('player_id', ['options' => $players]);
+            echo $this->Form->control('competition_id', ['options' => $competitions]);
         ?>
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>

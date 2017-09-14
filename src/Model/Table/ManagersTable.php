@@ -10,6 +10,7 @@ use Cake\Validation\Validator;
  * Managers Model
  *
  * @property \App\Model\Table\UsersTable|\Cake\ORM\Association\BelongsTo $Users
+ * @property \App\Model\Table\TeamsTable|\Cake\ORM\Association\BelongsTo $Teams
  *
  * @method \App\Model\Entity\Manager get($primaryKey, $options = [])
  * @method \App\Model\Entity\Manager newEntity($data = null, array $options = [])
@@ -40,6 +41,9 @@ class ManagersTable extends Table
             'foreignKey' => 'user_id',
             'joinType' => 'INNER'
         ]);
+        $this->belongsTo('Teams', [
+            'foreignKey' => 'team_id'
+        ]);
     }
 
     /**
@@ -67,6 +71,7 @@ class ManagersTable extends Table
     public function buildRules(RulesChecker $rules)
     {
         $rules->add($rules->existsIn(['user_id'], 'Users'));
+        $rules->add($rules->existsIn(['team_id'], 'Teams'));
 
         return $rules;
     }

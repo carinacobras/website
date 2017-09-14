@@ -9,7 +9,7 @@ use Cake\Validation\Validator;
 /**
  * FeesTypes Model
  *
- * @property |\Cake\ORM\Association\HasMany $Fees
+ * @property \App\Model\Table\FeesTable|\Cake\ORM\Association\HasMany $Fees
  *
  * @method \App\Model\Entity\FeesType get($primaryKey, $options = [])
  * @method \App\Model\Entity\FeesType newEntity($data = null, array $options = [])

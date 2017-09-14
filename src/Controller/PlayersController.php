@@ -21,7 +21,7 @@ class PlayersController extends AppController
     public function index()
     {
         $this->paginate = [
-            'contain' => ['Users', 'TeamsJerseys']
+            'contain' => ['Users', 'Teams']
         ];
         $players = $this->paginate($this->Players);
 
@@ -39,7 +39,7 @@ class PlayersController extends AppController
     public function view($id = null)
     {
         $player = $this->Players->get($id, [
-            'contain' => ['Users', 'TeamsJerseys', 'Fees', 'Teams', 'Absences', 'Contacts', 'Ladders', 'Transactions']
+            'contain' => ['Users', 'Teams', 'Absences', 'Ladders', 'Transactions']
         ]);
 
         $this->set('player', $player);
@@ -64,9 +64,8 @@ class PlayersController extends AppController
             $this->Flash->error(__('The player could not be saved. Please, try again.'));
         }
         $users = $this->Players->Users->find('list', ['limit' => 200]);
-        $teamsJerseys = $this->Players->TeamsJerseys->find('list', ['limit' => 200]);
-        $fees = $this->Players->Fees->find('list', ['limit' => 200]);
-        $this->set(compact('player', 'users', 'teamsJerseys', 'fees'));
+        $teams = $this->Players->Teams->find('list', ['limit' => 200]);
+        $this->set(compact('player', 'users', 'teams'));
         $this->set('_serialize', ['player']);
     }
 
@@ -80,7 +79,7 @@ class PlayersController extends AppController
     public function edit($id = null)
     {
         $player = $this->Players->get($id, [
-            'contain' => ['Fees']
+            'contain' => []
         ]);
         if ($this->request->is(['patch', 'post', 'put'])) {
             $player = $this->Players->patchEntity($player, $this->request->getData());
@@ -92,9 +91,8 @@ class PlayersController extends AppController
             $this->Flash->error(__('The player could not be saved. Please, try again.'));
         }
         $users = $this->Players->Users->find('list', ['limit' => 200]);
-        $teamsJerseys = $this->Players->TeamsJerseys->find('list', ['limit' => 200]);
-        $fees = $this->Players->Fees->find('list', ['limit' => 200]);
-        $this->set(compact('player', 'users', 'teamsJerseys', 'fees'));
+        $teams = $this->Players->Teams->find('list', ['limit' => 200]);
+        $this->set(compact('player', 'users', 'teams'));
         $this->set('_serialize', ['player']);
     }
 

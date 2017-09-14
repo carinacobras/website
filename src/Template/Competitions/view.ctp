@@ -34,11 +34,15 @@
         </tr>
         <tr>
             <th scope="row"><?= __('Team') ?></th>
-            <td><?= $competition->has('team') ? $this->Html->link($competition->team->id, ['controller' => 'Teams', 'action' => 'view', $competition->team->id]) : '' ?></td>
+            <td><?= $competition->has('team') ? $this->Html->link($competition->team->name, ['controller' => 'Teams', 'action' => 'view', $competition->team->id]) : '' ?></td>
         </tr>
         <tr>
             <th scope="row"><?= __('Ladder') ?></th>
             <td><?= $competition->has('ladder') ? $this->Html->link($competition->ladder->id, ['controller' => 'Ladders', 'action' => 'view', $competition->ladder->id]) : '' ?></td>
+        </tr>
+        <tr>
+            <th scope="row"><?= __('Court') ?></th>
+            <td><?= $competition->has('court') ? $this->Html->link($competition->court->id, ['controller' => 'Courts', 'action' => 'view', $competition->court->id]) : '' ?></td>
         </tr>
         <tr>
             <th scope="row"><?= __('Training') ?></th>
@@ -47,10 +51,6 @@
         <tr>
             <th scope="row"><?= __('Id') ?></th>
             <td><?= $this->Number->format($competition->id) ?></td>
-        </tr>
-        <tr>
-            <th scope="row"><?= __('Court Id') ?></th>
-            <td><?= $this->Number->format($competition->court_id) ?></td>
         </tr>
         <tr>
             <th scope="row"><?= __('Year') ?></th>

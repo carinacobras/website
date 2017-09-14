@@ -24,7 +24,8 @@ class UniformColoursTableTest extends TestCase
      * @var array
      */
     public $fixtures = [
-        'app.uniform_colours'
+        'app.uniform_colours',
+        'app.uniforms'
     ];
 
     /**

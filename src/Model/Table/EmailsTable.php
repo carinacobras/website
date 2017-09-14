@@ -10,7 +10,6 @@ use Cake\Validation\Validator;
  * Emails Model
  *
  * @property \App\Model\Table\UsersTable|\Cake\ORM\Association\BelongsTo $Users
- * @property \App\Model\Table\UsersTable|\Cake\ORM\Association\HasMany $Users
  *
  * @method \App\Model\Entity\Email get($primaryKey, $options = [])
  * @method \App\Model\Entity\Email newEntity($data = null, array $options = [])
@@ -40,9 +39,6 @@ class EmailsTable extends Table
         $this->belongsTo('Users', [
             'foreignKey' => 'user_id',
             'joinType' => 'INNER'
-        ]);
-        $this->hasMany('Users', [
-            'foreignKey' => 'email_id'
         ]);
     }
 

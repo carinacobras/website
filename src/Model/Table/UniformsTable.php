@@ -10,7 +10,7 @@ use Cake\Validation\Validator;
  * Uniforms Model
  *
  * @property \App\Model\Table\UniformColoursTable|\Cake\ORM\Association\BelongsTo $UniformColours
- * @property \App\Model\Table\TeamsTable|\Cake\ORM\Association\HasMany $Teams
+ * @property \App\Model\Table\TeamsTable|\Cake\ORM\Association\BelongsTo $Teams
  *
  * @method \App\Model\Entity\Uniform get($primaryKey, $options = [])
  * @method \App\Model\Entity\Uniform newEntity($data = null, array $options = [])
@@ -41,8 +41,8 @@ class UniformsTable extends Table
             'foreignKey' => 'uniform_colour_id',
             'joinType' => 'INNER'
         ]);
-        $this->hasMany('Teams', [
-            'foreignKey' => 'uniform_id'
+        $this->belongsTo('Teams', [
+            'foreignKey' => 'team_id'
         ]);
     }
 
@@ -71,6 +71,7 @@ class UniformsTable extends Table
     public function buildRules(RulesChecker $rules)
     {
         $rules->add($rules->existsIn(['uniform_colour_id'], 'UniformColours'));
+        $rules->add($rules->existsIn(['team_id'], 'Teams'));
 
         return $rules;
     }

@@ -11,14 +11,14 @@
         <li><?= $this->Form->postLink(__('Delete User'), ['action' => 'delete', $user->id], ['confirm' => __('Are you sure you want to delete # {0}?', $user->id)]) ?> </li>
         <li><?= $this->Html->link(__('List Users'), ['action' => 'index']) ?> </li>
         <li><?= $this->Html->link(__('New User'), ['action' => 'add']) ?> </li>
-        <li><?= $this->Html->link(__('List Phone Numbers'), ['controller' => 'PhoneNumbers', 'action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('New Phone Number'), ['controller' => 'PhoneNumbers', 'action' => 'add']) ?> </li>
-        <li><?= $this->Html->link(__('List Emails'), ['controller' => 'Emails', 'action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('New Email'), ['controller' => 'Emails', 'action' => 'add']) ?> </li>
         <li><?= $this->Html->link(__('List Coaches'), ['controller' => 'Coaches', 'action' => 'index']) ?> </li>
         <li><?= $this->Html->link(__('New Coach'), ['controller' => 'Coaches', 'action' => 'add']) ?> </li>
+        <li><?= $this->Html->link(__('List Emails'), ['controller' => 'Emails', 'action' => 'index']) ?> </li>
+        <li><?= $this->Html->link(__('New Email'), ['controller' => 'Emails', 'action' => 'add']) ?> </li>
         <li><?= $this->Html->link(__('List Managers'), ['controller' => 'Managers', 'action' => 'index']) ?> </li>
         <li><?= $this->Html->link(__('New Manager'), ['controller' => 'Managers', 'action' => 'add']) ?> </li>
+        <li><?= $this->Html->link(__('List Phone Numbers'), ['controller' => 'PhoneNumbers', 'action' => 'index']) ?> </li>
+        <li><?= $this->Html->link(__('New Phone Number'), ['controller' => 'PhoneNumbers', 'action' => 'add']) ?> </li>
         <li><?= $this->Html->link(__('List Players'), ['controller' => 'Players', 'action' => 'index']) ?> </li>
         <li><?= $this->Html->link(__('New Player'), ['controller' => 'Players', 'action' => 'add']) ?> </li>
         <li><?= $this->Html->link(__('List Roles'), ['controller' => 'Roles', 'action' => 'index']) ?> </li>
@@ -41,14 +41,6 @@
             <td><?= $this->Number->format($user->id) ?></td>
         </tr>
         <tr>
-            <th scope="row"><?= __('Phone Number Id') ?></th>
-            <td><?= $this->Number->format($user->phone_number_id) ?></td>
-        </tr>
-        <tr>
-            <th scope="row"><?= __('Email Id') ?></th>
-            <td><?= $this->Number->format($user->email_id) ?></td>
-        </tr>
-        <tr>
             <th scope="row"><?= __('Dob') ?></th>
             <td><?= h($user->dob) ?></td>
         </tr>
@@ -62,24 +54,24 @@
         </tr>
     </table>
     <div class="related">
-        <h4><?= __('Related Phone Numbers') ?></h4>
-        <?php if (!empty($user->phone_numbers)): ?>
+        <h4><?= __('Related Coaches') ?></h4>
+        <?php if (!empty($user->coaches)): ?>
         <table cellpadding="0" cellspacing="0">
             <tr>
                 <th scope="col"><?= __('Id') ?></th>
-                <th scope="col"><?= __('Number') ?></th>
                 <th scope="col"><?= __('User Id') ?></th>
+                <th scope="col"><?= __('Team Id') ?></th>
                 <th scope="col" class="actions"><?= __('Actions') ?></th>
             </tr>
-            <?php foreach ($user->phone_numbers as $phoneNumbers): ?>
+            <?php foreach ($user->coaches as $coaches): ?>
             <tr>
-                <td><?= h($phoneNumbers->id) ?></td>
-                <td><?= h($phoneNumbers->number) ?></td>
-                <td><?= h($phoneNumbers->user_id) ?></td>
+                <td><?= h($coaches->id) ?></td>
+                <td><?= h($coaches->user_id) ?></td>
+                <td><?= h($coaches->team_id) ?></td>
                 <td class="actions">
-                    <?= $this->Html->link(__('View'), ['controller' => 'PhoneNumbers', 'action' => 'view', $phoneNumbers->id]) ?>
-                    <?= $this->Html->link(__('Edit'), ['controller' => 'PhoneNumbers', 'action' => 'edit', $phoneNumbers->id]) ?>
-                    <?= $this->Form->postLink(__('Delete'), ['controller' => 'PhoneNumbers', 'action' => 'delete', $phoneNumbers->id], ['confirm' => __('Are you sure you want to delete # {0}?', $phoneNumbers->id)]) ?>
+                    <?= $this->Html->link(__('View'), ['controller' => 'Coaches', 'action' => 'view', $coaches->id]) ?>
+                    <?= $this->Html->link(__('Edit'), ['controller' => 'Coaches', 'action' => 'edit', $coaches->id]) ?>
+                    <?= $this->Form->postLink(__('Delete'), ['controller' => 'Coaches', 'action' => 'delete', $coaches->id], ['confirm' => __('Are you sure you want to delete # {0}?', $coaches->id)]) ?>
                 </td>
             </tr>
             <?php endforeach; ?>
@@ -112,22 +104,24 @@
         <?php endif; ?>
     </div>
     <div class="related">
-        <h4><?= __('Related Coaches') ?></h4>
-        <?php if (!empty($user->coaches)): ?>
+        <h4><?= __('Related Managers') ?></h4>
+        <?php if (!empty($user->managers)): ?>
         <table cellpadding="0" cellspacing="0">
             <tr>
                 <th scope="col"><?= __('Id') ?></th>
                 <th scope="col"><?= __('User Id') ?></th>
+                <th scope="col"><?= __('Team Id') ?></th>
                 <th scope="col" class="actions"><?= __('Actions') ?></th>
             </tr>
-            <?php foreach ($user->coaches as $coaches): ?>
+            <?php foreach ($user->managers as $managers): ?>
             <tr>
-                <td><?= h($coaches->id) ?></td>
-                <td><?= h($coaches->user_id) ?></td>
+                <td><?= h($managers->id) ?></td>
+                <td><?= h($managers->user_id) ?></td>
+                <td><?= h($managers->team_id) ?></td>
                 <td class="actions">
-                    <?= $this->Html->link(__('View'), ['controller' => 'Coaches', 'action' => 'view', $coaches->id]) ?>
-                    <?= $this->Html->link(__('Edit'), ['controller' => 'Coaches', 'action' => 'edit', $coaches->id]) ?>
-                    <?= $this->Form->postLink(__('Delete'), ['controller' => 'Coaches', 'action' => 'delete', $coaches->id], ['confirm' => __('Are you sure you want to delete # {0}?', $coaches->id)]) ?>
+                    <?= $this->Html->link(__('View'), ['controller' => 'Managers', 'action' => 'view', $managers->id]) ?>
+                    <?= $this->Html->link(__('Edit'), ['controller' => 'Managers', 'action' => 'edit', $managers->id]) ?>
+                    <?= $this->Form->postLink(__('Delete'), ['controller' => 'Managers', 'action' => 'delete', $managers->id], ['confirm' => __('Are you sure you want to delete # {0}?', $managers->id)]) ?>
                 </td>
             </tr>
             <?php endforeach; ?>
@@ -135,22 +129,24 @@
         <?php endif; ?>
     </div>
     <div class="related">
-        <h4><?= __('Related Managers') ?></h4>
-        <?php if (!empty($user->managers)): ?>
+        <h4><?= __('Related Phone Numbers') ?></h4>
+        <?php if (!empty($user->phone_numbers)): ?>
         <table cellpadding="0" cellspacing="0">
             <tr>
                 <th scope="col"><?= __('Id') ?></th>
+                <th scope="col"><?= __('Number') ?></th>
                 <th scope="col"><?= __('User Id') ?></th>
                 <th scope="col" class="actions"><?= __('Actions') ?></th>
             </tr>
-            <?php foreach ($user->managers as $managers): ?>
+            <?php foreach ($user->phone_numbers as $phoneNumbers): ?>
             <tr>
-                <td><?= h($managers->id) ?></td>
-                <td><?= h($managers->user_id) ?></td>
+                <td><?= h($phoneNumbers->id) ?></td>
+                <td><?= h($phoneNumbers->number) ?></td>
+                <td><?= h($phoneNumbers->user_id) ?></td>
                 <td class="actions">
-                    <?= $this->Html->link(__('View'), ['controller' => 'Managers', 'action' => 'view', $managers->id]) ?>
-                    <?= $this->Html->link(__('Edit'), ['controller' => 'Managers', 'action' => 'edit', $managers->id]) ?>
-                    <?= $this->Form->postLink(__('Delete'), ['controller' => 'Managers', 'action' => 'delete', $managers->id], ['confirm' => __('Are you sure you want to delete # {0}?', $managers->id)]) ?>
+                    <?= $this->Html->link(__('View'), ['controller' => 'PhoneNumbers', 'action' => 'view', $phoneNumbers->id]) ?>
+                    <?= $this->Html->link(__('Edit'), ['controller' => 'PhoneNumbers', 'action' => 'edit', $phoneNumbers->id]) ?>
+                    <?= $this->Form->postLink(__('Delete'), ['controller' => 'PhoneNumbers', 'action' => 'delete', $phoneNumbers->id], ['confirm' => __('Are you sure you want to delete # {0}?', $phoneNumbers->id)]) ?>
                 </td>
             </tr>
             <?php endforeach; ?>
@@ -165,7 +161,6 @@
                 <th scope="col"><?= __('Id') ?></th>
                 <th scope="col"><?= __('User Id') ?></th>
                 <th scope="col"><?= __('Team Id') ?></th>
-                <th scope="col"><?= __('Team Jersey Id') ?></th>
                 <th scope="col" class="actions"><?= __('Actions') ?></th>
             </tr>
             <?php foreach ($user->players as $players): ?>
@@ -173,7 +168,6 @@
                 <td><?= h($players->id) ?></td>
                 <td><?= h($players->user_id) ?></td>
                 <td><?= h($players->team_id) ?></td>
-                <td><?= h($players->team_jersey_id) ?></td>
                 <td class="actions">
                     <?= $this->Html->link(__('View'), ['controller' => 'Players', 'action' => 'view', $players->id]) ?>
                     <?= $this->Html->link(__('Edit'), ['controller' => 'Players', 'action' => 'edit', $players->id]) ?>
@@ -191,12 +185,14 @@
             <tr>
                 <th scope="col"><?= __('Id') ?></th>
                 <th scope="col"><?= __('Name') ?></th>
+                <th scope="col"><?= __('User Id') ?></th>
                 <th scope="col" class="actions"><?= __('Actions') ?></th>
             </tr>
             <?php foreach ($user->roles as $roles): ?>
             <tr>
                 <td><?= h($roles->id) ?></td>
                 <td><?= h($roles->name) ?></td>
+                <td><?= h($roles->user_id) ?></td>
                 <td class="actions">
                     <?= $this->Html->link(__('View'), ['controller' => 'Roles', 'action' => 'view', $roles->id]) ?>
                     <?= $this->Html->link(__('Edit'), ['controller' => 'Roles', 'action' => 'edit', $roles->id]) ?>

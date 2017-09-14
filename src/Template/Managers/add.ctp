@@ -9,6 +9,8 @@
         <li><?= $this->Html->link(__('List Managers'), ['action' => 'index']) ?></li>
         <li><?= $this->Html->link(__('List Users'), ['controller' => 'Users', 'action' => 'index']) ?></li>
         <li><?= $this->Html->link(__('New User'), ['controller' => 'Users', 'action' => 'add']) ?></li>
+        <li><?= $this->Html->link(__('List Teams'), ['controller' => 'Teams', 'action' => 'index']) ?></li>
+        <li><?= $this->Html->link(__('New Team'), ['controller' => 'Teams', 'action' => 'add']) ?></li>
     </ul>
 </nav>
 <div class="managers form large-9 medium-8 columns content">
@@ -17,6 +19,7 @@
         <legend><?= __('Add Manager') ?></legend>
         <?php
             echo $this->Form->control('user_id', ['options' => $users]);
+            echo $this->Form->control('team_id', ['options' => $teams, 'empty' => true]);
         ?>
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>

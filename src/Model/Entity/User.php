@@ -12,13 +12,11 @@ use Cake\ORM\Entity;
  * @property \Cake\I18n\FrozenTime $dob
  * @property \Cake\I18n\FrozenTime $created
  * @property \Cake\I18n\FrozenTime $modified
- * @property int $phone_number_id
- * @property int $email_id
  *
- * @property \App\Model\Entity\PhoneNumber[] $phone_numbers
- * @property \App\Model\Entity\Email[] $emails
  * @property \App\Model\Entity\Coach[] $coaches
+ * @property \App\Model\Entity\Email[] $emails
  * @property \App\Model\Entity\Manager[] $managers
+ * @property \App\Model\Entity\PhoneNumber[] $phone_numbers
  * @property \App\Model\Entity\Player[] $players
  * @property \App\Model\Entity\Role[] $roles
  */

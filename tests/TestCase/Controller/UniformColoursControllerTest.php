@@ -16,7 +16,28 @@ class UniformColoursControllerTest extends IntegrationTestCase
      * @var array
      */
     public $fixtures = [
-        'app.uniform_colours'
+        'app.uniform_colours',
+        'app.uniforms',
+        'app.teams',
+        'app.coaches',
+        'app.users',
+        'app.emails',
+        'app.managers',
+        'app.phone_numbers',
+        'app.contacts',
+        'app.relationships',
+        'app.players',
+        'app.absences',
+        'app.competitions',
+        'app.ladders',
+        'app.courts',
+        'app.locations',
+        'app.training',
+        'app.transactions',
+        'app.fees',
+        'app.fees_types',
+        'app.roles',
+        'app.teams_jerseys'
     ];
 
     /**

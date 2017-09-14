@@ -18,29 +18,26 @@ class PhoneNumbersControllerTest extends IntegrationTestCase
     public $fixtures = [
         'app.phone_numbers',
         'app.users',
-        'app.emails',
         'app.coaches',
         'app.teams',
         'app.competitions',
         'app.ladders',
         'app.players',
-        'app.teams_jerseys',
         'app.absences',
-        'app.contacts',
-        'app.relationships',
         'app.transactions',
         'app.fees',
         'app.fees_types',
-        'app.players_fees',
         'app.courts',
         'app.locations',
         'app.training',
+        'app.managers',
+        'app.teams_jerseys',
         'app.uniforms',
         'app.uniform_colours',
-        'app.teams_coaches',
-        'app.managers',
+        'app.emails',
         'app.roles',
-        'app.users_roles'
+        'app.contacts',
+        'app.relationships'
     ];
 
     /**

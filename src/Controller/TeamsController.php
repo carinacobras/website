@@ -20,9 +20,6 @@ class TeamsController extends AppController
      */
     public function index()
     {
-        $this->paginate = [
-            'contain' => ['Uniforms']
-        ];
         $teams = $this->paginate($this->Teams);
 
         $this->set(compact('teams'));
@@ -39,7 +36,7 @@ class TeamsController extends AppController
     public function view($id = null)
     {
         $team = $this->Teams->get($id, [
-            'contain' => ['Uniforms', 'Coaches', 'Competitions', 'Players', 'TeamsJerseys']
+            'contain' => ['Coaches', 'Competitions', 'Managers', 'Players', 'TeamsJerseys', 'Uniforms']
         ]);
 
         $this->set('team', $team);
@@ -63,9 +60,7 @@ class TeamsController extends AppController
             }
             $this->Flash->error(__('The team could not be saved. Please, try again.'));
         }
-        $uniforms = $this->Teams->Uniforms->find('list', ['limit' => 200]);
-        $coaches = $this->Teams->Coaches->find('list', ['limit' => 200]);
-        $this->set(compact('team', 'uniforms', 'coaches'));
+        $this->set(compact('team'));
         $this->set('_serialize', ['team']);
     }
 
@@ -79,7 +74,7 @@ class TeamsController extends AppController
     public function edit($id = null)
     {
         $team = $this->Teams->get($id, [
-            'contain' => ['Coaches']
+            'contain' => []
         ]);
         if ($this->request->is(['patch', 'post', 'put'])) {
             $team = $this->Teams->patchEntity($team, $this->request->getData());
@@ -90,9 +85,7 @@ class TeamsController extends AppController
             }
             $this->Flash->error(__('The team could not be saved. Please, try again.'));
         }
-        $uniforms = $this->Teams->Uniforms->find('list', ['limit' => 200]);
-        $coaches = $this->Teams->Coaches->find('list', ['limit' => 200]);
-        $this->set(compact('team', 'uniforms', 'coaches'));
+        $this->set(compact('team'));
         $this->set('_serialize', ['team']);
     }
 

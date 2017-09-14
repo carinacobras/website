@@ -20,9 +20,6 @@ class TrainingController extends AppController
      */
     public function index()
     {
-        $this->paginate = [
-            'contain' => ['Locations']
-        ];
         $training = $this->paginate($this->Training);
 
         $this->set(compact('training'));
@@ -39,7 +36,7 @@ class TrainingController extends AppController
     public function view($id = null)
     {
         $training = $this->Training->get($id, [
-            'contain' => ['Locations', 'Competitions']
+            'contain' => ['Competitions', 'Locations']
         ]);
 
         $this->set('training', $training);
@@ -63,8 +60,7 @@ class TrainingController extends AppController
             }
             $this->Flash->error(__('The training could not be saved. Please, try again.'));
         }
-        $locations = $this->Training->Locations->find('list', ['limit' => 200]);
-        $this->set(compact('training', 'locations'));
+        $this->set(compact('training'));
         $this->set('_serialize', ['training']);
     }
 
@@ -89,8 +85,7 @@ class TrainingController extends AppController
             }
             $this->Flash->error(__('The training could not be saved. Please, try again.'));
         }
-        $locations = $this->Training->Locations->find('list', ['limit' => 200]);
-        $this->set(compact('training', 'locations'));
+        $this->set(compact('training'));
         $this->set('_serialize', ['training']);
     }
 

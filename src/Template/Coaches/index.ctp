@@ -21,6 +21,7 @@
             <tr>
                 <th scope="col"><?= $this->Paginator->sort('id') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('user_id') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('team_id') ?></th>
                 <th scope="col" class="actions"><?= __('Actions') ?></th>
             </tr>
         </thead>
@@ -29,6 +30,7 @@
             <tr>
                 <td><?= $this->Number->format($coach->id) ?></td>
                 <td><?= $coach->has('user') ? $this->Html->link($coach->user->id, ['controller' => 'Users', 'action' => 'view', $coach->user->id]) : '' ?></td>
+                <td><?= $coach->has('team') ? $this->Html->link($coach->team->name, ['controller' => 'Teams', 'action' => 'view', $coach->team->id]) : '' ?></td>
                 <td class="actions">
                     <?= $this->Html->link(__('View'), ['action' => 'view', $coach->id]) ?>
                     <?= $this->Html->link(__('Edit'), ['action' => 'edit', $coach->id]) ?>

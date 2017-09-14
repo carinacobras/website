@@ -21,7 +21,7 @@ class CoachesController extends AppController
     public function index()
     {
         $this->paginate = [
-            'contain' => ['Users']
+            'contain' => ['Users', 'Teams']
         ];
         $coaches = $this->paginate($this->Coaches);
 
@@ -79,7 +79,7 @@ class CoachesController extends AppController
     public function edit($id = null)
     {
         $coach = $this->Coaches->get($id, [
-            'contain' => ['Teams']
+            'contain' => []
         ]);
         if ($this->request->is(['patch', 'post', 'put'])) {
             $coach = $this->Coaches->patchEntity($coach, $this->request->getData());

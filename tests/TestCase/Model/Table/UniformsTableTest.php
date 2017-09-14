@@ -27,28 +27,20 @@ class UniformsTableTest extends TestCase
         'app.uniforms',
         'app.uniform_colours',
         'app.teams',
+        'app.coaches',
+        'app.users',
         'app.competitions',
         'app.ladders',
         'app.players',
-        'app.users',
-        'app.phone_numbers',
-        'app.contacts',
-        'app.emails',
-        'app.relationships',
-        'app.coaches',
-        'app.teams_coaches',
-        'app.managers',
-        'app.roles',
-        'app.users_roles',
-        'app.teams_jerseys',
         'app.absences',
         'app.transactions',
         'app.fees',
         'app.fees_types',
-        'app.players_fees',
         'app.courts',
         'app.locations',
-        'app.training'
+        'app.training',
+        'app.managers',
+        'app.teams_jerseys'
     ];
 
     /**

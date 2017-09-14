@@ -17,30 +17,27 @@ class UsersControllerTest extends IntegrationTestCase
      */
     public $fixtures = [
         'app.users',
-        'app.phone_numbers',
-        'app.contacts',
-        'app.emails',
-        'app.relationships',
-        'app.players',
+        'app.coaches',
         'app.teams',
         'app.competitions',
         'app.ladders',
-        'app.courts',
-        'app.locations',
-        'app.training',
-        'app.uniforms',
-        'app.uniform_colours',
-        'app.teams_jerseys',
-        'app.coaches',
-        'app.teams_coaches',
+        'app.players',
         'app.absences',
         'app.transactions',
         'app.fees',
         'app.fees_types',
-        'app.players_fees',
+        'app.courts',
+        'app.locations',
+        'app.training',
         'app.managers',
-        'app.roles',
-        'app.users_roles'
+        'app.teams_jerseys',
+        'app.uniforms',
+        'app.uniform_colours',
+        'app.emails',
+        'app.phone_numbers',
+        'app.contacts',
+        'app.relationships',
+        'app.roles'
     ];
 
     /**

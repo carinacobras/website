@@ -9,7 +9,7 @@ use Cake\Validation\Validator;
 /**
  * UniformColours Model
  *
- * @property |\Cake\ORM\Association\HasMany $Uniforms
+ * @property \App\Model\Table\UniformsTable|\Cake\ORM\Association\HasMany $Uniforms
  *
  * @method \App\Model\Entity\UniformColour get($primaryKey, $options = [])
  * @method \App\Model\Entity\UniformColour newEntity($data = null, array $options = [])

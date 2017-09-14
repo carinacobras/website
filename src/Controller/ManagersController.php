@@ -21,7 +21,7 @@ class ManagersController extends AppController
     public function index()
     {
         $this->paginate = [
-            'contain' => ['Users']
+            'contain' => ['Users', 'Teams']
         ];
         $managers = $this->paginate($this->Managers);
 
@@ -39,7 +39,7 @@ class ManagersController extends AppController
     public function view($id = null)
     {
         $manager = $this->Managers->get($id, [
-            'contain' => ['Users']
+            'contain' => ['Users', 'Teams']
         ]);
 
         $this->set('manager', $manager);
@@ -64,7 +64,8 @@ class ManagersController extends AppController
             $this->Flash->error(__('The manager could not be saved. Please, try again.'));
         }
         $users = $this->Managers->Users->find('list', ['limit' => 200]);
-        $this->set(compact('manager', 'users'));
+        $teams = $this->Managers->Teams->find('list', ['limit' => 200]);
+        $this->set(compact('manager', 'users', 'teams'));
         $this->set('_serialize', ['manager']);
     }
 
@@ -90,7 +91,8 @@ class ManagersController extends AppController
             $this->Flash->error(__('The manager could not be saved. Please, try again.'));
         }
         $users = $this->Managers->Users->find('list', ['limit' => 200]);
-        $this->set(compact('manager', 'users'));
+        $teams = $this->Managers->Teams->find('list', ['limit' => 200]);
+        $this->set(compact('manager', 'users', 'teams'));
         $this->set('_serialize', ['manager']);
     }
 

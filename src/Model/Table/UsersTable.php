@@ -9,14 +9,12 @@ use Cake\Validation\Validator;
 /**
  * Users Model
  *
- * @property \App\Model\Table\PhoneNumbersTable|\Cake\ORM\Association\BelongsTo $PhoneNumbers
- * @property \App\Model\Table\EmailsTable|\Cake\ORM\Association\BelongsTo $Emails
  * @property \App\Model\Table\CoachesTable|\Cake\ORM\Association\HasMany $Coaches
  * @property \App\Model\Table\EmailsTable|\Cake\ORM\Association\HasMany $Emails
  * @property \App\Model\Table\ManagersTable|\Cake\ORM\Association\HasMany $Managers
  * @property \App\Model\Table\PhoneNumbersTable|\Cake\ORM\Association\HasMany $PhoneNumbers
  * @property \App\Model\Table\PlayersTable|\Cake\ORM\Association\HasMany $Players
- * @property \App\Model\Table\RolesTable|\Cake\ORM\Association\BelongsToMany $Roles
+ * @property \App\Model\Table\RolesTable|\Cake\ORM\Association\HasMany $Roles
  *
  * @method \App\Model\Entity\User get($primaryKey, $options = [])
  * @method \App\Model\Entity\User newEntity($data = null, array $options = [])
@@ -47,12 +45,6 @@ class UsersTable extends Table
 
         $this->addBehavior('Timestamp');
 
-        $this->belongsTo('PhoneNumbers', [
-            'foreignKey' => 'phone_number_id'
-        ]);
-        $this->belongsTo('Emails', [
-            'foreignKey' => 'email_id'
-        ]);
         $this->hasMany('Coaches', [
             'foreignKey' => 'user_id'
         ]);
@@ -68,10 +60,8 @@ class UsersTable extends Table
         $this->hasMany('Players', [
             'foreignKey' => 'user_id'
         ]);
-        $this->belongsToMany('Roles', [
-            'foreignKey' => 'user_id',
-            'targetForeignKey' => 'role_id',
-            'joinTable' => 'users_roles'
+        $this->hasMany('Roles', [
+            'foreignKey' => 'user_id'
         ]);
     }
 
@@ -103,20 +93,5 @@ class UsersTable extends Table
             ->notEmpty('dob');
 
         return $validator;
-    }
-
-    /**
-     * Returns a rules checker object that will be used for validating
-     * application integrity.
-     *
-     * @param \Cake\ORM\RulesChecker $rules The rules object to be modified.
-     * @return \Cake\ORM\RulesChecker
-     */
-    public function buildRules(RulesChecker $rules)
-    {
-        $rules->add($rules->existsIn(['phone_number_id'], 'PhoneNumbers'));
-        $rules->add($rules->existsIn(['email_id'], 'Emails'));
-
-        return $rules;
     }
 }

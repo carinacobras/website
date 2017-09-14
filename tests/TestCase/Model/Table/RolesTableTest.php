@@ -25,29 +25,7 @@ class RolesTableTest extends TestCase
      */
     public $fixtures = [
         'app.roles',
-        'app.users',
-        'app.phone_numbers',
-        'app.contacts',
-        'app.emails',
-        'app.relationships',
-        'app.players',
-        'app.absences',
-        'app.competitions',
-        'app.teams',
-        'app.uniforms',
-        'app.uniform_colours',
-        'app.coaches',
-        'app.teams_coaches',
-        'app.ladders',
-        'app.courts',
-        'app.locations',
-        'app.training',
-        'app.transactions',
-        'app.fees',
-        'app.fees_types',
-        'app.players_fees',
-        'app.managers',
-        'app.users_roles'
+        'app.users'
     ];
 
     /**
@@ -90,6 +68,16 @@ class RolesTableTest extends TestCase
      * @return void
      */
     public function testValidationDefault()
+    {
+        $this->markTestIncomplete('Not implemented yet.');
+    }
+
+    /**
+     * Test buildRules method
+     *
+     * @return void
+     */
+    public function testBuildRules()
     {
         $this->markTestIncomplete('Not implemented yet.');
     }

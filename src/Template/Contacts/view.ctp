@@ -17,21 +17,11 @@
         <li><?= $this->Html->link(__('New Email'), ['controller' => 'Emails', 'action' => 'add']) ?> </li>
         <li><?= $this->Html->link(__('List Relationships'), ['controller' => 'Relationships', 'action' => 'index']) ?> </li>
         <li><?= $this->Html->link(__('New Relationship'), ['controller' => 'Relationships', 'action' => 'add']) ?> </li>
-        <li><?= $this->Html->link(__('List Players'), ['controller' => 'Players', 'action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('New Player'), ['controller' => 'Players', 'action' => 'add']) ?> </li>
     </ul>
 </nav>
 <div class="contacts view large-9 medium-8 columns content">
     <h3><?= h($contact->id) ?></h3>
     <table class="vertical-table">
-        <tr>
-            <th scope="row"><?= __('Phone Number') ?></th>
-            <td><?= $contact->has('phone_number') ? $this->Html->link($contact->phone_number->id, ['controller' => 'PhoneNumbers', 'action' => 'view', $contact->phone_number->id]) : '' ?></td>
-        </tr>
-        <tr>
-            <th scope="row"><?= __('Email') ?></th>
-            <td><?= $contact->has('email') ? $this->Html->link($contact->email->id, ['controller' => 'Emails', 'action' => 'view', $contact->email->id]) : '' ?></td>
-        </tr>
         <tr>
             <th scope="row"><?= __('First Name') ?></th>
             <td><?= h($contact->first_name) ?></td>
@@ -41,12 +31,16 @@
             <td><?= h($contact->last_name) ?></td>
         </tr>
         <tr>
-            <th scope="row"><?= __('Relationship') ?></th>
-            <td><?= $contact->has('relationship') ? $this->Html->link($contact->relationship->title, ['controller' => 'Relationships', 'action' => 'view', $contact->relationship->id]) : '' ?></td>
+            <th scope="row"><?= __('Phone Number') ?></th>
+            <td><?= $contact->has('phone_number') ? $this->Html->link($contact->phone_number->id, ['controller' => 'PhoneNumbers', 'action' => 'view', $contact->phone_number->id]) : '' ?></td>
         </tr>
         <tr>
-            <th scope="row"><?= __('Player') ?></th>
-            <td><?= $contact->has('player') ? $this->Html->link($contact->player->id, ['controller' => 'Players', 'action' => 'view', $contact->player->id]) : '' ?></td>
+            <th scope="row"><?= __('Email') ?></th>
+            <td><?= $contact->has('email') ? $this->Html->link($contact->email->id, ['controller' => 'Emails', 'action' => 'view', $contact->email->id]) : '' ?></td>
+        </tr>
+        <tr>
+            <th scope="row"><?= __('Relationship') ?></th>
+            <td><?= $contact->has('relationship') ? $this->Html->link($contact->relationship->title, ['controller' => 'Relationships', 'action' => 'view', $contact->relationship->id]) : '' ?></td>
         </tr>
         <tr>
             <th scope="row"><?= __('Id') ?></th>

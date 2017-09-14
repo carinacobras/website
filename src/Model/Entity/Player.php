@@ -9,16 +9,12 @@ use Cake\ORM\Entity;
  * @property int $id
  * @property int $user_id
  * @property int $team_id
- * @property int $team_jersey_id
  *
  * @property \App\Model\Entity\User $user
- * @property \App\Model\Entity\Team[] $teams
- * @property \App\Model\Entity\TeamsJersey $teams_jersey
+ * @property \App\Model\Entity\Team $team
  * @property \App\Model\Entity\Absence[] $absences
- * @property \App\Model\Entity\Contact[] $contacts
  * @property \App\Model\Entity\Ladder[] $ladders
  * @property \App\Model\Entity\Transaction[] $transactions
- * @property \App\Model\Entity\Fee[] $fees
  */
 class Player extends Entity
 {

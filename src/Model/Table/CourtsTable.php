@@ -9,8 +9,8 @@ use Cake\Validation\Validator;
 /**
  * Courts Model
  *
- * @property \App\Model\Table\LocationsTable|\Cake\ORM\Association\BelongsTo $Locations
- * @property |\Cake\ORM\Association\HasMany $Competitions
+ * @property \App\Model\Table\CompetitionsTable|\Cake\ORM\Association\HasMany $Competitions
+ * @property \App\Model\Table\LocationsTable|\Cake\ORM\Association\HasMany $Locations
  *
  * @method \App\Model\Entity\Court get($primaryKey, $options = [])
  * @method \App\Model\Entity\Court newEntity($data = null, array $options = [])
@@ -37,11 +37,10 @@ class CourtsTable extends Table
         $this->setDisplayField('id');
         $this->setPrimaryKey('id');
 
-        $this->belongsTo('Locations', [
-            'foreignKey' => 'location_id',
-            'joinType' => 'INNER'
-        ]);
         $this->hasMany('Competitions', [
+            'foreignKey' => 'court_id'
+        ]);
+        $this->hasMany('Locations', [
             'foreignKey' => 'court_id'
         ]);
     }
@@ -64,19 +63,5 @@ class CourtsTable extends Table
             ->notEmpty('number');
 
         return $validator;
-    }
-
-    /**
-     * Returns a rules checker object that will be used for validating
-     * application integrity.
-     *
-     * @param \Cake\ORM\RulesChecker $rules The rules object to be modified.
-     * @return \Cake\ORM\RulesChecker
-     */
-    public function buildRules(RulesChecker $rules)
-    {
-        $rules->add($rules->existsIn(['location_id'], 'Locations'));
-
-        return $rules;
     }
 }

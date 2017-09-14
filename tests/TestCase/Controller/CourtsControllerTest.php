@@ -17,25 +17,27 @@ class CourtsControllerTest extends IntegrationTestCase
      */
     public $fixtures = [
         'app.courts',
-        'app.locations',
-        'app.training',
         'app.competitions',
         'app.teams',
-        'app.uniforms',
-        'app.uniform_colours',
         'app.coaches',
         'app.users',
-        'app.phone_numbers',
         'app.emails',
         'app.managers',
+        'app.phone_numbers',
+        'app.contacts',
+        'app.relationships',
         'app.players',
+        'app.absences',
         'app.ladders',
+        'app.transactions',
         'app.fees',
         'app.fees_types',
-        'app.players_fees',
         'app.roles',
-        'app.users_roles',
-        'app.teams_coaches'
+        'app.teams_jerseys',
+        'app.uniforms',
+        'app.uniform_colours',
+        'app.training',
+        'app.locations'
     ];
 
     /**

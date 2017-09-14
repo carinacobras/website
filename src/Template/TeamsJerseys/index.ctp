@@ -28,7 +28,7 @@
             <tr>
                 <td><?= $this->Number->format($teamsJersey->id) ?></td>
                 <td><?= $this->Number->format($teamsJersey->number) ?></td>
-                <td><?= $teamsJersey->has('team') ? $this->Html->link($teamsJersey->team->id, ['controller' => 'Teams', 'action' => 'view', $teamsJersey->team->id]) : '' ?></td>
+                <td><?= $teamsJersey->has('team') ? $this->Html->link($teamsJersey->team->name, ['controller' => 'Teams', 'action' => 'view', $teamsJersey->team->id]) : '' ?></td>
                 <td class="actions">
                     <?= $this->Html->link(__('View'), ['action' => 'view', $teamsJersey->id]) ?>
                     <?= $this->Html->link(__('Edit'), ['action' => 'edit', $teamsJersey->id]) ?>

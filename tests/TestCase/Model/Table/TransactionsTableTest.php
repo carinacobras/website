@@ -29,26 +29,17 @@ class TransactionsTableTest extends TestCase
         'app.fees_types',
         'app.players',
         'app.users',
-        'app.phone_numbers',
-        'app.contacts',
-        'app.emails',
-        'app.relationships',
-        'app.coaches',
         'app.teams',
+        'app.coaches',
         'app.competitions',
         'app.ladders',
         'app.courts',
         'app.locations',
         'app.training',
-        'app.uniforms',
-        'app.uniform_colours',
-        'app.teams_jerseys',
-        'app.teams_coaches',
         'app.managers',
-        'app.roles',
-        'app.users_roles',
-        'app.absences',
-        'app.players_fees'
+        'app.teams_jerseys',
+        'app.uniforms',
+        'app.absences'
     ];
 
     /**

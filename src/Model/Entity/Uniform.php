@@ -8,9 +8,10 @@ use Cake\ORM\Entity;
  *
  * @property int $id
  * @property int $uniform_colour_id
+ * @property int $team_id
  *
  * @property \App\Model\Entity\UniformColour $uniform_colour
- * @property \App\Model\Entity\Team[] $teams
+ * @property \App\Model\Entity\Team $team
  */
 class Uniform extends Entity
 {

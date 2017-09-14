@@ -26,28 +26,7 @@ class ContactsTableTest extends TestCase
     public $fixtures = [
         'app.contacts',
         'app.phone_numbers',
-        'app.users',
         'app.emails',
-        'app.coaches',
-        'app.teams',
-        'app.competitions',
-        'app.ladders',
-        'app.players',
-        'app.teams_jerseys',
-        'app.absences',
-        'app.transactions',
-        'app.fees',
-        'app.fees_types',
-        'app.players_fees',
-        'app.courts',
-        'app.locations',
-        'app.training',
-        'app.uniforms',
-        'app.uniform_colours',
-        'app.teams_coaches',
-        'app.managers',
-        'app.roles',
-        'app.users_roles',
         'app.relationships'
     ];
 
