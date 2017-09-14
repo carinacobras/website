@@ -10,7 +10,7 @@ use Cake\Validation\Validator;
  * PhoneNumbers Model
  *
  * @property \App\Model\Table\UsersTable|\Cake\ORM\Association\BelongsTo $Users
- * @property |\Cake\ORM\Association\HasMany $Contacts
+ * @property \App\Model\Table\ContactsTable|\Cake\ORM\Association\HasMany $Contacts
  * @property \App\Model\Table\UsersTable|\Cake\ORM\Association\HasMany $Users
  *
  * @method \App\Model\Entity\PhoneNumber get($primaryKey, $options = [])
