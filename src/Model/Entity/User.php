@@ -12,7 +12,9 @@ use Cake\ORM\Entity;
  * @property \Cake\I18n\FrozenTime $dob
  * @property \Cake\I18n\FrozenTime $created
  * @property \Cake\I18n\FrozenTime $modified
+ * @property int $phone_numbers_id
  *
+ * @property \App\Model\Entity\PhoneNumber $phone_number
  * @property \App\Model\Entity\Coach[] $coaches
  * @property \App\Model\Entity\Manager[] $managers
  * @property \App\Model\Entity\Player[] $players

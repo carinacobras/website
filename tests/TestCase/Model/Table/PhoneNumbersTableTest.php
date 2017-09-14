@@ -24,7 +24,25 @@ class PhoneNumbersTableTest extends TestCase
      * @var array
      */
     public $fixtures = [
-        'app.phone_numbers'
+        'app.phone_numbers',
+        'app.users',
+        'app.coaches',
+        'app.teams',
+        'app.competitions',
+        'app.ladders',
+        'app.players',
+        'app.fees',
+        'app.fees_types',
+        'app.players_fees',
+        'app.courts',
+        'app.locations',
+        'app.training',
+        'app.uniforms',
+        'app.uniform_colours',
+        'app.teams_coaches',
+        'app.managers',
+        'app.roles',
+        'app.users_roles'
     ];
 
     /**
@@ -67,6 +85,16 @@ class PhoneNumbersTableTest extends TestCase
      * @return void
      */
     public function testValidationDefault()
+    {
+        $this->markTestIncomplete('Not implemented yet.');
+    }
+
+    /**
+     * Test buildRules method
+     *
+     * @return void
+     */
+    public function testBuildRules()
     {
         $this->markTestIncomplete('Not implemented yet.');
     }

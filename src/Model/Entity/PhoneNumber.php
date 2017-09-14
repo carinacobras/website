@@ -9,6 +9,8 @@ use Cake\ORM\Entity;
  * @property int $id
  * @property int $number
  * @property int $users_id
+ *
+ * @property \App\Model\Entity\User $user
  */
 class PhoneNumber extends Entity
 {

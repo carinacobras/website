@@ -13,6 +13,8 @@
             )
         ?></li>
         <li><?= $this->Html->link(__('List Phone Numbers'), ['action' => 'index']) ?></li>
+        <li><?= $this->Html->link(__('List Users'), ['controller' => 'Users', 'action' => 'index']) ?></li>
+        <li><?= $this->Html->link(__('New User'), ['controller' => 'Users', 'action' => 'add']) ?></li>
     </ul>
 </nav>
 <div class="phoneNumbers form large-9 medium-8 columns content">
@@ -21,7 +23,7 @@
         <legend><?= __('Edit Phone Number') ?></legend>
         <?php
             echo $this->Form->control('number');
-            echo $this->Form->control('users_id');
+            echo $this->Form->control('users_id', ['options' => $users, 'empty' => true]);
         ?>
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>
