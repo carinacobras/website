@@ -17,7 +17,7 @@
         <legend><?= __('Add Phone Number') ?></legend>
         <?php
             echo $this->Form->control('number');
-            echo $this->Form->control('users_id', ['options' => $users, 'empty' => true]);
+            echo $this->Form->control('users_id', ['options' => $users]);
         ?>
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>

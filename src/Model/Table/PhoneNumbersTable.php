@@ -37,7 +37,8 @@ class PhoneNumbersTable extends Table
         $this->setPrimaryKey('id');
 
         $this->belongsTo('Users', [
-            'foreignKey' => 'users_id'
+            'foreignKey' => 'users_id',
+            'joinType' => 'INNER'
         ]);
     }
 
