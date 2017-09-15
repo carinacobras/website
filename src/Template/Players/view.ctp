@@ -28,15 +28,11 @@
     <table class="vertical-table">
         <tr>
             <th scope="row"><?= __('User') ?></th>
-            <td><?= $player->has('user') ? $this->Html->link($player->user->id, ['controller' => 'Users', 'action' => 'view', $player->user->id]) : '' ?></td>
+            <td><?= $player->has('user') ? $this->Html->link($player->user->full_name, ['controller' => 'Users', 'action' => 'view', $player->user->id]) : '' ?></td>
         </tr>
         <tr>
             <th scope="row"><?= __('Team') ?></th>
             <td><?= $player->has('team') ? $this->Html->link($player->team->name, ['controller' => 'Teams', 'action' => 'view', $player->team->id]) : '' ?></td>
-        </tr>
-        <tr>
-            <th scope="row"><?= __('Id') ?></th>
-            <td><?= $this->Number->format($player->id) ?></td>
         </tr>
     </table>
     <div class="related">
