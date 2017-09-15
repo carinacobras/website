@@ -26,7 +26,7 @@
         <thead>
             <tr>
                 <th scope="col"><?= $this->Paginator->sort('id') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('user_id') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('Users.full_name') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('team_id') ?></th>
                 <th scope="col" class="actions"><?= __('Actions') ?></th>
             </tr>
