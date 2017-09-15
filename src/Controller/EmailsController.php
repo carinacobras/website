@@ -1,7 +1,7 @@
 <?php
 namespace App\Controller;
 
-require 'vendor' . DIRECTORY_SEPARATOR . 'autoload.php';
+require ROOT .DS. 'vendor' . DS . 'autoload.php';
 $apiKey = getenv('SENDGRID_API_KEY');
 $sg = new \SendGrid($apiKey);
 
