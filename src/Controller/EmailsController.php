@@ -59,6 +59,15 @@ class EmailsController extends AppController
         if ($this->request->is('post')) {
             $email = $this->Emails->patchEntity($email, $this->request->getData());
             if ($this->Emails->save($email)) {
+
+                $apiKey = getenv('SENDGRID_API_KEY');
+                $sg = new \SendGrid($apiKey);
+                $request_body = json_decode('[{"email": '. $address  .', "first_name": ' . $this->Emails->Users->first_name . ', "last_name": ' . $this->Emails->Users->last_name .'}]');
+                $response = $sg->client->contactdb()->recipients()->post($request_body);
+                echo $response->statusCode();
+                echo $response->body();
+                print_r($response->headers());
+
                 $this->Flash->success(__('The email has been saved.'));
 
                 return $this->redirect(['action' => 'index']);
@@ -68,25 +77,6 @@ class EmailsController extends AppController
         $users = $this->Emails->Users->find('list', ['limit' => 200]);
         $this->set(compact('email', 'users'));
         $this->set('_serialize', ['email']);
-
-
-        $apiKey = getenv('SENDGRID_API_KEY');
-        $sg = new \SendGrid($apiKey);
-        ////////////////////////////////////////////////////
-        // Add recipients #
-        // POST /contactdb/recipients #
-        $request_body = json_decode('[
-            {
-            "email": "example@example.com", 
-            "first_name": "Joe", 
-            "last_name": "User"
-            }
-        ]');
-        $response = $sg->client->contactdb()->recipients()->post($request_body);
-        echo $response->statusCode();
-        echo $response->body();
-        print_r($response->headers());
-        
     }
 
     /**
