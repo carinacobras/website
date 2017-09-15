@@ -84,9 +84,9 @@
                 <td><?= h($contacts->player_id) ?></td>
                 <td><?= h($contacts->first_name) ?></td>
                 <td><?= h($contacts->last_name) ?></td>
-                <td><?= h($contacts->phone_number_id->number) ?></td>
+                <td><?= h($contacts->phone_number->number) ?></td>
                 <td><?= h($contacts->emails_id) ?></td>
-                <td><?= h($contacts->relationship_id->name) ?></td>
+                <td><?= h($contacts->relationship->name) ?></td>
                 <td class="actions">
                     <?= $this->Html->link(__('View'), ['controller' => 'Contacts', 'action' => 'view', $contacts->id]) ?>
                     <?= $this->Html->link(__('Edit'), ['controller' => 'Contacts', 'action' => 'edit', $contacts->id]) ?>
