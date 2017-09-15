@@ -11,7 +11,6 @@ use Cake\ORM\Entity;
  * @property int $player_id
  *
  * @property \App\Model\Entity\Player $player
- * @property \App\Model\Entity\Competition $competition
  */
 class Absence extends Entity
 {

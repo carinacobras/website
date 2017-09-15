@@ -26,20 +26,11 @@ class LaddersTableTest extends TestCase
     public $fixtures = [
         'app.ladders',
         'app.competitions',
-        'app.players',
-        'app.users',
-        'app.coaches',
+        'app.courts',
+        'app.locations',
         'app.teams',
-        'app.managers',
-        'app.teams_jerseys',
-        'app.uniforms',
-        'app.uniform_colours',
-        'app.emails',
-        'app.phone_numbers',
-        'app.contacts',
-        'app.relationships',
-        'app.roles',
-        'app.absences'
+        'app.training',
+        'app.players'
     ];
 
     /**

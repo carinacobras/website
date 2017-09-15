@@ -18,20 +18,23 @@ class RelationshipsControllerTest extends IntegrationTestCase
     public $fixtures = [
         'app.relationships',
         'app.contacts',
-        'app.phone_numbers',
+        'app.players',
         'app.users',
         'app.coaches',
         'app.teams',
         'app.competitions',
-        'app.managers',
-        'app.players',
-        'app.absences',
+        'app.courts',
+        'app.locations',
+        'app.training',
         'app.ladders',
+        'app.managers',
         'app.teams_jerseys',
         'app.uniforms',
         'app.uniform_colours',
         'app.emails',
-        'app.roles'
+        'app.phone_numbers',
+        'app.roles',
+        'app.absences'
     ];
 
     /**

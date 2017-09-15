@@ -26,8 +26,11 @@ class LocationsTableTest extends TestCase
     public $fixtures = [
         'app.locations',
         'app.training',
+        'app.courts',
         'app.competitions',
-        'app.courts'
+        'app.ladders',
+        'app.players',
+        'app.teams'
     ];
 
     /**

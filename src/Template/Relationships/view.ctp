@@ -33,6 +33,7 @@
         <table cellpadding="0" cellspacing="0">
             <tr>
                 <th scope="col"><?= __('Id') ?></th>
+                <th scope="col"><?= __('Player Id') ?></th>
                 <th scope="col"><?= __('First Name') ?></th>
                 <th scope="col"><?= __('Last Name') ?></th>
                 <th scope="col"><?= __('Phone Number Id') ?></th>
@@ -43,6 +44,7 @@
             <?php foreach ($relationship->contacts as $contacts): ?>
             <tr>
                 <td><?= h($contacts->id) ?></td>
+                <td><?= h($contacts->player_id) ?></td>
                 <td><?= h($contacts->first_name) ?></td>
                 <td><?= h($contacts->last_name) ?></td>
                 <td><?= h($contacts->phone_number_id) ?></td>

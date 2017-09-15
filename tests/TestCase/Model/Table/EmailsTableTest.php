@@ -25,21 +25,7 @@ class EmailsTableTest extends TestCase
      */
     public $fixtures = [
         'app.emails',
-        'app.users',
-        'app.coaches',
-        'app.teams',
-        'app.managers',
-        'app.players',
-        'app.contacts',
-        'app.phone_numbers',
-        'app.relationships',
-        'app.absences',
-        'app.competitions',
-        'app.ladders',
-        'app.teams_jerseys',
-        'app.uniforms',
-        'app.uniform_colours',
-        'app.roles'
+        'app.users'
     ];
 
     /**

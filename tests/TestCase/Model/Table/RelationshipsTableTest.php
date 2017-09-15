@@ -26,20 +26,17 @@ class RelationshipsTableTest extends TestCase
     public $fixtures = [
         'app.relationships',
         'app.contacts',
-        'app.phone_numbers',
-        'app.users',
-        'app.coaches',
-        'app.teams',
-        'app.managers',
         'app.players',
+        'app.users',
+        'app.teams',
         'app.absences',
-        'app.competitions',
         'app.ladders',
-        'app.teams_jerseys',
-        'app.uniforms',
-        'app.uniform_colours',
-        'app.emails',
-        'app.roles'
+        'app.competitions',
+        'app.courts',
+        'app.locations',
+        'app.training',
+        'app.phone_numbers',
+        'app.emails'
     ];
 
     /**

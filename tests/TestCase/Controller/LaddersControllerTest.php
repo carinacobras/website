@@ -18,20 +18,23 @@ class LaddersControllerTest extends IntegrationTestCase
     public $fixtures = [
         'app.ladders',
         'app.competitions',
-        'app.players',
-        'app.users',
-        'app.coaches',
+        'app.courts',
+        'app.locations',
+        'app.training',
         'app.teams',
-        'app.managers',
-        'app.teams_jerseys',
-        'app.uniforms',
-        'app.uniform_colours',
+        'app.coaches',
+        'app.users',
         'app.emails',
+        'app.managers',
         'app.phone_numbers',
         'app.contacts',
+        'app.players',
+        'app.absences',
         'app.relationships',
         'app.roles',
-        'app.absences'
+        'app.teams_jerseys',
+        'app.uniforms',
+        'app.uniform_colours'
     ];
 
     /**

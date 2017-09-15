@@ -9,12 +9,11 @@ use Cake\ORM\Entity;
  * @property int $id
  * @property int $user_id
  * @property int $team_id
- * @property int $contact_id
  *
  * @property \App\Model\Entity\User $user
  * @property \App\Model\Entity\Team $team
- * @property \App\Model\Entity\Contact $contact
  * @property \App\Model\Entity\Absence[] $absences
+ * @property \App\Model\Entity\Contact[] $contacts
  * @property \App\Model\Entity\Ladder[] $ladders
  */
 class Player extends Entity

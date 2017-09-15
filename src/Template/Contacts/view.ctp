@@ -11,19 +11,23 @@
         <li><?= $this->Form->postLink(__('Delete Contact'), ['action' => 'delete', $contact->id], ['confirm' => __('Are you sure you want to delete # {0}?', $contact->id)]) ?> </li>
         <li><?= $this->Html->link(__('List Contacts'), ['action' => 'index']) ?> </li>
         <li><?= $this->Html->link(__('New Contact'), ['action' => 'add']) ?> </li>
+        <li><?= $this->Html->link(__('List Players'), ['controller' => 'Players', 'action' => 'index']) ?> </li>
+        <li><?= $this->Html->link(__('New Player'), ['controller' => 'Players', 'action' => 'add']) ?> </li>
         <li><?= $this->Html->link(__('List Phone Numbers'), ['controller' => 'PhoneNumbers', 'action' => 'index']) ?> </li>
         <li><?= $this->Html->link(__('New Phone Number'), ['controller' => 'PhoneNumbers', 'action' => 'add']) ?> </li>
         <li><?= $this->Html->link(__('List Emails'), ['controller' => 'Emails', 'action' => 'index']) ?> </li>
         <li><?= $this->Html->link(__('New Email'), ['controller' => 'Emails', 'action' => 'add']) ?> </li>
         <li><?= $this->Html->link(__('List Relationships'), ['controller' => 'Relationships', 'action' => 'index']) ?> </li>
         <li><?= $this->Html->link(__('New Relationship'), ['controller' => 'Relationships', 'action' => 'add']) ?> </li>
-        <li><?= $this->Html->link(__('List Players'), ['controller' => 'Players', 'action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('New Player'), ['controller' => 'Players', 'action' => 'add']) ?> </li>
     </ul>
 </nav>
 <div class="contacts view large-9 medium-8 columns content">
     <h3><?= h($contact->id) ?></h3>
     <table class="vertical-table">
+        <tr>
+            <th scope="row"><?= __('Player') ?></th>
+            <td><?= $contact->has('player') ? $this->Html->link($contact->player->id, ['controller' => 'Players', 'action' => 'view', $contact->player->id]) : '' ?></td>
+        </tr>
         <tr>
             <th scope="row"><?= __('First Name') ?></th>
             <td><?= h($contact->first_name) ?></td>
@@ -49,31 +53,4 @@
             <td><?= $this->Number->format($contact->id) ?></td>
         </tr>
     </table>
-    <div class="related">
-        <h4><?= __('Related Players') ?></h4>
-        <?php if (!empty($contact->players)): ?>
-        <table cellpadding="0" cellspacing="0">
-            <tr>
-                <th scope="col"><?= __('Id') ?></th>
-                <th scope="col"><?= __('User Id') ?></th>
-                <th scope="col"><?= __('Team Id') ?></th>
-                <th scope="col"><?= __('Contact Id') ?></th>
-                <th scope="col" class="actions"><?= __('Actions') ?></th>
-            </tr>
-            <?php foreach ($contact->players as $players): ?>
-            <tr>
-                <td><?= h($players->id) ?></td>
-                <td><?= h($players->user_id) ?></td>
-                <td><?= h($players->team_id) ?></td>
-                <td><?= h($players->contact_id) ?></td>
-                <td class="actions">
-                    <?= $this->Html->link(__('View'), ['controller' => 'Players', 'action' => 'view', $players->id]) ?>
-                    <?= $this->Html->link(__('Edit'), ['controller' => 'Players', 'action' => 'edit', $players->id]) ?>
-                    <?= $this->Form->postLink(__('Delete'), ['controller' => 'Players', 'action' => 'delete', $players->id], ['confirm' => __('Are you sure you want to delete # {0}?', $players->id)]) ?>
-                </td>
-            </tr>
-            <?php endforeach; ?>
-        </table>
-        <?php endif; ?>
-    </div>
 </div>

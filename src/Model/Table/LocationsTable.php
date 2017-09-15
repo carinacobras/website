@@ -34,7 +34,7 @@ class LocationsTable extends Table
         parent::initialize($config);
 
         $this->setTable('locations');
-        $this->setDisplayField('id');
+        $this->setDisplayField('name');
         $this->setPrimaryKey('id');
 
         $this->belongsTo('Training', [

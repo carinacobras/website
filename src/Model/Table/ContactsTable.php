@@ -9,10 +9,10 @@ use Cake\Validation\Validator;
 /**
  * Contacts Model
  *
+ * @property \App\Model\Table\PlayersTable|\Cake\ORM\Association\BelongsTo $Players
  * @property \App\Model\Table\PhoneNumbersTable|\Cake\ORM\Association\BelongsTo $PhoneNumbers
  * @property \App\Model\Table\EmailsTable|\Cake\ORM\Association\BelongsTo $Emails
  * @property \App\Model\Table\RelationshipsTable|\Cake\ORM\Association\BelongsTo $Relationships
- * @property \App\Model\Table\PlayersTable|\Cake\ORM\Association\HasMany $Players
  *
  * @method \App\Model\Entity\Contact get($primaryKey, $options = [])
  * @method \App\Model\Entity\Contact newEntity($data = null, array $options = [])
@@ -39,20 +39,19 @@ class ContactsTable extends Table
         $this->setDisplayField('id');
         $this->setPrimaryKey('id');
 
-        $this->belongsTo('PhoneNumbers', [
-            'foreignKey' => 'phone_number_id',
+        $this->belongsTo('Players', [
+            'foreignKey' => 'player_id',
             'joinType' => 'INNER'
         ]);
+        $this->belongsTo('PhoneNumbers', [
+            'foreignKey' => 'phone_number_id'
+        ]);
         $this->belongsTo('Emails', [
-            'foreignKey' => 'emails_id',
-            'joinType' => 'INNER'
+            'foreignKey' => 'emails_id'
         ]);
         $this->belongsTo('Relationships', [
             'foreignKey' => 'relationship_id',
             'joinType' => 'INNER'
-        ]);
-        $this->hasMany('Players', [
-            'foreignKey' => 'contact_id'
         ]);
     }
 
@@ -90,6 +89,7 @@ class ContactsTable extends Table
      */
     public function buildRules(RulesChecker $rules)
     {
+        $rules->add($rules->existsIn(['player_id'], 'Players'));
         $rules->add($rules->existsIn(['phone_number_id'], 'PhoneNumbers'));
         $rules->add($rules->existsIn(['emails_id'], 'Emails'));
         $rules->add($rules->existsIn(['relationship_id'], 'Relationships'));
