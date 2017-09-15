@@ -39,8 +39,7 @@ class PlayersController extends AppController
     public function view($id = null)
     {
         $player = $this->Players->get($id, [
-            'recursive' => 1,
-            'contains' => ['Users', 'Teams', 'Absences', 'Contacts', 'Ladders']
+            'contain' => ['Users', 'Teams', 'Absences', 'Contacts', 'Ladders', 'Contacts.PhoneNumbers']
         ]);
 
         $this->set('player', $player);
