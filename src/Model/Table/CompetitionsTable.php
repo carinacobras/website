@@ -9,6 +9,11 @@ use Cake\Validation\Validator;
 /**
  * Competitions Model
  *
+ * @property \App\Model\Table\CourtsTable|\Cake\ORM\Association\HasMany $Courts
+ * @property \App\Model\Table\LaddersTable|\Cake\ORM\Association\HasMany $Ladders
+ * @property \App\Model\Table\TeamsTable|\Cake\ORM\Association\HasMany $Teams
+ * @property \App\Model\Table\TrainingTable|\Cake\ORM\Association\HasMany $Training
+ *
  * @method \App\Model\Entity\Competition get($primaryKey, $options = [])
  * @method \App\Model\Entity\Competition newEntity($data = null, array $options = [])
  * @method \App\Model\Entity\Competition[] newEntities(array $data, array $options = [])
@@ -32,7 +37,20 @@ class CompetitionsTable extends Table
 
         $this->setTable('competitions');
         $this->setDisplayField('name');
-        $this->setPrimaryKey(['id', 'name', 'year']);
+        $this->setPrimaryKey('id');
+
+        $this->hasMany('Courts', [
+            'foreignKey' => 'competition_id'
+        ]);
+        $this->hasMany('Ladders', [
+            'foreignKey' => 'competition_id'
+        ]);
+        $this->hasMany('Teams', [
+            'foreignKey' => 'competition_id'
+        ]);
+        $this->hasMany('Training', [
+            'foreignKey' => 'competition_id'
+        ]);
     }
 
     /**

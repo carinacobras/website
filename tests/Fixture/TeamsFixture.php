@@ -21,7 +21,7 @@ class TeamsFixture extends TestFixture
         'name' => ['type' => 'string', 'length' => 45, 'null' => false, 'default' => '', 'collate' => 'utf8_general_ci', 'comment' => '', 'precision' => null, 'fixed' => null],
         'competition_id' => ['type' => 'integer', 'length' => 11, 'unsigned' => false, 'null' => true, 'default' => null, 'comment' => '', 'precision' => null, 'autoIncrement' => null],
         '_indexes' => [
-            'fk_team_competition1' => ['type' => 'index', 'columns' => ['competition_id'], 'length' => []],
+            'fk_team_competition1_idx' => ['type' => 'index', 'columns' => ['competition_id'], 'length' => []],
         ],
         '_constraints' => [
             'primary' => ['type' => 'primary', 'columns' => ['id'], 'length' => []],

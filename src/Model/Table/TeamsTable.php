@@ -9,7 +9,7 @@ use Cake\Validation\Validator;
 /**
  * Teams Model
  *
- * @property |\Cake\ORM\Association\BelongsTo $Competitions
+ * @property \App\Model\Table\CompetitionsTable|\Cake\ORM\Association\BelongsTo $Competitions
  * @property \App\Model\Table\CoachesTable|\Cake\ORM\Association\HasMany $Coaches
  * @property \App\Model\Table\ManagersTable|\Cake\ORM\Association\HasMany $Managers
  * @property \App\Model\Table\PlayersTable|\Cake\ORM\Association\HasMany $Players

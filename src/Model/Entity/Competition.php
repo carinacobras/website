@@ -8,6 +8,11 @@ use Cake\ORM\Entity;
  *
  * @property int $id
  * @property string $name
+ *
+ * @property \App\Model\Entity\Court[] $courts
+ * @property \App\Model\Entity\Ladder[] $ladders
+ * @property \App\Model\Entity\Team[] $teams
+ * @property \App\Model\Entity\Training[] $training
  */
 class Competition extends Entity
 {
@@ -23,8 +28,6 @@ class Competition extends Entity
      */
     protected $_accessible = [
         '*' => true,
-        'id' => false,
-        'name' => false,
-        'year' => false
+        'id' => false
     ];
 }

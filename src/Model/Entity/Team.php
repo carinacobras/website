@@ -10,6 +10,7 @@ use Cake\ORM\Entity;
  * @property string $name
  * @property int $competition_id
  *
+ * @property \App\Model\Entity\Competition $competition
  * @property \App\Model\Entity\Coach[] $coaches
  * @property \App\Model\Entity\Manager[] $managers
  * @property \App\Model\Entity\Player[] $players
