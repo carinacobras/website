@@ -43,9 +43,9 @@ class UsersFixture extends TestFixture
             'id' => 1,
             'first_name' => 'Lorem ipsum dolor sit amet',
             'last_name' => 'Lorem ipsum dolor sit amet',
-            'dob' => '2017-09-15 11:46:32',
-            'created' => '2017-09-15 11:46:32',
-            'modified' => '2017-09-15 11:46:32'
+            'dob' => '2017-09-15 11:56:39',
+            'created' => '2017-09-15 11:56:39',
+            'modified' => '2017-09-15 11:56:39'
         ],
     ];
 }

@@ -19,20 +19,20 @@ class AbsencesControllerTest extends IntegrationTestCase
         'app.absences',
         'app.players',
         'app.users',
+        'app.coaches',
         'app.teams',
         'app.competitions',
         'app.courts',
         'app.locations',
         'app.training',
         'app.ladders',
-        'app.coaches',
         'app.managers',
         'app.teams_jerseys',
-        'app.uniforms',
-        'app.contacts',
-        'app.phone_numbers',
         'app.emails',
-        'app.relationships'
+        'app.phone_numbers',
+        'app.contacts',
+        'app.relationships',
+        'app.roles'
     ];
 
     /**

@@ -23,6 +23,10 @@
             <td><?= $teamsJersey->has('team') ? $this->Html->link($teamsJersey->team->name, ['controller' => 'Teams', 'action' => 'view', $teamsJersey->team->id]) : '' ?></td>
         </tr>
         <tr>
+            <th scope="row"><?= __('Colour') ?></th>
+            <td><?= h($teamsJersey->colour) ?></td>
+        </tr>
+        <tr>
             <th scope="row"><?= __('Id') ?></th>
             <td><?= $this->Number->format($teamsJersey->id) ?></td>
         </tr>

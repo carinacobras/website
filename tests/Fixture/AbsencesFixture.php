@@ -42,7 +42,7 @@ class AbsencesFixture extends TestFixture
     public $records = [
         [
             'id' => 1,
-            'date' => '2017-09-15 11:46:31',
+            'date' => '2017-09-15 11:56:38',
             'player_id' => 1
         ],
     ];

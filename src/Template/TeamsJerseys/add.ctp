@@ -18,6 +18,7 @@
         <?php
             echo $this->Form->control('number');
             echo $this->Form->control('team_id', ['options' => $teams]);
+            echo $this->Form->control('colour');
         ?>
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>

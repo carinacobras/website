@@ -14,7 +14,6 @@ use Cake\Validation\Validator;
  * @property \App\Model\Table\ManagersTable|\Cake\ORM\Association\HasMany $Managers
  * @property \App\Model\Table\PlayersTable|\Cake\ORM\Association\HasMany $Players
  * @property \App\Model\Table\TeamsJerseysTable|\Cake\ORM\Association\HasMany $TeamsJerseys
- * @property \App\Model\Table\UniformsTable|\Cake\ORM\Association\HasMany $Uniforms
  *
  * @method \App\Model\Entity\Team get($primaryKey, $options = [])
  * @method \App\Model\Entity\Team newEntity($data = null, array $options = [])
@@ -54,9 +53,6 @@ class TeamsTable extends Table
             'foreignKey' => 'team_id'
         ]);
         $this->hasMany('TeamsJerseys', [
-            'foreignKey' => 'team_id'
-        ]);
-        $this->hasMany('Uniforms', [
             'foreignKey' => 'team_id'
         ]);
     }

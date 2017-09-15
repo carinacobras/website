@@ -59,6 +59,11 @@ class TeamsJerseysTable extends Table
             ->requirePresence('number', 'create')
             ->notEmpty('number');
 
+        $validator
+            ->scalar('colour')
+            ->requirePresence('colour', 'create')
+            ->notEmpty('colour');
+
         return $validator;
     }
 

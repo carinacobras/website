@@ -49,7 +49,7 @@ class TrainingFixture extends TestFixture
     public $records = [
         [
             'id' => 1,
-            'time' => '2017-09-15 11:46:32',
+            'time' => '2017-09-15 11:56:38',
             'competition_id' => 1
         ],
     ];

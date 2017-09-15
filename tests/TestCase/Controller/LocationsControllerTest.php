@@ -23,16 +23,16 @@ class LocationsControllerTest extends IntegrationTestCase
         'app.ladders',
         'app.players',
         'app.users',
-        'app.teams',
         'app.coaches',
+        'app.teams',
         'app.managers',
         'app.teams_jerseys',
-        'app.uniforms',
-        'app.absences',
-        'app.contacts',
-        'app.phone_numbers',
         'app.emails',
-        'app.relationships'
+        'app.phone_numbers',
+        'app.contacts',
+        'app.relationships',
+        'app.roles',
+        'app.absences'
     ];
 
     /**

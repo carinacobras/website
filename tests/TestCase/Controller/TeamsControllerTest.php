@@ -24,15 +24,15 @@ class TeamsControllerTest extends IntegrationTestCase
         'app.ladders',
         'app.players',
         'app.users',
-        'app.absences',
-        'app.contacts',
-        'app.phone_numbers',
-        'app.emails',
-        'app.relationships',
         'app.coaches',
+        'app.emails',
         'app.managers',
-        'app.teams_jerseys',
-        'app.uniforms'
+        'app.phone_numbers',
+        'app.contacts',
+        'app.relationships',
+        'app.roles',
+        'app.absences',
+        'app.teams_jerseys'
     ];
 
     /**

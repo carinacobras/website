@@ -24,15 +24,15 @@ class LaddersControllerTest extends IntegrationTestCase
         'app.teams',
         'app.coaches',
         'app.users',
+        'app.emails',
         'app.managers',
+        'app.phone_numbers',
+        'app.contacts',
         'app.players',
         'app.absences',
-        'app.contacts',
-        'app.phone_numbers',
-        'app.emails',
         'app.relationships',
-        'app.teams_jerseys',
-        'app.uniforms'
+        'app.roles',
+        'app.teams_jerseys'
     ];
 
     /**

@@ -15,7 +15,6 @@ use Cake\ORM\Entity;
  * @property \App\Model\Entity\Manager[] $managers
  * @property \App\Model\Entity\Player[] $players
  * @property \App\Model\Entity\TeamsJersey[] $teams_jerseys
- * @property \App\Model\Entity\Uniform[] $uniforms
  */
 class Team extends Entity
 {

@@ -40,8 +40,6 @@ class UsersTableTest extends TestCase
         'app.relationships',
         'app.managers',
         'app.teams_jerseys',
-        'app.uniforms',
-        'app.uniform_colours',
         'app.roles'
     ];
 
