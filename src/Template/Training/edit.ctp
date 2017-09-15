@@ -25,7 +25,7 @@
         <legend><?= __('Edit Training') ?></legend>
         <?php
             echo $this->Form->control('time', ['empty' => true]);
-            echo $this->Form->control('competition_id');
+            echo $this->Form->control('competition_id', ['options' => $competitions, 'empty' => true]);
         ?>
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>

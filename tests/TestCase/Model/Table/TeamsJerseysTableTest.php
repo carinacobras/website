@@ -37,11 +37,6 @@ class TeamsJerseysTableTest extends TestCase
         'app.absences',
         'app.competitions',
         'app.ladders',
-        'app.courts',
-        'app.locations',
-        'app.training',
-        'app.transactions',
-        'app.fees',
         'app.roles',
         'app.uniforms',
         'app.uniform_colours'

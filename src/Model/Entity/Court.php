@@ -10,7 +10,7 @@ use Cake\ORM\Entity;
  * @property int $number
  * @property int $competition_id
  *
- * @property \App\Model\Entity\Competition[] $competitions
+ * @property \App\Model\Entity\Competition $competition
  * @property \App\Model\Entity\Location[] $locations
  */
 class Court extends Entity

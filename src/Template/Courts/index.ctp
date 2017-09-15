@@ -30,7 +30,7 @@
             <tr>
                 <td><?= $this->Number->format($court->id) ?></td>
                 <td><?= $this->Number->format($court->number) ?></td>
-                <td><?= $this->Number->format($court->competition_id) ?></td>
+                <td><?= $court->has('competition') ? $this->Html->link($court->competition->name, ['controller' => 'Competitions', 'action' => 'view', $court->competition->id]) : '' ?></td>
                 <td class="actions">
                     <?= $this->Html->link(__('View'), ['action' => 'view', $court->id]) ?>
                     <?= $this->Html->link(__('Edit'), ['action' => 'edit', $court->id]) ?>

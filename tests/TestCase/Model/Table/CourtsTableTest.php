@@ -26,25 +26,8 @@ class CourtsTableTest extends TestCase
     public $fixtures = [
         'app.courts',
         'app.competitions',
-        'app.teams',
-        'app.coaches',
-        'app.users',
-        'app.emails',
-        'app.managers',
-        'app.phone_numbers',
-        'app.contacts',
-        'app.relationships',
-        'app.players',
-        'app.absences',
-        'app.ladders',
-        'app.transactions',
-        'app.fees',
-        'app.roles',
-        'app.teams_jerseys',
-        'app.uniforms',
-        'app.uniform_colours',
-        'app.training',
-        'app.locations'
+        'app.locations',
+        'app.training'
     ];
 
     /**
@@ -87,6 +70,16 @@ class CourtsTableTest extends TestCase
      * @return void
      */
     public function testValidationDefault()
+    {
+        $this->markTestIncomplete('Not implemented yet.');
+    }
+
+    /**
+     * Test buildRules method
+     *
+     * @return void
+     */
+    public function testBuildRules()
     {
         $this->markTestIncomplete('Not implemented yet.');
     }

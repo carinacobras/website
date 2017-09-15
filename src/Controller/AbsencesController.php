@@ -21,7 +21,7 @@ class AbsencesController extends AppController
     public function index()
     {
         $this->paginate = [
-            'contain' => ['Players', 'Competitions']
+            'contain' => ['Players']
         ];
         $absences = $this->paginate($this->Absences);
 
@@ -39,7 +39,7 @@ class AbsencesController extends AppController
     public function view($id = null)
     {
         $absence = $this->Absences->get($id, [
-            'contain' => ['Players', 'Competitions']
+            'contain' => ['Players']
         ]);
 
         $this->set('absence', $absence);
@@ -64,8 +64,7 @@ class AbsencesController extends AppController
             $this->Flash->error(__('The absence could not be saved. Please, try again.'));
         }
         $players = $this->Absences->Players->find('list', ['limit' => 200]);
-        $competitions = $this->Absences->Competitions->find('list', ['limit' => 200]);
-        $this->set(compact('absence', 'players', 'competitions'));
+        $this->set(compact('absence', 'players'));
         $this->set('_serialize', ['absence']);
     }
 
@@ -91,8 +90,7 @@ class AbsencesController extends AppController
             $this->Flash->error(__('The absence could not be saved. Please, try again.'));
         }
         $players = $this->Absences->Players->find('list', ['limit' => 200]);
-        $competitions = $this->Absences->Competitions->find('list', ['limit' => 200]);
-        $this->set(compact('absence', 'players', 'competitions'));
+        $this->set(compact('absence', 'players'));
         $this->set('_serialize', ['absence']);
     }
 

@@ -12,7 +12,7 @@ use Cake\Validation\Validator;
  * @property \App\Model\Table\PhoneNumbersTable|\Cake\ORM\Association\BelongsTo $PhoneNumbers
  * @property \App\Model\Table\EmailsTable|\Cake\ORM\Association\BelongsTo $Emails
  * @property \App\Model\Table\RelationshipsTable|\Cake\ORM\Association\BelongsTo $Relationships
- * @property |\Cake\ORM\Association\HasMany $Players
+ * @property \App\Model\Table\PlayersTable|\Cake\ORM\Association\HasMany $Players
  *
  * @method \App\Model\Entity\Contact get($primaryKey, $options = [])
  * @method \App\Model\Entity\Contact newEntity($data = null, array $options = [])

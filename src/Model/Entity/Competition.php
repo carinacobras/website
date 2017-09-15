@@ -8,8 +8,6 @@ use Cake\ORM\Entity;
  *
  * @property int $id
  * @property string $name
- * @property \Cake\I18n\FrozenTime $year
- * @property string $comments
  */
 class Competition extends Entity
 {

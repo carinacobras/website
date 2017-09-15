@@ -10,7 +10,6 @@ use Cake\Validation\Validator;
  * Absences Model
  *
  * @property \App\Model\Table\PlayersTable|\Cake\ORM\Association\BelongsTo $Players
- * @property \App\Model\Table\CompetitionsTable|\Cake\ORM\Association\BelongsTo $Competitions
  *
  * @method \App\Model\Entity\Absence get($primaryKey, $options = [])
  * @method \App\Model\Entity\Absence newEntity($data = null, array $options = [])
@@ -39,10 +38,6 @@ class AbsencesTable extends Table
 
         $this->belongsTo('Players', [
             'foreignKey' => 'player_id',
-            'joinType' => 'INNER'
-        ]);
-        $this->belongsTo('Competitions', [
-            'foreignKey' => 'competition_id',
             'joinType' => 'INNER'
         ]);
     }
@@ -76,7 +71,6 @@ class AbsencesTable extends Table
     public function buildRules(RulesChecker $rules)
     {
         $rules->add($rules->existsIn(['player_id'], 'Players'));
-        $rules->add($rules->existsIn(['competition_id'], 'Competitions'));
 
         return $rules;
     }

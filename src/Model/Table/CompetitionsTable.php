@@ -52,15 +52,6 @@ class CompetitionsTable extends Table
             ->requirePresence('name', 'create')
             ->notEmpty('name');
 
-        $validator
-            ->dateTime('year')
-            ->requirePresence('year', 'create')
-            ->notEmpty('year');
-
-        $validator
-            ->scalar('comments')
-            ->allowEmpty('comments');
-
         return $validator;
     }
 }

@@ -10,8 +10,8 @@ use Cake\ORM\Entity;
  * @property int $competition_id
  * @property int $player_id
  *
+ * @property \App\Model\Entity\Competition $competition
  * @property \App\Model\Entity\Player $player
- * @property \App\Model\Entity\Competition[] $competitions
  */
 class Ladder extends Entity
 {

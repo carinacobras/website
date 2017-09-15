@@ -8,10 +8,10 @@
     <ul class="side-nav">
         <li class="heading"><?= __('Actions') ?></li>
         <li><?= $this->Html->link(__('New Ladder'), ['action' => 'add']) ?></li>
-        <li><?= $this->Html->link(__('List Players'), ['controller' => 'Players', 'action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('New Player'), ['controller' => 'Players', 'action' => 'add']) ?></li>
         <li><?= $this->Html->link(__('List Competitions'), ['controller' => 'Competitions', 'action' => 'index']) ?></li>
         <li><?= $this->Html->link(__('New Competition'), ['controller' => 'Competitions', 'action' => 'add']) ?></li>
+        <li><?= $this->Html->link(__('List Players'), ['controller' => 'Players', 'action' => 'index']) ?></li>
+        <li><?= $this->Html->link(__('New Player'), ['controller' => 'Players', 'action' => 'add']) ?></li>
     </ul>
 </nav>
 <div class="ladders index large-9 medium-8 columns content">
@@ -29,7 +29,7 @@
             <?php foreach ($ladders as $ladder): ?>
             <tr>
                 <td><?= $this->Number->format($ladder->id) ?></td>
-                <td><?= $this->Number->format($ladder->competition_id) ?></td>
+                <td><?= $ladder->has('competition') ? $this->Html->link($ladder->competition->name, ['controller' => 'Competitions', 'action' => 'view', $ladder->competition->id]) : '' ?></td>
                 <td><?= $ladder->has('player') ? $this->Html->link($ladder->player->id, ['controller' => 'Players', 'action' => 'view', $ladder->player->id]) : '' ?></td>
                 <td class="actions">
                     <?= $this->Html->link(__('View'), ['action' => 'view', $ladder->id]) ?>

@@ -29,11 +29,6 @@ class AbsencesTableTest extends TestCase
         'app.users',
         'app.coaches',
         'app.teams',
-        'app.competitions',
-        'app.ladders',
-        'app.courts',
-        'app.locations',
-        'app.training',
         'app.managers',
         'app.teams_jerseys',
         'app.uniforms',
@@ -43,8 +38,8 @@ class AbsencesTableTest extends TestCase
         'app.contacts',
         'app.relationships',
         'app.roles',
-        'app.transactions',
-        'app.fees'
+        'app.ladders',
+        'app.competitions'
     ];
 
     /**

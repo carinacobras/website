@@ -13,8 +13,6 @@
         <li><?= $this->Html->link(__('New Absence'), ['action' => 'add']) ?> </li>
         <li><?= $this->Html->link(__('List Players'), ['controller' => 'Players', 'action' => 'index']) ?> </li>
         <li><?= $this->Html->link(__('New Player'), ['controller' => 'Players', 'action' => 'add']) ?> </li>
-        <li><?= $this->Html->link(__('List Competitions'), ['controller' => 'Competitions', 'action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('New Competition'), ['controller' => 'Competitions', 'action' => 'add']) ?> </li>
     </ul>
 </nav>
 <div class="absences view large-9 medium-8 columns content">
@@ -23,10 +21,6 @@
         <tr>
             <th scope="row"><?= __('Player') ?></th>
             <td><?= $absence->has('player') ? $this->Html->link($absence->player->id, ['controller' => 'Players', 'action' => 'view', $absence->player->id]) : '' ?></td>
-        </tr>
-        <tr>
-            <th scope="row"><?= __('Competition') ?></th>
-            <td><?= $absence->has('competition') ? $this->Html->link($absence->competition->name, ['controller' => 'Competitions', 'action' => 'view', $absence->competition->id]) : '' ?></td>
         </tr>
         <tr>
             <th scope="row"><?= __('Id') ?></th>

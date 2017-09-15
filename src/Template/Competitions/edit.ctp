@@ -20,7 +20,6 @@
     <fieldset>
         <legend><?= __('Edit Competition') ?></legend>
         <?php
-            echo $this->Form->control('comments');
         ?>
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>

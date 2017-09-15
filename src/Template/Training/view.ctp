@@ -21,47 +21,18 @@
     <h3><?= h($training->id) ?></h3>
     <table class="vertical-table">
         <tr>
-            <th scope="row"><?= __('Id') ?></th>
-            <td><?= $this->Number->format($training->id) ?></td>
+            <th scope="row"><?= __('Competition') ?></th>
+            <td><?= $training->has('competition') ? $this->Html->link($training->competition->name, ['controller' => 'Competitions', 'action' => 'view', $training->competition->id]) : '' ?></td>
         </tr>
         <tr>
-            <th scope="row"><?= __('Competition Id') ?></th>
-            <td><?= $this->Number->format($training->competition_id) ?></td>
+            <th scope="row"><?= __('Id') ?></th>
+            <td><?= $this->Number->format($training->id) ?></td>
         </tr>
         <tr>
             <th scope="row"><?= __('Time') ?></th>
             <td><?= h($training->time) ?></td>
         </tr>
     </table>
-    <div class="related">
-        <h4><?= __('Related Competitions') ?></h4>
-        <?php if (!empty($training->competitions)): ?>
-        <table cellpadding="0" cellspacing="0">
-            <tr>
-                <th scope="col"><?= __('Id') ?></th>
-                <th scope="col"><?= __('Name') ?></th>
-                <th scope="col"><?= __('Year') ?></th>
-                <th scope="col"><?= __('Time') ?></th>
-                <th scope="col"><?= __('Comments') ?></th>
-                <th scope="col" class="actions"><?= __('Actions') ?></th>
-            </tr>
-            <?php foreach ($training->competitions as $competitions): ?>
-            <tr>
-                <td><?= h($competitions->id) ?></td>
-                <td><?= h($competitions->name) ?></td>
-                <td><?= h($competitions->year) ?></td>
-                <td><?= h($competitions->time) ?></td>
-                <td><?= h($competitions->comments) ?></td>
-                <td class="actions">
-                    <?= $this->Html->link(__('View'), ['controller' => 'Competitions', 'action' => 'view', $competitions->id]) ?>
-                    <?= $this->Html->link(__('Edit'), ['controller' => 'Competitions', 'action' => 'edit', $competitions->id]) ?>
-                    <?= $this->Form->postLink(__('Delete'), ['controller' => 'Competitions', 'action' => 'delete', $competitions->id], ['confirm' => __('Are you sure you want to delete # {0}?', $competitions->id)]) ?>
-                </td>
-            </tr>
-            <?php endforeach; ?>
-        </table>
-        <?php endif; ?>
-    </div>
     <div class="related">
         <h4><?= __('Related Locations') ?></h4>
         <?php if (!empty($training->locations)): ?>

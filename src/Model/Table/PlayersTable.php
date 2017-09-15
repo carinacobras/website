@@ -11,7 +11,7 @@ use Cake\Validation\Validator;
  *
  * @property \App\Model\Table\UsersTable|\Cake\ORM\Association\BelongsTo $Users
  * @property \App\Model\Table\TeamsTable|\Cake\ORM\Association\BelongsTo $Teams
- * @property |\Cake\ORM\Association\BelongsTo $Contacts
+ * @property \App\Model\Table\ContactsTable|\Cake\ORM\Association\BelongsTo $Contacts
  * @property \App\Model\Table\AbsencesTable|\Cake\ORM\Association\HasMany $Absences
  * @property \App\Model\Table\LaddersTable|\Cake\ORM\Association\HasMany $Ladders
  *

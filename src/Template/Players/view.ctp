@@ -15,6 +15,8 @@
         <li><?= $this->Html->link(__('New User'), ['controller' => 'Users', 'action' => 'add']) ?> </li>
         <li><?= $this->Html->link(__('List Teams'), ['controller' => 'Teams', 'action' => 'index']) ?> </li>
         <li><?= $this->Html->link(__('New Team'), ['controller' => 'Teams', 'action' => 'add']) ?> </li>
+        <li><?= $this->Html->link(__('List Contacts'), ['controller' => 'Contacts', 'action' => 'index']) ?> </li>
+        <li><?= $this->Html->link(__('New Contact'), ['controller' => 'Contacts', 'action' => 'add']) ?> </li>
         <li><?= $this->Html->link(__('List Absences'), ['controller' => 'Absences', 'action' => 'index']) ?> </li>
         <li><?= $this->Html->link(__('New Absence'), ['controller' => 'Absences', 'action' => 'add']) ?> </li>
         <li><?= $this->Html->link(__('List Ladders'), ['controller' => 'Ladders', 'action' => 'index']) ?> </li>
@@ -33,12 +35,12 @@
             <td><?= $player->has('team') ? $this->Html->link($player->team->name, ['controller' => 'Teams', 'action' => 'view', $player->team->id]) : '' ?></td>
         </tr>
         <tr>
-            <th scope="row"><?= __('Id') ?></th>
-            <td><?= $this->Number->format($player->id) ?></td>
+            <th scope="row"><?= __('Contact') ?></th>
+            <td><?= $player->has('contact') ? $this->Html->link($player->contact->id, ['controller' => 'Contacts', 'action' => 'view', $player->contact->id]) : '' ?></td>
         </tr>
         <tr>
-            <th scope="row"><?= __('Contact Id') ?></th>
-            <td><?= $this->Number->format($player->contact_id) ?></td>
+            <th scope="row"><?= __('Id') ?></th>
+            <td><?= $this->Number->format($player->id) ?></td>
         </tr>
     </table>
     <div class="related">
@@ -49,7 +51,6 @@
                 <th scope="col"><?= __('Id') ?></th>
                 <th scope="col"><?= __('Date') ?></th>
                 <th scope="col"><?= __('Player Id') ?></th>
-                <th scope="col"><?= __('Competition Id') ?></th>
                 <th scope="col" class="actions"><?= __('Actions') ?></th>
             </tr>
             <?php foreach ($player->absences as $absences): ?>
@@ -57,7 +58,6 @@
                 <td><?= h($absences->id) ?></td>
                 <td><?= h($absences->date) ?></td>
                 <td><?= h($absences->player_id) ?></td>
-                <td><?= h($absences->competition_id) ?></td>
                 <td class="actions">
                     <?= $this->Html->link(__('View'), ['controller' => 'Absences', 'action' => 'view', $absences->id]) ?>
                     <?= $this->Html->link(__('Edit'), ['controller' => 'Absences', 'action' => 'edit', $absences->id]) ?>

@@ -19,7 +19,7 @@
         <legend><?= __('Add Court') ?></legend>
         <?php
             echo $this->Form->control('number');
-            echo $this->Form->control('competition_id');
+            echo $this->Form->control('competition_id', ['options' => $competitions, 'empty' => true]);
         ?>
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>

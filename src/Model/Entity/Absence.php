@@ -9,7 +9,6 @@ use Cake\ORM\Entity;
  * @property int $id
  * @property \Cake\I18n\FrozenTime $date
  * @property int $player_id
- * @property int $competition_id
  *
  * @property \App\Model\Entity\Player $player
  * @property \App\Model\Entity\Competition $competition

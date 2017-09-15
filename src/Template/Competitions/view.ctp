@@ -21,16 +21,8 @@
             <td><?= h($competition->name) ?></td>
         </tr>
         <tr>
-            <th scope="row"><?= __('Comments') ?></th>
-            <td><?= h($competition->comments) ?></td>
-        </tr>
-        <tr>
             <th scope="row"><?= __('Id') ?></th>
             <td><?= $this->Number->format($competition->id) ?></td>
-        </tr>
-        <tr>
-            <th scope="row"><?= __('Year') ?></th>
-            <td><?= h($competition->year) ?></td>
         </tr>
     </table>
 </div>
