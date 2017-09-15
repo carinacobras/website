@@ -60,9 +60,11 @@ class EmailsController extends AppController
             $email = $this->Emails->patchEntity($email, $this->request->getData());
             if ($this->Emails->save($email)) {
 
+                $first_name = $this->request->getData('User.first_name');
+                $last_name = $this->request->getData('User.last_name');
                 $apiKey = getenv('SENDGRID_API_KEY');
                 $sg = new \SendGrid($apiKey);
-                $request_body = json_decode('[{"email": '. $address  .', "first_name": ' . $this->Emails->Users->first_name . ', "last_name": ' . $this->Emails->Users->last_name .'}]');
+                $request_body = json_decode('[{"email": '. $address  .', "first_name": ' . $first_name . ', "last_name": ' . $last_name .'}]');
                 $response = $sg->client->contactdb()->recipients()->post($request_body);
                 echo $response->statusCode();
                 echo $response->body();
