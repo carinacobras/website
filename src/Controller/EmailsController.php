@@ -1,6 +1,10 @@
 <?php
 namespace App\Controller;
 
+require 'vendor/autoload.php';
+$apiKey = getenv('SENDGRID_API_KEY');
+$sg = new \SendGrid($apiKey);
+
 use App\Controller\AppController;
 
 /**
@@ -66,6 +70,23 @@ class EmailsController extends AppController
         $users = $this->Emails->Users->find('list', ['limit' => 200]);
         $this->set(compact('email', 'users'));
         $this->set('_serialize', ['email']);
+
+
+        ////////////////////////////////////////////////////
+        // Add recipients #
+        // POST /contactdb/recipients #
+        $request_body = json_decode('[
+            {
+            "email": "example@example.com", 
+            "first_name": "Joe", 
+            "last_name": "User"
+            }
+        ]');
+        $response = $sg->client->contactdb()->recipients()->post($request_body);
+        echo $response->statusCode();
+        echo $response->body();
+        print_r($response->headers());
+        
     }
 
     /**
