@@ -49,37 +49,16 @@ class CompetitionsTable extends Table
 
         $validator
             ->scalar('name')
-            ->allowEmpty('name', 'create')
-            ->add('name', 'unique', ['rule' => 'validateUnique', 'provider' => 'table']);
+            ->allowEmpty('name');
 
         $validator
             ->dateTime('year')
-            ->allowEmpty('year', 'create');
-
-        $validator
-            ->dateTime('time')
-            ->requirePresence('time', 'create')
-            ->notEmpty('time');
+            ->allowEmpty('year');
 
         $validator
             ->scalar('comments')
             ->allowEmpty('comments');
 
         return $validator;
-    }
-
-    /**
-     * Returns a rules checker object that will be used for validating
-     * application integrity.
-     *
-     * @param \Cake\ORM\RulesChecker $rules The rules object to be modified.
-     * @return \Cake\ORM\RulesChecker
-     */
-    public function buildRules(RulesChecker $rules)
-    {
-        $rules->add($rules->isUnique(['name']));
-        $rules->add($rules->isUnique(['year']));
-
-        return $rules;
     }
 }

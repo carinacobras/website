@@ -9,13 +9,7 @@ use Cake\ORM\Entity;
  * @property int $id
  * @property string $name
  * @property \Cake\I18n\FrozenTime $year
- * @property \Cake\I18n\FrozenTime $time
  * @property string $comments
- *
- * @property \App\Model\Entity\Team $team
- * @property \App\Model\Entity\Ladder $ladder
- * @property \App\Model\Entity\Court $court
- * @property \App\Model\Entity\Training $training
  */
 class Competition extends Entity
 {

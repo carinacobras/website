@@ -11,14 +11,6 @@
         <li><?= $this->Form->postLink(__('Delete Competition'), ['action' => 'delete', $competition->id], ['confirm' => __('Are you sure you want to delete # {0}?', $competition->id)]) ?> </li>
         <li><?= $this->Html->link(__('List Competitions'), ['action' => 'index']) ?> </li>
         <li><?= $this->Html->link(__('New Competition'), ['action' => 'add']) ?> </li>
-        <li><?= $this->Html->link(__('List Teams'), ['controller' => 'Teams', 'action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('New Team'), ['controller' => 'Teams', 'action' => 'add']) ?> </li>
-        <li><?= $this->Html->link(__('List Ladders'), ['controller' => 'Ladders', 'action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('New Ladder'), ['controller' => 'Ladders', 'action' => 'add']) ?> </li>
-        <li><?= $this->Html->link(__('List Courts'), ['controller' => 'Courts', 'action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('New Court'), ['controller' => 'Courts', 'action' => 'add']) ?> </li>
-        <li><?= $this->Html->link(__('List Training'), ['controller' => 'Training', 'action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('New Training'), ['controller' => 'Training', 'action' => 'add']) ?> </li>
     </ul>
 </nav>
 <div class="competitions view large-9 medium-8 columns content">
@@ -39,10 +31,6 @@
         <tr>
             <th scope="row"><?= __('Year') ?></th>
             <td><?= h($competition->year) ?></td>
-        </tr>
-        <tr>
-            <th scope="row"><?= __('Time') ?></th>
-            <td><?= h($competition->time) ?></td>
         </tr>
     </table>
 </div>

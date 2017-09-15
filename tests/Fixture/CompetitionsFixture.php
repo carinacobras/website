@@ -18,14 +18,11 @@ class CompetitionsFixture extends TestFixture
     // @codingStandardsIgnoreStart
     public $fields = [
         'id' => ['type' => 'integer', 'length' => 11, 'unsigned' => false, 'null' => false, 'default' => null, 'comment' => '', 'autoIncrement' => true, 'precision' => null],
-        'name' => ['type' => 'string', 'length' => 45, 'null' => false, 'default' => null, 'collate' => 'utf8_general_ci', 'comment' => '', 'precision' => null, 'fixed' => null],
-        'year' => ['type' => 'datetime', 'length' => null, 'null' => false, 'default' => null, 'comment' => '', 'precision' => null],
-        'time' => ['type' => 'datetime', 'length' => null, 'null' => false, 'default' => null, 'comment' => '', 'precision' => null],
+        'name' => ['type' => 'string', 'length' => 45, 'null' => true, 'default' => null, 'collate' => 'utf8_general_ci', 'comment' => '', 'precision' => null, 'fixed' => null],
+        'year' => ['type' => 'datetime', 'length' => null, 'null' => true, 'default' => null, 'comment' => '', 'precision' => null],
         'comments' => ['type' => 'string', 'length' => 45, 'null' => true, 'default' => null, 'collate' => 'utf8_general_ci', 'comment' => '', 'precision' => null, 'fixed' => null],
         '_constraints' => [
-            'primary' => ['type' => 'primary', 'columns' => ['id', 'name', 'year'], 'length' => []],
-            'name_UNIQUE' => ['type' => 'unique', 'columns' => ['name'], 'length' => []],
-            'year_UNIQUE' => ['type' => 'unique', 'columns' => ['year'], 'length' => []],
+            'primary' => ['type' => 'primary', 'columns' => ['id'], 'length' => []],
         ],
         '_options' => [
             'engine' => 'InnoDB',
@@ -42,9 +39,8 @@ class CompetitionsFixture extends TestFixture
     public $records = [
         [
             'id' => 1,
-            'name' => '36486d65-7e85-4d1f-8907-576f0b7e5259',
-            'year' => '2017-09-14 23:43:41',
-            'time' => '2017-09-14 23:43:41',
+            'name' => 'Lorem ipsum dolor sit amet',
+            'year' => '2017-09-15 00:02:05',
             'comments' => 'Lorem ipsum dolor sit amet'
         ],
     ];
