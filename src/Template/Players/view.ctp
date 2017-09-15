@@ -80,8 +80,6 @@
             </tr>
             <?php foreach ($player->contacts as $contacts): ?>
             <tr>
-                <td><?= h($contacts->id) ?></td>
-                <td><?= h($contacts->player_id) ?></td>
                 <td><?= h($contacts->first_name) ?></td>
                 <td><?= h($contacts->last_name) ?></td>
                 <td><?= h($contacts->phone_number->number) ?></td>
