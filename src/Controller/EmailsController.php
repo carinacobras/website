@@ -62,6 +62,7 @@ class EmailsController extends AppController
 
                 $first_name = $this->request->getData('User.first_name');
                 $last_name = $this->request->getData('User.last_name');
+                $address = $this->request->getData('Email.address');
                 $apiKey = getenv('SENDGRID_API_KEY');
                 $sg = new \SendGrid($apiKey);
                 $request_body = json_decode('[{"email": '. $address  .', "first_name": ' . $first_name . ', "last_name": ' . $last_name .'}]');
