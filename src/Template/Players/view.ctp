@@ -24,11 +24,11 @@
     </ul>
 </nav>
 <div class="players view large-9 medium-8 columns content">
-    <h3><?= h($player->user->full_name) ?></h3>
+    <h3><?= h($player->user->first_name . ' ' . $player->user->last_name) ?></h3>
     <table class="vertical-table">
         <tr>
             <th scope="row"><?= __('User') ?></th>
-            <td><?= $player->has('user') ? $this->Html->link($player->user->full_name, ['controller' => 'Users', 'action' => 'view', $player->user->id]) : '' ?></td>
+            <td><?= $player->has('user') ? $this->Html->link($player->user->id, ['controller' => 'Users', 'action' => 'view', $player->user->id]) : '' ?></td>
         </tr>
         <tr>
             <th scope="row"><?= __('Team') ?></th>
