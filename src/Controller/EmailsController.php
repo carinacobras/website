@@ -2,8 +2,6 @@
 namespace App\Controller;
 
 require ROOT .DS. 'vendor' . DS . 'autoload.php';
-$apiKey = getenv('SENDGRID_API_KEY');
-$sg = new \SendGrid($apiKey);
 
 use App\Controller\AppController;
 
@@ -72,6 +70,8 @@ class EmailsController extends AppController
         $this->set('_serialize', ['email']);
 
 
+        $apiKey = getenv('SENDGRID_API_KEY');
+        $sg = new \SendGrid($apiKey);
         ////////////////////////////////////////////////////
         // Add recipients #
         // POST /contactdb/recipients #
