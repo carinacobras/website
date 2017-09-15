@@ -24,11 +24,11 @@
     </ul>
 </nav>
 <div class="players view large-9 medium-8 columns content">
-    <h3><?= h($player->id) ?></h3>
+    <h3><?= h($player->user->full_name) ?></h3>
     <table class="vertical-table">
         <tr>
             <th scope="row"><?= __('User') ?></th>
-            <td><?= $player->has('user') ? $this->Html->link($player->user->id, ['controller' => 'Users', 'action' => 'view', $player->user->id]) : '' ?></td>
+            <td><?= $player->has('user') ? $this->Html->link($player->user->full_name, ['controller' => 'Users', 'action' => 'view', $player->user->id]) : '' ?></td>
         </tr>
         <tr>
             <th scope="row"><?= __('Team') ?></th>
@@ -78,7 +78,7 @@
                 <td><?= h($contacts->last_name) ?></td>
                 <td><?= h($contacts->phone_number->number) ?></td>
                 <td><?= h($contacts->emails_id) ?></td>
-                <td><?= h($contacts->relationship->name) ?></td>
+                <td><?= h($contacts->relationship->title) ?></td>
                 <td class="actions">
                     <?= $this->Html->link(__('View'), ['controller' => 'Contacts', 'action' => 'view', $contacts->id]) ?>
                     <?= $this->Html->link(__('Edit'), ['controller' => 'Contacts', 'action' => 'edit', $contacts->id]) ?>
