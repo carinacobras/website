@@ -73,7 +73,7 @@ class EmailsController extends AppController
 
                 $this->Flash->success(__('The email has been saved.'));
 
-                return $this->redirect(['action' => 'index']);
+               // return $this->redirect(['action' => 'index']);
             }
             $this->Flash->error(__('The email could not be saved. Please, try again.'));
         }
