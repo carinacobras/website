@@ -26,7 +26,21 @@ class ManagersTableTest extends TestCase
     public $fixtures = [
         'app.managers',
         'app.users',
-        'app.teams'
+        'app.teams',
+        'app.competitions',
+        'app.courts',
+        'app.locations',
+        'app.training',
+        'app.ladders',
+        'app.players',
+        'app.absences',
+        'app.contacts',
+        'app.phone_numbers',
+        'app.emails',
+        'app.relationships',
+        'app.coaches',
+        'app.teams_jerseys',
+        'app.uniforms'
     ];
 
     /**

@@ -1,8 +1,6 @@
 <?php
 namespace App\Controller;
 
-require ROOT .DS. 'vendor' . DS . 'autoload.php';
-
 use App\Controller\AppController;
 
 /**
@@ -59,27 +57,9 @@ class EmailsController extends AppController
         if ($this->request->is('post')) {
             $email = $this->Emails->patchEntity($email, $this->request->getData());
             if ($this->Emails->save($email)) {
-
-                $first_name = $this->request->getData('User.first_name');
-                $last_name = $this->request->getData('User.last_name');
-                $address = $this->request->getData('address');
-                if (is_null($first_name)) {
-                    $first_name = "Donk";
-                }
-                if (is_null($last_name)) {
-                    $last_name = "Fonk";
-                }
-                if (is_null($address)) {
-                    $address = "Me@you.com";
-                }
-                $apiKey = getenv('SENDGRID_API_KEY');
-                $sg = new \SendGrid($apiKey);
-                $request_body = json_decode('[{"email": "'. $address  .'", "first_name": "' . $first_name . '", "last_name": "' . $last_name .'"}]');
-                $response = $sg->client->contactdb()->recipients()->post($request_body);
-
                 $this->Flash->success(__('The email has been saved.'));
 
-               return $this->redirect(['action' => 'index']);
+                return $this->redirect(['action' => 'index']);
             }
             $this->Flash->error(__('The email could not be saved. Please, try again.'));
         }

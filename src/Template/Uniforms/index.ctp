@@ -1,17 +1,13 @@
 <?php
 /**
   * @var \App\View\AppView $this
-  * @var \App\Model\Entity\Uniform[]|\Cake\Collection\CollectionInterface $uniforms
+  * @var \Cake\Datasource\EntityInterface[]|\Cake\Collection\CollectionInterface $uniforms
   */
 ?>
 <nav class="large-3 medium-4 columns" id="actions-sidebar">
     <ul class="side-nav">
         <li class="heading"><?= __('Actions') ?></li>
         <li><?= $this->Html->link(__('New Uniform'), ['action' => 'add']) ?></li>
-        <li><?= $this->Html->link(__('List Uniform Colours'), ['controller' => 'UniformColours', 'action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('New Uniform Colour'), ['controller' => 'UniformColours', 'action' => 'add']) ?></li>
-        <li><?= $this->Html->link(__('List Teams'), ['controller' => 'Teams', 'action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('New Team'), ['controller' => 'Teams', 'action' => 'add']) ?></li>
     </ul>
 </nav>
 <div class="uniforms index large-9 medium-8 columns content">
@@ -29,8 +25,8 @@
             <?php foreach ($uniforms as $uniform): ?>
             <tr>
                 <td><?= $this->Number->format($uniform->id) ?></td>
-                <td><?= $uniform->has('uniform_colour') ? $this->Html->link($uniform->uniform_colour->name, ['controller' => 'UniformColours', 'action' => 'view', $uniform->uniform_colour->id]) : '' ?></td>
-                <td><?= $uniform->has('team') ? $this->Html->link($uniform->team->name, ['controller' => 'Teams', 'action' => 'view', $uniform->team->id]) : '' ?></td>
+                <td><?= $this->Number->format($uniform->uniform_colour_id) ?></td>
+                <td><?= $this->Number->format($uniform->team_id) ?></td>
                 <td class="actions">
                     <?= $this->Html->link(__('View'), ['action' => 'view', $uniform->id]) ?>
                     <?= $this->Html->link(__('Edit'), ['action' => 'edit', $uniform->id]) ?>

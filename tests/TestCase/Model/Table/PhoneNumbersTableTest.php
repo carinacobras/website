@@ -28,6 +28,17 @@ class PhoneNumbersTableTest extends TestCase
         'app.users',
         'app.contacts',
         'app.players',
+        'app.teams',
+        'app.competitions',
+        'app.courts',
+        'app.locations',
+        'app.training',
+        'app.ladders',
+        'app.coaches',
+        'app.managers',
+        'app.teams_jerseys',
+        'app.uniforms',
+        'app.absences',
         'app.emails',
         'app.relationships'
     ];

@@ -6,7 +6,6 @@ use App\Controller\AppController;
 /**
  * Uniforms Controller
  *
- * @property \App\Model\Table\UniformsTable $Uniforms
  *
  * @method \App\Model\Entity\Uniform[] paginate($object = null, array $settings = [])
  */
@@ -20,9 +19,6 @@ class UniformsController extends AppController
      */
     public function index()
     {
-        $this->paginate = [
-            'contain' => ['UniformColours', 'Teams']
-        ];
         $uniforms = $this->paginate($this->Uniforms);
 
         $this->set(compact('uniforms'));
@@ -39,7 +35,7 @@ class UniformsController extends AppController
     public function view($id = null)
     {
         $uniform = $this->Uniforms->get($id, [
-            'contain' => ['UniformColours', 'Teams']
+            'contain' => []
         ]);
 
         $this->set('uniform', $uniform);
@@ -63,9 +59,7 @@ class UniformsController extends AppController
             }
             $this->Flash->error(__('The uniform could not be saved. Please, try again.'));
         }
-        $uniformColours = $this->Uniforms->UniformColours->find('list', ['limit' => 200]);
-        $teams = $this->Uniforms->Teams->find('list', ['limit' => 200]);
-        $this->set(compact('uniform', 'uniformColours', 'teams'));
+        $this->set(compact('uniform'));
         $this->set('_serialize', ['uniform']);
     }
 
@@ -90,9 +84,7 @@ class UniformsController extends AppController
             }
             $this->Flash->error(__('The uniform could not be saved. Please, try again.'));
         }
-        $uniformColours = $this->Uniforms->UniformColours->find('list', ['limit' => 200]);
-        $teams = $this->Uniforms->Teams->find('list', ['limit' => 200]);
-        $this->set(compact('uniform', 'uniformColours', 'teams'));
+        $this->set(compact('uniform'));
         $this->set('_serialize', ['uniform']);
     }
 

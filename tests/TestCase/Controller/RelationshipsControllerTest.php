@@ -20,21 +20,19 @@ class RelationshipsControllerTest extends IntegrationTestCase
         'app.contacts',
         'app.players',
         'app.users',
-        'app.coaches',
         'app.teams',
         'app.competitions',
         'app.courts',
         'app.locations',
         'app.training',
         'app.ladders',
+        'app.coaches',
         'app.managers',
         'app.teams_jerseys',
         'app.uniforms',
-        'app.uniform_colours',
-        'app.emails',
+        'app.absences',
         'app.phone_numbers',
-        'app.roles',
-        'app.absences'
+        'app.emails'
     ];
 
     /**

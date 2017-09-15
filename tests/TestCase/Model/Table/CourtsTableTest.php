@@ -27,7 +27,18 @@ class CourtsTableTest extends TestCase
         'app.courts',
         'app.competitions',
         'app.ladders',
+        'app.players',
+        'app.users',
         'app.teams',
+        'app.coaches',
+        'app.managers',
+        'app.teams_jerseys',
+        'app.uniforms',
+        'app.absences',
+        'app.contacts',
+        'app.phone_numbers',
+        'app.emails',
+        'app.relationships',
         'app.training',
         'app.locations'
     ];

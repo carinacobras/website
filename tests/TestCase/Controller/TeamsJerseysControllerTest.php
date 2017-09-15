@@ -25,16 +25,14 @@ class TeamsJerseysControllerTest extends IntegrationTestCase
         'app.ladders',
         'app.players',
         'app.users',
-        'app.coaches',
-        'app.emails',
-        'app.managers',
-        'app.phone_numbers',
-        'app.contacts',
-        'app.relationships',
-        'app.roles',
         'app.absences',
-        'app.uniforms',
-        'app.uniform_colours'
+        'app.contacts',
+        'app.phone_numbers',
+        'app.emails',
+        'app.relationships',
+        'app.coaches',
+        'app.managers',
+        'app.uniforms'
     ];
 
     /**

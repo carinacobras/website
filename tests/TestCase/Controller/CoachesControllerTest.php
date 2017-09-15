@@ -18,8 +18,6 @@ class CoachesControllerTest extends IntegrationTestCase
     public $fixtures = [
         'app.coaches',
         'app.users',
-        'app.emails',
-        'app.managers',
         'app.teams',
         'app.competitions',
         'app.courts',
@@ -30,11 +28,11 @@ class CoachesControllerTest extends IntegrationTestCase
         'app.absences',
         'app.contacts',
         'app.phone_numbers',
+        'app.emails',
         'app.relationships',
+        'app.managers',
         'app.teams_jerseys',
-        'app.uniforms',
-        'app.uniform_colours',
-        'app.roles'
+        'app.uniforms'
     ];
 
     /**

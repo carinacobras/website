@@ -25,7 +25,22 @@ class AbsencesTableTest extends TestCase
      */
     public $fixtures = [
         'app.absences',
-        'app.players'
+        'app.players',
+        'app.users',
+        'app.teams',
+        'app.competitions',
+        'app.courts',
+        'app.locations',
+        'app.training',
+        'app.ladders',
+        'app.coaches',
+        'app.managers',
+        'app.teams_jerseys',
+        'app.uniforms',
+        'app.contacts',
+        'app.phone_numbers',
+        'app.emails',
+        'app.relationships'
     ];
 
     /**

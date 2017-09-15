@@ -1,7 +1,7 @@
 <?php
 /**
   * @var \App\View\AppView $this
-  * @var \App\Model\Entity\UniformColour $uniformColour
+  * @var \Cake\Datasource\EntityInterface $uniformColour
   */
 ?>
 <nav class="large-3 medium-4 columns" id="actions-sidebar">

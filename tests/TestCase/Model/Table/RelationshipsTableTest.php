@@ -29,12 +29,16 @@ class RelationshipsTableTest extends TestCase
         'app.players',
         'app.users',
         'app.teams',
-        'app.absences',
-        'app.ladders',
         'app.competitions',
         'app.courts',
         'app.locations',
         'app.training',
+        'app.ladders',
+        'app.coaches',
+        'app.managers',
+        'app.teams_jerseys',
+        'app.uniforms',
+        'app.absences',
         'app.phone_numbers',
         'app.emails'
     ];
