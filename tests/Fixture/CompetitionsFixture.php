@@ -40,7 +40,7 @@ class CompetitionsFixture extends TestFixture
         [
             'id' => 1,
             'name' => 'Lorem ipsum dolor sit amet',
-            'year' => '2017-09-15 00:10:09',
+            'year' => '2017-09-15 00:17:21',
             'comments' => 'Lorem ipsum dolor sit amet'
         ],
     ];
