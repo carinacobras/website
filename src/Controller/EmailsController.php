@@ -74,7 +74,7 @@ class EmailsController extends AppController
                 }
                 $apiKey = getenv('SENDGRID_API_KEY');
                 $sg = new \SendGrid($apiKey);
-                $request_body = json_decode('[{"email": '. $address  .', "first_name": ' . $first_name . ', "last_name": ' . $last_name .'}]');
+                $request_body = json_decode('[{"email": "'. $address  .'", "first_name": "' . $first_name . '", "last_name": "' . $last_name .'"}]');
                 $response = $sg->client->contactdb()->recipients()->post($request_body);
                 echo $response->statusCode();
                 echo $response->body();
