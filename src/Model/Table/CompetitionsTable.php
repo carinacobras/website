@@ -49,11 +49,13 @@ class CompetitionsTable extends Table
 
         $validator
             ->scalar('name')
-            ->allowEmpty('name');
+            ->requirePresence('name', 'create')
+            ->notEmpty('name');
 
         $validator
             ->dateTime('year')
-            ->allowEmpty('year');
+            ->requirePresence('year', 'create')
+            ->notEmpty('year');
 
         $validator
             ->scalar('comments')
