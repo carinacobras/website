@@ -25,7 +25,11 @@ use Cake\Validation\Validator;
  */
 class PlayersTable extends Table
 {
-
+    public $displayField = 'full_name';
+	public $virtualFields = array(
+		'full_name' => 'CONCAT(User.first_name, " ", User.last_name)'
+    );
+    
     /**
      * Initialize method
      *
