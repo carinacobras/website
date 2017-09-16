@@ -29,6 +29,12 @@ use Cake\Validation\Validator;
 class UsersTable extends Table
 {
 
+    protected function _getFullName()
+    {
+        return $this->_properties['first_name'] . '  ' .
+            $this->_properties['last_name'];
+    }
+
     /**
      * Initialize method
      *
@@ -40,7 +46,7 @@ class UsersTable extends Table
         parent::initialize($config);
 
         $this->setTable('users');
-        $this->setDisplayField('id');
+        $this->setDisplayField('full_name');
         $this->setPrimaryKey('id');
 
         $this->addBehavior('Timestamp');
