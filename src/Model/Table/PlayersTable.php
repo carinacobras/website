@@ -42,8 +42,7 @@ class PlayersTable extends Table
 
         $this->belongsTo('Users', [
             'foreignKey' => 'user_id',
-            'joinType' => 'INNER',
-            'propertyName' => 'user'
+            'joinType' => 'INNER'
         ]);
         $this->belongsTo('Teams', [
             'foreignKey' => 'team_id'
