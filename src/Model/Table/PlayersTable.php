@@ -37,12 +37,13 @@ class PlayersTable extends Table
         parent::initialize($config);
 
         $this->setTable('players');
-        $this->setDisplayField('id');
+        $this->setDisplayField('full_name');
         $this->setPrimaryKey('id');
 
         $this->belongsTo('Users', [
             'foreignKey' => 'user_id',
-            'joinType' => 'INNER'
+            'joinType' => 'INNER',
+            'propertyName' => 'user'
         ]);
         $this->belongsTo('Teams', [
             'foreignKey' => 'team_id'
@@ -86,12 +87,5 @@ class PlayersTable extends Table
         $rules->add($rules->existsIn(['team_id'], 'Teams'));
 
         return $rules;
-    }
-
-    public function beforeSave($event, $entity, $options) {
-        if (!empty($this->data['Player']['first_name'])){
-            $this->data['Player']['first_name'] = "FUCK";
-       }
-       return true;
     }
 }
