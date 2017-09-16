@@ -21,7 +21,7 @@ class ContactsController extends AppController
     public function index()
     {
         $this->paginate = [
-            'contain' => ['Players', 'PhoneNumbers', 'Emails', 'Relationships', 'Users']
+            'contain' => ['Players', 'PhoneNumbers', 'Emails', 'Relationships']
         ];
         $contacts = $this->paginate($this->Contacts);
 
@@ -39,7 +39,7 @@ class ContactsController extends AppController
     public function view($id = null)
     {
         $contact = $this->Contacts->get($id, [
-            'contain' => ['Players', 'PhoneNumbers', 'Emails', 'Relationships', 'Users']
+            'contain' => ['Players', 'PhoneNumbers', 'Emails', 'Relationships']
         ]);
 
         $this->set('contact', $contact);
