@@ -35,7 +35,7 @@ class Player extends Entity
 
     protected function _getFullName()
     {
-        return $this->_properties['User.first_name'] . '  ' .
-            $this->_properties['User.last_name'];
+        return $this->_properties['Users.first_name'] . '  ' .
+            $this->_properties['Users.last_name'];
     }
 }
