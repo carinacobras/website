@@ -28,7 +28,7 @@
     <table class="vertical-table">
         <tr>
             <th scope="row"><?= __('User') ?></th>
-            <td><?= $player->has('user') ? $this->Html->link($player->user->id, ['controller' => 'Users', 'action' => 'view', $player->user->id]) : '' ?></td>
+            <td><?= $player->has('user') ? $this->Html->link($player->user->first_name . ' ' . $player->user->last_name, ['controller' => 'Users', 'action' => 'view', $player->user->id]) : '' ?></td>
         </tr>
         <tr>
             <th scope="row"><?= __('Team') ?></th>
