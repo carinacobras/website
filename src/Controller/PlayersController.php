@@ -56,7 +56,7 @@ class PlayersController extends AppController
         $player = $this->Players->newEntity();
         if ($this->request->is('post')) {
             $player = $this->Players->patchEntity($player, $this->request->getData());
-            $player->updateAll(['first_name' => 'test'], ['id' => $entityId]);
+
             if ($this->Players->save($player)) {
                 $this->Flash->success(__('The player has been saved.'));
 
@@ -84,7 +84,7 @@ class PlayersController extends AppController
         ]);
         if ($this->request->is(['patch', 'post', 'put'])) {
             $player = $this->Players->patchEntity($player, $this->request->getData());
-            $player->updateAll(['first_name' => 'test'], ['id' => $entityId]);
+         
             if ($this->Players->save($player)) {
                 $this->Flash->success(__('The player has been saved.'));
 
