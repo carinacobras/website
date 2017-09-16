@@ -117,4 +117,15 @@ class PlayersController extends AppController
 
         return $this->redirect(['action' => 'index']);
     }
+
+    function choose($id = null) {
+        // regular view code here
+        $players = $this->Player->find('all', array(
+          'contain' => array(
+            'User'
+          )
+        ));
+        // create a key-value that the FormHelper recognizes
+        $players = Set::combine($players , '{n}.Player.id', '{n}.User.first_name');
+      }
 }
