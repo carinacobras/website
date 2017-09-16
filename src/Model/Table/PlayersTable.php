@@ -89,8 +89,8 @@ class PlayersTable extends Table
     }
 
     public function beforeSave($event, $entity, $options) {
-        if (!empty($this->data['Players']['first_name'])){
-            $this->data['Players']['first_name'] = "FUCK";
+        if (!empty($this->data['Player']['first_name'])){
+            $this->data['Player']['first_name'] = "FUCK";
        }
        return true;
     }
