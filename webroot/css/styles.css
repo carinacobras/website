@@ -1,0 +1,12 @@
+
+select[name="dob[day]"] {
+    min-width:50px;
+}
+
+select[name="dob[month]"] {
+    min-width:110px;
+}
+
+select[name="dob[year]"] {
+    min-width:70px;
+}
