@@ -37,7 +37,7 @@
             <?php foreach ($contacts as $contact): ?>
             <tr>
                 <td><?= $this->Number->format($contact->id) ?></td>
-                <td><?= $contact->has('player') ? $this->Html->link($contact->player->id, ['controller' => 'Players', 'action' => 'view', $contact->player->id]) : '' ?></td>
+                <td><?= $contact->has('player') ? $this->Html->link($contact->player->user->full_name, ['controller' => 'Players', 'action' => 'view', $contact->player->id]) : '' ?></td>
                 <td><?= h($contact->first_name) ?></td>
                 <td><?= h($contact->last_name) ?></td>
                 <td><?= $contact->has('phone_number') ? $this->Html->link($contact->phone_number->number, ['controller' => 'PhoneNumbers', 'action' => 'view', $contact->phone_number->id]) : '' ?></td>

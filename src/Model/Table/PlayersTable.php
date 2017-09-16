@@ -36,6 +36,9 @@ class PlayersTable extends Table
     {
         parent::initialize($config);
 
+        $this->setTable('players');
+        $this->setDisplayField('id');
+        $this->setPrimaryKey('id');
 
         $this->belongsTo('Users', [
             'foreignKey' => 'user_id',
@@ -53,10 +56,6 @@ class PlayersTable extends Table
         $this->hasMany('Ladders', [
             'foreignKey' => 'player_id'
         ]);
-
-        $this->setTable('players');
-        $this->setDisplayField('Users.full_name');
-        $this->setPrimaryKey('id');
     }
 
     /**
