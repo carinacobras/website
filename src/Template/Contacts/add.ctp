@@ -22,7 +22,7 @@
     <fieldset>
         <legend><?= __('Add Contact') ?></legend>
         <?php
-            echo $this->Form->control('player_id', ['options' => $players]);
+            echo $this->Form->control('player_id', ['options' => $players->users]);
             echo $this->Form->control('first_name');
             echo $this->Form->control('last_name');
             echo $this->Form->control('phone_number_id', ['options' => $phoneNumbers, 'empty' => true]);
