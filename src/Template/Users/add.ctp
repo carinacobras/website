@@ -28,8 +28,14 @@
         <?php
             echo $this->Form->control('first_name');
             echo $this->Form->control('last_name');
-            echo $this->Form->input('dob', ['day', 'month', 'year', ['minYear' => date('Y') - 70],
-            ['maxYear' => date('Y') - 5]]);
+            echo $this->Form->input('dob', 
+            ['minYear' => date('Y') - 70,
+            'maxYear' => date("Y") - 5,
+            'day' => true,
+            'month' => true,
+            'year' => true
+            ]
+        );
             
             //echo $this->Form->control('dob');
         ?>
