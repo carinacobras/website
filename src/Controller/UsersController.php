@@ -18,14 +18,6 @@ class UsersController extends AppController
      * @return \Cake\Http\Response|void
      */
 
-    //  public function beforeRender(Event $event)
-    //  {
-    //      parent::beforeRender($event);
-    //      $this->loadHelper('Form', [
-    //         'templates' => 'form_templates',
-    //     ]);
-    //  }
-
     public function index()
     {
 
