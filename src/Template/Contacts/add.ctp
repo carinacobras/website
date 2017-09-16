@@ -22,6 +22,7 @@
     <fieldset>
         <legend><?= __('Add Contact') ?></legend>
         <?php
+        echo $players;
             echo $this->Form->control('player_id', ['options' => $players]);
             echo $this->Form->control('first_name');
             echo $this->Form->control('last_name');
