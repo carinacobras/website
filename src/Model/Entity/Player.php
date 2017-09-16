@@ -32,10 +32,4 @@ class Player extends Entity
         '*' => true,
         'id' => false
     ];
-
-    protected function _getFullName()
-    {
-        return $this->_properties['Users.first_name'] . '  ' .
-            $this->_properties['Users.last_name'];
-    }
 }
