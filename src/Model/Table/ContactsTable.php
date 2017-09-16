@@ -36,7 +36,7 @@ class ContactsTable extends Table
         parent::initialize($config);
 
         $this->setTable('contacts');
-        $this->setDisplayField('id');
+        $this->setDisplayField('full_name');
         $this->setPrimaryKey('id');
 
         $this->belongsTo('Players', [

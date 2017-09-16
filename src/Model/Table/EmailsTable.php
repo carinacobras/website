@@ -33,7 +33,7 @@ class EmailsTable extends Table
         parent::initialize($config);
 
         $this->setTable('emails');
-        $this->setDisplayField('id');
+        $this->setDisplayField('address');
         $this->setPrimaryKey('id');
 
         $this->belongsTo('Users', [
