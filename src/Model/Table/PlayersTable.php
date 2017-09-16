@@ -53,9 +53,11 @@ class PlayersTable extends Table
         $this->hasMany('Ladders', [
             'foreignKey' => 'player_id'
         ]);
+
+        $this->hasOne('Users');
         
         $this->setTable('players');
-        $this->setDisplayField('id');
+        $this->setDisplayField('first_name');
         $this->setPrimaryKey('id');
 
     }
