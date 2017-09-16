@@ -64,7 +64,7 @@ class ContactsController extends AppController
             $this->Flash->error(__('The contact could not be saved. Please, try again.'));
         }
         $players = $this->Contacts->Players->find('list', 
-        ['contain' => ['Players', 'Users'],
+        ['contain' => ['Users', 'Teams'],
         'limit' => 200]);
         $phoneNumbers = $this->Contacts->PhoneNumbers->find('list', ['limit' => 200]);
         $emails = $this->Contacts->Emails->find('list', ['limit' => 200]);
