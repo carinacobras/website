@@ -67,6 +67,7 @@ class ContactsController extends AppController
 
         $players = $this->Contacts->Players->find()
         ->contain(['Teams', 'Users'])
+        ->recursive(2)
         ->select(['Players.id', 'Users.first_name', 'Users.last_name'])
         ->order(['Users.first_name'])
         ->combine('id', 'first_name', 'last_name')
