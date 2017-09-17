@@ -37,7 +37,7 @@ class PlayersTable extends Table
         parent::initialize($config);
 
         $this->setTable('players');
-        $this->setDisplayField('full_name');
+        $this->setDisplayField('id');
         $this->setPrimaryKey('id');
 
         $this->belongsTo('Users', [
