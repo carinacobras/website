@@ -67,8 +67,7 @@ class ContactsController extends AppController
 
         $players = $this->Contacts->Players->find()
         ->contain(['Users'])
-        ->select($players-Users)
-        ->toArray();
+        ->select(['Players.id', 'Users.first_name', 'Users.last_name']);
 
         //$players = $this->Contacts->Players->find('list', ['fields', 'limit' => 200]);
         $phoneNumbers = $this->Contacts->PhoneNumbers->find('list', ['limit' => 200]);
