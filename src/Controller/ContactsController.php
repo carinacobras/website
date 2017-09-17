@@ -64,8 +64,8 @@ class ContactsController extends AppController
             }
             $this->Flash->error(__('The contact could not be saved. Please, try again.'));
         }
-        
-        $players = $this->find()
+
+        $players = $this->Contacts->Players->find()
         ->select(['Player.id', 'Team.name', 'User.first_name', 'User.last_name'])
         ->order(['User.first_name'])
         ->combine('id', 'name', 'first_name', 'last_name')
