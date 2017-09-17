@@ -2,6 +2,7 @@
 namespace App\Controller;
 
 use App\Controller\AppController;
+use Cake\Utility\Hash;
 
 /**
  * Contacts Controller
@@ -71,7 +72,7 @@ class ContactsController extends AppController
         )
         ));
         // create a key-value that the FormHelper recognizes
-        $players = Set::combine($players , '{n}.Player.id', '{n}.User.first_name');
+        $players = Hash::combine($players , '{n}.Player.id', '{n}.User.first_name');
               
         //$players = $this->Contacts->Players->find('list', ['fields', 'limit' => 200]);
         $phoneNumbers = $this->Contacts->PhoneNumbers->find('list', ['limit' => 200]);
