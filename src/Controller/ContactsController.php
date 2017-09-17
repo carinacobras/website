@@ -67,7 +67,7 @@ class ContactsController extends AppController
 
         $players = $this->Contacts->Players->find()
         ->contain(['Players', 'Teams', 'Users'])
-        ->select(['Players.id', 'Users.first_name', 'Users.last_name'])
+        ->select(['Player.id', 'User.first_name', 'User.last_name'])
         ->order(['Users.first_name'])
         ->combine('id', 'first_name', 'last_name')
         ->toArray();
