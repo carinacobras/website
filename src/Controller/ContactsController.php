@@ -67,6 +67,7 @@ class ContactsController extends AppController
 
         $players = $this->Contacts->Players->find('list', 
         ['contain' => ['Users'],
+        'select' => ['Players.id', 'Users.first_name', 'Users.last_name'],
         'limit' => 200]);
         $phoneNumbers = $this->Contacts->PhoneNumbers->find('list', ['limit' => 200]);
         $emails = $this->Contacts->Emails->find('list', ['limit' => 200]);
