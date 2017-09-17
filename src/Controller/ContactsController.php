@@ -66,9 +66,9 @@ class ContactsController extends AppController
         }
 
         // regular view code here
-        $players = $this->Contacts->Players->find('list', array(
+        $players = $this->Contacts->Players->find('all', array(
         'contain' => array(
-            'User', 'Player'
+            'Player', 'User'
         )
         ));
         // create a key-value that the FormHelper recognizes
