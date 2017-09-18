@@ -69,10 +69,10 @@ class ContactsController extends AppController
         ->select(['Players.id', 'Users.first_name', 'Users.last_name']);
 
         $players = $players->extract(function ($player) {
-            return $player->id . ',' . $player->user->first_name . $player->user->last_name;
+            return ['id' => $player->id , 'full_name' => $player->user->first_name . $player->user->last_name];
         });
 
-       $players = $players->toList();
+       $players = $players->combine('id', 'full_name');
               
        // $players = $this->Contacts->Players->find('list', ['fields', 'limit' => 200]);
         $phoneNumbers = $this->Contacts->PhoneNumbers->find('list', ['limit' => 200]);
