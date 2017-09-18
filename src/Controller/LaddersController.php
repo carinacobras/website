@@ -29,7 +29,8 @@ class LaddersController extends AppController
         ->select(['Ladders.id', 'Players.id', 'Users.first_name', 'Users.last_name']
         );
 
-        $ladders = $this->paginate($players);
+        $lads = $this->ladders + $players;
+        $ladders = $this->paginate($lads);
 
         $this->set(compact('ladders'));
         $this->set('_serialize', ['ladders']);
