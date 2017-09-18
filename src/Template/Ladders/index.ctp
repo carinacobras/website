@@ -30,7 +30,7 @@
             <tr>
                 <td><?= $this->Number->format($ladder->id) ?></td>
                 <td><?= $ladder->has('competition') ? $this->Html->link($ladder->competition->name, ['controller' => 'Competitions', 'action' => 'view', $ladder->competition->id]) : '' ?></td>
-                <td><?= $ladder->has('player') ? $this->Html->link($ladder->player->user->first_name, ['controller' => 'Players', 'action' => 'view', $ladder->player->id]) : '' ?></td>
+                <td><?= $ladder->has('player') ? $this->Html->link($ladder->player->id, ['controller' => 'Players', 'action' => 'view', $ladder->player->id]) : '' ?></td>
                 <td class="actions">
                     <?= $this->Html->link(__('View'), ['action' => 'view', $ladder->id]) ?>
                     <?= $this->Html->link(__('Edit'), ['action' => 'edit', $ladder->id]) ?>
