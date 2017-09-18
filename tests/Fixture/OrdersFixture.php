@@ -19,7 +19,7 @@ class OrdersFixture extends TestFixture
     public $fields = [
         'id' => ['type' => 'integer', 'length' => 11, 'unsigned' => false, 'null' => false, 'default' => null, 'comment' => '', 'autoIncrement' => true, 'precision' => null],
         'order_date' => ['type' => 'datetime', 'length' => null, 'null' => false, 'default' => null, 'comment' => '', 'precision' => null],
-        'player_id' => ['type' => 'integer', 'length' => 11, 'unsigned' => false, 'null' => true, 'default' => null, 'comment' => '', 'precision' => null, 'autoIncrement' => null],
+        'player_id' => ['type' => 'integer', 'length' => 11, 'unsigned' => false, 'null' => false, 'default' => null, 'comment' => '', 'precision' => null, 'autoIncrement' => null],
         '_indexes' => [
             'fk_orders_player' => ['type' => 'index', 'columns' => ['player_id'], 'length' => []],
         ],
@@ -42,7 +42,7 @@ class OrdersFixture extends TestFixture
     public $records = [
         [
             'id' => 1,
-            'order_date' => '2017-09-18 13:40:50',
+            'order_date' => '2017-09-18 13:52:02',
             'player_id' => 1
         ],
     ];

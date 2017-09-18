@@ -39,7 +39,8 @@ class OrdersTable extends Table
         $this->setPrimaryKey('id');
 
         $this->belongsTo('Players', [
-            'foreignKey' => 'player_id'
+            'foreignKey' => 'player_id',
+            'joinType' => 'INNER'
         ]);
         $this->hasMany('Invoices', [
             'foreignKey' => 'order_id'

@@ -27,7 +27,7 @@
         <legend><?= __('Edit Order') ?></legend>
         <?php
             echo $this->Form->control('order_date');
-            echo $this->Form->control('player_id', ['options' => $players, 'empty' => true]);
+            echo $this->Form->control('player_id', ['options' => $players]);
         ?>
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>
