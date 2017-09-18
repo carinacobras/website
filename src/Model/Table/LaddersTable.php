@@ -42,7 +42,13 @@ class LaddersTable extends Table
             'joinType' => 'INNER'
         ]);
         $this->belongsTo('Players', [
+            'className' => 'Players',
             'foreignKey' => 'player_id',
+            'joinType' => 'INNER'
+        ]);
+        $this->belongsTo('Users', [
+            'className' => 'Players',
+            'foreignKey' => 'user_id',
             'joinType' => 'INNER'
         ]);
     }
