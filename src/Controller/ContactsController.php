@@ -70,7 +70,7 @@ class ContactsController extends AppController
 
         $players = $players->extract(function ($player) {
             return [$player->id, $player->user->first_name . $player->user->last_name];
-        });
+        }).toArray();
               
        // $players = $this->Contacts->Players->find('list', ['fields', 'limit' => 200]);
         $phoneNumbers = $this->Contacts->PhoneNumbers->find('list', ['limit' => 200]);
