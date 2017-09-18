@@ -1,22 +1,22 @@
 <?php
 namespace App\Test\TestCase\Model\Table;
 
-use App\Model\Table\InvoicesTable;
+use App\Model\Table\ChargeTypesTable;
 use Cake\ORM\TableRegistry;
 use Cake\TestSuite\TestCase;
 
 /**
- * App\Model\Table\InvoicesTable Test Case
+ * App\Model\Table\ChargeTypesTable Test Case
  */
-class InvoicesTableTest extends TestCase
+class ChargeTypesTableTest extends TestCase
 {
 
     /**
      * Test subject
      *
-     * @var \App\Model\Table\InvoicesTable
+     * @var \App\Model\Table\ChargeTypesTable
      */
-    public $Invoices;
+    public $ChargeTypes;
 
     /**
      * Fixtures
@@ -24,9 +24,9 @@ class InvoicesTableTest extends TestCase
      * @var array
      */
     public $fixtures = [
-        'app.invoices',
-        'app.charges',
         'app.charge_types',
+        'app.charges',
+        'app.invoices',
         'app.players',
         'app.users',
         'app.coaches',
@@ -55,8 +55,8 @@ class InvoicesTableTest extends TestCase
     public function setUp()
     {
         parent::setUp();
-        $config = TableRegistry::exists('Invoices') ? [] : ['className' => InvoicesTable::class];
-        $this->Invoices = TableRegistry::get('Invoices', $config);
+        $config = TableRegistry::exists('ChargeTypes') ? [] : ['className' => ChargeTypesTable::class];
+        $this->ChargeTypes = TableRegistry::get('ChargeTypes', $config);
     }
 
     /**
@@ -66,7 +66,7 @@ class InvoicesTableTest extends TestCase
      */
     public function tearDown()
     {
-        unset($this->Invoices);
+        unset($this->ChargeTypes);
 
         parent::tearDown();
     }
@@ -87,16 +87,6 @@ class InvoicesTableTest extends TestCase
      * @return void
      */
     public function testValidationDefault()
-    {
-        $this->markTestIncomplete('Not implemented yet.');
-    }
-
-    /**
-     * Test buildRules method
-     *
-     * @return void
-     */
-    public function testBuildRules()
     {
         $this->markTestIncomplete('Not implemented yet.');
     }

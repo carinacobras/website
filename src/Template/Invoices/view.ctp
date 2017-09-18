@@ -13,6 +13,8 @@
         <li><?= $this->Html->link(__('New Invoice'), ['action' => 'add']) ?> </li>
         <li><?= $this->Html->link(__('List Players'), ['controller' => 'Players', 'action' => 'index']) ?> </li>
         <li><?= $this->Html->link(__('New Player'), ['controller' => 'Players', 'action' => 'add']) ?> </li>
+        <li><?= $this->Html->link(__('List Charges'), ['controller' => 'Charges', 'action' => 'index']) ?> </li>
+        <li><?= $this->Html->link(__('New Charge'), ['controller' => 'Charges', 'action' => 'add']) ?> </li>
         <li><?= $this->Html->link(__('List Payments'), ['controller' => 'Payments', 'action' => 'index']) ?> </li>
         <li><?= $this->Html->link(__('New Payment'), ['controller' => 'Payments', 'action' => 'add']) ?> </li>
     </ul>
@@ -33,6 +35,10 @@
             <td><?= $this->Number->format($invoice->id) ?></td>
         </tr>
         <tr>
+            <th scope="row"><?= __('Charges Id') ?></th>
+            <td><?= $this->Number->format($invoice->charges_id) ?></td>
+        </tr>
+        <tr>
             <th scope="row"><?= __('Amount') ?></th>
             <td><?= $this->Number->format($invoice->amount) ?></td>
         </tr>
@@ -45,6 +51,31 @@
             <td><?= h($invoice->due_date) ?></td>
         </tr>
     </table>
+    <div class="related">
+        <h4><?= __('Related Charges') ?></h4>
+        <?php if (!empty($invoice->charges)): ?>
+        <table cellpadding="0" cellspacing="0">
+            <tr>
+                <th scope="col"><?= __('Id') ?></th>
+                <th scope="col"><?= __('Invoice Id') ?></th>
+                <th scope="col"><?= __('Charge Type Id') ?></th>
+                <th scope="col" class="actions"><?= __('Actions') ?></th>
+            </tr>
+            <?php foreach ($invoice->charges as $charges): ?>
+            <tr>
+                <td><?= h($charges->id) ?></td>
+                <td><?= h($charges->invoice_id) ?></td>
+                <td><?= h($charges->charge_type_id) ?></td>
+                <td class="actions">
+                    <?= $this->Html->link(__('View'), ['controller' => 'Charges', 'action' => 'view', $charges->id]) ?>
+                    <?= $this->Html->link(__('Edit'), ['controller' => 'Charges', 'action' => 'edit', $charges->id]) ?>
+                    <?= $this->Form->postLink(__('Delete'), ['controller' => 'Charges', 'action' => 'delete', $charges->id], ['confirm' => __('Are you sure you want to delete # {0}?', $charges->id)]) ?>
+                </td>
+            </tr>
+            <?php endforeach; ?>
+        </table>
+        <?php endif; ?>
+    </div>
     <div class="related">
         <h4><?= __('Related Payments') ?></h4>
         <?php if (!empty($invoice->payments)): ?>
