@@ -66,10 +66,12 @@ class ContactsController extends AppController
 
         $players = $this->Contacts->Players->find()
         ->contain(['Users'])
-        ->select(['Players.id', 'Users.first_name', 'Users.last_name']);
+        ->select(['Players.id', 'Users.first_name', 'Users.last_name']
+        ->limit(200)
+        );
 
         $players = $players->extract(function ($player) {
-            return ['id' => $player->id , 'full_name' => $player->user->first_name . $player->user->last_name];
+            return ['id' => $player->id , 'full_name' => $player->user->first_name . ' ' . $player->user->last_name];
         });
 
        $players = $players->combine('id', 'full_name');
