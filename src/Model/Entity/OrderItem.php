@@ -4,15 +4,13 @@ namespace App\Model\Entity;
 use Cake\ORM\Entity;
 
 /**
- * ChargeType Entity
+ * OrderItem Entity
  *
  * @property int $id
  * @property string $name
- * @property \Cake\I18n\FrozenDate $year
- *
- * @property \App\Model\Entity\Charge[] $charges
+ * @property int $price
  */
-class ChargeType extends Entity
+class OrderItem extends Entity
 {
 
     /**
@@ -26,7 +24,6 @@ class ChargeType extends Entity
      */
     protected $_accessible = [
         'name' => true,
-        'year' => true,
-        'charges' => true
+        'price' => true
     ];
 }

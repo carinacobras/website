@@ -1,38 +1,36 @@
 <?php
 /**
  * @var \App\View\AppView $this
- * @var \App\Model\Entity\ChargeType[]|\Cake\Collection\CollectionInterface $chargeTypes
+ * @var \App\Model\Entity\OrderItem[]|\Cake\Collection\CollectionInterface $orderItems
  */
 ?>
 <nav class="large-3 medium-4 columns" id="actions-sidebar">
     <ul class="side-nav">
         <li class="heading"><?= __('Actions') ?></li>
-        <li><?= $this->Html->link(__('New Charge Type'), ['action' => 'add']) ?></li>
-        <li><?= $this->Html->link(__('List Charges'), ['controller' => 'Charges', 'action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('New Charge'), ['controller' => 'Charges', 'action' => 'add']) ?></li>
+        <li><?= $this->Html->link(__('New Order Item'), ['action' => 'add']) ?></li>
     </ul>
 </nav>
-<div class="chargeTypes index large-9 medium-8 columns content">
-    <h3><?= __('Charge Types') ?></h3>
+<div class="orderItems index large-9 medium-8 columns content">
+    <h3><?= __('Order Items') ?></h3>
     <table cellpadding="0" cellspacing="0">
         <thead>
             <tr>
                 <th scope="col"><?= $this->Paginator->sort('id') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('name') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('year') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('price') ?></th>
                 <th scope="col" class="actions"><?= __('Actions') ?></th>
             </tr>
         </thead>
         <tbody>
-            <?php foreach ($chargeTypes as $chargeType): ?>
+            <?php foreach ($orderItems as $orderItem): ?>
             <tr>
-                <td><?= $this->Number->format($chargeType->id) ?></td>
-                <td><?= h($chargeType->name) ?></td>
-                <td><?= h($chargeType->year) ?></td>
+                <td><?= $this->Number->format($orderItem->id) ?></td>
+                <td><?= h($orderItem->name) ?></td>
+                <td><?= $this->Number->format($orderItem->price) ?></td>
                 <td class="actions">
-                    <?= $this->Html->link(__('View'), ['action' => 'view', $chargeType->id]) ?>
-                    <?= $this->Html->link(__('Edit'), ['action' => 'edit', $chargeType->id]) ?>
-                    <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $chargeType->id], ['confirm' => __('Are you sure you want to delete # {0}?', $chargeType->id)]) ?>
+                    <?= $this->Html->link(__('View'), ['action' => 'view', $orderItem->id]) ?>
+                    <?= $this->Html->link(__('Edit'), ['action' => 'edit', $orderItem->id]) ?>
+                    <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $orderItem->id], ['confirm' => __('Are you sure you want to delete # {0}?', $orderItem->id)]) ?>
                 </td>
             </tr>
             <?php endforeach; ?>

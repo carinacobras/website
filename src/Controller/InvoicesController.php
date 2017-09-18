@@ -21,7 +21,7 @@ class InvoicesController extends AppController
     public function index()
     {
         $this->paginate = [
-            'contain' => ['Players']
+            'contain' => ['Orders']
         ];
         $invoices = $this->paginate($this->Invoices);
 
@@ -39,7 +39,7 @@ class InvoicesController extends AppController
     public function view($id = null)
     {
         $invoice = $this->Invoices->get($id, [
-            'contain' => ['Players', 'InvoicesItem', 'Payments']
+            'contain' => ['Orders', 'Payments']
         ]);
 
         $this->set('invoice', $invoice);
@@ -63,8 +63,8 @@ class InvoicesController extends AppController
             }
             $this->Flash->error(__('The invoice could not be saved. Please, try again.'));
         }
-        $players = $this->Invoices->Players->find('list', ['limit' => 200]);
-        $this->set(compact('invoice', 'players'));
+        $orders = $this->Invoices->Orders->find('list', ['limit' => 200]);
+        $this->set(compact('invoice', 'orders'));
         $this->set('_serialize', ['invoice']);
     }
 
@@ -89,8 +89,8 @@ class InvoicesController extends AppController
             }
             $this->Flash->error(__('The invoice could not be saved. Please, try again.'));
         }
-        $players = $this->Invoices->Players->find('list', ['limit' => 200]);
-        $this->set(compact('invoice', 'players'));
+        $orders = $this->Invoices->Orders->find('list', ['limit' => 200]);
+        $this->set(compact('invoice', 'orders'));
         $this->set('_serialize', ['invoice']);
     }
 

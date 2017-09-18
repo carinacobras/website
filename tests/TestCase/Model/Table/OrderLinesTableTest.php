@@ -1,22 +1,22 @@
 <?php
 namespace App\Test\TestCase\Model\Table;
 
-use App\Model\Table\InvoicesTable;
+use App\Model\Table\OrderLinesTable;
 use Cake\ORM\TableRegistry;
 use Cake\TestSuite\TestCase;
 
 /**
- * App\Model\Table\InvoicesTable Test Case
+ * App\Model\Table\OrderLinesTable Test Case
  */
-class InvoicesTableTest extends TestCase
+class OrderLinesTableTest extends TestCase
 {
 
     /**
      * Test subject
      *
-     * @var \App\Model\Table\InvoicesTable
+     * @var \App\Model\Table\OrderLinesTable
      */
-    public $Invoices;
+    public $OrderLines;
 
     /**
      * Fixtures
@@ -24,27 +24,8 @@ class InvoicesTableTest extends TestCase
      * @var array
      */
     public $fixtures = [
-        'app.invoices',
-        'app.orders',
-        'app.players',
-        'app.users',
-        'app.coaches',
-        'app.teams',
-        'app.competitions',
-        'app.courts',
-        'app.locations',
-        'app.training',
-        'app.ladders',
-        'app.managers',
-        'app.teams_jerseys',
-        'app.emails',
-        'app.phone_numbers',
-        'app.contacts',
-        'app.relationships',
-        'app.roles',
-        'app.absences',
         'app.order_lines',
-        'app.payments'
+        'app.orders'
     ];
 
     /**
@@ -55,8 +36,8 @@ class InvoicesTableTest extends TestCase
     public function setUp()
     {
         parent::setUp();
-        $config = TableRegistry::exists('Invoices') ? [] : ['className' => InvoicesTable::class];
-        $this->Invoices = TableRegistry::get('Invoices', $config);
+        $config = TableRegistry::exists('OrderLines') ? [] : ['className' => OrderLinesTable::class];
+        $this->OrderLines = TableRegistry::get('OrderLines', $config);
     }
 
     /**
@@ -66,7 +47,7 @@ class InvoicesTableTest extends TestCase
      */
     public function tearDown()
     {
-        unset($this->Invoices);
+        unset($this->OrderLines);
 
         parent::tearDown();
     }

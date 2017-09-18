@@ -42,7 +42,9 @@ class PaymentsTableTest extends TestCase
         'app.relationships',
         'app.roles',
         'app.absences',
-        'app.invoices'
+        'app.invoices',
+        'app.orders',
+        'app.order_lines'
     ];
 
     /**

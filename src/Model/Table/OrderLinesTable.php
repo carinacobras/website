@@ -7,20 +7,19 @@ use Cake\ORM\Table;
 use Cake\Validation\Validator;
 
 /**
- * Charges Model
+ * OrderLines Model
  *
- * @property \App\Model\Table\ChargeTypesTable|\Cake\ORM\Association\BelongsTo $ChargeTypes
- * @property \App\Model\Table\InvoiceItemsTable|\Cake\ORM\Association\HasMany $InvoiceItems
+ * @property \App\Model\Table\OrdersTable|\Cake\ORM\Association\BelongsTo $Orders
  *
- * @method \App\Model\Entity\Charge get($primaryKey, $options = [])
- * @method \App\Model\Entity\Charge newEntity($data = null, array $options = [])
- * @method \App\Model\Entity\Charge[] newEntities(array $data, array $options = [])
- * @method \App\Model\Entity\Charge|bool save(\Cake\Datasource\EntityInterface $entity, $options = [])
- * @method \App\Model\Entity\Charge patchEntity(\Cake\Datasource\EntityInterface $entity, array $data, array $options = [])
- * @method \App\Model\Entity\Charge[] patchEntities($entities, array $data, array $options = [])
- * @method \App\Model\Entity\Charge findOrCreate($search, callable $callback = null, $options = [])
+ * @method \App\Model\Entity\OrderLine get($primaryKey, $options = [])
+ * @method \App\Model\Entity\OrderLine newEntity($data = null, array $options = [])
+ * @method \App\Model\Entity\OrderLine[] newEntities(array $data, array $options = [])
+ * @method \App\Model\Entity\OrderLine|bool save(\Cake\Datasource\EntityInterface $entity, $options = [])
+ * @method \App\Model\Entity\OrderLine patchEntity(\Cake\Datasource\EntityInterface $entity, array $data, array $options = [])
+ * @method \App\Model\Entity\OrderLine[] patchEntities($entities, array $data, array $options = [])
+ * @method \App\Model\Entity\OrderLine findOrCreate($search, callable $callback = null, $options = [])
  */
-class ChargesTable extends Table
+class OrderLinesTable extends Table
 {
 
     /**
@@ -33,16 +32,13 @@ class ChargesTable extends Table
     {
         parent::initialize($config);
 
-        $this->setTable('charges');
+        $this->setTable('order_lines');
         $this->setDisplayField('id');
         $this->setPrimaryKey('id');
 
-        $this->belongsTo('ChargeTypes', [
-            'foreignKey' => 'charge_type_id',
+        $this->belongsTo('Orders', [
+            'foreignKey' => 'order_id',
             'joinType' => 'INNER'
-        ]);
-        $this->hasMany('InvoiceItems', [
-            'foreignKey' => 'charge_id'
         ]);
     }
 
@@ -58,6 +54,11 @@ class ChargesTable extends Table
             ->integer('id')
             ->allowEmpty('id', 'create');
 
+        $validator
+            ->integer('order_item')
+            ->requirePresence('order_item', 'create')
+            ->notEmpty('order_item');
+
         return $validator;
     }
 
@@ -70,7 +71,7 @@ class ChargesTable extends Table
      */
     public function buildRules(RulesChecker $rules)
     {
-        $rules->add($rules->existsIn(['charge_type_id'], 'ChargeTypes'));
+        $rules->add($rules->existsIn(['order_id'], 'Orders'));
 
         return $rules;
     }

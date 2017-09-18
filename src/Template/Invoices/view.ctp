@@ -11,10 +11,8 @@
         <li><?= $this->Form->postLink(__('Delete Invoice'), ['action' => 'delete', $invoice->id], ['confirm' => __('Are you sure you want to delete # {0}?', $invoice->id)]) ?> </li>
         <li><?= $this->Html->link(__('List Invoices'), ['action' => 'index']) ?> </li>
         <li><?= $this->Html->link(__('New Invoice'), ['action' => 'add']) ?> </li>
-        <li><?= $this->Html->link(__('List Players'), ['controller' => 'Players', 'action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('New Player'), ['controller' => 'Players', 'action' => 'add']) ?> </li>
-        <li><?= $this->Html->link(__('List Invoices Item'), ['controller' => 'InvoicesItem', 'action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('New Invoices Item'), ['controller' => 'InvoicesItem', 'action' => 'add']) ?> </li>
+        <li><?= $this->Html->link(__('List Orders'), ['controller' => 'Orders', 'action' => 'index']) ?> </li>
+        <li><?= $this->Html->link(__('New Order'), ['controller' => 'Orders', 'action' => 'add']) ?> </li>
         <li><?= $this->Html->link(__('List Payments'), ['controller' => 'Payments', 'action' => 'index']) ?> </li>
         <li><?= $this->Html->link(__('New Payment'), ['controller' => 'Payments', 'action' => 'add']) ?> </li>
     </ul>
@@ -23,55 +21,18 @@
     <h3><?= h($invoice->id) ?></h3>
     <table class="vertical-table">
         <tr>
-            <th scope="row"><?= __('Invoice Number') ?></th>
-            <td><?= h($invoice->invoice_number) ?></td>
-        </tr>
-        <tr>
-            <th scope="row"><?= __('Player') ?></th>
-            <td><?= $invoice->has('player') ? $this->Html->link($invoice->player->id, ['controller' => 'Players', 'action' => 'view', $invoice->player->id]) : '' ?></td>
+            <th scope="row"><?= __('Order') ?></th>
+            <td><?= $invoice->has('order') ? $this->Html->link($invoice->order->id, ['controller' => 'Orders', 'action' => 'view', $invoice->order->id]) : '' ?></td>
         </tr>
         <tr>
             <th scope="row"><?= __('Id') ?></th>
             <td><?= $this->Number->format($invoice->id) ?></td>
         </tr>
         <tr>
-            <th scope="row"><?= __('Amount') ?></th>
-            <td><?= $this->Number->format($invoice->amount) ?></td>
-        </tr>
-        <tr>
             <th scope="row"><?= __('Invoice Date') ?></th>
             <td><?= h($invoice->invoice_date) ?></td>
         </tr>
-        <tr>
-            <th scope="row"><?= __('Due Date') ?></th>
-            <td><?= h($invoice->due_date) ?></td>
-        </tr>
     </table>
-    <div class="related">
-        <h4><?= __('Related Invoices Item') ?></h4>
-        <?php if (!empty($invoice->invoices_item)): ?>
-        <table cellpadding="0" cellspacing="0">
-            <tr>
-                <th scope="col"><?= __('Id') ?></th>
-                <th scope="col"><?= __('Invoice Id') ?></th>
-                <th scope="col"><?= __('Charge Id') ?></th>
-                <th scope="col" class="actions"><?= __('Actions') ?></th>
-            </tr>
-            <?php foreach ($invoice->invoices_item as $invoicesItem): ?>
-            <tr>
-                <td><?= h($invoicesItem->id) ?></td>
-                <td><?= h($invoicesItem->invoice_id) ?></td>
-                <td><?= h($invoicesItem->charge_id) ?></td>
-                <td class="actions">
-                    <?= $this->Html->link(__('View'), ['controller' => 'InvoicesItem', 'action' => 'view', $invoicesItem->id]) ?>
-                    <?= $this->Html->link(__('Edit'), ['controller' => 'InvoicesItem', 'action' => 'edit', $invoicesItem->id]) ?>
-                    <?= $this->Form->postLink(__('Delete'), ['controller' => 'InvoicesItem', 'action' => 'delete', $invoicesItem->id], ['confirm' => __('Are you sure you want to delete # {0}?', $invoicesItem->id)]) ?>
-                </td>
-            </tr>
-            <?php endforeach; ?>
-        </table>
-        <?php endif; ?>
-    </div>
     <div class="related">
         <h4><?= __('Related Payments') ?></h4>
         <?php if (!empty($invoice->payments)): ?>

@@ -4,10 +4,10 @@ namespace App\Test\Fixture;
 use Cake\TestSuite\Fixture\TestFixture;
 
 /**
- * InvoicesFixture
+ * OrdersFixture
  *
  */
-class InvoicesFixture extends TestFixture
+class OrdersFixture extends TestFixture
 {
 
     /**
@@ -18,14 +18,14 @@ class InvoicesFixture extends TestFixture
     // @codingStandardsIgnoreStart
     public $fields = [
         'id' => ['type' => 'integer', 'length' => 11, 'unsigned' => false, 'null' => false, 'default' => null, 'comment' => '', 'autoIncrement' => true, 'precision' => null],
-        'order_id' => ['type' => 'integer', 'length' => 11, 'unsigned' => false, 'null' => false, 'default' => null, 'comment' => '', 'precision' => null, 'autoIncrement' => null],
-        'invoice_date' => ['type' => 'datetime', 'length' => null, 'null' => false, 'default' => null, 'comment' => '', 'precision' => null],
+        'order_date' => ['type' => 'datetime', 'length' => null, 'null' => false, 'default' => null, 'comment' => '', 'precision' => null],
+        'player_id' => ['type' => 'integer', 'length' => 11, 'unsigned' => false, 'null' => true, 'default' => null, 'comment' => '', 'precision' => null, 'autoIncrement' => null],
         '_indexes' => [
-            'fk_invoices_order1' => ['type' => 'index', 'columns' => ['order_id'], 'length' => []],
+            'fk_orders_player' => ['type' => 'index', 'columns' => ['player_id'], 'length' => []],
         ],
         '_constraints' => [
             'primary' => ['type' => 'primary', 'columns' => ['id'], 'length' => []],
-            'fk_invoices_order1' => ['type' => 'foreign', 'columns' => ['order_id'], 'references' => ['orders', 'id'], 'update' => 'restrict', 'delete' => 'restrict', 'length' => []],
+            'fk_orders_player' => ['type' => 'foreign', 'columns' => ['player_id'], 'references' => ['players', 'id'], 'update' => 'restrict', 'delete' => 'restrict', 'length' => []],
         ],
         '_options' => [
             'engine' => 'InnoDB',
@@ -42,8 +42,8 @@ class InvoicesFixture extends TestFixture
     public $records = [
         [
             'id' => 1,
-            'order_id' => 1,
-            'invoice_date' => '2017-09-18 13:40:59'
+            'order_date' => '2017-09-18 13:40:50',
+            'player_id' => 1
         ],
     ];
 }

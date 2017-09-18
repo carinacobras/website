@@ -9,8 +9,7 @@ use Cake\Validation\Validator;
 /**
  * Invoices Model
  *
- * @property \App\Model\Table\PlayersTable|\Cake\ORM\Association\BelongsTo $Players
- * @property \App\Model\Table\InvoicesItemTable|\Cake\ORM\Association\HasMany $InvoicesItem
+ * @property \App\Model\Table\OrdersTable|\Cake\ORM\Association\BelongsTo $Orders
  * @property \App\Model\Table\PaymentsTable|\Cake\ORM\Association\HasMany $Payments
  *
  * @method \App\Model\Entity\Invoice get($primaryKey, $options = [])
@@ -38,12 +37,9 @@ class InvoicesTable extends Table
         $this->setDisplayField('id');
         $this->setPrimaryKey('id');
 
-        $this->belongsTo('Players', [
-            'foreignKey' => 'player_id',
+        $this->belongsTo('Orders', [
+            'foreignKey' => 'order_id',
             'joinType' => 'INNER'
-        ]);
-        $this->hasMany('InvoicesItem', [
-            'foreignKey' => 'invoice_id'
         ]);
         $this->hasMany('Payments', [
             'foreignKey' => 'invoice_id'
@@ -63,24 +59,9 @@ class InvoicesTable extends Table
             ->allowEmpty('id', 'create');
 
         $validator
-            ->scalar('invoice_number')
-            ->requirePresence('invoice_number', 'create')
-            ->notEmpty('invoice_number');
-
-        $validator
-            ->date('invoice_date')
+            ->dateTime('invoice_date')
             ->requirePresence('invoice_date', 'create')
             ->notEmpty('invoice_date');
-
-        $validator
-            ->integer('amount')
-            ->requirePresence('amount', 'create')
-            ->notEmpty('amount');
-
-        $validator
-            ->date('due_date')
-            ->requirePresence('due_date', 'create')
-            ->notEmpty('due_date');
 
         return $validator;
     }
@@ -94,7 +75,7 @@ class InvoicesTable extends Table
      */
     public function buildRules(RulesChecker $rules)
     {
-        $rules->add($rules->existsIn(['player_id'], 'Players'));
+        $rules->add($rules->existsIn(['order_id'], 'Orders'));
 
         return $rules;
     }

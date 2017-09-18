@@ -1,13 +1,13 @@
 <?php
 namespace App\Test\TestCase\Controller;
 
-use App\Controller\PaymentsController;
+use App\Controller\OrderLinesController;
 use Cake\TestSuite\IntegrationTestCase;
 
 /**
- * App\Controller\PaymentsController Test Case
+ * App\Controller\OrderLinesController Test Case
  */
-class PaymentsControllerTest extends IntegrationTestCase
+class OrderLinesControllerTest extends IntegrationTestCase
 {
 
     /**
@@ -16,27 +16,8 @@ class PaymentsControllerTest extends IntegrationTestCase
      * @var array
      */
     public $fixtures = [
-        'app.payments',
-        'app.players',
-        'app.users',
-        'app.coaches',
-        'app.teams',
-        'app.competitions',
-        'app.courts',
-        'app.locations',
-        'app.training',
-        'app.ladders',
-        'app.managers',
-        'app.teams_jerseys',
-        'app.emails',
-        'app.phone_numbers',
-        'app.contacts',
-        'app.relationships',
-        'app.roles',
-        'app.absences',
-        'app.invoices',
-        'app.orders',
-        'app.order_lines'
+        'app.order_lines',
+        'app.orders'
     ];
 
     /**

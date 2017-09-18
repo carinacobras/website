@@ -4,16 +4,15 @@ namespace App\Model\Entity;
 use Cake\ORM\Entity;
 
 /**
- * InvoiceItem Entity
+ * OrderLine Entity
  *
  * @property int $id
- * @property int $invoice_id
- * @property int $charge_id
+ * @property int $order_id
+ * @property int $order_item
  *
- * @property \App\Model\Entity\Invoice $invoice
- * @property \App\Model\Entity\Charge $charge
+ * @property \App\Model\Entity\Order $order
  */
-class InvoiceItem extends Entity
+class OrderLine extends Entity
 {
 
     /**
@@ -26,9 +25,8 @@ class InvoiceItem extends Entity
      * @var array
      */
     protected $_accessible = [
-        'invoice_id' => true,
-        'charge_id' => true,
-        'invoice' => true,
-        'charge' => true
+        'order_id' => true,
+        'order_item' => true,
+        'order' => true
     ];
 }
