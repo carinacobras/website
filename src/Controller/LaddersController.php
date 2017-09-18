@@ -24,13 +24,12 @@ class LaddersController extends AppController
             'contain' => ['Competitions', 'Players']
         ];
 
-        $laddersUsrs = $this->Ladders->find()
+        $players = $this->Ladders->Players->find()
         ->contain(['Users'])
-        ->select(['Players.id', 'Users.first_name', 'Users.last_name']
+        ->select(['Ladders.id', 'Players.id', 'Users.first_name', 'Users.last_name']
         );
 
-
-        $ladders = $this->paginate($laddersUsrs);
+        $ladders = $this->paginate($players);
 
         $this->set(compact('ladders'));
         $this->set('_serialize', ['ladders']);
