@@ -21,7 +21,7 @@ class LaddersController extends AppController
     public function index()
     {
         $this->paginate = [
-            'contain' => ['Competitions', 'Players']
+            'contain' => ['Competitions', 'Players', 'Users']
         ];
         $ladders = $this->paginate($this->Ladders);
 
