@@ -48,7 +48,7 @@ class LaddersTable extends Table
         ]);
         $this->belongsTo('Users', [
             'className' => 'Players',
-            'foreignKey' => 'id',
+            'foreignKey' => 'Players.user_id',
             'joinType' => 'INNER'
         ]);
     }
