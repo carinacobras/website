@@ -28,8 +28,8 @@
         <tbody>
             <?php foreach ($phoneNumbers as $phoneNumber): ?>
             <tr>
-                <td><?= $this->Number->format($phoneNumber->id) ?></td>
-                <td><?= $this->Number->format($phoneNumber->number) ?></td>
+                <td><?= $phoneNumber->id ?></td>
+                <td><?= $phoneNumber->number ?></td>
                 <td><?= $phoneNumber->has('user') ? $this->Html->link($phoneNumber->user->id, ['controller' => 'Users', 'action' => 'view', $phoneNumber->user->id]) : '' ?></td>
                 <td class="actions">
                     <?= $this->Html->link(__('View'), ['action' => 'view', $phoneNumber->id]) ?>
