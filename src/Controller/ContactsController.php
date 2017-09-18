@@ -67,7 +67,7 @@ class ContactsController extends AppController
         // regular view code here
         $players = $this->Contacts->Players->find('list', array(
             'contain' => array(
-                'User'
+                'Users'
             )
         ));
        
