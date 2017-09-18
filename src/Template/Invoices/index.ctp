@@ -10,8 +10,8 @@
         <li><?= $this->Html->link(__('New Invoice'), ['action' => 'add']) ?></li>
         <li><?= $this->Html->link(__('List Players'), ['controller' => 'Players', 'action' => 'index']) ?></li>
         <li><?= $this->Html->link(__('New Player'), ['controller' => 'Players', 'action' => 'add']) ?></li>
-        <li><?= $this->Html->link(__('List Charges'), ['controller' => 'Charges', 'action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('New Charge'), ['controller' => 'Charges', 'action' => 'add']) ?></li>
+        <li><?= $this->Html->link(__('List Invoices Item'), ['controller' => 'InvoicesItem', 'action' => 'index']) ?></li>
+        <li><?= $this->Html->link(__('New Invoices Item'), ['controller' => 'InvoicesItem', 'action' => 'add']) ?></li>
         <li><?= $this->Html->link(__('List Payments'), ['controller' => 'Payments', 'action' => 'index']) ?></li>
         <li><?= $this->Html->link(__('New Payment'), ['controller' => 'Payments', 'action' => 'add']) ?></li>
     </ul>
@@ -24,7 +24,6 @@
                 <th scope="col"><?= $this->Paginator->sort('id') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('invoice_number') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('invoice_date') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('charges_id') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('amount') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('due_date') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('player_id') ?></th>
@@ -37,7 +36,6 @@
                 <td><?= $this->Number->format($invoice->id) ?></td>
                 <td><?= h($invoice->invoice_number) ?></td>
                 <td><?= h($invoice->invoice_date) ?></td>
-                <td><?= $this->Number->format($invoice->charges_id) ?></td>
                 <td><?= $this->Number->format($invoice->amount) ?></td>
                 <td><?= h($invoice->due_date) ?></td>
                 <td><?= $invoice->has('player') ? $this->Html->link($invoice->player->id, ['controller' => 'Players', 'action' => 'view', $invoice->player->id]) : '' ?></td>

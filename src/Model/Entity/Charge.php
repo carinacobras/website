@@ -7,11 +7,12 @@ use Cake\ORM\Entity;
  * Charge Entity
  *
  * @property int $id
- * @property int $invoice_id
+ * @property int $order_id
  * @property int $charge_type_id
  *
- * @property \App\Model\Entity\Invoice $invoice
+ * @property \App\Model\Entity\Order $order
  * @property \App\Model\Entity\ChargeType $charge_type
+ * @property \App\Model\Entity\InvoicesItem[] $invoices_item
  */
 class Charge extends Entity
 {
@@ -26,9 +27,10 @@ class Charge extends Entity
      * @var array
      */
     protected $_accessible = [
-        'invoice_id' => true,
+        'order_id' => true,
         'charge_type_id' => true,
-        'invoice' => true,
-        'charge_type' => true
+        'order' => true,
+        'charge_type' => true,
+        'invoices_item' => true
     ];
 }

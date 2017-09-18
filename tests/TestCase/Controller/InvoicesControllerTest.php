@@ -17,8 +17,6 @@ class InvoicesControllerTest extends IntegrationTestCase
      */
     public $fixtures = [
         'app.invoices',
-        'app.charges',
-        'app.charge_types',
         'app.players',
         'app.users',
         'app.coaches',
@@ -36,6 +34,7 @@ class InvoicesControllerTest extends IntegrationTestCase
         'app.relationships',
         'app.roles',
         'app.absences',
+        'app.invoices_item',
         'app.payments'
     ];
 

@@ -9,9 +9,8 @@ use Cake\Validation\Validator;
 /**
  * Invoices Model
  *
- * @property \App\Model\Table\ChargesTable|\Cake\ORM\Association\BelongsTo $Charges
  * @property \App\Model\Table\PlayersTable|\Cake\ORM\Association\BelongsTo $Players
- * @property \App\Model\Table\ChargesTable|\Cake\ORM\Association\HasMany $Charges
+ * @property \App\Model\Table\InvoicesItemTable|\Cake\ORM\Association\HasMany $InvoicesItem
  * @property \App\Model\Table\PaymentsTable|\Cake\ORM\Association\HasMany $Payments
  *
  * @method \App\Model\Entity\Invoice get($primaryKey, $options = [])
@@ -39,15 +38,11 @@ class InvoicesTable extends Table
         $this->setDisplayField('id');
         $this->setPrimaryKey('id');
 
-        $this->belongsTo('Charges', [
-            'foreignKey' => 'charges_id',
-            'joinType' => 'INNER'
-        ]);
         $this->belongsTo('Players', [
             'foreignKey' => 'player_id',
             'joinType' => 'INNER'
         ]);
-        $this->hasMany('Charges', [
+        $this->hasMany('InvoicesItem', [
             'foreignKey' => 'invoice_id'
         ]);
         $this->hasMany('Payments', [
@@ -99,7 +94,6 @@ class InvoicesTable extends Table
      */
     public function buildRules(RulesChecker $rules)
     {
-        $rules->add($rules->existsIn(['charges_id'], 'Charges'));
         $rules->add($rules->existsIn(['player_id'], 'Players'));
 
         return $rules;

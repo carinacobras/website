@@ -8,10 +8,10 @@
     <ul class="side-nav">
         <li class="heading"><?= __('Actions') ?></li>
         <li><?= $this->Html->link(__('New Charge'), ['action' => 'add']) ?></li>
-        <li><?= $this->Html->link(__('List Invoices'), ['controller' => 'Invoices', 'action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('New Invoice'), ['controller' => 'Invoices', 'action' => 'add']) ?></li>
         <li><?= $this->Html->link(__('List Charge Types'), ['controller' => 'ChargeTypes', 'action' => 'index']) ?></li>
         <li><?= $this->Html->link(__('New Charge Type'), ['controller' => 'ChargeTypes', 'action' => 'add']) ?></li>
+        <li><?= $this->Html->link(__('List Invoices Item'), ['controller' => 'InvoicesItem', 'action' => 'index']) ?></li>
+        <li><?= $this->Html->link(__('New Invoices Item'), ['controller' => 'InvoicesItem', 'action' => 'add']) ?></li>
     </ul>
 </nav>
 <div class="charges index large-9 medium-8 columns content">
@@ -20,7 +20,7 @@
         <thead>
             <tr>
                 <th scope="col"><?= $this->Paginator->sort('id') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('invoice_id') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('order_id') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('charge_type_id') ?></th>
                 <th scope="col" class="actions"><?= __('Actions') ?></th>
             </tr>
@@ -29,7 +29,7 @@
             <?php foreach ($charges as $charge): ?>
             <tr>
                 <td><?= $this->Number->format($charge->id) ?></td>
-                <td><?= $charge->has('invoice') ? $this->Html->link($charge->invoice->id, ['controller' => 'Invoices', 'action' => 'view', $charge->invoice->id]) : '' ?></td>
+                <td><?= $this->Number->format($charge->order_id) ?></td>
                 <td><?= $charge->has('charge_type') ? $this->Html->link($charge->charge_type->name, ['controller' => 'ChargeTypes', 'action' => 'view', $charge->charge_type->id]) : '' ?></td>
                 <td class="actions">
                     <?= $this->Html->link(__('View'), ['action' => 'view', $charge->id]) ?>

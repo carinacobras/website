@@ -1,22 +1,22 @@
 <?php
 namespace App\Test\TestCase\Model\Table;
 
-use App\Model\Table\InvoicesTable;
+use App\Model\Table\InvoiceItemsTable;
 use Cake\ORM\TableRegistry;
 use Cake\TestSuite\TestCase;
 
 /**
- * App\Model\Table\InvoicesTable Test Case
+ * App\Model\Table\InvoiceItemsTable Test Case
  */
-class InvoicesTableTest extends TestCase
+class InvoiceItemsTableTest extends TestCase
 {
 
     /**
      * Test subject
      *
-     * @var \App\Model\Table\InvoicesTable
+     * @var \App\Model\Table\InvoiceItemsTable
      */
-    public $Invoices;
+    public $InvoiceItems;
 
     /**
      * Fixtures
@@ -24,6 +24,7 @@ class InvoicesTableTest extends TestCase
      * @var array
      */
     public $fixtures = [
+        'app.invoice_items',
         'app.invoices',
         'app.players',
         'app.users',
@@ -43,7 +44,10 @@ class InvoicesTableTest extends TestCase
         'app.roles',
         'app.absences',
         'app.invoices_item',
-        'app.payments'
+        'app.payments',
+        'app.charges',
+        'app.orders',
+        'app.charge_types'
     ];
 
     /**
@@ -54,8 +58,8 @@ class InvoicesTableTest extends TestCase
     public function setUp()
     {
         parent::setUp();
-        $config = TableRegistry::exists('Invoices') ? [] : ['className' => InvoicesTable::class];
-        $this->Invoices = TableRegistry::get('Invoices', $config);
+        $config = TableRegistry::exists('InvoiceItems') ? [] : ['className' => InvoiceItemsTable::class];
+        $this->InvoiceItems = TableRegistry::get('InvoiceItems', $config);
     }
 
     /**
@@ -65,7 +69,7 @@ class InvoicesTableTest extends TestCase
      */
     public function tearDown()
     {
-        unset($this->Invoices);
+        unset($this->InvoiceItems);
 
         parent::tearDown();
     }

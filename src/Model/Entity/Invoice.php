@@ -9,13 +9,12 @@ use Cake\ORM\Entity;
  * @property int $id
  * @property string $invoice_number
  * @property \Cake\I18n\FrozenDate $invoice_date
- * @property int $charges_id
  * @property int $amount
  * @property \Cake\I18n\FrozenDate $due_date
  * @property int $player_id
  *
- * @property \App\Model\Entity\Charge[] $charges
  * @property \App\Model\Entity\Player $player
+ * @property \App\Model\Entity\InvoicesItem[] $invoices_item
  * @property \App\Model\Entity\Payment[] $payments
  */
 class Invoice extends Entity
@@ -33,12 +32,11 @@ class Invoice extends Entity
     protected $_accessible = [
         'invoice_number' => true,
         'invoice_date' => true,
-        'charges_id' => true,
         'amount' => true,
         'due_date' => true,
         'player_id' => true,
-        'charges' => true,
         'player' => true,
+        'invoices_item' => true,
         'payments' => true
     ];
 }

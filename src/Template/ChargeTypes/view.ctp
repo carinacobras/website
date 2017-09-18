@@ -37,14 +37,14 @@
         <table cellpadding="0" cellspacing="0">
             <tr>
                 <th scope="col"><?= __('Id') ?></th>
-                <th scope="col"><?= __('Invoice Id') ?></th>
+                <th scope="col"><?= __('Order Id') ?></th>
                 <th scope="col"><?= __('Charge Type Id') ?></th>
                 <th scope="col" class="actions"><?= __('Actions') ?></th>
             </tr>
             <?php foreach ($chargeType->charges as $charges): ?>
             <tr>
                 <td><?= h($charges->id) ?></td>
-                <td><?= h($charges->invoice_id) ?></td>
+                <td><?= h($charges->order_id) ?></td>
                 <td><?= h($charges->charge_type_id) ?></td>
                 <td class="actions">
                     <?= $this->Html->link(__('View'), ['controller' => 'Charges', 'action' => 'view', $charges->id]) ?>

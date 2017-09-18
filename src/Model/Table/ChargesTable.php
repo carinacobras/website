@@ -9,8 +9,9 @@ use Cake\Validation\Validator;
 /**
  * Charges Model
  *
- * @property \App\Model\Table\InvoicesTable|\Cake\ORM\Association\BelongsTo $Invoices
+ * @property \App\Model\Table\OrdersTable|\Cake\ORM\Association\BelongsTo $Orders
  * @property \App\Model\Table\ChargeTypesTable|\Cake\ORM\Association\BelongsTo $ChargeTypes
+ * @property \App\Model\Table\InvoicesItemTable|\Cake\ORM\Association\HasMany $InvoicesItem
  *
  * @method \App\Model\Entity\Charge get($primaryKey, $options = [])
  * @method \App\Model\Entity\Charge newEntity($data = null, array $options = [])
@@ -37,13 +38,16 @@ class ChargesTable extends Table
         $this->setDisplayField('id');
         $this->setPrimaryKey('id');
 
-        $this->belongsTo('Invoices', [
-            'foreignKey' => 'invoice_id',
+        $this->belongsTo('Orders', [
+            'foreignKey' => 'order_id',
             'joinType' => 'INNER'
         ]);
         $this->belongsTo('ChargeTypes', [
             'foreignKey' => 'charge_type_id',
             'joinType' => 'INNER'
+        ]);
+        $this->hasMany('InvoicesItem', [
+            'foreignKey' => 'charge_id'
         ]);
     }
 
@@ -71,7 +75,7 @@ class ChargesTable extends Table
      */
     public function buildRules(RulesChecker $rules)
     {
-        $rules->add($rules->existsIn(['invoice_id'], 'Invoices'));
+        $rules->add($rules->existsIn(['order_id'], 'Orders'));
         $rules->add($rules->existsIn(['charge_type_id'], 'ChargeTypes'));
 
         return $rules;

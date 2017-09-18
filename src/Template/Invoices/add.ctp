@@ -9,8 +9,8 @@
         <li><?= $this->Html->link(__('List Invoices'), ['action' => 'index']) ?></li>
         <li><?= $this->Html->link(__('List Players'), ['controller' => 'Players', 'action' => 'index']) ?></li>
         <li><?= $this->Html->link(__('New Player'), ['controller' => 'Players', 'action' => 'add']) ?></li>
-        <li><?= $this->Html->link(__('List Charges'), ['controller' => 'Charges', 'action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('New Charge'), ['controller' => 'Charges', 'action' => 'add']) ?></li>
+        <li><?= $this->Html->link(__('List Invoices Item'), ['controller' => 'InvoicesItem', 'action' => 'index']) ?></li>
+        <li><?= $this->Html->link(__('New Invoices Item'), ['controller' => 'InvoicesItem', 'action' => 'add']) ?></li>
         <li><?= $this->Html->link(__('List Payments'), ['controller' => 'Payments', 'action' => 'index']) ?></li>
         <li><?= $this->Html->link(__('New Payment'), ['controller' => 'Payments', 'action' => 'add']) ?></li>
     </ul>
@@ -22,7 +22,6 @@
         <?php
             echo $this->Form->control('invoice_number');
             echo $this->Form->control('invoice_date');
-            echo $this->Form->control('charges_id');
             echo $this->Form->control('amount');
             echo $this->Form->control('due_date');
             echo $this->Form->control('player_id', ['options' => $players]);
