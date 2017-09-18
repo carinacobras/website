@@ -11,6 +11,8 @@
         <li><?= $this->Form->postLink(__('Delete Order Item'), ['action' => 'delete', $orderItem->id], ['confirm' => __('Are you sure you want to delete # {0}?', $orderItem->id)]) ?> </li>
         <li><?= $this->Html->link(__('List Order Items'), ['action' => 'index']) ?> </li>
         <li><?= $this->Html->link(__('New Order Item'), ['action' => 'add']) ?> </li>
+        <li><?= $this->Html->link(__('List Order Lines'), ['controller' => 'OrderLines', 'action' => 'index']) ?> </li>
+        <li><?= $this->Html->link(__('New Order Line'), ['controller' => 'OrderLines', 'action' => 'add']) ?> </li>
     </ul>
 </nav>
 <div class="orderItems view large-9 medium-8 columns content">
@@ -29,4 +31,29 @@
             <td><?= $this->Number->format($orderItem->price) ?></td>
         </tr>
     </table>
+    <div class="related">
+        <h4><?= __('Related Order Lines') ?></h4>
+        <?php if (!empty($orderItem->order_lines)): ?>
+        <table cellpadding="0" cellspacing="0">
+            <tr>
+                <th scope="col"><?= __('Id') ?></th>
+                <th scope="col"><?= __('Order Id') ?></th>
+                <th scope="col"><?= __('Order Item Id') ?></th>
+                <th scope="col" class="actions"><?= __('Actions') ?></th>
+            </tr>
+            <?php foreach ($orderItem->order_lines as $orderLines): ?>
+            <tr>
+                <td><?= h($orderLines->id) ?></td>
+                <td><?= h($orderLines->order_id) ?></td>
+                <td><?= h($orderLines->order_item_id) ?></td>
+                <td class="actions">
+                    <?= $this->Html->link(__('View'), ['controller' => 'OrderLines', 'action' => 'view', $orderLines->id]) ?>
+                    <?= $this->Html->link(__('Edit'), ['controller' => 'OrderLines', 'action' => 'edit', $orderLines->id]) ?>
+                    <?= $this->Form->postLink(__('Delete'), ['controller' => 'OrderLines', 'action' => 'delete', $orderLines->id], ['confirm' => __('Are you sure you want to delete # {0}?', $orderLines->id)]) ?>
+                </td>
+            </tr>
+            <?php endforeach; ?>
+        </table>
+        <?php endif; ?>
+    </div>
 </div>

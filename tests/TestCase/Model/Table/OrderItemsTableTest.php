@@ -24,7 +24,28 @@ class OrderItemsTableTest extends TestCase
      * @var array
      */
     public $fixtures = [
-        'app.order_items'
+        'app.order_items',
+        'app.order_lines',
+        'app.orders',
+        'app.players',
+        'app.users',
+        'app.coaches',
+        'app.teams',
+        'app.competitions',
+        'app.courts',
+        'app.locations',
+        'app.training',
+        'app.ladders',
+        'app.managers',
+        'app.teams_jerseys',
+        'app.emails',
+        'app.phone_numbers',
+        'app.contacts',
+        'app.relationships',
+        'app.roles',
+        'app.absences',
+        'app.invoices',
+        'app.payments'
     ];
 
     /**

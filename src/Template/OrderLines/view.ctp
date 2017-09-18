@@ -13,6 +13,8 @@
         <li><?= $this->Html->link(__('New Order Line'), ['action' => 'add']) ?> </li>
         <li><?= $this->Html->link(__('List Orders'), ['controller' => 'Orders', 'action' => 'index']) ?> </li>
         <li><?= $this->Html->link(__('New Order'), ['controller' => 'Orders', 'action' => 'add']) ?> </li>
+        <li><?= $this->Html->link(__('List Order Items'), ['controller' => 'OrderItems', 'action' => 'index']) ?> </li>
+        <li><?= $this->Html->link(__('New Order Item'), ['controller' => 'OrderItems', 'action' => 'add']) ?> </li>
     </ul>
 </nav>
 <div class="orderLines view large-9 medium-8 columns content">
@@ -23,12 +25,12 @@
             <td><?= $orderLine->has('order') ? $this->Html->link($orderLine->order->id, ['controller' => 'Orders', 'action' => 'view', $orderLine->order->id]) : '' ?></td>
         </tr>
         <tr>
-            <th scope="row"><?= __('Id') ?></th>
-            <td><?= $this->Number->format($orderLine->id) ?></td>
+            <th scope="row"><?= __('Order Item') ?></th>
+            <td><?= $orderLine->has('order_item') ? $this->Html->link($orderLine->order_item->name, ['controller' => 'OrderItems', 'action' => 'view', $orderLine->order_item->id]) : '' ?></td>
         </tr>
         <tr>
-            <th scope="row"><?= __('Order Item') ?></th>
-            <td><?= $this->Number->format($orderLine->order_item) ?></td>
+            <th scope="row"><?= __('Id') ?></th>
+            <td><?= $this->Number->format($orderLine->id) ?></td>
         </tr>
     </table>
 </div>

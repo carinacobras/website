@@ -36,7 +36,8 @@ class OrderLinesControllerTest extends IntegrationTestCase
         'app.roles',
         'app.absences',
         'app.invoices',
-        'app.payments'
+        'app.payments',
+        'app.order_items'
     ];
 
     /**

@@ -42,7 +42,7 @@ class OrdersFixture extends TestFixture
     public $records = [
         [
             'id' => 1,
-            'order_date' => '2017-09-18 14:00:30',
+            'order_date' => '2017-09-18 14:03:02',
             'player_id' => 1
         ],
     ];

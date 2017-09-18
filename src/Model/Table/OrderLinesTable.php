@@ -10,6 +10,7 @@ use Cake\Validation\Validator;
  * OrderLines Model
  *
  * @property \App\Model\Table\OrdersTable|\Cake\ORM\Association\BelongsTo $Orders
+ * @property \App\Model\Table\OrderItemsTable|\Cake\ORM\Association\BelongsTo $OrderItems
  *
  * @method \App\Model\Entity\OrderLine get($primaryKey, $options = [])
  * @method \App\Model\Entity\OrderLine newEntity($data = null, array $options = [])
@@ -40,6 +41,10 @@ class OrderLinesTable extends Table
             'foreignKey' => 'order_id',
             'joinType' => 'INNER'
         ]);
+        $this->belongsTo('OrderItems', [
+            'foreignKey' => 'order_item_id',
+            'joinType' => 'INNER'
+        ]);
     }
 
     /**
@@ -54,11 +59,6 @@ class OrderLinesTable extends Table
             ->integer('id')
             ->allowEmpty('id', 'create');
 
-        $validator
-            ->integer('order_item')
-            ->requirePresence('order_item', 'create')
-            ->notEmpty('order_item');
-
         return $validator;
     }
 
@@ -72,6 +72,7 @@ class OrderLinesTable extends Table
     public function buildRules(RulesChecker $rules)
     {
         $rules->add($rules->existsIn(['order_id'], 'Orders'));
+        $rules->add($rules->existsIn(['order_item_id'], 'OrderItems'));
 
         return $rules;
     }

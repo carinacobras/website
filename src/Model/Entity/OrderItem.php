@@ -9,6 +9,8 @@ use Cake\ORM\Entity;
  * @property int $id
  * @property string $name
  * @property int $price
+ *
+ * @property \App\Model\Entity\OrderLine[] $order_lines
  */
 class OrderItem extends Entity
 {
@@ -24,6 +26,7 @@ class OrderItem extends Entity
      */
     protected $_accessible = [
         'name' => true,
-        'price' => true
+        'price' => true,
+        'order_lines' => true
     ];
 }

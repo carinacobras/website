@@ -44,7 +44,8 @@ class OrderLinesTableTest extends TestCase
         'app.roles',
         'app.absences',
         'app.invoices',
-        'app.payments'
+        'app.payments',
+        'app.order_items'
     ];
 
     /**

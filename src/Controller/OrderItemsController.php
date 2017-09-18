@@ -36,7 +36,7 @@ class OrderItemsController extends AppController
     public function view($id = null)
     {
         $orderItem = $this->OrderItems->get($id, [
-            'contain' => []
+            'contain' => ['OrderLines']
         ]);
 
         $this->set('orderItem', $orderItem);

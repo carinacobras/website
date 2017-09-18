@@ -8,9 +8,10 @@ use Cake\ORM\Entity;
  *
  * @property int $id
  * @property int $order_id
- * @property int $order_item
+ * @property int $order_item_id
  *
  * @property \App\Model\Entity\Order $order
+ * @property \App\Model\Entity\OrderItem $order_item
  */
 class OrderLine extends Entity
 {
@@ -26,7 +27,8 @@ class OrderLine extends Entity
      */
     protected $_accessible = [
         'order_id' => true,
-        'order_item' => true,
-        'order' => true
+        'order_item_id' => true,
+        'order' => true,
+        'order_item' => true
     ];
 }

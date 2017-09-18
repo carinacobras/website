@@ -21,7 +21,7 @@ class OrderLinesController extends AppController
     public function index()
     {
         $this->paginate = [
-            'contain' => ['Orders']
+            'contain' => ['Orders', 'OrderItems']
         ];
         $orderLines = $this->paginate($this->OrderLines);
 
@@ -39,7 +39,7 @@ class OrderLinesController extends AppController
     public function view($id = null)
     {
         $orderLine = $this->OrderLines->get($id, [
-            'contain' => ['Orders']
+            'contain' => ['Orders', 'OrderItems']
         ]);
 
         $this->set('orderLine', $orderLine);
@@ -64,7 +64,8 @@ class OrderLinesController extends AppController
             $this->Flash->error(__('The order line could not be saved. Please, try again.'));
         }
         $orders = $this->OrderLines->Orders->find('list', ['limit' => 200]);
-        $this->set(compact('orderLine', 'orders'));
+        $orderItems = $this->OrderLines->OrderItems->find('list', ['limit' => 200]);
+        $this->set(compact('orderLine', 'orders', 'orderItems'));
         $this->set('_serialize', ['orderLine']);
     }
 
@@ -90,7 +91,8 @@ class OrderLinesController extends AppController
             $this->Flash->error(__('The order line could not be saved. Please, try again.'));
         }
         $orders = $this->OrderLines->Orders->find('list', ['limit' => 200]);
-        $this->set(compact('orderLine', 'orders'));
+        $orderItems = $this->OrderLines->OrderItems->find('list', ['limit' => 200]);
+        $this->set(compact('orderLine', 'orders', 'orderItems'));
         $this->set('_serialize', ['orderLine']);
     }
 
