@@ -29,7 +29,7 @@ class LaddersController extends AppController
         ->select(['Ladders.id', 'Players.id', 'Users.first_name', 'Users.last_name']
         );
 
-        $lads = array_merge($this->ladders, $players);
+       // $lads = array_merge($this->ladders, $players);
         $ladders = $this->paginate($this->ladders);
 
         $this->set(compact('ladders'));
