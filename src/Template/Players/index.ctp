@@ -35,7 +35,7 @@
             <?php foreach ($players as $player): ?>
             <tr>
                 <td><?= $this->Number->format($player->id) ?></td>
-                <td><?= $player->has('user') ? $this->Html->link($player->user->id, ['controller' => 'Users', 'action' => 'view', $player->user->id]) : '' ?></td>
+                <td><?= $player->has('user') ? $this->Html->link($player->user->first_name . ' ' . $player->user->last_name, ['controller' => 'Users', 'action' => 'view', $player->user->id]) : '' ?></td>
                 <td><?= $player->has('team') ? $this->Html->link($player->team->name, ['controller' => 'Teams', 'action' => 'view', $player->team->id]) : '' ?></td>
                 <td class="actions">
                     <?= $this->Html->link(__('View'), ['action' => 'view', $player->id]) ?>
