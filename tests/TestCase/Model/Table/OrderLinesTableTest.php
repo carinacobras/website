@@ -25,7 +25,26 @@ class OrderLinesTableTest extends TestCase
      */
     public $fixtures = [
         'app.order_lines',
-        'app.orders'
+        'app.orders',
+        'app.players',
+        'app.users',
+        'app.coaches',
+        'app.teams',
+        'app.competitions',
+        'app.courts',
+        'app.locations',
+        'app.training',
+        'app.ladders',
+        'app.managers',
+        'app.teams_jerseys',
+        'app.emails',
+        'app.phone_numbers',
+        'app.contacts',
+        'app.relationships',
+        'app.roles',
+        'app.absences',
+        'app.invoices',
+        'app.payments'
     ];
 
     /**
