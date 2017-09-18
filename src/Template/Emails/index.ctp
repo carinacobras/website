@@ -28,7 +28,7 @@
             <tr>
                 <td><?= $this->Number->format($email->id) ?></td>
                 <td><?= h($email->address) ?></td>
-                <td><?= $email->has('user') ? $this->Html->link($email->user->id, ['controller' => 'Users', 'action' => 'view', $email->user->id]) : '' ?></td>
+                <td><?= $email->has('user') ? $this->Html->link($email->user->first_name . ' ' . $email->user->last_name, ['controller' => 'Users', 'action' => 'view', $email->user->id]) : '' ?></td>
                 <td class="actions">
                     <?= $this->Html->link(__('View'), ['action' => 'view', $email->id]) ?>
                     <?= $this->Html->link(__('Edit'), ['action' => 'edit', $email->id]) ?>
