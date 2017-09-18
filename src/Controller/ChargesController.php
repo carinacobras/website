@@ -21,7 +21,7 @@ class ChargesController extends AppController
     public function index()
     {
         $this->paginate = [
-            'contain' => ['Orders', 'ChargeTypes']
+            'contain' => ['ChargeTypes']
         ];
         $charges = $this->paginate($this->Charges);
 
@@ -39,7 +39,7 @@ class ChargesController extends AppController
     public function view($id = null)
     {
         $charge = $this->Charges->get($id, [
-            'contain' => ['Orders', 'ChargeTypes', 'InvoicesItem']
+            'contain' => ['ChargeTypes', 'InvoiceItems']
         ]);
 
         $this->set('charge', $charge);
@@ -63,9 +63,8 @@ class ChargesController extends AppController
             }
             $this->Flash->error(__('The charge could not be saved. Please, try again.'));
         }
-        $orders = $this->Charges->Orders->find('list', ['limit' => 200]);
         $chargeTypes = $this->Charges->ChargeTypes->find('list', ['limit' => 200]);
-        $this->set(compact('charge', 'orders', 'chargeTypes'));
+        $this->set(compact('charge', 'chargeTypes'));
         $this->set('_serialize', ['charge']);
     }
 
@@ -90,9 +89,8 @@ class ChargesController extends AppController
             }
             $this->Flash->error(__('The charge could not be saved. Please, try again.'));
         }
-        $orders = $this->Charges->Orders->find('list', ['limit' => 200]);
         $chargeTypes = $this->Charges->ChargeTypes->find('list', ['limit' => 200]);
-        $this->set(compact('charge', 'orders', 'chargeTypes'));
+        $this->set(compact('charge', 'chargeTypes'));
         $this->set('_serialize', ['charge']);
     }
 

@@ -17,9 +17,28 @@ class ChargesControllerTest extends IntegrationTestCase
      */
     public $fixtures = [
         'app.charges',
-        'app.orders',
         'app.charge_types',
-        'app.invoices_item'
+        'app.invoice_items',
+        'app.invoices',
+        'app.players',
+        'app.users',
+        'app.coaches',
+        'app.teams',
+        'app.competitions',
+        'app.courts',
+        'app.locations',
+        'app.training',
+        'app.ladders',
+        'app.managers',
+        'app.teams_jerseys',
+        'app.emails',
+        'app.phone_numbers',
+        'app.contacts',
+        'app.relationships',
+        'app.roles',
+        'app.absences',
+        'app.invoices_item',
+        'app.payments'
     ];
 
     /**

@@ -13,8 +13,8 @@
         <li><?= $this->Html->link(__('New Charge'), ['action' => 'add']) ?> </li>
         <li><?= $this->Html->link(__('List Charge Types'), ['controller' => 'ChargeTypes', 'action' => 'index']) ?> </li>
         <li><?= $this->Html->link(__('New Charge Type'), ['controller' => 'ChargeTypes', 'action' => 'add']) ?> </li>
-        <li><?= $this->Html->link(__('List Invoices Item'), ['controller' => 'InvoicesItem', 'action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('New Invoices Item'), ['controller' => 'InvoicesItem', 'action' => 'add']) ?> </li>
+        <li><?= $this->Html->link(__('List Invoice Items'), ['controller' => 'InvoiceItems', 'action' => 'index']) ?> </li>
+        <li><?= $this->Html->link(__('New Invoice Item'), ['controller' => 'InvoiceItems', 'action' => 'add']) ?> </li>
     </ul>
 </nav>
 <div class="charges view large-9 medium-8 columns content">
@@ -28,14 +28,10 @@
             <th scope="row"><?= __('Id') ?></th>
             <td><?= $this->Number->format($charge->id) ?></td>
         </tr>
-        <tr>
-            <th scope="row"><?= __('Order Id') ?></th>
-            <td><?= $this->Number->format($charge->order_id) ?></td>
-        </tr>
     </table>
     <div class="related">
-        <h4><?= __('Related Invoices Item') ?></h4>
-        <?php if (!empty($charge->invoices_item)): ?>
+        <h4><?= __('Related Invoice Items') ?></h4>
+        <?php if (!empty($charge->invoice_items)): ?>
         <table cellpadding="0" cellspacing="0">
             <tr>
                 <th scope="col"><?= __('Id') ?></th>
@@ -43,15 +39,15 @@
                 <th scope="col"><?= __('Charge Id') ?></th>
                 <th scope="col" class="actions"><?= __('Actions') ?></th>
             </tr>
-            <?php foreach ($charge->invoices_item as $invoicesItem): ?>
+            <?php foreach ($charge->invoice_items as $invoiceItems): ?>
             <tr>
-                <td><?= h($invoicesItem->id) ?></td>
-                <td><?= h($invoicesItem->invoice_id) ?></td>
-                <td><?= h($invoicesItem->charge_id) ?></td>
+                <td><?= h($invoiceItems->id) ?></td>
+                <td><?= h($invoiceItems->invoice_id) ?></td>
+                <td><?= h($invoiceItems->charge_id) ?></td>
                 <td class="actions">
-                    <?= $this->Html->link(__('View'), ['controller' => 'InvoicesItem', 'action' => 'view', $invoicesItem->id]) ?>
-                    <?= $this->Html->link(__('Edit'), ['controller' => 'InvoicesItem', 'action' => 'edit', $invoicesItem->id]) ?>
-                    <?= $this->Form->postLink(__('Delete'), ['controller' => 'InvoicesItem', 'action' => 'delete', $invoicesItem->id], ['confirm' => __('Are you sure you want to delete # {0}?', $invoicesItem->id)]) ?>
+                    <?= $this->Html->link(__('View'), ['controller' => 'InvoiceItems', 'action' => 'view', $invoiceItems->id]) ?>
+                    <?= $this->Html->link(__('Edit'), ['controller' => 'InvoiceItems', 'action' => 'edit', $invoiceItems->id]) ?>
+                    <?= $this->Form->postLink(__('Delete'), ['controller' => 'InvoiceItems', 'action' => 'delete', $invoiceItems->id], ['confirm' => __('Are you sure you want to delete # {0}?', $invoiceItems->id)]) ?>
                 </td>
             </tr>
             <?php endforeach; ?>
