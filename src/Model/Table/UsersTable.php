@@ -87,7 +87,7 @@ class UsersTable extends Table
             ->notEmpty('last_name');
 
         $validator
-            ->dateTime('dob')
+            ->date('dob')
             ->requirePresence('dob', 'create')
             ->notEmpty('dob');
         $validator
