@@ -26,6 +26,7 @@
     <fieldset>
         <legend><?= __('Add User') ?></legend>
         <?php
+             echo $this->Form->control('username');
             echo $this->Form->control('first_name');
             echo $this->Form->control('last_name');
             echo $this->Form->input('dob', 

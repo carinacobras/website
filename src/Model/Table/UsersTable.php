@@ -76,7 +76,6 @@ class UsersTable extends Table
         $validator
             ->integer('id')
             ->allowEmpty('id', 'create');
-
         $validator
             ->scalar('first_name')
             ->requirePresence('first_name', 'create')
@@ -92,10 +91,13 @@ class UsersTable extends Table
             ->requirePresence('dob', 'create')
             ->notEmpty('dob');
         $validator
-            >add('role', 'inList', [
+            ->add('role', 'inList', [
                 'rule' => ['inList', ['user', 'admin']],
                 'message' => 'Please enter a valid role'
             ]);
+        $validator
+            ->add(new IsUnique(['username']));
+        
 
         return $validator;
     }
