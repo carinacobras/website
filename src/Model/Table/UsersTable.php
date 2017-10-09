@@ -60,7 +60,7 @@ class UsersTable extends Table
         $this->hasMany('Players', [
             'foreignKey' => 'user_id'
         ]);
-        $this->hasMany('Roles', [
+        $this->hasMany('UsersGroups', [
             'foreignKey' => 'user_id'
         ]);
     }
@@ -91,6 +91,11 @@ class UsersTable extends Table
             ->dateTime('dob')
             ->requirePresence('dob', 'create')
             ->notEmpty('dob');
+        $validator
+            >add('role', 'inList', [
+                'rule' => ['inList', ['user', 'admin']],
+                'message' => 'Please enter a valid role'
+            ]);
 
         return $validator;
     }

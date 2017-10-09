@@ -36,8 +36,9 @@
             'year' => true
             ]
         );
-            
-            //echo $this->Form->control('dob');
+        echo $this->Form->control('role', [
+            'options' => ['user' => 'User', 'admin' => 'Admin']
+        ]);
         ?>
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>
