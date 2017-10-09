@@ -95,10 +95,14 @@ class UsersTable extends Table
                 'rule' => ['inList', ['user', 'admin']],
                 'message' => 'Please enter a valid role'
             ]);
-        $validator
-            ->add(new IsUnique(['username']));
-        
 
         return $validator;
+    }
+
+    public function buildRules(RulesChecker $rules)
+    {
+        $rules->addCreate(new IsUnique(['username']), 'uniqueUsername');
+
+        return $rules;
     }
 }
