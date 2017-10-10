@@ -117,6 +117,10 @@ class UsersController extends AppController
         // You should not add the "login" action to allow list. Doing so would
         // cause problems with normal functioning of AuthComponent.
         $this->Auth->allow(['add', 'logout']);
+
+        if ($this->Auth->user('role_id') != 2) {
+            $this->Auth->deny('index');
+        }
     }
 
     public function login()
