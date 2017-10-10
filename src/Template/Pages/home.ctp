@@ -49,7 +49,7 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
 <header class="row">
     <div class="header-image"><?= $this->Html->image('cake.logo.svg') ?></div>
     <?php
-    if($this->Session->read('Auth')) {
+    if($this->request->session()->read('Auth')) {
         // user is logged in, show logout..user menu etc
         echo "User:" . $user->username;
         echo $this->Html->link('Logout', array('controller' => 'users', 'action' => 'logout')); 
