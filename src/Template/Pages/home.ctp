@@ -48,9 +48,16 @@ $cakeDescription = 'CakePHP: the rapid development PHP framework';
 
 <header class="row">
     <div class="header-image"><?= $this->Html->image('cake.logo.svg') ?></div>
-    <div class="header-title">
-        <h1>Welcome to CakePHP <?= Configure::version() ?> Red Velvet. Build fast. Grow solid.</h1>
-    </div>
+    <?php
+    if($this->Session->read('Auth')) {
+        // user is logged in, show logout..user menu etc
+        echo "User:" . $user->username;
+        echo $this->Html->link('Logout', array('controller' => 'users', 'action' => 'logout')); 
+     } else {
+        // the user is not logged in
+        echo $this->Html->link('Login', array('controller' => 'users', 'action' => 'login')); 
+     }
+    ?>
 </header>
 
 <div class="row">
