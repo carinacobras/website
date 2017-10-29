@@ -60,7 +60,7 @@ class UsersTable extends Table
         $this->hasMany('Players', [
             'foreignKey' => 'user_id'
         ]);
-        $this->hasMany('UsersGroups', [
+        $this->hasMany('UsersRoles', [
             'foreignKey' => 'user_id'
         ]);
     }

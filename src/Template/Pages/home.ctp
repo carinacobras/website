@@ -18,44 +18,84 @@ use Cake\Core\Plugin;
 use Cake\Datasource\ConnectionManager;
 use Cake\Error\Debugger;
 use Cake\Network\Exception\NotFoundException;
+use Cake\Routing\Router;
 
 $this->layout = false;
 
-if (!Configure::read('debug')) :
-    throw new NotFoundException(
-        'Please replace src/Template/Pages/home.ctp with your own version or re-enable debug mode.'
+$urls = array(
+    array(
+        'label' => 'Home',
+        'url' => array('controller' => 'pages', 'action' => 'home')
+    ),
+    array(
+        'label' => 'About Us',
+        'url' => array('controller' => 'pages', 'action' => 'about')
+    ),
+    array(
+        'label' => 'Fee Information',
+        'url' => array('controller' => 'pages', 'action' => 'fees')
+    ),
+    array(
+        'label' => 'Payments',
+        'url' => array('controller' => 'pages', 'action' => 'payments')
+    ),
+    array(
+        'label' => 'Contact Us',
+        'url' => array('controller' => 'pages', 'action' => 'contact')
+    )
     );
-endif;
-
-$cakeDescription = 'CakePHP: the rapid development PHP framework';
 ?>
 <!DOCTYPE html>
 <html>
-<head>
+    <head>
     <?= $this->Html->charset() ?>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cobras test site</title>
 
     <?= $this->Html->meta('icon') ?>
-    <?= $this->Html->css('base.css') ?>
-    <?= $this->Html->css('cake.css') ?>
-    <?= $this->Html->css('home.css') ?>
-    <link href="https://fonts.googleapis.com/css?family=Raleway:500i|Roboto:300,400,700|Roboto+Mono" rel="stylesheet">
-</head>
-<body class="home">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
 
-<header class="row">
-    <div class="header-image"><?= $this->Html->image('cake.logo.svg') ?></div>
+    <link href="https://fonts.googleapis.com/css?family=Raleway:500i|Roboto:300,400,700|Roboto+Mono" rel="stylesheet">
+    </head>
+<body class="home">
+<nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse">
+<div class="justify-content-end collapse navbar-collapse" id="navbarNav">
+  <ul class="navbar-nav">
+    <li class="nav-link">
     <?php
     if($this->request->session()->read('Auth')) {
         // user is logged in, show logout..user menu etc     
-        echo $this->Html->link('Logout', array('controller' => 'users', 'action' => 'logout')); 
+        echo $this->Html->link('Logout', array('controller' => 'users', 'action' => 'logout'), ['class' => 'nav-link']); 
      } else {
         // the user is not logged in
-        echo $this->Html->link('Login', array('controller' => 'users', 'action' => 'login')); 
+        echo $this->Html->link('Login', array('controller' => 'users', 'action' => 'login'), ['class' => 'nav-link']); 
      }
     ?>
-</header>
+    </li>
+    </ul>
+    </div>
+</nav>
+<nav class="navbar navbar-toggleable-md navbar-inverse bg-success">
+<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNav2" aria-controls="navbarNav2" aria-expanded="false" aria-label="Toggle navigation">
+  <span class="navbar-toggler-icon"></span>
+</button>
+
+<a class="navbar-brand" href="#">Carina Cobras</a>
+<div class="collapse navbar-collapse" id="navbarNav2">
+  <ul class="navbar-nav nav-fill w-100">
+
+  <?php 
+       foreach ($urls as $url) {
+        $active = (Router::normalize(Router::url()) === Router::normalize($url['url'])) ? 'active' : '' ;
+        echo '<li class="nav-item text-center"'.$active.'">'.$this->Html->link($url['label'], $url['url'], ['class' => 'nav-link']).'</li>' ;
+    }
+    ?>
+  </ul>
+</div>
+</nav>
 
 <div class="row">
     <div class="columns large-12">
