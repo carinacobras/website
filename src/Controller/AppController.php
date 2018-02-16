@@ -12,10 +12,14 @@
  * @since     0.2.9
  * @license   https://opensource.org/licenses/mit-license.php MIT License
  */
+
 namespace App\Controller;
+
+require_once(ROOT . DS . 'vendor' . DS . "laravel-sass" . DS . "sass-compiler.php");
 
 use Cake\Controller\Controller;
 use Cake\Event\Event;
+use SassCompiler;
 
 /**
  * Application Controller
@@ -37,6 +41,7 @@ class AppController extends Controller
      *
      * @return void
      */
+
     public function initialize()
     {
         parent::initialize();
@@ -75,6 +80,7 @@ class AppController extends Controller
         // Default deny
         return false;
     }
+    
 
     public function beforeFilter(Event $event)
     {
@@ -89,9 +95,15 @@ class AppController extends Controller
      */
     public function beforeRender(Event $event)
     {
-        // Note: These defaults are just to get started quickly with development
-        // and should not be used in production. You should instead set "_serialize"
-        // in each action as required.
+        // set the LESS file location
+        $scss = ROOT . DS . APP_DIR . DS . 'webroot' . DS . 'scss' . DS . 'bootstrap.scss';
+
+        // set the CSS file to be written
+        $css = ROOT . DS . APP_DIR . DS . 'webroot' . DS . 'css' . DS . 'bootstrap.min.css';
+
+        // compile the file
+        SassCompiler::run($scss, $css);
+                
         if (!array_key_exists('_serialize', $this->viewVars) &&
             in_array($this->response->type(), ['application/json', 'application/xml'])
         ) {
