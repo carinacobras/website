@@ -95,7 +95,7 @@ class AppController extends Controller
     public function beforeRender(Event $event)
     {
         // set the LESS file location
-        $scss_dir = ROOT . DS . APP_DIR . DS . 'webroot' . DS . 'scss';
+        $scss_dir = ROOT . DS . APP_DIR . DS . 'webroot' . DS . 'scss' . DS;
 
         // set the CSS file to be written
         $css = ROOT . DS . APP_DIR . DS . 'webroot' . DS . 'css' . DS . 'bootstrap.min.css';
@@ -105,7 +105,7 @@ class AppController extends Controller
         $scssc->setImportPaths($scss_dir);
 
         // compile the file
-        $current = $scssc->compile('@import "'. $scss_dir . DS . 'bootstrap.scss' . '"');
+        $current = $scssc->compile('@import bootstrap.scss');
 
         // Write the contents back to the file
         file_put_contents($css, $current);
