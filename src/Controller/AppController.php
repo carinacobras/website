@@ -15,7 +15,7 @@
 
 namespace App\Controller;
 
-require(ROOT . DS . 'vendor' . DS . "leafo" . DS . "scssphp" . DS . "scss.inc.php");
+require_once(ROOT . DS . 'vendor' . DS . "leafo" . DS . "scssphp" . DS . "scss.inc.php");
 
 use Cake\Controller\Controller;
 use Cake\Event\Event;
@@ -99,20 +99,16 @@ class AppController extends Controller
 
         // set the CSS file to be written
         $css = ROOT . DS . APP_DIR . DS . 'webroot' . DS . 'css' . DS . 'bootstrap.min.css';
-        $scss = new scssc();
 
-        echo $scss->compile('
-          $color: #abc;
-          div { color: lighten($color, 20%); }
-        ');
+        $scssc = new \scssc();
 
-        // $scssc->setImportPaths($scss_dir);
+        $scssc->setImportPaths($scss_dir);
 
         // compile the file
-        //$current = $scssc->compile('@import bootstrap.scss');
+        $current = $scssc->compile('@import bootstrap.scss');
 
         // Write the contents back to the file
-        //file_put_contents($css, $current);
+        file_put_contents($css, $current);
                 
         if (!array_key_exists('_serialize', $this->viewVars) &&
             in_array($this->response->type(), ['application/json', 'application/xml'])
