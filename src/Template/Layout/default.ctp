@@ -40,7 +40,9 @@ $cakeDescription = 'CakePHP: the rapid development php framework';
     <?= $this->Flash->render() ?>
     <div class="container-fluid clearfix">
         <div class="row no-gutters">
-            <?= $this->fetch('content') ?>
+            <div class="col-sm-12">
+                <?= $this->fetch('content') ?>
+            </div>
         </div>
     </div>
     <footer>
