@@ -14,7 +14,8 @@
         "cakephp/debug_kit": "~3.2",
         "sendgrid/sendgrid": "~6.0",
         "ext-pdo_sqlite": "*",
-        "sendinblue/sendinblue-api-bundle": "^2.0"
+        "sendinblue/sendinblue-api-bundle": "^2.0",
+        "promisepay/promisepay-php": "2.*"        
     },
     "require-dev": {
         "psy/psysh": "@stable",
