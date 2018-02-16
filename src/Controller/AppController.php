@@ -15,11 +15,10 @@
 
 namespace App\Controller;
 
-require_once(ROOT . DS . 'vendor' . DS . "panique" . DS . "laravel-sass" . DS . "sass-compiler.php");
+require_once(ROOT . DS . 'vendor' . DS . "leafo" . DS . "scssphp" . DS . "scss.inc.php");
 
 use Cake\Controller\Controller;
 use Cake\Event\Event;
-use \SassCompiler;
 
 /**
  * Application Controller
@@ -96,15 +95,19 @@ class AppController extends Controller
     public function beforeRender(Event $event)
     {
         // set the LESS file location
-        $scss = ROOT . DS . APP_DIR . DS . 'webroot' . DS . 'scss' . DS . 'bootstrap.scss';
+        $scss_dir = ROOT . DS . APP_DIR . DS . 'webroot' . DS . 'scss';
 
         // set the CSS file to be written
         $css = ROOT . DS . APP_DIR . DS . 'webroot' . DS . 'css' . DS . 'bootstrap.min.css';
 
-        $sassc= new SassCompiler();
+        $scssc = new scssc();
+
+        $scssc->setImportPaths($scss_dir);
 
         // compile the file
-        $sassc::run($scss, $css);
+        $current .= $scss->compile('@import "'. $scss_dir . DS . 'bootstrap.scss' . '"');
+        // Write the contents back to the file
+        file_put_contents($css, $current);
                 
         if (!array_key_exists('_serialize', $this->viewVars) &&
             in_array($this->response->type(), ['application/json', 'application/xml'])
