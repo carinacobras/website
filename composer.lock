@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "3a4e14673236eaa35e629a5176630045",
+    "content-hash": "83f5193b59de202459b86d29331e82df",
     "packages": [
         {
             "name": "aura/intl",
@@ -775,24 +775,23 @@
         },
         {
             "name": "leafo/scssphp",
-            "version": "v0.6.6",
+            "version": "v0.7.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/leafo/scssphp.git",
-                "reference": "6fdfe19d2b13a3f12ba0792227f0718809ce4e4d"
+                "reference": "4f605a51462c85cf6df5bb45460483a138e04025"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/leafo/scssphp/zipball/6fdfe19d2b13a3f12ba0792227f0718809ce4e4d",
-                "reference": "6fdfe19d2b13a3f12ba0792227f0718809ce4e4d",
+                "url": "https://api.github.com/repos/leafo/scssphp/zipball/4f605a51462c85cf6df5bb45460483a138e04025",
+                "reference": "4f605a51462c85cf6df5bb45460483a138e04025",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.4.0"
             },
             "require-dev": {
-                "kherge/box": "~2.5",
-                "phpunit/phpunit": "~3.7",
+                "phpunit/phpunit": "~4.6",
                 "squizlabs/php_codesniffer": "~2.5"
             },
             "bin": [
@@ -824,7 +823,7 @@
                 "scss",
                 "stylesheet"
             ],
-            "time": "2016-09-11T01:34:11+00:00"
+            "time": "2017-10-14T21:35:01+00:00"
         },
         {
             "name": "m1/env",
