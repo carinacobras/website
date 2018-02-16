@@ -15,7 +15,7 @@
 
 namespace App\Controller;
 
-require_once(ROOT . DS . 'vendor' . DS . "laravel-sass" . DS . "sass-compiler.php");
+require_once(ROOT . DS . 'vendor' . DS . "panique" . DS . "laravel-sass" . DS . "sass-compiler.php");
 
 use Cake\Controller\Controller;
 use Cake\Event\Event;
