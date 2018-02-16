@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "1cb711e319c3133b59c75bd5faec197d",
+    "content-hash": "a7667b29acf60dd69159dc9d139be2f5",
     "packages": [
         {
             "name": "aura/intl",
@@ -775,16 +775,16 @@
         },
         {
             "name": "leafo/scssphp",
-            "version": "v0.7.0",
+            "version": "v0.7.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/leafo/scssphp.git",
-                "reference": "6486e9b5157a6e75d4ea442f662297bfd925c7ef"
+                "reference": "9eaf3a6db4d88ce2c265a89e3fc495fbec9bf7a6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/leafo/scssphp/zipball/6486e9b5157a6e75d4ea442f662297bfd925c7ef",
-                "reference": "6486e9b5157a6e75d4ea442f662297bfd925c7ef",
+                "url": "https://api.github.com/repos/leafo/scssphp/zipball/9eaf3a6db4d88ce2c265a89e3fc495fbec9bf7a6",
+                "reference": "9eaf3a6db4d88ce2c265a89e3fc495fbec9bf7a6",
                 "shasum": ""
             },
             "require": {
@@ -823,7 +823,7 @@
                 "scss",
                 "stylesheet"
             ],
-            "time": "2017-10-13T15:52:30+00:00"
+            "time": "2017-10-13T15:53:00+00:00"
         },
         {
             "name": "m1/env",
