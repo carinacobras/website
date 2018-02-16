@@ -105,7 +105,8 @@ class AppController extends Controller
         $scssc->setImportPaths($scss_dir);
 
         // compile the file
-        $current .= $scss->compile('@import "'. $scss_dir . DS . 'bootstrap.scss' . '"');
+        $current .= $scssc->compile('@import "'. $scss_dir . DS . 'bootstrap.scss' . '"');
+        
         // Write the contents back to the file
         file_put_contents($css, $current);
                 
