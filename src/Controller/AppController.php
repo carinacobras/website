@@ -101,8 +101,10 @@ class AppController extends Controller
         // set the CSS file to be written
         $css = ROOT . DS . APP_DIR . DS . 'webroot' . DS . 'css' . DS . 'bootstrap.min.css';
 
+        $sassc= new SassCompiler();
+
         // compile the file
-        SassCompiler::run($scss, $css);
+        $sassc::run($scss, $css);
                 
         if (!array_key_exists('_serialize', $this->viewVars) &&
             in_array($this->response->type(), ['application/json', 'application/xml'])
