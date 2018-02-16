@@ -15,11 +15,11 @@
 
 namespace App\Controller;
 
-require_once(ROOT . DS . 'vendor' . DS . "leafo" . DS . "scssphp" . DS . "scss.inc.php");
+//require_once(ROOT . DS . 'vendor' . DS . "leafo" . DS . "scssphp" . DS . "scss.inc.php");
 
 use Cake\Controller\Controller;
 use Cake\Event\Event;
-use Leafo\ScssPhp\Compiler;
+// use Leafo\ScssPhp\Compiler;
 
 /**
  * Application Controller
@@ -95,20 +95,20 @@ class AppController extends Controller
      */
     public function beforeRender(Event $event)
     {
-        // set the LESS file location
-        $scss_dir = ROOT . DS . 'webroot' . DS . 'scss';
+    //     // set the LESS file location
+    //     $scss_dir = ROOT . DS . 'webroot' . DS . 'scss';
 
-        // set the CSS file to be written
-        $css = ROOT . DS . 'webroot' . DS . 'css' . DS . 'bootstrap.min.css';
+    //     // set the CSS file to be written
+    //     $css = ROOT . DS . 'webroot' . DS . 'css' . DS . 'bootstrap.min.css';
 
-        $scssc = new Compiler();
+    //     $scssc = new Compiler();
 
-        $scssc->setImportPaths($scss_dir);
+    //     $scssc->setImportPaths($scss_dir);
 
-        // compile the file
-       $compiledcss = $scssc->compile('@import "bootstrap.scss";');
-        // Write the contents back to the file
-        file_put_contents($css, $compiledcss);
+    //     // compile the file
+    //    $compiledcss = $scssc->compile('@import "bootstrap.scss";');
+    //     // Write the contents back to the file
+    //     file_put_contents($css, $compiledcss);
                 
         if (!array_key_exists('_serialize', $this->viewVars) &&
             in_array($this->response->type(), ['application/json', 'application/xml'])
