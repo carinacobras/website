@@ -19,7 +19,7 @@ require_once(ROOT . DS . 'vendor' . DS . "panique" . DS . "laravel-sass" . DS . 
 
 use Cake\Controller\Controller;
 use Cake\Event\Event;
-use SassCompiler;
+use \SassCompiler;
 
 /**
  * Application Controller
