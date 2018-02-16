@@ -33,10 +33,6 @@ require dirname(__DIR__) . '/vendor/autoload.php';
 use App\Application;
 use Cake\Http\Server;
 
-require __DIR__ . '/vendor/autoload.php';
-
-SassCompiler::run("scss/", "css/");
-
 // Bind your application to the server.
 $server = new Server(new Application(dirname(__DIR__) . '/config'));
 
