@@ -32,6 +32,7 @@ require dirname(__DIR__) . '/vendor/autoload.php';
 
 use App\Application;
 use Cake\Http\Server;
+use SassCompiler;
 
 SassCompiler::run("scss/", "css/");
 
