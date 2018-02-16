@@ -20,7 +20,8 @@
     "require-dev": {
         "psy/psysh": "@stable",
         "cakephp/bake": "~1.1",
-        "cakephp/cakephp-codesniffer": "^3.0"
+        "cakephp/cakephp-codesniffer": "^3.0",
+        "panique/laravel-sass": "1.0"
     },
     "suggest": {
         "markstory/asset_compress": "An asset compression plugin which provides file concatenation and a flexible filter system for preprocessing and minification.",

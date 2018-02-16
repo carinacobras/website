@@ -10,7 +10,3 @@ select[name="dob[month]"] {
 select[name="dob[year]"] {
     min-width:70px;
 }
-
-body {
-    background: #333333;
-}
