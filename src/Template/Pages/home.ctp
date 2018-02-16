@@ -44,7 +44,6 @@ $urls = array(
     );
 ?>
 
-<body class="home">
 <nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse">
 <div class="justify-content-end collapse navbar-collapse" id="navbarNav">
   <ul class="navbar-nav">
