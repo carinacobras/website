@@ -22,8 +22,6 @@ use Cake\Routing\Router;
 
 ?>
 
-<div class="row">
-    <div class="col-sm-12">
-        <p>HOME</p>
-    </div>
+<div class="col-sm-12">
+    <p>HOME</p>
 </div>

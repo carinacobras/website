@@ -106,7 +106,7 @@ $urls = array(
 </nav>
 
     <div class="container clearfix">
-    <div class="col-sm-12">
+    <div class="content col-sm-12">
         <?= $this->fetch('content') ?>
     </div>
     </div>
