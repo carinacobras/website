@@ -100,12 +100,10 @@ $urls = array(
     //     $active = (Router::normalize(Router::url()) === Router::normalize($url['url'])) ? 'active' : '' ;
     //     echo '<li class="nav-item text-center"'.$active.'">'.$this->Html->link($url['label'], $url['url'], ['class' => 'nav-link']).'</li>' ;
     // }
-
-    $this->Html->addCrumb('Home', ['controller'=>'pages','action'=>'home']);
-    $this->Html->addCrumb('Home', ['controller'=>'pages','action'=>'about']);
-    $this->Html->addCrumb('Home', ['controller'=>'pages','action'=>'fees']);
-    $this->Html->addCrumb('Home', ['controller'=>'pages','action'=>'payments']);
-    $this->Html->addCrumb('Home', ['controller'=>'pages','action'=>'contact']);
+    $this->Html->addCrumb('About', ['controller'=>'pages','action'=>'about']);
+    $this->Html->addCrumb('Fees', ['controller'=>'pages','action'=>'fees']);
+    $this->Html->addCrumb('Payments', ['controller'=>'pages','action'=>'payments']);
+    $this->Html->addCrumb('Contact', ['controller'=>'pages','action'=>'contact']);
 
     echo $this->Html->getCrumbList(
         [
