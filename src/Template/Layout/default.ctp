@@ -97,8 +97,7 @@ $urls = array(
 
      <?php 
        foreach ($urls as $url) {
-        echo 'current url = ' . Router::normalize(Router::url($this->request->here(), true)) . ' url = ' . Router::normalize($url['url']);
-        $active = (Router::normalize(Router::url($this->request->here(), true)) === Router::normalize($url['url'])) ? 'active' : '' ;
+        $active = (Router::normalize(Router::url($this->request->here(), false)) === Router::normalize($url['url'])) ? 'active' : '' ;
         echo '<li class="nav-item text-center"'.$active.'">'.$this->Html->link($url['label'], $url['url'], ['class' => 'nav-link']).'</li>' ;
     }
     ?>
