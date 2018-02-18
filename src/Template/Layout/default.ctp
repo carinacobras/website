@@ -97,7 +97,7 @@ $urls = array(
 
     <?php 
        foreach ($urls as $url) {
-           $base = $this->Url->build($this->request->getAttribute('base'));
+           $base = $this->Url->build(null, true);
            echo ' /// ';
            echo Router::normalize($url['url']);
         $active = ($base === Router::normalize($url['url'])) ? 'active' : '' ;
