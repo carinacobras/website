@@ -97,6 +97,7 @@ $urls = array(
 
      <?php 
        foreach ($urls as $url) {
+        echo $this->request->getAttribute('base');
         $active = (Router::normalize(Router::url($this->request->getAttribute('base'), true)) === Router::normalize($url['url'])) ? 'active' : '' ;
         echo '<li class="nav-item text-center"'.$active.'">'.$this->Html->link($url['label'], $url['url'], ['class' => 'nav-link']).'</li>' ;
     }
