@@ -102,7 +102,7 @@ $urls = array(
            echo ' /// ';
            echo Router::normalize($url['url']);
         $active = ($base === Router::normalize($url['url'])) ? 'active' : '' ;
-        echo '<li class="nav-item text-center"'.$active.'">'.$this->Html->link($url['label'], $url['url'], ['class' => 'nav-link']).'</li>' ;
+        echo '<li class="nav-item text-center '.$active.'">'.$this->Html->link($url['label'], $url['url'], ['class' => 'nav-link']).'</li>' ;
     }
     ?>
   </ul>
