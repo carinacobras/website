@@ -86,7 +86,7 @@ $urls = array(
     </ul>
     </div>
 </nav>
-<nav class="navbar navbar-toggleable-md navbar-inverse bg-success">
+<nav class="navbar navbar-toggleable-md navbar-inverse bg-primary">
 <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNav2" aria-controls="navbarNav2" aria-expanded="false" aria-label="Toggle navigation">
   <span class="navbar-toggler-icon"></span>
 </button>
