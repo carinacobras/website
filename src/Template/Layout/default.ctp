@@ -97,10 +97,10 @@ $urls = array(
 
     <?php 
        foreach ($urls as $url) {
-           echo $this->request->getAttribute('base');
+           $base = $this->Url->build($this->request->getAttribute('base'));
            echo ' /// ';
            echo Router::normalize($url['url']);
-        $active = ($this->request->getAttribute('base') === Router::normalize($url['url'])) ? 'active' : '' ;
+        $active = ($base === Router::normalize($url['url'])) ? 'active' : '' ;
         echo '<li class="nav-item text-center"'.$active.'">'.$this->Html->link($url['label'], $url['url'], ['class' => 'nav-link']).'</li>' ;
     }
     ?>
