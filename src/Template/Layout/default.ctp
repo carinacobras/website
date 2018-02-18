@@ -26,7 +26,7 @@ use Cake\Routing\Router;
 $urls = array(
     array(
         'label' => 'Home',
-        'url' => array('controller' => 'pages', 'action' => 'home')
+        'url' => '/'
     ),
     array(
         'label' => 'About Us',
@@ -97,8 +97,9 @@ $urls = array(
 
      <?php 
        foreach ($urls as $url) {
-        echo $this->request->getAttribute('base');
-        $active = (Router::normalize(Router::url($this->request->getAttribute('base'), true)) === Router::normalize($url['url'])) ? 'active' : '' ;
+        $base = $this->request->getAttribute('base');
+        $urlmatch = (Router::normalize(Router::url($base, true)) === Router::normalize($url['url']));
+        $active = $urlmatch ? 'active' : '' ;
         echo '<li class="nav-item text-center"'.$active.'">'.$this->Html->link($url['label'], $url['url'], ['class' => 'nav-link']).'</li>' ;
     }
     ?>
