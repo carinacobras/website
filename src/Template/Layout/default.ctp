@@ -96,24 +96,11 @@ $urls = array(
   <ul class="navbar-nav nav-fill w-100">
 
      <?php 
-    //    foreach ($urls as $url) {
-    //     $active = (Router::normalize(Router::url()) === Router::normalize($url['url'])) ? 'active' : '' ;
-    //     echo '<li class="nav-item text-center"'.$active.'">'.$this->Html->link($url['label'], $url['url'], ['class' => 'nav-link']).'</li>' ;
-    // }
-    $this->Html->addCrumb('About', ['controller'=>'pages','action'=>'about']);
-    $this->Html->addCrumb('Fees', ['controller'=>'pages','action'=>'fees']);
-    $this->Html->addCrumb('Payments', ['controller'=>'pages','action'=>'payments']);
-    $this->Html->addCrumb('Contact', ['controller'=>'pages','action'=>'contact']);
-
-    echo $this->Html->getCrumbList(
-        [
-            'firstClass' => false,
-            'lastClass' => 'active',
-            'class' => 'nav-link'
-        ],
-        'Home'
-    );
-
+       foreach ($urls as $url) {
+        echo 'current url = ' . Router::normalize(Router::url()) . ' url = ' . Router::normalize($url['url']);
+        $active = (Router::normalize(Router::url()) === Router::normalize($url['url'])) ? 'active' : '' ;
+        echo '<li class="nav-item text-center"'.$active.'">'.$this->Html->link($url['label'], $url['url'], ['class' => 'nav-link']).'</li>' ;
+    }
     ?>
 
   </ul>
