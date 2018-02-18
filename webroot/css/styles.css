@@ -3,15 +3,21 @@ body {
 }
 
 .content {
-    background-color:white;
-    padding:5px;
-    margin-top: 12px;
+    background-color: #888;
+    padding: 30px;
+    margin-top: 30px;
+    color: white;
+    border-radius: 10px;
 }
 
 .bg-primary {
-    background-color: #416135 !important;
+    background-color: #137c00 !important;
 }
 
 .bg-secondary {
     background-color: #666666 !important;
+}
+
+.navbar .nav-item.active {
+    border-bottom: 2px solid red;
 }
