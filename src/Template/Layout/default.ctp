@@ -13,7 +13,7 @@
  * @license       https://opensource.org/licenses/mit-license.php MIT License
  */
 
-$cakeDescription = 'CakePHP: the rapid development php framework';
+$cakeDescription = 'COBRAS JUNIORS - Carina, Carindale & District Basketball Club';
 
 use Cake\Cache\Cache;
 use Cake\Core\Configure;
