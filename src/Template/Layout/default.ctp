@@ -82,7 +82,7 @@ $urls = array(
     $loguser = $this->request->session()->read('Auth.User');
 
     if(!$loguser) {
-        $user = $loguser['first_name'].' '.$loguser['last_name'];
+        $loggedusername = $loguser['first_name'].' '.$loguser['last_name'];
         
         echo $user;
         // user is logged in, show logout..user menu etc     
@@ -95,9 +95,10 @@ $urls = array(
 
     <div class="media">
     <div class="media-body">
+        <? echo $loggedusername ?>
         <? echo $loglink; ?>
     </div>
-    <img class="d-flex mr-3" src="/img/blank-profile.png" alt="profile photo">
+    <img class="d-flex ml-3" src="/img/blank-profile.png" alt="profile photo">
     </div>
 
     </li>
