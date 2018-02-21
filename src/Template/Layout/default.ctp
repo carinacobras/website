@@ -95,7 +95,7 @@ $urls = array(
 
     <div class="media">
     <div class="media-body">
-        <? echo $loggedusername ?>
+        <p><? if ($loggedusername) $loggedusername; ?></p>
         <? echo $loglink; ?>
     </div>
     <img class="d-flex ml-3" src="/img/blank-profile.png" alt="profile photo">
