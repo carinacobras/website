@@ -56,7 +56,11 @@ $urls = array(
         <?= $cakeDescription ?>:
         <?= $this->fetch('title') ?>
     </title>
-    <?= $this->Html->meta('icon') ?>
+    <?= $this->Html->meta(
+    'favicon.ico',
+    '/favicon.ico',
+    ['type' => 'icon']
+) ?>
 
     <?= $this->Html->css('bootstrap.min') ?>
     <?= $this->Html->css('styles') ?>
