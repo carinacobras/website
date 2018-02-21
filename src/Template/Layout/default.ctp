@@ -69,19 +69,33 @@ $urls = array(
 </head>
 <body>
     <?= $this->Flash->render() ?>
-    <nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse">
-<div class="justify-content-end collapse navbar-collapse" id="navbarNav">
+    <nav class="navbar navbar-inverse bg-inverse">
+<div class="justify-content-end" id="navbarNav">
   <ul class="navbar-nav">
-    <li class="nav-link">
+    <li class="nav-link text-right">
     <?php
-    if($this->request->session()->read('Auth')) {
+
+    $loguser = $this->request->session()->read('Auth.User');
+
+    if(!$loguser) {
+        $user = $loguser['first_name'].' '.$loguser['last_name'];
+        
+        echo $user;
         // user is logged in, show logout..user menu etc     
-        echo $this->Html->link('Logout', array('controller' => 'users', 'action' => 'logout'), ['class' => 'nav-link']); 
+        $loglink = $this->Html->link('Logout', array('controller' => 'users', 'action' => 'logout'), ['class' => 'nav-link']); 
      } else {
         // the user is not logged in
-        echo $this->Html->link('Login', array('controller' => 'users', 'action' => 'login'), ['class' => 'nav-link']); 
+        $loglink = $this->Html->link('Login', array('controller' => 'users', 'action' => 'login'), ['class' => 'nav-link']); 
      }
     ?>
+
+    <div class="media">
+    <div class="media-body">
+        <? echo $loglink; ?>
+    </div>
+    <img class="d-flex mr-3" src="/img/blank-profile.png" alt="profile photo">
+    </div>
+
     </li>
     </ul>
     </div>
