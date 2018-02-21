@@ -79,10 +79,13 @@ $urls = array(
     <li class="nav-link text-right">
     <?php
 
-    $loguser = $this->request->session()->read('Auth');
+    $session = $this->request->getSession(); // 3.5 or more
+    $user_data = $session->read('Auth.User');
 
-    if($loguser) {
-        $loggedusername = $loguser['User']['first_name'].' '.$loguser['User']['last_name'];
+    //$loguser = $this->request->getSession()->read('Auth');
+
+    if($user_data) {
+        $loggedusername = $user_data['first_name'].' '.$user_data['last_name'];
         // user is logged in, show logout..user menu etc     
         $loglink = $this->Html->link('Logout', array('controller' => 'users', 'action' => 'logout'), ['class' => 'nav-link']); 
      } else {
