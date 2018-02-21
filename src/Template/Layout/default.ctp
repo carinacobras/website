@@ -79,7 +79,7 @@ $urls = array(
     <li class="nav-link text-right">
     <?php
 
-    $loguser = $this->request->session()->read('Auth.User');
+    $loguser = $this->request->session()->read('Auth');
 
     if(!$loguser) {
         $loggedusername = $loguser['first_name'].' '.$loguser['last_name'];
