@@ -81,10 +81,8 @@ $urls = array(
 
     $loguser = $this->request->session()->read('Auth');
 
-    if(!$loguser) {
+    if($loguser) {
         $loggedusername = $loguser['first_name'].' '.$loguser['last_name'];
-        
-        echo $user;
         // user is logged in, show logout..user menu etc     
         $loglink = $this->Html->link('Logout', array('controller' => 'users', 'action' => 'logout'), ['class' => 'nav-link']); 
      } else {
@@ -96,9 +94,10 @@ $urls = array(
     <div class="media">
     <div class="media-body">
         <p><? if ($loggedusername) $loggedusername; ?></p>
-        <? echo $loglink; ?>
+       
     </div>
     <img class="d-flex ml-3" src="/img/blank-profile.png" alt="profile photo">
+    <? echo $loglink; ?>
     </div>
 
     </li>
