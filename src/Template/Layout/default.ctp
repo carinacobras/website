@@ -74,9 +74,10 @@ $urls = array(
 <body>
     <?= $this->Flash->render() ?>
     <nav class="navbar navbar-inverse bg-inverse">
-<div class="justify-content-end" id="navbarNav">
+<div class="col-md-3 offset-md-9">
+
   <ul class="navbar-nav">
-    <li class="nav-link text-right">
+    <li>
     <?php
 
     $session = $this->request->getSession(); // 3.5 or more
@@ -96,7 +97,7 @@ $urls = array(
 
     <div class="media">
     <div class="media-body">
-        <p><? if (isset($loggedusername)) echo $loggedusername; ?></p>
+        <p class="navbar-text"><? if (isset($loggedusername)) echo $loggedusername; ?></p>
        
     </div>
     <? if (isset($loggedusername)) echo '<img class="d-flex ml-3" src="/img/blank-profile.png" alt="profile photo">'; ?>
