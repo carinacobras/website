@@ -82,7 +82,7 @@ $urls = array(
     $loguser = $this->request->session()->read('Auth');
 
     if($loguser) {
-        $loggedusername = $loguser['first_name'].' '.$loguser['last_name'];
+        $loggedusername = $loguser['User']['first_name'].' '.$loguser['User']['last_name'];
         // user is logged in, show logout..user menu etc     
         $loglink = $this->Html->link('Logout', array('controller' => 'users', 'action' => 'logout'), ['class' => 'nav-link']); 
      } else {
