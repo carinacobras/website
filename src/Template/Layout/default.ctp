@@ -99,10 +99,10 @@ $urls = array(
         <p><? if (isset($loggedusername)) echo $loggedusername; ?></p>
        
     </div>
-    <img class="d-flex ml-3" src="/img/blank-profile.png" alt="profile photo">
-    <? echo $loglink; ?>
+    <? if (isset($loggedusername)) echo '<img class="d-flex ml-3" src="/img/blank-profile.png" alt="profile photo">'; ?>
+    
     </div>
-
+    <div class="align-self-end"><? echo $loglink; ?></div>
     </li>
     </ul>
     </div>
