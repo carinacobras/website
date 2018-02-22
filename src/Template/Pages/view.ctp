@@ -5,7 +5,7 @@
  */
 ?>
     <div class="row">
-        <?= h($page->title) ?>
+        <h3><?= h($page->title) ?></h3>
         <?= $this->Text->autoParagraph(h($page->body)); ?>
     </div>
 </div>
