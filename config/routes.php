@@ -56,7 +56,7 @@ Router::scope('/', function (RouteBuilder $routes) {
      */
     //$routes->connect('/pages/*', ['controller' => 'Pages', 'action' => 'view']);
 
-    $routes->connect('/:pages/:action/*', [], ['routeClass' => 'DashedRoute']);
+    $routes->connect('/:pages/:action/*', ['controller' => 'Pages'], ['routeClass' => 'DashedRoute']);
 
     /**
      * Connect catchall routes for all controllers.
