@@ -22,6 +22,7 @@ body {
     border-bottom: 2px solid red;
 }
 
-.btn-primary {
-    background-color:#b14021;
+
+.btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited {
+    background-color:#b14021 !important;
 }
