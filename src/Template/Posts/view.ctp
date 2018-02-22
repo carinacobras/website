@@ -25,6 +25,10 @@
             <td><?= $this->Number->format($post->id) ?></td>
         </tr>
         <tr>
+            <th scope="row"><?= __('Category Id') ?></th>
+            <td><?= $this->Number->format($post->category_id) ?></td>
+        </tr>
+        <tr>
             <th scope="row"><?= __('Created') ?></th>
             <td><?= h($post->created) ?></td>
         </tr>

@@ -12,6 +12,7 @@
         <?php
             echo $this->Form->control('title');
             echo $this->Form->control('body');
+            echo $this->Form->radio('display_posts', ['Yes','No']);
         ?>
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>

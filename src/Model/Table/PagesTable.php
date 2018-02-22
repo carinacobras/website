@@ -62,6 +62,11 @@ class PagesTable extends Table
             ->requirePresence('body', 'create')
             ->notEmpty('body');
 
+        $validator
+            ->boolean('display_posts')
+            ->requirePresence('display_posts', 'create')
+            ->notEmpty('display_posts');
+
         return $validator;
     }
 }

@@ -19,6 +19,7 @@
                 <th scope="col"><?= $this->Paginator->sort('title') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('created') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('modified') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('display_posts') ?></th>
                 <th scope="col" class="actions"><?= __('Actions') ?></th>
             </tr>
         </thead>
@@ -29,6 +30,7 @@
                 <td><?= h($page->title) ?></td>
                 <td><?= h($page->created) ?></td>
                 <td><?= h($page->modified) ?></td>
+                <td><?= h($page->display_posts) ?></td>
                 <td class="actions">
                     <?= $this->Html->link(__('View'), ['action' => 'view', $page->id]) ?>
                     <?= $this->Html->link(__('Edit'), ['action' => 'edit', $page->id]) ?>

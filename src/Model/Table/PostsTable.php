@@ -9,6 +9,8 @@ use Cake\Validation\Validator;
 /**
  * Posts Model
  *
+ * @property |\Cake\ORM\Association\BelongsTo $Categories
+ *
  * @method \App\Model\Entity\Post get($primaryKey, $options = [])
  * @method \App\Model\Entity\Post newEntity($data = null, array $options = [])
  * @method \App\Model\Entity\Post[] newEntities(array $data, array $options = [])
@@ -37,6 +39,11 @@ class PostsTable extends Table
         $this->setPrimaryKey('id');
 
         $this->addBehavior('Timestamp');
+
+        $this->belongsTo('Categories', [
+            'foreignKey' => 'category_id',
+            'joinType' => 'INNER'
+        ]);
     }
 
     /**
@@ -61,5 +68,19 @@ class PostsTable extends Table
             ->allowEmpty('body');
 
         return $validator;
+    }
+
+    /**
+     * Returns a rules checker object that will be used for validating
+     * application integrity.
+     *
+     * @param \Cake\ORM\RulesChecker $rules The rules object to be modified.
+     * @return \Cake\ORM\RulesChecker
+     */
+    public function buildRules(RulesChecker $rules)
+    {
+        $rules->add($rules->existsIn(['category_id'], 'Categories'));
+
+        return $rules;
     }
 }

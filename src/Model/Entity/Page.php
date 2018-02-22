@@ -11,6 +11,7 @@ use Cake\ORM\Entity;
  * @property string $body
  * @property \Cake\I18n\FrozenTime $created
  * @property \Cake\I18n\FrozenTime $modified
+ * @property bool $display_posts
  */
 class Page extends Entity
 {
@@ -28,6 +29,7 @@ class Page extends Entity
         'title' => true,
         'body' => true,
         'created' => true,
-        'modified' => true
+        'modified' => true,
+        'display_posts' => true
     ];
 }
