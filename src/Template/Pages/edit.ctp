@@ -4,27 +4,30 @@
  * @var \App\Model\Entity\Page $page
  */
 ?>
-<nav class="large-3 medium-4 columns" id="actions-sidebar">
-    <ul class="side-nav">
-        <li class="heading"><?= __('Actions') ?></li>
-        <li><?= $this->Form->postLink(
-                __('Delete'),
-                ['action' => 'delete', $page->id],
-                ['confirm' => __('Are you sure you want to delete # {0}?', $page->id)]
-            )
-        ?></li>
-        <li><?= $this->Html->link(__('List Pages'), ['action' => 'index']) ?></li>
-    </ul>
-</nav>
-<div class="pages form large-9 medium-8 columns content">
+
+<!-- Include Quill stylesheet -->
+<link href="https://cdn.quilljs.com/1.0.0/quill.snow.css" rel="stylesheet">
+
     <?= $this->Form->create($page) ?>
-    <fieldset>
-        <legend><?= __('Edit Page') ?></legend>
+    <!-- Create the toolbar container -->
+    <div id="toolbar">
+    <button class="ql-bold">Bold</button>
+    <button class="ql-italic">Italic</button>
+    </div>
         <?php
-            echo $this->Form->control('title');
+            echo $this->Form->control('title', array('id' => 'editor'));
             echo $this->Form->control('body');
         ?>
-    </fieldset>
     <?= $this->Form->button(__('Submit')) ?>
     <?= $this->Form->end() ?>
-</div>
+
+<!-- Include the Quill library -->
+<script src="https://cdn.quilljs.com/1.0.0/quill.js"></script>
+
+<!-- Initialize Quill editor -->
+<script>
+  var editor = new Quill('#editor', {
+    modules: { toolbar: '#toolbar' },
+    theme: 'snow'
+  });
+</script>
