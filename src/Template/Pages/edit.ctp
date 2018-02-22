@@ -11,7 +11,7 @@
         <?php
         
             echo $this->Form->control('title');
-            echo $this->Form->radio('display_posts', ['No','Yes']);
+            echo $this->Form->control('display_posts', ['No','Yes']);
             echo $this->Form->control('body', ['rows' => '10']);
         ?>
     <?= $this->Form->button(__('Submit'), array("class" => "btn btn-primary")) ?>
