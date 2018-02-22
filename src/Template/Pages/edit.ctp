@@ -15,8 +15,10 @@
     <button class="ql-italic">Italic</button>
     </div>
         <?php
+        
             echo $this->Form->control('title', array('class' => 'form-control'));
-            echo $this->Form->control('body', array('id' => 'editor', 'default' => $page->body, 'class' => 'form-control'));
+            echo $this->Form->control('body', ['type' => 'div']);
+            //echo $this->Form->control('body', array('id' => 'editor', 'default' => $page->body, 'class' => 'form-control'));
         ?>
     <?= $this->Form->button(__('Submit')) ?>
     <?= $this->Form->end() ?>
