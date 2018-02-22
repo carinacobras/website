@@ -11,7 +11,7 @@
         <legend><?= __('Add Page') ?></legend>
         <?php
             echo $this->Form->control('title');
-            echo $this->Form->radio('display_posts', ['No','Yes']);
+            echo $this->Form->control('display_posts');
             echo $this->Form->control('body');
         ?>
     </fieldset>
