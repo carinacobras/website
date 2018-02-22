@@ -6,6 +6,6 @@
 ?>
     <div class="row">
         <h3><?= h($page->title) ?></h3>
-        <?= $this->Text->autoParagraph(h($page->body)); ?>
+        <?= $this->Text->$page->body ?>
     </div>
 </div>
