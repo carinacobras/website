@@ -5,6 +5,6 @@
         'input' => '<input class="form-control" type="{{type}}" name="{{name}}" {{attrs}} />',
         'checkbox' => '<input type="checkbox" class="form-check-input" name="{{name}}" value="{{value}}"{{attrs}}>',
         'checkboxWrapper' => '<div class="form-check">{{label}}</div>',
-        'nestingLabel' => '{{hidden}}<label class="form-check-label" {{attrs}}>{{input}}{{text}}</label>'
+        'nestingLabel' => '{{hidden}}<label class="form-check-label" {{attrs}}>{{input}} {{text}}</label>'
     ];
 ?>
