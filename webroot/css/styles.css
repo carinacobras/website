@@ -27,3 +27,8 @@ body {
     background-color:#b14021 !important;
     border-color:#8a3118 !important;
 }
+
+a {
+    color: #2dad16! important;
+    text-decoration: none;
+}
