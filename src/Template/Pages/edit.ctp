@@ -10,8 +10,8 @@
     <?= $this->Form->create($page) ?>
         <?php
         
-            echo $this->Form->control('title', array('class' => 'form-control'));
-            echo $this->Form->control('body', array('class' => 'form-control'));
+            echo $this->Form->control('title');
+            echo $this->Form->control('body');
         ?>
     <?= $this->Form->button(__('Submit')) ?>
     <?= $this->Form->end() ?>
