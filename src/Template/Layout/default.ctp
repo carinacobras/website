@@ -97,7 +97,7 @@ $urls = array(
 
     <div class="media">
     <div class="media-body">
-        <p class="navbar-text"><? if (isset($loggedusername)) echo $loggedusername; ?></p>
+        <p class="navbar-text text-right"><? if (isset($loggedusername)) echo $loggedusername; ?></p>
        
     </div>
     <? if (isset($loggedusername)) echo '<img class="d-flex ml-3" src="/img/blank-profile.png" alt="profile photo">'; ?>

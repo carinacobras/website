@@ -7,19 +7,19 @@ use Cake\ORM\Table;
 use Cake\Validation\Validator;
 
 /**
- * Articles Model
+ * Posts Model
  *
- * @method \App\Model\Entity\Article get($primaryKey, $options = [])
- * @method \App\Model\Entity\Article newEntity($data = null, array $options = [])
- * @method \App\Model\Entity\Article[] newEntities(array $data, array $options = [])
- * @method \App\Model\Entity\Article|bool save(\Cake\Datasource\EntityInterface $entity, $options = [])
- * @method \App\Model\Entity\Article patchEntity(\Cake\Datasource\EntityInterface $entity, array $data, array $options = [])
- * @method \App\Model\Entity\Article[] patchEntities($entities, array $data, array $options = [])
- * @method \App\Model\Entity\Article findOrCreate($search, callable $callback = null, $options = [])
+ * @method \App\Model\Entity\Post get($primaryKey, $options = [])
+ * @method \App\Model\Entity\Post newEntity($data = null, array $options = [])
+ * @method \App\Model\Entity\Post[] newEntities(array $data, array $options = [])
+ * @method \App\Model\Entity\Post|bool save(\Cake\Datasource\EntityInterface $entity, $options = [])
+ * @method \App\Model\Entity\Post patchEntity(\Cake\Datasource\EntityInterface $entity, array $data, array $options = [])
+ * @method \App\Model\Entity\Post[] patchEntities($entities, array $data, array $options = [])
+ * @method \App\Model\Entity\Post findOrCreate($search, callable $callback = null, $options = [])
  *
  * @mixin \Cake\ORM\Behavior\TimestampBehavior
  */
-class ArticlesTable extends Table
+class PostsTable extends Table
 {
 
     /**
@@ -32,7 +32,7 @@ class ArticlesTable extends Table
     {
         parent::initialize($config);
 
-        $this->setTable('articles');
+        $this->setTable('posts');
         $this->setDisplayField('title');
         $this->setPrimaryKey('id');
 

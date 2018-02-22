@@ -1,7 +1,7 @@
 <?php
 /**
  * @var \App\View\AppView $this
- * @var \App\Model\Entity\Article $article
+ * @var \App\Model\Entity\Post $post
  */
 ?>
 <nav class="large-3 medium-4 columns" id="actions-sidebar">
@@ -9,17 +9,17 @@
         <li class="heading"><?= __('Actions') ?></li>
         <li><?= $this->Form->postLink(
                 __('Delete'),
-                ['action' => 'delete', $article->id],
-                ['confirm' => __('Are you sure you want to delete # {0}?', $article->id)]
+                ['action' => 'delete', $post->id],
+                ['confirm' => __('Are you sure you want to delete # {0}?', $post->id)]
             )
         ?></li>
-        <li><?= $this->Html->link(__('List Articles'), ['action' => 'index']) ?></li>
+        <li><?= $this->Html->link(__('List Posts'), ['action' => 'index']) ?></li>
     </ul>
 </nav>
-<div class="articles form large-9 medium-8 columns content">
-    <?= $this->Form->create($article) ?>
+<div class="posts form large-9 medium-8 columns content">
+    <?= $this->Form->create($post) ?>
     <fieldset>
-        <legend><?= __('Edit Article') ?></legend>
+        <legend><?= __('Edit Post') ?></legend>
         <?php
             echo $this->Form->control('title');
             echo $this->Form->control('body');

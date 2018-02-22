@@ -1,17 +1,17 @@
 <?php
 /**
  * @var \App\View\AppView $this
- * @var \App\Model\Entity\Article[]|\Cake\Collection\CollectionInterface $articles
+ * @var \App\Model\Entity\Post[]|\Cake\Collection\CollectionInterface $posts
  */
 ?>
 <nav class="large-3 medium-4 columns" id="actions-sidebar">
     <ul class="side-nav">
         <li class="heading"><?= __('Actions') ?></li>
-        <li><?= $this->Html->link(__('New Article'), ['action' => 'add']) ?></li>
+        <li><?= $this->Html->link(__('New Post'), ['action' => 'add']) ?></li>
     </ul>
 </nav>
-<div class="articles index large-9 medium-8 columns content">
-    <h3><?= __('Articles') ?></h3>
+<div class="posts index large-9 medium-8 columns content">
+    <h3><?= __('Posts') ?></h3>
     <table cellpadding="0" cellspacing="0">
         <thead>
             <tr>
@@ -23,16 +23,16 @@
             </tr>
         </thead>
         <tbody>
-            <?php foreach ($articles as $article): ?>
+            <?php foreach ($posts as $post): ?>
             <tr>
-                <td><?= $this->Number->format($article->id) ?></td>
-                <td><?= h($article->title) ?></td>
-                <td><?= h($article->created) ?></td>
-                <td><?= h($article->modified) ?></td>
+                <td><?= $this->Number->format($post->id) ?></td>
+                <td><?= h($post->title) ?></td>
+                <td><?= h($post->created) ?></td>
+                <td><?= h($post->modified) ?></td>
                 <td class="actions">
-                    <?= $this->Html->link(__('View'), ['action' => 'view', $article->id]) ?>
-                    <?= $this->Html->link(__('Edit'), ['action' => 'edit', $article->id]) ?>
-                    <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $article->id], ['confirm' => __('Are you sure you want to delete # {0}?', $article->id)]) ?>
+                    <?= $this->Html->link(__('View'), ['action' => 'view', $post->id]) ?>
+                    <?= $this->Html->link(__('Edit'), ['action' => 'edit', $post->id]) ?>
+                    <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $post->id], ['confirm' => __('Are you sure you want to delete # {0}?', $post->id)]) ?>
                 </td>
             </tr>
             <?php endforeach; ?>
