@@ -30,7 +30,7 @@ $urls = array(
     ),
     array(
         'label' => 'About Us',
-        'url' => array('controller' => 'pages', 'action' => 'about')
+        'url' => array('controller' => 'pages', 'view' => 'about', 2)
     ),
     array(
         'label' => 'Fee Information',
@@ -42,7 +42,7 @@ $urls = array(
     ),
     array(
         'label' => 'Contact Us',
-        'url' => array('controller' => 'pages', 'action' => 'contact')
+        'url' => array('controller' => 'pages', 'view' => 'contact', 3)
     )
     );
 ?>
