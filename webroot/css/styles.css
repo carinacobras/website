@@ -21,3 +21,7 @@ body {
 .navbar .nav-item.active {
     border-bottom: 2px solid red;
 }
+
+.btn-primary {
+    background-color:#b14021;
+}

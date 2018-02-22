@@ -13,7 +13,7 @@
             echo $this->Form->control('title');
             echo $this->Form->control('body');
         ?>
-    <?= $this->Form->button(__('Submit')) ?>
+    <?= $this->Form->button(__('Submit'), array("class" => "btn btn-primary")) ?>
     <?= $this->Form->end() ?>
 
 <!-- Initialize Quill editor -->
