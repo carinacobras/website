@@ -1,6 +1,6 @@
 <?php
     return [
         'dateWidget' => '{{day}}{{month}}{{year}}{{hour}}{{minute}}{{second}}{{meridian}}',
-        'inputContainer' => '<div class="form-control">{{content}}</div>'
+        'inputContainer' => '<div class="form-group">{{content}}</div>'
     ];
 ?>
