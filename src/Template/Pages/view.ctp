@@ -4,8 +4,6 @@
  * @var \App\Model\Entity\Page $page
  */
 ?>
-    <div class="row">
-        <h3><?= h($page->title) ?></h3>
-        <?= $page->body ?>
-    </div>
+    <h3><?= h($page->title) ?></h3>
+    <div><?= $page->body ?></p>
 </div>
