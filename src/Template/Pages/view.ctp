@@ -10,10 +10,10 @@
         <?php foreach($posts as $post): ?>
         <div class="card">
             <div class="card-header">
-                <?php $post->title ?>
+                <?php echo $post->title ?>
             </div>
             <div class="card-block">
-                <p class="card-text"><?php $post->body ?></p>
+                <p class="card-text"><?php echo $post->body ?></p>
             </div>
         </div>
         <?php endforeach; ?>
