@@ -38,7 +38,15 @@ class PagesController extends AppController
             'contain' => []
         ]);
 
+        $this->loadModel('Posts');
+
+        $posts = $this->Articles->find('all', [
+            'limit' => 5,
+            'order' => 'Articles.created DESC'
+        ]);
+
         $this->set('page', $page);
+        $this->set('posts', $posts);
     }
 
     /**

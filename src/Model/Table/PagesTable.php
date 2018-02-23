@@ -59,8 +59,7 @@ class PagesTable extends Table
 
         $validator
             ->scalar('body')
-            ->requirePresence('body', 'create')
-            ->notEmpty('body');
+            ->requirePresence('body', 'create');
 
         $validator
             ->boolean('display_posts')

@@ -6,4 +6,12 @@
 ?>
     <h3><?= h($page->title) ?></h3>
     <div><?= $page->body ?></p>
+    <? 
+        if ($page->display_posts) {
+            foreach ($posts as $post) {
+                echo "post";
+            }
+        }
+    ?>
+
 </div>
