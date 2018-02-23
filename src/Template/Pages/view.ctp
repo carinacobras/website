@@ -8,7 +8,7 @@
     <div><?= $page->body ?></p>
     <?php if ($page->display_posts):?>
         <?php foreach($posts as $post): ?>
-        <div class="card">
+        <div class="card mt-5">
             <div class="card-header">
                 <?php echo $post->title ?>
             </div>
