@@ -40,7 +40,7 @@ class PagesController extends AppController
 
         $this->loadModel('Posts');
 
-        $posts = $this->Articles->find('all', [
+        $posts = $this->Posts->find('all', [
             'limit' => 5,
             'order' => 'Articles.created DESC'
         ]);
