@@ -42,7 +42,7 @@ class PagesController extends AppController
 
         $posts = $this->Posts->find('all', [
             'limit' => 5,
-            'order' => 'Articles.created DESC'
+            'order' => 'Posts.created DESC'
         ]);
 
         $this->set('page', $page);
