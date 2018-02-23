@@ -38,3 +38,12 @@ body {
     color: #b14021! important;
     text-decoration: none;
 }
+
+.card-header {
+    background-color:#127c02;
+}
+
+.card-block {
+    background-color:#ffffff;
+    color: #666;
+}
