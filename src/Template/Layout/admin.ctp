@@ -127,12 +127,12 @@ $urls = array(
 </div>
 </nav>
 
-    <div class="container clearfix">
+    <div class="admin container clearfix">
         <div class="row">
-            <div class="sidebar col-sm-12">
+            <div class="sidebar col-sm-2">
                 <p>admin links here</p>
             </div>
-            <div class="content col-sm-12">
+            <div class="content col-sm-10">
                 <?= $this->fetch('content') ?>
             </div>
         </div>

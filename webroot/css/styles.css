@@ -49,8 +49,16 @@ body {
 }
 
 .sidebar {
+    background-color: #aaa;
+    padding: 30px;
+    margin-top: 30px;
+    color: white;
+}
+
+.admin .content {
     background-color: #888;
     padding: 30px;
     margin-top: 30px;
-    color: #888;
+    color: white;
+    border-radius: 0 10px 10px 0;
 }
