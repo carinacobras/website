@@ -129,6 +129,7 @@ class UsersController extends AppController
             $user = $this->Auth->identify();
             if ($user) {
                 $this->Auth->setUser($user);
+                $this->viewBuilder()->layout('admin');
                 return $this->redirect($this->Auth->redirectUrl());
             }
             $this->Flash->error(__('Invalid username or password, try again'));
@@ -137,6 +138,7 @@ class UsersController extends AppController
 
     public function logout()
     {
+        $this->viewBuilder()->layout('default');
         return $this->redirect($this->Auth->logout());
     }
 }
