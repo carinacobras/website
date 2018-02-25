@@ -34,11 +34,11 @@ $urls = array(
     ),
     array(
         'label' => 'Fee Information',
-        'url' => array('controller' => 'pages', 'action' => 'fees')
+        'url' => '/fees'
     ),
     array(
         'label' => 'Payments',
-        'url' => array('controller' => 'pages', 'action' => 'payments')
+        'url' => '/payments'
     ),
     array(
         'label' => 'Contact Us',
