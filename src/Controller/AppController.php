@@ -86,6 +86,10 @@ class AppController extends Controller
     public function beforeFilter(Event $event)
     {
         $this->Auth->allow(['index', 'view', 'display']);
+
+        if (isset($user['role_id']) && $user['role_id'] === 2) {
+            $this->viewBuilder()->setLayout('admin');
+        }
     }
 
     /**
