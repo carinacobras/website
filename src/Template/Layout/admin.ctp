@@ -75,7 +75,6 @@ $urls = array(
     <?= $this->Flash->render() ?>
     <nav class="navbar navbar-inverse bg-inverse">
 <div class="col-md-3 offset-md-9">
-<p>ADMIN</p>
   <ul class="navbar-nav">
     <li>
     <?php
@@ -129,9 +128,14 @@ $urls = array(
 </nav>
 
     <div class="container clearfix">
-    <div class="content col-sm-12">
-        <?= $this->fetch('content') ?>
-    </div>
+        <div class="row">
+            <div class="sidebar col-sm-12">
+                <p>admin links here</p>
+            </div>
+            <div class="content col-sm-12">
+                <?= $this->fetch('content') ?>
+            </div>
+        </div>
     </div>
     <footer>
     </footer>
