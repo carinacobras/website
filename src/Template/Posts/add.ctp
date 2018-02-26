@@ -4,13 +4,13 @@
  * @var \App\Model\Entity\Post $post
  */
 ?>
-<nav class="large-3 medium-4 columns" id="actions-sidebar">
-    <ul class="side-nav">
+<nav class="col-lg-3 col-md-4">
+    <ul class="actions-side-nav">
         <li class="heading"><?= __('Actions') ?></li>
-        <li><?= $this->Html->link(__('List Posts'), ['action' => 'index']) ?></li>
+        <li><?= $this->Html->link(__('List Posts'), ['action' => 'index', 'class'=>'btn btn-primary']) ?></li>
     </ul>
 </nav>
-<div class="posts form large-9 medium-8 columns content">
+<div class="col-lg-9 col-md-8">
     <?= $this->Form->create($post) ?>
     <fieldset>
         <legend><?= __('Add Post') ?></legend>
