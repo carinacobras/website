@@ -14,7 +14,7 @@
             echo $this->Form->control('display_posts');
             echo $this->Form->control('body', ['rows' => '10']);
         ?>
-    <?= $this->Form->button(__('Submit'), array("class" => "btn btn-primary")) ?>
+    <?= $this->Form->button(__('Submit')) ?>
     <?= $this->Form->end() ?>
 
 <script>

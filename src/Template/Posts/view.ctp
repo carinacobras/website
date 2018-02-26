@@ -4,15 +4,7 @@
  * @var \App\Model\Entity\Post $post
  */
 ?>
-<nav class="col-lg-3 col-md-4">
-    <ul class="actions-side-nav">
-        <li class="heading"><?= __('Actions') ?></li>
-        <li><?= $this->Html->link(__('Edit Post'), ['action' => 'edit', $post->id]) ?> </li>
-        <li><?= $this->Form->postLink(__('Delete Post'), ['action' => 'delete', $post->id], ['confirm' => __('Are you sure you want to delete # {0}?', $post->id)]) ?> </li>
-        <li><?= $this->Html->link(__('List Posts'), ['action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('New Post'), ['action' => 'add']) ?> </li>
-    </ul>
-</nav>
+
 <div class="col-lg-9 col-md-8">
     <h3><?= h($post->title) ?></h3>
     <table class="table">

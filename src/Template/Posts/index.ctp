@@ -4,14 +4,9 @@
  * @var \App\Model\Entity\Post[]|\Cake\Collection\CollectionInterface $posts
  */
 ?>
-<nav class="col-lg-3 col-md-4">
-    <ul class="actions-side-nav">
-        <li class="heading"><?= __('Actions') ?></li>
-        <li><?= $this->Html->link(__('New Post'), ['action' => 'add']) ?></li>
-    </ul>
-</nav>
-<div class="col-lg-9 col-md-8">
+<div class="col-sm-12">
     <h3><?= __('Posts') ?></h3>
+    <?= $this->Html->link(__('New Post'), ['action' => 'add'], ['class' => 'btn btn-primary']) ?>
     <table class="table">
         <thead>
             <tr>
