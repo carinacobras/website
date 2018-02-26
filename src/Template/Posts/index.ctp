@@ -6,7 +6,7 @@
 ?>
 <div class="col-sm-12">
     <h3><?= __('Posts') ?></h3>
-    <?= $this->Html->link(__('New Post'), ['action' => 'add'], ['class' => 'btn btn-primary']) ?>
+    <?= $this->Html->link(__('New Post'), ['action' => 'add'], ['class' => 'btn btn-primary mt-3 mb-3']) ?>
     <table class="table">
         <thead>
             <tr>
