@@ -7,7 +7,7 @@
 <nav class="col-lg-3 col-md-4">
     <ul class="actions-side-nav">
         <li class="heading"><?= __('Actions') ?></li>
-        <li><?= $this->Html->link(__('New Post'), ['action' => 'add', 'class'=>'btn btn-primary']) ?></li>
+        <li><?= $this->Html->link(__('New Post'), ['action' => 'add']) ?></li>
     </ul>
 </nav>
 <div class="col-lg-9 col-md-8">
