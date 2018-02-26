@@ -23,6 +23,7 @@ class PostsController extends AppController
         $this->paginate = [
             'contain' => ['Categories']
         ];
+        $posts = $this->paginate($this->Posts);
 
         $this->set(compact('posts'));
     }
