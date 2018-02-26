@@ -130,7 +130,14 @@ $urls = array(
     <div class="admin container-fluid clearfix">
         <div class="row">
             <div class="sidebar col-sm-2">
-                <p>admin links here</p>
+                <ul>
+                    <li><a href="/posts/">Posts</a></li>
+                    <li><a href="/players/">Players</a></li>
+                    <li><a href="/teams/">Teams</a></li>
+                    <li><a href="/competitions/">Competitions</a></li>
+                    <li><a href="/locations/">Locations</a></li>
+                    <li><a href="/training/">Training</a></li>
+                </ul>
             </div>
             <div class="content col-sm-10">
                 <?= $this->fetch('content') ?>
