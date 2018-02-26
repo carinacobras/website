@@ -127,7 +127,7 @@ $urls = array(
 </div>
 </nav>
 
-    <div class="admin container clearfix">
+    <div class="admin container-fluid clearfix">
         <div class="row">
             <div class="sidebar col-sm-2">
                 <p>admin links here</p>
