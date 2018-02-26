@@ -11,8 +11,8 @@
     <li><?= $this->Form->postLink(
                 __('Delete'),
                 ['action' => 'delete', $post->id],
-                ['confirm' => __('Are you sure you want to delete # {0}?', $post->id)],
-                ['class' => 'btn btn-primary']
+                ['confirm' => __('Are you sure you want to delete # {0}?', $post->id),
+                'class' => 'btn btn-primary']
             )
         ?></li>
     </ul>
