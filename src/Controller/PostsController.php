@@ -20,7 +20,9 @@ class PostsController extends AppController
      */
     public function index()
     {
-        $posts = $this->paginate($this->Posts);
+        $this->paginate = [
+            'contain' => ['Categories']
+        ];
 
         $this->set(compact('posts'));
     }
@@ -58,7 +60,7 @@ class PostsController extends AppController
             }
             $this->Flash->error(__('The post could not be saved. Please, try again.'));
         }
-        $this->set(compact('post'));
+        $this->set(compact('post', 'categories'));
     }
 
     /**
@@ -82,7 +84,7 @@ class PostsController extends AppController
             }
             $this->Flash->error(__('The post could not be saved. Please, try again.'));
         }
-        $this->set(compact('post'));
+        $this->set(compact('post', 'categories'));
     }
 
     /**
