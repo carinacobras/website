@@ -61,7 +61,7 @@ class PostsController extends AppController
             }
             $this->Flash->error(__('The post could not be saved. Please, try again.'));
         }
-        $categories = $this->Players->Categories->find('list', ['limit' => 200]);
+        $categories = $this->Posts->Categories->find('list', ['limit' => 200]);
         $this->set(compact('post', 'categories'));
     }
 
@@ -86,7 +86,7 @@ class PostsController extends AppController
             }
             $this->Flash->error(__('The post could not be saved. Please, try again.'));
         }
-        $categories = $this->Players->Categories->find('list', ['limit' => 200]);
+        $categories = $this->Posts->Categories->find('list', ['limit' => 200]);
         $this->set(compact('post', 'categories'));
     }
 
