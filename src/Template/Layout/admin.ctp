@@ -102,7 +102,7 @@ $urls = array(
     
     <li class="nav-item">
     
-        <? if (isset($loggedusername)) echo '<img class="img-responsive" src="/img/blank-profile.png" alt="profile photo">'; ?>
+        <? if (isset($loggedusername)) echo '<img class="img-responsive img-circle" src="/img/blank-profile.png" alt="profile photo">'; ?>
     
     </li>
         <li class="nav-item text-center"><? echo $loglink; ?></li>
