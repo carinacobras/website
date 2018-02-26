@@ -94,9 +94,6 @@ $urls = array(
         $loglink = $this->Html->link('Login', array('controller' => 'users', 'action' => 'login'), ['class' => 'nav-link']); 
      }
     ?>
-
-    <ul class="navbar-nav nav-justified ml-auto">
-        <li class="nav-item  ">
         <p class="navbar-text text-nowrap mr-3"><? if (isset($loggedusername)) echo $loggedusername; ?></p>
     </li>
     
