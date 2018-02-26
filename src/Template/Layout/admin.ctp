@@ -73,10 +73,11 @@ $urls = array(
 </head>
 <body>
     <?= $this->Flash->render() ?>
-    <nav class="navbar navbar-inverse bg-inverse">
-<div class="col-md-3 offset-md-9">
-  <ul class="navbar-nav">
-    <li>
+    <nav class="navbar navbar-inverse navbar-toggleable-xl ">
+<div class="collapse navbar-collapse">
+
+  <ul class="navbar-nav nav-justified ml-auto">
+    <li class="nav-item">
     <?php
 
     $session = $this->request->getSession(); // 3.5 or more
@@ -94,17 +95,19 @@ $urls = array(
      }
     ?>
 
-    <div class="media">
-    <div class="media-body">
-        <p class="navbar-text text-right"><? if (isset($loggedusername)) echo $loggedusername; ?></p>
-       
-    </div>
-    <? if (isset($loggedusername)) echo '<img class="d-flex ml-3" src="/img/blank-profile.png" alt="profile photo">'; ?>
-    
-    </div>
-    <div class="align-self-end"><? echo $loglink; ?></div>
+    <ul class="navbar-nav nav-justified ml-auto">
+        <li class="nav-item  ">
+        <p class="navbar-text text-nowrap mr-3"><? if (isset($loggedusername)) echo $loggedusername; ?></p>
     </li>
+    
+    <li class="nav-item">
+    
+        <? if (isset($loggedusername)) echo '<img class="img-responsive" src="/img/blank-profile.png" alt="profile photo">'; ?>
+    
+    </li>
+        <li class="nav-item text-center"><? echo $loglink; ?></li>
     </ul>
+
     </div>
 </nav>
 <nav class="navbar navbar-toggleable-md navbar-inverse bg-primary">
