@@ -4,7 +4,7 @@
   */
 ?>
 
-<div class="teams form large-9 medium-8 columns content">
+<div class="col-sm-12">
     <?= $this->Form->create($team) ?>
     <fieldset>
         <legend><?= __('Edit Team') ?></legend>
