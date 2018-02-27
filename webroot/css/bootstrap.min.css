@@ -66,6 +66,22 @@ line-height: 30px
 >>>>>>> 27f45ecd50e262b30243475216e32b64c90ce4a6
 }
 
+<style>
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #d4d6d7;
+  color: #fff;
+  text-align: center;
+}
+</style>
+
+<div class="footer"
+  <p> Footer </p>
+</div>
+
 figcaption,
 figure,
 main {
