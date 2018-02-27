@@ -4,7 +4,7 @@
  * @var \App\Model\Entity\Page $page
  */
 ?>
-    <h3><?= h($page->title) ?></h3>
+    <h1><?= h($page->title) ?></h1>
     <div><?= $page->body ?></p>
     <?php if ($page->display_posts):?>
         <?php foreach($posts as $post): ?>

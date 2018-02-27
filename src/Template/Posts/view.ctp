@@ -5,7 +5,7 @@
  */
 ?>
 
-<div class="col-lg-9 col-md-8">
+<div class="col-sm-12">
     <h3><?= h($post->title) ?></h3>
     <table class="table">
         <tr>
