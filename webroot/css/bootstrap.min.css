@@ -26,12 +26,36 @@ html {
   }
 
   h1 {
-    font-size: 16px
-    font-style: normal;
+    font-size: 20px
+    font-style: bold;
     font-weight: 500;
     line-height: 14.4px;
     margin: 0.67em 0;
+    font-variant: small-caps;
   }
+
+h2 {
+  font-size: 14px;
+  font-style: normal;
+  font-weight:500;
+  line-height: 14.4px;
+  font-variant: small-caps;
+}
+
+p {
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 15.4px;
+}
+
+blockquote {
+  font-size: 21px;
+  font-style: italic;
+  font-variant: normal;
+  font-weight:400;
+  line-height: 30px
+}
 
   figcaption,
   figure,
