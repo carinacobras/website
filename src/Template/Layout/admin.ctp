@@ -50,5 +50,6 @@ use Cake\Routing\Router;
         </div>
     </div>
 <?=$this->element('footer') ?>
+<?=$this->element('richtexteditor') ?>
 </body>
 </html>

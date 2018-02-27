@@ -4,7 +4,7 @@
  * @var \App\Model\Entity\Post $post
  */
 ?>
-<script src="//cdnjs.cloudflare.com/ajax/libs/tinymce/4.5.1/tinymce.min.js"></script>
+
 
 <div class="col-sm-12">
     <?= $this->Form->create($post) ?>
@@ -19,7 +19,3 @@
     <?= $this->Form->button(__('Submit')) ?>
     <?= $this->Form->end() ?>
 </div>
-
-<script>
-    tinymce.init({ selector:'textarea' });
-</script>

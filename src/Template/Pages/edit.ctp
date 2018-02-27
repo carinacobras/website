@@ -5,8 +5,6 @@
  */
 ?>
 
-<script src="//cdnjs.cloudflare.com/ajax/libs/tinymce/4.5.1/tinymce.min.js"></script>
-
     <?= $this->Form->create($page) ?>
         <?php
         
@@ -16,7 +14,3 @@
         ?>
     <?= $this->Form->button(__('Submit')) ?>
     <?= $this->Form->end() ?>
-
-<script>
-    tinymce.init({ selector:'textarea' });
-</script>

@@ -4,7 +4,6 @@
  * @var \App\Model\Entity\Page $page
  */
 ?>
-<script src="//cdnjs.cloudflare.com/ajax/libs/tinymce/4.5.1/tinymce.min.js"></script>
 
 <div class="pages form large-9 medium-8 columns content">
     <?= $this->Form->create($page) ?>
@@ -19,7 +18,3 @@
     <?= $this->Form->button(__('Submit')) ?>
     <?= $this->Form->end() ?>
 </div>
-
-<script>
-    tinymce.init({ selector:'textarea' });
-</script>
