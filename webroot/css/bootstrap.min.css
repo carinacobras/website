@@ -4293,6 +4293,7 @@ tbody.collapse.show {
     -webkit-align-items: center;
         -ms-flex-align: center;
             align-items: center;
+<<<<<<< HEAD
   }
   .navbar-toggleable-sm .navbar-collapse {
     display: -webkit-box !important;
