@@ -3855,6 +3855,8 @@ blockquote {
   .nav-link {
     display: block;
     padding: 0.5em 1em;
+    font-variant: small-caps;
+    font-size: 25px;
   }
 
   .nav-link:focus, .nav-link:hover {
