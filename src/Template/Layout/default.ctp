@@ -13,8 +13,6 @@
  * @license       https://opensource.org/licenses/mit-license.php MIT License
  */
 
-$cakeDescription = 'COBRAS JUNIORS - Carina, Carindale & District Basketball Club';
-
 use Cake\Cache\Cache;
 use Cake\Core\Configure;
 use Cake\Core\Plugin;

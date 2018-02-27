@@ -1,3 +1,7 @@
+<?php 
+$cakeDescription = 'COBRAS JUNIORS - Carina, Carindale & District Basketball Club';
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
