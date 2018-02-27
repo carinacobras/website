@@ -29,8 +29,8 @@ h1 {
   font-size: 25px
   font-style: bold;
   font-weight: 500;
-  line-height: 14.4px;
-  margin: 0.67em 0;
+  line-height: 14px;
+  margin: 0.5em 0;
   font-variant: small-caps;
 }
 
@@ -38,7 +38,7 @@ h2 {
 font-size: 18px;
 font-style: normal;
 font-weight:500;
-line-height: 14.4px;
+line-height: 14px;
 font-variant: small-caps;
 }
 
@@ -46,7 +46,7 @@ p {
 font-size: 16px;
 font-style: normal;
 font-weight: 400;
-line-height: 15.4px;
+line-height: 14px;
 }
 
 blockquote {
