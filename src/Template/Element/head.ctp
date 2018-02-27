@@ -1,29 +1,3 @@
-<?php
-
-$urls = array(
-    array(
-        'label' => 'Home',
-        'url' => '/'
-    ),
-    array(
-        'label' => 'About Us',
-        'url' => '/about'
-    ),
-    array(
-        'label' => 'Fee Information',
-        'url' => '/fees'
-    ),
-    array(
-        'label' => 'Payments',
-        'url' => '/payments'
-    ),
-    array(
-        'label' => 'Contact Us',
-        'url' => 'contact'
-    )
-    );
-?>
-
 <!DOCTYPE html>
 <html>
 <head>

@@ -1,3 +1,29 @@
+<?php
+
+$urls = array(
+    array(
+        'label' => 'Home',
+        'url' => '/'
+    ),
+    array(
+        'label' => 'About Us',
+        'url' => '/about'
+    ),
+    array(
+        'label' => 'Fee Information',
+        'url' => '/fees'
+    ),
+    array(
+        'label' => 'Payments',
+        'url' => '/payments'
+    ),
+    array(
+        'label' => 'Contact Us',
+        'url' => 'contact'
+    )
+    );
+?>
+
 <nav class="navbar navbar-toggleable-md navbar-inverse bg-primary">
 <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNav2" aria-controls="navbarNav2" aria-expanded="false" aria-label="Toggle navigation">
   <span class="navbar-toggler-icon"></span>
