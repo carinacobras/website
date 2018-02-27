@@ -67,8 +67,6 @@ $urls = array(
     <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
     <?= $this->Html->script('bootstrap.min') ?>
-    <link href="https://fonts.googleapis.com/css?family=Raleway:500i|Roboto:300,400,700|Roboto+Mono" rel="stylesheet">
-
 
 </head>
 <body>
@@ -130,6 +128,7 @@ $urls = array(
     <div class="admin container-fluid clearfix">
         <div class="row">
             <div class="sidebar col-sm-2">
+                <h2>Admin</h2>
                 <ul>
                     <li><a href="/posts/">Posts</a></li>
                     <li><a href="/players/">Players</a></li>
