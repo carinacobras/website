@@ -73,7 +73,7 @@
     </div>
     <div class="related">
         <h4><?= __('Ranks') ?></h4>
-        <?php if (!empty($player->Ranks)): ?>
+        <?php if (!empty($player->ranks)): ?>
         <table class="table">
             <tr>
                 <th scope="col"><?= __('Id') ?></th>
@@ -81,15 +81,15 @@
                 <th scope="col"><?= __('Player Id') ?></th>
                 <th scope="col" class="actions"><?= __('Actions') ?></th>
             </tr>
-            <?php foreach ($player->Ranks as $Ranks): ?>
+            <?php foreach ($player->ranks as $ranks): ?>
             <tr>
-                <td><?= h($Ranks->id) ?></td>
-                <td><?= h($Ranks->competition_id) ?></td>
-                <td><?= h($Ranks->player_id) ?></td>
+                <td><?= h($ranks->id) ?></td>
+                <td><?= h($ranks->competition_id) ?></td>
+                <td><?= h($ranks->player_id) ?></td>
                 <td class="actions">
-                    <?= $this->Html->link(__('View'), ['controller' => 'Ranks', 'action' => 'view', $Ranks->id]) ?>
-                    <?= $this->Html->link(__('Edit'), ['controller' => 'Ranks', 'action' => 'edit', $Ranks->id]) ?>
-                    <?= $this->Form->postLink(__('Delete'), ['controller' => 'Ranks', 'action' => 'delete', $Ranks->id], ['confirm' => __('Are you sure you want to delete # {0}?', $Ranks->id)]) ?>
+                    <?= $this->Html->link(__('View'), ['controller' => 'Ranks', 'action' => 'view', $ranks->id]) ?>
+                    <?= $this->Html->link(__('Edit'), ['controller' => 'Ranks', 'action' => 'edit', $ranks->id]) ?>
+                    <?= $this->Form->postLink(__('Delete'), ['controller' => 'Ranks', 'action' => 'delete', $ranks->id], ['confirm' => __('Are you sure you want to delete # {0}?', $ranks->id)]) ?>
                 </td>
             </tr>
             <?php endforeach; ?>
