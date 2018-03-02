@@ -21,7 +21,7 @@ class PlayersController extends AppController
     public function index()
     {
         $this->paginate = [
-            'contain' => ['Users', 'Teams']
+            'contain' => ['Users', 'Teams', 'Ranks', 'Contacts', 'Absences']
         ];
         $players = $this->paginate($this->Players);
 
