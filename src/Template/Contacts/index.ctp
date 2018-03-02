@@ -4,7 +4,7 @@
   * @var \App\Model\Entity\Contact[]|\Cake\Collection\CollectionInterface $contacts
   */
 ?>
-<nav class="large-3 medium-4 columns" id="actions-sidebar">
+<nav class="col-sm-12" id="actions-sidebar">
     <ul class="side-nav">
         <li class="heading"><?= __('Actions') ?></li>
         <li><?= $this->Html->link(__('New Contact'), ['action' => 'add']) ?></li>
@@ -18,7 +18,7 @@
         <li><?= $this->Html->link(__('New Relationship'), ['controller' => 'Relationships', 'action' => 'add']) ?></li>
     </ul>
 </nav>
-<div class="contacts index large-9 medium-8 columns content">
+<div class="contacts index col-sm-12">
     <h3><?= __('Contacts') ?></h3>
     <table class="table">
         <thead>

@@ -4,7 +4,7 @@
  * @var \App\Model\Entity\Order $order
  */
 ?>
-<nav class="large-3 medium-4 columns" id="actions-sidebar">
+<nav class="col-sm-12" id="actions-sidebar">
     <ul class="side-nav">
         <li class="heading"><?= __('Actions') ?></li>
         <li><?= $this->Html->link(__('Edit Order'), ['action' => 'edit', $order->id]) ?> </li>
@@ -19,9 +19,9 @@
         <li><?= $this->Html->link(__('New Order Line'), ['controller' => 'OrderLines', 'action' => 'add']) ?> </li>
     </ul>
 </nav>
-<div class="orders view large-9 medium-8 columns content">
+<div class="orders view col-sm-12">
     <h3><?= h($order->id) ?></h3>
-    <table class="vertical-table">
+    <table class="table">
         <tr>
             <th scope="row"><?= __('Player') ?></th>
             <td><?= $order->has('player') ? $this->Html->link($order->player->id, ['controller' => 'Players', 'action' => 'view', $order->player->id]) : '' ?></td>

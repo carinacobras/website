@@ -4,7 +4,7 @@
   * @var \App\Model\Entity\Competition[]|\Cake\Collection\CollectionInterface $competitions
   */
 ?>
-<nav class="large-3 medium-4 columns" id="actions-sidebar">
+<nav class="col-sm-12" id="actions-sidebar">
     <ul class="side-nav">
         <li class="heading"><?= __('Actions') ?></li>
         <li><?= $this->Html->link(__('New Competition'), ['action' => 'add']) ?></li>
@@ -18,7 +18,7 @@
         <li><?= $this->Html->link(__('New Training'), ['controller' => 'Training', 'action' => 'add']) ?></li>
     </ul>
 </nav>
-<div class="competitions index large-9 medium-8 columns content">
+<div class="competitions index col-sm-12">
     <h3><?= __('Competitions') ?></h3>
     <table class="table">
         <thead>

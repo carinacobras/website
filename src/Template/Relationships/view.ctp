@@ -4,7 +4,7 @@
   * @var \App\Model\Entity\Relationship $relationship
   */
 ?>
-<nav class="large-3 medium-4 columns" id="actions-sidebar">
+<nav class="col-sm-12" id="actions-sidebar">
     <ul class="side-nav">
         <li class="heading"><?= __('Actions') ?></li>
         <li><?= $this->Html->link(__('Edit Relationship'), ['action' => 'edit', $relationship->id]) ?> </li>
@@ -15,9 +15,9 @@
         <li><?= $this->Html->link(__('New Contact'), ['controller' => 'Contacts', 'action' => 'add']) ?> </li>
     </ul>
 </nav>
-<div class="relationships view large-9 medium-8 columns content">
+<div class="relationships view col-sm-12">
     <h3><?= h($relationship->title) ?></h3>
-    <table class="vertical-table">
+    <table class="table">
         <tr>
             <th scope="row"><?= __('Title') ?></th>
             <td><?= h($relationship->title) ?></td>

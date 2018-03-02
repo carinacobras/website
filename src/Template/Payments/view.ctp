@@ -4,7 +4,7 @@
  * @var \App\Model\Entity\Payment $payment
  */
 ?>
-<nav class="large-3 medium-4 columns" id="actions-sidebar">
+<nav class="col-sm-12" id="actions-sidebar">
     <ul class="side-nav">
         <li class="heading"><?= __('Actions') ?></li>
         <li><?= $this->Html->link(__('Edit Payment'), ['action' => 'edit', $payment->id]) ?> </li>
@@ -17,9 +17,9 @@
         <li><?= $this->Html->link(__('New Invoice'), ['controller' => 'Invoices', 'action' => 'add']) ?> </li>
     </ul>
 </nav>
-<div class="payments view large-9 medium-8 columns content">
+<div class="payments view col-sm-12">
     <h3><?= h($payment->id) ?></h3>
-    <table class="vertical-table">
+    <table class="table">
         <tr>
             <th scope="row"><?= __('Player') ?></th>
             <td><?= $payment->has('player') ? $this->Html->link($payment->player->id, ['controller' => 'Players', 'action' => 'view', $payment->player->id]) : '' ?></td>

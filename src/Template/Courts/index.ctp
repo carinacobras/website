@@ -4,7 +4,7 @@
   * @var \App\Model\Entity\Court[]|\Cake\Collection\CollectionInterface $courts
   */
 ?>
-<nav class="large-3 medium-4 columns" id="actions-sidebar">
+<nav class="col-sm-12" id="actions-sidebar">
     <ul class="side-nav">
         <li class="heading"><?= __('Actions') ?></li>
         <li><?= $this->Html->link(__('New Court'), ['action' => 'add']) ?></li>
@@ -14,7 +14,7 @@
         <li><?= $this->Html->link(__('New Location'), ['controller' => 'Locations', 'action' => 'add']) ?></li>
     </ul>
 </nav>
-<div class="courts index large-9 medium-8 columns content">
+<div class="courts index col-sm-12">
     <h3><?= __('Courts') ?></h3>
     <table class="table">
         <thead>

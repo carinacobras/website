@@ -4,7 +4,7 @@
   * @var \App\Model\Entity\Competition $competition
   */
 ?>
-<nav class="large-3 medium-4 columns" id="actions-sidebar">
+<nav class="col-sm-12" id="actions-sidebar">
     <ul class="side-nav">
         <li class="heading"><?= __('Actions') ?></li>
         <li><?= $this->Html->link(__('Edit Competition'), ['action' => 'edit', $competition->id]) ?> </li>
@@ -21,9 +21,9 @@
         <li><?= $this->Html->link(__('New Training'), ['controller' => 'Training', 'action' => 'add']) ?> </li>
     </ul>
 </nav>
-<div class="competitions view large-9 medium-8 columns content">
+<div class="competitions view col-sm-12">
     <h3><?= h($competition->name) ?></h3>
-    <table class="vertical-table">
+    <table class="table">
         <tr>
             <th scope="row"><?= __('Name') ?></th>
             <td><?= h($competition->name) ?></td>

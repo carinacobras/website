@@ -3,7 +3,7 @@
   * @var \App\View\AppView $this
   */
 ?>
-<nav class="large-3 medium-4 columns" id="actions-sidebar">
+<nav class="col-sm-12" id="actions-sidebar">
     <ul class="side-nav">
         <li class="heading"><?= __('Actions') ?></li>
         <li><?= $this->Form->postLink(
@@ -23,7 +23,7 @@
         <li><?= $this->Html->link(__('New Relationship'), ['controller' => 'Relationships', 'action' => 'add']) ?></li>
     </ul>
 </nav>
-<div class="contacts form large-9 medium-8 columns content">
+<div class="contacts form col-sm-12">
     <?= $this->Form->create($contact) ?>
     <fieldset>
         <legend><?= __('Edit Contact') ?></legend>

@@ -4,7 +4,7 @@
   * @var \App\Model\Entity\Court $court
   */
 ?>
-<nav class="large-3 medium-4 columns" id="actions-sidebar">
+<nav class="col-sm-12" id="actions-sidebar">
     <ul class="side-nav">
         <li class="heading"><?= __('Actions') ?></li>
         <li><?= $this->Html->link(__('Edit Court'), ['action' => 'edit', $court->id]) ?> </li>
@@ -17,9 +17,9 @@
         <li><?= $this->Html->link(__('New Location'), ['controller' => 'Locations', 'action' => 'add']) ?> </li>
     </ul>
 </nav>
-<div class="courts view large-9 medium-8 columns content">
+<div class="courts view col-sm-12">
     <h3><?= h($court->id) ?></h3>
-    <table class="vertical-table">
+    <table class="table">
         <tr>
             <th scope="row"><?= __('Competition') ?></th>
             <td><?= $court->has('competition') ? $this->Html->link($court->competition->name, ['controller' => 'Competitions', 'action' => 'view', $court->competition->id]) : '' ?></td>

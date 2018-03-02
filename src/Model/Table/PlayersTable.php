@@ -13,7 +13,7 @@ use Cake\Validation\Validator;
  * @property \App\Model\Table\TeamsTable|\Cake\ORM\Association\BelongsTo $Teams
  * @property \App\Model\Table\AbsencesTable|\Cake\ORM\Association\HasMany $Absences
  * @property \App\Model\Table\ContactsTable|\Cake\ORM\Association\HasMany $Contacts
- * @property \App\Model\Table\LaddersTable|\Cake\ORM\Association\HasMany $Ladders
+ * @property \App\Model\Table\RanksTable|\Cake\ORM\Association\HasMany $Ranks
  *
  * @method \App\Model\Entity\Player get($primaryKey, $options = [])
  * @method \App\Model\Entity\Player newEntity($data = null, array $options = [])
@@ -53,7 +53,7 @@ class PlayersTable extends Table
         $this->hasMany('Contacts', [
             'foreignKey' => 'player_id'
         ]);
-        $this->hasMany('Ladders', [
+        $this->hasMany('Ranks', [
             'foreignKey' => 'player_id'
         ]);
     }

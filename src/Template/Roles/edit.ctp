@@ -3,7 +3,7 @@
   * @var \App\View\AppView $this
   */
 ?>
-<nav class="large-3 medium-4 columns" id="actions-sidebar">
+<nav class="col-sm-12" id="actions-sidebar">
     <ul class="side-nav">
         <li class="heading"><?= __('Actions') ?></li>
         <li><?= $this->Form->postLink(
@@ -17,7 +17,7 @@
         <li><?= $this->Html->link(__('New User'), ['controller' => 'Users', 'action' => 'add']) ?></li>
     </ul>
 </nav>
-<div class="roles form large-9 medium-8 columns content">
+<div class="roles form col-sm-12">
     <?= $this->Form->create($role) ?>
     <fieldset>
         <legend><?= __('Edit Role') ?></legend>

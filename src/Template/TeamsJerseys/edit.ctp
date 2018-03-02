@@ -3,7 +3,7 @@
   * @var \App\View\AppView $this
   */
 ?>
-<nav class="large-3 medium-4 columns" id="actions-sidebar">
+<nav class="col-sm-12" id="actions-sidebar">
     <ul class="side-nav">
         <li class="heading"><?= __('Actions') ?></li>
         <li><?= $this->Form->postLink(
@@ -17,7 +17,7 @@
         <li><?= $this->Html->link(__('New Team'), ['controller' => 'Teams', 'action' => 'add']) ?></li>
     </ul>
 </nav>
-<div class="teamsJerseys form large-9 medium-8 columns content">
+<div class="teamsJerseys form col-sm-12">
     <?= $this->Form->create($teamsJersey) ?>
     <fieldset>
         <legend><?= __('Edit Teams Jersey') ?></legend>

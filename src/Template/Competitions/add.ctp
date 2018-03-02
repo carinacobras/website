@@ -3,7 +3,7 @@
   * @var \App\View\AppView $this
   */
 ?>
-<nav class="large-3 medium-4 columns" id="actions-sidebar">
+<nav class="col-sm-12" id="actions-sidebar">
     <ul class="side-nav">
         <li class="heading"><?= __('Actions') ?></li>
         <li><?= $this->Html->link(__('List Competitions'), ['action' => 'index']) ?></li>
@@ -17,7 +17,7 @@
         <li><?= $this->Html->link(__('New Training'), ['controller' => 'Training', 'action' => 'add']) ?></li>
     </ul>
 </nav>
-<div class="competitions form large-9 medium-8 columns content">
+<div class="competitions form col-sm-12">
     <?= $this->Form->create($competition) ?>
     <fieldset>
         <legend><?= __('Add Competition') ?></legend>

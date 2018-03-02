@@ -4,7 +4,7 @@
   * @var \App\Model\Entity\Location[]|\Cake\Collection\CollectionInterface $locations
   */
 ?>
-<nav class="large-3 medium-4 columns" id="actions-sidebar">
+<nav class="col-sm-12" id="actions-sidebar">
     <ul class="side-nav">
         <li class="heading"><?= __('Actions') ?></li>
         <li><?= $this->Html->link(__('New Location'), ['action' => 'add']) ?></li>
@@ -14,7 +14,7 @@
         <li><?= $this->Html->link(__('New Court'), ['controller' => 'Courts', 'action' => 'add']) ?></li>
     </ul>
 </nav>
-<div class="locations index large-9 medium-8 columns content">
+<div class="locations index col-sm-12">
     <h3><?= __('Locations') ?></h3>
     <table class="table">
         <thead>

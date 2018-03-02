@@ -3,7 +3,7 @@
   * @var \App\View\AppView $this
   */
 ?>
-<nav class="large-3 medium-4 columns" id="actions-sidebar">
+<nav class="col-sm-12" id="actions-sidebar">
     <ul class="side-nav">
         <li class="heading"><?= __('Actions') ?></li>
         <li><?= $this->Html->link(__('List Phone Numbers'), ['action' => 'index']) ?></li>
@@ -13,7 +13,7 @@
         <li><?= $this->Html->link(__('New Contact'), ['controller' => 'Contacts', 'action' => 'add']) ?></li>
     </ul>
 </nav>
-<div class="phoneNumbers form large-9 medium-8 columns content">
+<div class="phoneNumbers form col-sm-12">
     <?= $this->Form->create($phoneNumber) ?>
     <fieldset>
         <legend><?= __('Add Phone Number') ?></legend>

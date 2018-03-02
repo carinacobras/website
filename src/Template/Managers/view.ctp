@@ -4,7 +4,7 @@
   * @var \App\Model\Entity\Manager $manager
   */
 ?>
-<nav class="large-3 medium-4 columns" id="actions-sidebar">
+<nav class="col-sm-12" id="actions-sidebar">
     <ul class="side-nav">
         <li class="heading"><?= __('Actions') ?></li>
         <li><?= $this->Html->link(__('Edit Manager'), ['action' => 'edit', $manager->id]) ?> </li>
@@ -17,9 +17,9 @@
         <li><?= $this->Html->link(__('New Team'), ['controller' => 'Teams', 'action' => 'add']) ?> </li>
     </ul>
 </nav>
-<div class="managers view large-9 medium-8 columns content">
+<div class="managers view col-sm-12">
     <h3><?= h($manager->id) ?></h3>
-    <table class="vertical-table">
+    <table class="table">
         <tr>
             <th scope="row"><?= __('User') ?></th>
             <td><?= $manager->has('user') ? $this->Html->link($manager->user->id, ['controller' => 'Users', 'action' => 'view', $manager->user->id]) : '' ?></td>

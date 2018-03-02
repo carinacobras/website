@@ -4,30 +4,10 @@
   * @var \App\Model\Entity\User $user
   */
 ?>
-<nav class="large-3 medium-4 columns" id="actions-sidebar">
-    <ul class="side-nav">
-        <li class="heading"><?= __('Actions') ?></li>
-        <li><?= $this->Html->link(__('Edit User'), ['action' => 'edit', $user->id]) ?> </li>
-        <li><?= $this->Form->postLink(__('Delete User'), ['action' => 'delete', $user->id], ['confirm' => __('Are you sure you want to delete # {0}?', $user->id)]) ?> </li>
-        <li><?= $this->Html->link(__('List Users'), ['action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('New User'), ['action' => 'add']) ?> </li>
-        <li><?= $this->Html->link(__('List Coaches'), ['controller' => 'Coaches', 'action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('New Coach'), ['controller' => 'Coaches', 'action' => 'add']) ?> </li>
-        <li><?= $this->Html->link(__('List Emails'), ['controller' => 'Emails', 'action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('New Email'), ['controller' => 'Emails', 'action' => 'add']) ?> </li>
-        <li><?= $this->Html->link(__('List Managers'), ['controller' => 'Managers', 'action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('New Manager'), ['controller' => 'Managers', 'action' => 'add']) ?> </li>
-        <li><?= $this->Html->link(__('List Phone Numbers'), ['controller' => 'PhoneNumbers', 'action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('New Phone Number'), ['controller' => 'PhoneNumbers', 'action' => 'add']) ?> </li>
-        <li><?= $this->Html->link(__('List Players'), ['controller' => 'Players', 'action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('New Player'), ['controller' => 'Players', 'action' => 'add']) ?> </li>
-        <li><?= $this->Html->link(__('List Roles'), ['controller' => 'Roles', 'action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('New Role'), ['controller' => 'Roles', 'action' => 'add']) ?> </li>
-    </ul>
-</nav>
-<div class="users view large-9 medium-8 columns content">
+
+<div class="col-sm-12">
     <h3><?= h($user->id) ?></h3>
-    <table class="vertical-table">
+    <table class="table">
         <tr>
             <th scope="row"><?= __('Username') ?></th>
             <td><?= h($user->username) ?></td>
@@ -39,10 +19,6 @@
         <tr>
             <th scope="row"><?= __('Last Name') ?></th>
             <td><?= h($user->last_name) ?></td>
-        </tr>
-        <tr>
-            <th scope="row"><?= __('Id') ?></th>
-            <td><?= $this->Number->format($user->id) ?></td>
         </tr>
         <tr>
             <th scope="row"><?= __('Dob') ?></th>
@@ -58,7 +34,7 @@
         </tr>
     </table>
     <div class="related">
-        <h4><?= __('Related Coaches') ?></h4>
+        <h4><?= __('Coaches') ?></h4>
         <?php if (!empty($user->coaches)): ?>
         <table class="table">
             <tr>
@@ -83,7 +59,7 @@
         <?php endif; ?>
     </div>
     <div class="related">
-        <h4><?= __('Related Emails') ?></h4>
+        <h4><?= __('Emails') ?></h4>
         <?php if (!empty($user->emails)): ?>
         <table class="table">
             <tr>
@@ -108,7 +84,7 @@
         <?php endif; ?>
     </div>
     <div class="related">
-        <h4><?= __('Related Managers') ?></h4>
+        <h4><?= __('Managers') ?></h4>
         <?php if (!empty($user->managers)): ?>
         <table class="table">
             <tr>
@@ -133,7 +109,7 @@
         <?php endif; ?>
     </div>
     <div class="related">
-        <h4><?= __('Related Phone Numbers') ?></h4>
+        <h4><?= __('Phone Numbers') ?></h4>
         <?php if (!empty($user->phone_numbers)): ?>
         <table class="table">
             <tr>
@@ -183,7 +159,7 @@
         <?php endif; ?>
     </div>
     <div class="related">
-        <h4><?= __('Related Roles') ?></h4>
+        <h4><?= __('Roles') ?></h4>
         <?php if (!empty($user->roles)): ?>
         <table class="table">
             <tr>

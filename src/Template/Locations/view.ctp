@@ -4,7 +4,7 @@
   * @var \App\Model\Entity\Location $location
   */
 ?>
-<nav class="large-3 medium-4 columns" id="actions-sidebar">
+<nav class="col-sm-12" id="actions-sidebar">
     <ul class="side-nav">
         <li class="heading"><?= __('Actions') ?></li>
         <li><?= $this->Html->link(__('Edit Location'), ['action' => 'edit', $location->id]) ?> </li>
@@ -17,9 +17,9 @@
         <li><?= $this->Html->link(__('New Court'), ['controller' => 'Courts', 'action' => 'add']) ?> </li>
     </ul>
 </nav>
-<div class="locations view large-9 medium-8 columns content">
+<div class="locations view col-sm-12">
     <h3><?= h($location->name) ?></h3>
-    <table class="vertical-table">
+    <table class="table">
         <tr>
             <th scope="row"><?= __('Name') ?></th>
             <td><?= h($location->name) ?></td>

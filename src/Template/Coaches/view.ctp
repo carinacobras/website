@@ -4,7 +4,7 @@
   * @var \App\Model\Entity\Coach $coach
   */
 ?>
-<nav class="large-3 medium-4 columns" id="actions-sidebar">
+<nav class="col-sm-12" id="actions-sidebar">
     <ul class="side-nav">
         <li class="heading"><?= __('Actions') ?></li>
         <li><?= $this->Html->link(__('Edit Coach'), ['action' => 'edit', $coach->id]) ?> </li>
@@ -17,9 +17,9 @@
         <li><?= $this->Html->link(__('New Team'), ['controller' => 'Teams', 'action' => 'add']) ?> </li>
     </ul>
 </nav>
-<div class="coaches view large-9 medium-8 columns content">
+<div class="coaches view col-sm-12">
     <h3><?= h($coach->id) ?></h3>
-    <table class="vertical-table">
+    <table class="table">
         <tr>
             <th scope="row"><?= __('User') ?></th>
             <td><?= $coach->has('user') ? $this->Html->link($coach->user->id, ['controller' => 'Users', 'action' => 'view', $coach->user->id]) : '' ?></td>

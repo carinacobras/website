@@ -4,7 +4,7 @@
   * @var \App\Model\Entity\Email[]|\Cake\Collection\CollectionInterface $emails
   */
 ?>
-<nav class="large-3 medium-4 columns" id="actions-sidebar">
+<nav class="col-sm-12" id="actions-sidebar">
     <ul class="side-nav">
         <li class="heading"><?= __('Actions') ?></li>
         <li><?= $this->Html->link(__('New Email'), ['action' => 'add']) ?></li>
@@ -12,7 +12,7 @@
         <li><?= $this->Html->link(__('New User'), ['controller' => 'Users', 'action' => 'add']) ?></li>
     </ul>
 </nav>
-<div class="emails index large-9 medium-8 columns content">
+<div class="emails index col-sm-12">
     <h3><?= __('Emails') ?></h3>
     <table class="table">
         <thead>

@@ -4,7 +4,7 @@
   * @var \App\Model\Entity\PhoneNumber $phoneNumber
   */
 ?>
-<nav class="large-3 medium-4 columns" id="actions-sidebar">
+<nav class="col-sm-12" id="actions-sidebar">
     <ul class="side-nav">
         <li class="heading"><?= __('Actions') ?></li>
         <li><?= $this->Html->link(__('Edit Phone Number'), ['action' => 'edit', $phoneNumber->id]) ?> </li>
@@ -17,9 +17,9 @@
         <li><?= $this->Html->link(__('New Contact'), ['controller' => 'Contacts', 'action' => 'add']) ?> </li>
     </ul>
 </nav>
-<div class="phoneNumbers view large-9 medium-8 columns content">
+<div class="phoneNumbers view col-sm-12">
     <h3><?= h($phoneNumber->id) ?></h3>
-    <table class="vertical-table">
+    <table class="table">
         <tr>
             <th scope="row"><?= __('User') ?></th>
             <td><?= $phoneNumber->has('user') ? $this->Html->link($phoneNumber->user->id, ['controller' => 'Users', 'action' => 'view', $phoneNumber->user->id]) : '' ?></td>

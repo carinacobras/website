@@ -4,7 +4,7 @@
  * @var \App\Model\Entity\Invoice[]|\Cake\Collection\CollectionInterface $invoices
  */
 ?>
-<nav class="large-3 medium-4 columns" id="actions-sidebar">
+<nav class="col-sm-12" id="actions-sidebar">
     <ul class="side-nav">
         <li class="heading"><?= __('Actions') ?></li>
         <li><?= $this->Html->link(__('New Invoice'), ['action' => 'add']) ?></li>
@@ -14,7 +14,7 @@
         <li><?= $this->Html->link(__('New Payment'), ['controller' => 'Payments', 'action' => 'add']) ?></li>
     </ul>
 </nav>
-<div class="invoices index large-9 medium-8 columns content">
+<div class="invoices index col-sm-12">
     <h3><?= __('Invoices') ?></h3>
     <table class="table">
         <thead>

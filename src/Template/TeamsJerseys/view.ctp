@@ -4,7 +4,7 @@
   * @var \App\Model\Entity\TeamsJersey $teamsJersey
   */
 ?>
-<nav class="large-3 medium-4 columns" id="actions-sidebar">
+<nav class="col-sm-12" id="actions-sidebar">
     <ul class="side-nav">
         <li class="heading"><?= __('Actions') ?></li>
         <li><?= $this->Html->link(__('Edit Teams Jersey'), ['action' => 'edit', $teamsJersey->id]) ?> </li>
@@ -15,9 +15,9 @@
         <li><?= $this->Html->link(__('New Team'), ['controller' => 'Teams', 'action' => 'add']) ?> </li>
     </ul>
 </nav>
-<div class="teamsJerseys view large-9 medium-8 columns content">
+<div class="teamsJerseys view col-sm-12">
     <h3><?= h($teamsJersey->id) ?></h3>
-    <table class="vertical-table">
+    <table class="table">
         <tr>
             <th scope="row"><?= __('Team') ?></th>
             <td><?= $teamsJersey->has('team') ? $this->Html->link($teamsJersey->team->name, ['controller' => 'Teams', 'action' => 'view', $teamsJersey->team->id]) : '' ?></td>

@@ -4,7 +4,7 @@
   * @var \App\Model\Entity\Absence[]|\Cake\Collection\CollectionInterface $absences
   */
 ?>
-<nav class="large-3 medium-4 columns" id="actions-sidebar">
+<nav class="col-sm-12" id="actions-sidebar">
     <ul class="side-nav">
         <li class="heading"><?= __('Actions') ?></li>
         <li><?= $this->Html->link(__('New Absence'), ['action' => 'add']) ?></li>
@@ -12,7 +12,7 @@
         <li><?= $this->Html->link(__('New Player'), ['controller' => 'Players', 'action' => 'add']) ?></li>
     </ul>
 </nav>
-<div class="absences index large-9 medium-8 columns content">
+<div class="absences index col-sm-12">
     <h3><?= __('Absences') ?></h3>
     <table class="table">
         <thead>

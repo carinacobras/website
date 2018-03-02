@@ -4,7 +4,7 @@
   */
 ?>
 
-<div class="players form large-9 medium-8 columns content">
+<div class="players form col-sm-12">
     <?= $this->Form->create($player) ?>
     <fieldset>
         <legend><?= __('Edit Player') ?></legend>

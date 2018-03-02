@@ -4,7 +4,7 @@
   * @var \App\Model\Entity\Absence $absence
   */
 ?>
-<nav class="large-3 medium-4 columns" id="actions-sidebar">
+<nav class="col-sm-12" id="actions-sidebar">
     <ul class="side-nav">
         <li class="heading"><?= __('Actions') ?></li>
         <li><?= $this->Html->link(__('Edit Absence'), ['action' => 'edit', $absence->id]) ?> </li>
@@ -15,9 +15,9 @@
         <li><?= $this->Html->link(__('New Player'), ['controller' => 'Players', 'action' => 'add']) ?> </li>
     </ul>
 </nav>
-<div class="absences view large-9 medium-8 columns content">
+<div class="absences view col-sm-12">
     <h3><?= h($absence->id) ?></h3>
-    <table class="vertical-table">
+    <table class="table">
         <tr>
             <th scope="row"><?= __('Player') ?></th>
             <td><?= $absence->has('player') ? $this->Html->link($absence->player->id, ['controller' => 'Players', 'action' => 'view', $absence->player->id]) : '' ?></td>

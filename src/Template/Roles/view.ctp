@@ -4,7 +4,7 @@
   * @var \App\Model\Entity\Role $role
   */
 ?>
-<nav class="large-3 medium-4 columns" id="actions-sidebar">
+<nav class="col-sm-12" id="actions-sidebar">
     <ul class="side-nav">
         <li class="heading"><?= __('Actions') ?></li>
         <li><?= $this->Html->link(__('Edit Role'), ['action' => 'edit', $role->id]) ?> </li>
@@ -15,9 +15,9 @@
         <li><?= $this->Html->link(__('New User'), ['controller' => 'Users', 'action' => 'add']) ?> </li>
     </ul>
 </nav>
-<div class="roles view large-9 medium-8 columns content">
+<div class="roles view col-sm-12">
     <h3><?= h($role->name) ?></h3>
-    <table class="vertical-table">
+    <table class="table">
         <tr>
             <th scope="row"><?= __('Name') ?></th>
             <td><?= h($role->name) ?></td>

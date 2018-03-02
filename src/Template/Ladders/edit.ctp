@@ -3,7 +3,7 @@
   * @var \App\View\AppView $this
   */
 ?>
-<nav class="large-3 medium-4 columns" id="actions-sidebar">
+<nav class="col-sm-12" id="actions-sidebar">
     <ul class="side-nav">
         <li class="heading"><?= __('Actions') ?></li>
         <li><?= $this->Form->postLink(
@@ -19,7 +19,7 @@
         <li><?= $this->Html->link(__('New Player'), ['controller' => 'Players', 'action' => 'add']) ?></li>
     </ul>
 </nav>
-<div class="ladders form large-9 medium-8 columns content">
+<div class="ladders form col-sm-12">
     <?= $this->Form->create($ladder) ?>
     <fieldset>
         <legend><?= __('Edit Ladder') ?></legend>

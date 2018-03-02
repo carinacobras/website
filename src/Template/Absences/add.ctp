@@ -3,7 +3,7 @@
   * @var \App\View\AppView $this
   */
 ?>
-<nav class="large-3 medium-4 columns" id="actions-sidebar">
+<nav class="col-sm-12" id="actions-sidebar">
     <ul class="side-nav">
         <li class="heading"><?= __('Actions') ?></li>
         <li><?= $this->Html->link(__('List Absences'), ['action' => 'index']) ?></li>
@@ -11,7 +11,7 @@
         <li><?= $this->Html->link(__('New Player'), ['controller' => 'Players', 'action' => 'add']) ?></li>
     </ul>
 </nav>
-<div class="absences form large-9 medium-8 columns content">
+<div class="absences form col-sm-12">
     <?= $this->Form->create($absence) ?>
     <fieldset>
         <legend><?= __('Add Absence') ?></legend>

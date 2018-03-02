@@ -4,7 +4,7 @@
   * @var \App\Model\Entity\PhoneNumber[]|\Cake\Collection\CollectionInterface $phoneNumbers
   */
 ?>
-<nav class="large-3 medium-4 columns" id="actions-sidebar">
+<nav class="col-sm-12" id="actions-sidebar">
     <ul class="side-nav">
         <li class="heading"><?= __('Actions') ?></li>
         <li><?= $this->Html->link(__('New Phone Number'), ['action' => 'add']) ?></li>
@@ -14,7 +14,7 @@
         <li><?= $this->Html->link(__('New Contact'), ['controller' => 'Contacts', 'action' => 'add']) ?></li>
     </ul>
 </nav>
-<div class="phoneNumbers index large-9 medium-8 columns content">
+<div class="phoneNumbers index col-sm-12">
     <h3><?= __('Phone Numbers') ?></h3>
     <table class="table">
         <thead>
