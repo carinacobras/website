@@ -1,22 +1,22 @@
 <?php
 namespace App\Test\TestCase\Model\Table;
 
-use App\Model\Table\LaddersTable;
+use App\Model\Table\RanksTable;
 use Cake\ORM\TableRegistry;
 use Cake\TestSuite\TestCase;
 
 /**
- * App\Model\Table\LaddersTable Test Case
+ * App\Model\Table\RanksTable Test Case
  */
-class LaddersTableTest extends TestCase
+class RanksTableTest extends TestCase
 {
 
     /**
      * Test subject
      *
-     * @var \App\Model\Table\LaddersTable
+     * @var \App\Model\Table\RanksTable
      */
-    public $Ladders;
+    public $Ranks;
 
     /**
      * Fixtures
@@ -24,11 +24,12 @@ class LaddersTableTest extends TestCase
      * @var array
      */
     public $fixtures = [
-        'app.ladders',
+        'app.ranks',
         'app.competitions',
         'app.courts',
         'app.locations',
         'app.training',
+        'app.ladders',
         'app.teams',
         'app.coaches',
         'app.users',
@@ -39,7 +40,7 @@ class LaddersTableTest extends TestCase
         'app.players',
         'app.absences',
         'app.relationships',
-        'app.roles',
+        'app.users_roles',
         'app.teams_jerseys'
     ];
 
@@ -51,8 +52,8 @@ class LaddersTableTest extends TestCase
     public function setUp()
     {
         parent::setUp();
-        $config = TableRegistry::exists('Ladders') ? [] : ['className' => LaddersTable::class];
-        $this->Ladders = TableRegistry::get('Ladders', $config);
+        $config = TableRegistry::exists('Ranks') ? [] : ['className' => RanksTable::class];
+        $this->Ranks = TableRegistry::get('Ranks', $config);
     }
 
     /**
@@ -62,7 +63,7 @@ class LaddersTableTest extends TestCase
      */
     public function tearDown()
     {
-        unset($this->Ladders);
+        unset($this->Ranks);
 
         parent::tearDown();
     }

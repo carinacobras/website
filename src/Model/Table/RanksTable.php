@@ -7,20 +7,21 @@ use Cake\ORM\Table;
 use Cake\Validation\Validator;
 
 /**
- * Ladders Model
+ * Ranks Model
  *
  * @property \App\Model\Table\CompetitionsTable|\Cake\ORM\Association\BelongsTo $Competitions
  * @property \App\Model\Table\PlayersTable|\Cake\ORM\Association\BelongsTo $Players
+ * @property \App\Model\Table\TeamsTable|\Cake\ORM\Association\BelongsTo $Teams
  *
- * @method \App\Model\Entity\Ladder get($primaryKey, $options = [])
- * @method \App\Model\Entity\Ladder newEntity($data = null, array $options = [])
- * @method \App\Model\Entity\Ladder[] newEntities(array $data, array $options = [])
- * @method \App\Model\Entity\Ladder|bool save(\Cake\Datasource\EntityInterface $entity, $options = [])
- * @method \App\Model\Entity\Ladder patchEntity(\Cake\Datasource\EntityInterface $entity, array $data, array $options = [])
- * @method \App\Model\Entity\Ladder[] patchEntities($entities, array $data, array $options = [])
- * @method \App\Model\Entity\Ladder findOrCreate($search, callable $callback = null, $options = [])
+ * @method \App\Model\Entity\Rank get($primaryKey, $options = [])
+ * @method \App\Model\Entity\Rank newEntity($data = null, array $options = [])
+ * @method \App\Model\Entity\Rank[] newEntities(array $data, array $options = [])
+ * @method \App\Model\Entity\Rank|bool save(\Cake\Datasource\EntityInterface $entity, $options = [])
+ * @method \App\Model\Entity\Rank patchEntity(\Cake\Datasource\EntityInterface $entity, array $data, array $options = [])
+ * @method \App\Model\Entity\Rank[] patchEntities($entities, array $data, array $options = [])
+ * @method \App\Model\Entity\Rank findOrCreate($search, callable $callback = null, $options = [])
  */
-class LaddersTable extends Table
+class RanksTable extends Table
 {
 
     /**
@@ -33,7 +34,7 @@ class LaddersTable extends Table
     {
         parent::initialize($config);
 
-        $this->setTable('ladders');
+        $this->setTable('ranks');
         $this->setDisplayField('id');
         $this->setPrimaryKey('id');
 
@@ -42,8 +43,11 @@ class LaddersTable extends Table
             'joinType' => 'INNER'
         ]);
         $this->belongsTo('Players', [
-            'className' => 'Players',
             'foreignKey' => 'player_id',
+            'joinType' => 'INNER'
+        ]);
+        $this->belongsTo('Teams', [
+            'foreignKey' => 'team_id',
             'joinType' => 'INNER'
         ]);
     }
@@ -60,6 +64,10 @@ class LaddersTable extends Table
             ->integer('id')
             ->allowEmpty('id', 'create');
 
+        $validator
+            ->integer('rank')
+            ->allowEmpty('rank');
+
         return $validator;
     }
 
@@ -74,6 +82,7 @@ class LaddersTable extends Table
     {
         $rules->add($rules->existsIn(['competition_id'], 'Competitions'));
         $rules->add($rules->existsIn(['player_id'], 'Players'));
+        $rules->add($rules->existsIn(['team_id'], 'Teams'));
 
         return $rules;
     }

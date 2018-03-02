@@ -4,16 +4,19 @@ namespace App\Model\Entity;
 use Cake\ORM\Entity;
 
 /**
- * Ladder Entity
+ * Rank Entity
  *
  * @property int $id
  * @property int $competition_id
  * @property int $player_id
+ * @property int $team_id
+ * @property int $rank
  *
  * @property \App\Model\Entity\Competition $competition
  * @property \App\Model\Entity\Player $player
+ * @property \App\Model\Entity\Team $team
  */
-class Ladder extends Entity
+class Rank extends Entity
 {
 
     /**
@@ -26,7 +29,12 @@ class Ladder extends Entity
      * @var array
      */
     protected $_accessible = [
-        '*' => true,
-        'id' => false
+        'competition_id' => true,
+        'player_id' => true,
+        'team_id' => true,
+        'rank' => true,
+        'competition' => true,
+        'player' => true,
+        'team' => true
     ];
 }
