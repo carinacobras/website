@@ -60,7 +60,7 @@
     <div class="related">
         <h4><?= __('Related Coaches') ?></h4>
         <?php if (!empty($user->coaches)): ?>
-        <table cellpadding="0" cellspacing="0">
+        <table class="table">
             <tr>
                 <th scope="col"><?= __('Id') ?></th>
                 <th scope="col"><?= __('User Id') ?></th>
@@ -85,7 +85,7 @@
     <div class="related">
         <h4><?= __('Related Emails') ?></h4>
         <?php if (!empty($user->emails)): ?>
-        <table cellpadding="0" cellspacing="0">
+        <table class="table">
             <tr>
                 <th scope="col"><?= __('Id') ?></th>
                 <th scope="col"><?= __('Address') ?></th>
@@ -110,7 +110,7 @@
     <div class="related">
         <h4><?= __('Related Managers') ?></h4>
         <?php if (!empty($user->managers)): ?>
-        <table cellpadding="0" cellspacing="0">
+        <table class="table">
             <tr>
                 <th scope="col"><?= __('Id') ?></th>
                 <th scope="col"><?= __('User Id') ?></th>
@@ -135,7 +135,7 @@
     <div class="related">
         <h4><?= __('Related Phone Numbers') ?></h4>
         <?php if (!empty($user->phone_numbers)): ?>
-        <table cellpadding="0" cellspacing="0">
+        <table class="table">
             <tr>
                 <th scope="col"><?= __('Id') ?></th>
                 <th scope="col"><?= __('Number') ?></th>
@@ -160,7 +160,7 @@
     <div class="related">
         <h4><?= __('Related Players') ?></h4>
         <?php if (!empty($user->players)): ?>
-        <table cellpadding="0" cellspacing="0">
+        <table class="table">
             <tr>
                 <th scope="col"><?= __('Id') ?></th>
                 <th scope="col"><?= __('User Id') ?></th>
@@ -185,7 +185,7 @@
     <div class="related">
         <h4><?= __('Related Roles') ?></h4>
         <?php if (!empty($user->roles)): ?>
-        <table cellpadding="0" cellspacing="0">
+        <table class="table">
             <tr>
                 <th scope="col"><?= __('Id') ?></th>
                 <th scope="col"><?= __('Name') ?></th>

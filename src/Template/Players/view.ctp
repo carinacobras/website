@@ -38,7 +38,7 @@
     <div class="related">
         <h4><?= __('Related Absences') ?></h4>
         <?php if (!empty($player->absences)): ?>
-        <table cellpadding="0" cellspacing="0">
+        <table class="table">
             <tr>
                 <th scope="col"><?= __('Id') ?></th>
                 <th scope="col"><?= __('Date') ?></th>
@@ -63,7 +63,7 @@
     <div class="related">
         <h4><?= __('Related Contacts') ?></h4>
         <?php if (!empty($player->contacts)): ?>
-        <table cellpadding="0" cellspacing="0">
+        <table class="table">
             <tr>
                 <th scope="col"><?= __('First Name') ?></th>
                 <th scope="col"><?= __('Last Name') ?></th>
@@ -92,7 +92,7 @@
     <div class="related">
         <h4><?= __('Related Ladders') ?></h4>
         <?php if (!empty($player->ladders)): ?>
-        <table cellpadding="0" cellspacing="0">
+        <table class="table">
             <tr>
                 <th scope="col"><?= __('Id') ?></th>
                 <th scope="col"><?= __('Competition Id') ?></th>

@@ -42,7 +42,7 @@
     <div class="related">
         <h4><?= __('Related Coaches') ?></h4>
         <?php if (!empty($team->coaches)): ?>
-        <table cellpadding="0" cellspacing="0">
+        <table class="table">
             <tr>
                 <th scope="col"><?= __('Id') ?></th>
                 <th scope="col"><?= __('User Id') ?></th>
@@ -67,7 +67,7 @@
     <div class="related">
         <h4><?= __('Related Managers') ?></h4>
         <?php if (!empty($team->managers)): ?>
-        <table cellpadding="0" cellspacing="0">
+        <table class="table">
             <tr>
                 <th scope="col"><?= __('Id') ?></th>
                 <th scope="col"><?= __('User Id') ?></th>
@@ -92,7 +92,7 @@
     <div class="related">
         <h4><?= __('Related Players') ?></h4>
         <?php if (!empty($team->players)): ?>
-        <table cellpadding="0" cellspacing="0">
+        <table class="table">
             <tr>
                 <th scope="col"><?= __('Id') ?></th>
                 <th scope="col"><?= __('User Id') ?></th>
@@ -117,7 +117,7 @@
     <div class="related">
         <h4><?= __('Related Teams Jerseys') ?></h4>
         <?php if (!empty($team->teams_jerseys)): ?>
-        <table cellpadding="0" cellspacing="0">
+        <table class="table">
             <tr>
                 <th scope="col"><?= __('Id') ?></th>
                 <th scope="col"><?= __('Number') ?></th>

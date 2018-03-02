@@ -34,7 +34,7 @@
     <div class="related">
         <h4><?= __('Related Order Lines') ?></h4>
         <?php if (!empty($orderItem->order_lines)): ?>
-        <table cellpadding="0" cellspacing="0">
+        <table class="table">
             <tr>
                 <th scope="col"><?= __('Id') ?></th>
                 <th scope="col"><?= __('Order Id') ?></th>

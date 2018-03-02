@@ -36,7 +36,7 @@
     <div class="related">
         <h4><?= __('Related Courts') ?></h4>
         <?php if (!empty($competition->courts)): ?>
-        <table cellpadding="0" cellspacing="0">
+        <table class="table">
             <tr>
                 <th scope="col"><?= __('Id') ?></th>
                 <th scope="col"><?= __('Number') ?></th>
@@ -61,7 +61,7 @@
     <div class="related">
         <h4><?= __('Related Ladders') ?></h4>
         <?php if (!empty($competition->ladders)): ?>
-        <table cellpadding="0" cellspacing="0">
+        <table class="table">
             <tr>
                 <th scope="col"><?= __('Id') ?></th>
                 <th scope="col"><?= __('Competition Id') ?></th>
@@ -86,7 +86,7 @@
     <div class="related">
         <h4><?= __('Related Teams') ?></h4>
         <?php if (!empty($competition->teams)): ?>
-        <table cellpadding="0" cellspacing="0">
+        <table class="table">
             <tr>
                 <th scope="col"><?= __('Id') ?></th>
                 <th scope="col"><?= __('Name') ?></th>
@@ -111,7 +111,7 @@
     <div class="related">
         <h4><?= __('Related Training') ?></h4>
         <?php if (!empty($competition->training)): ?>
-        <table cellpadding="0" cellspacing="0">
+        <table class="table">
             <tr>
                 <th scope="col"><?= __('Id') ?></th>
                 <th scope="col"><?= __('Time') ?></th>

@@ -14,7 +14,7 @@
 </nav>
 <div class="roles index large-9 medium-8 columns content">
     <h3><?= __('Roles') ?></h3>
-    <table cellpadding="0" cellspacing="0">
+    <table class="table">
         <thead>
             <tr>
                 <th scope="col"><?= $this->Paginator->sort('id') ?></th>

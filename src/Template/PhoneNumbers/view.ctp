@@ -36,7 +36,7 @@
     <div class="related">
         <h4><?= __('Related Contacts') ?></h4>
         <?php if (!empty($phoneNumber->contacts)): ?>
-        <table cellpadding="0" cellspacing="0">
+        <table class="table">
             <tr>
                 <th scope="col"><?= __('Id') ?></th>
                 <th scope="col"><?= __('Player Id') ?></th>
