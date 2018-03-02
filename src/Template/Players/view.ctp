@@ -76,9 +76,8 @@
         <?php if (!empty($player->ranks)): ?>
         <table class="table">
             <tr>
-                <th scope="col"><?= __('Id') ?></th>
                 <th scope="col"><?= __('Competition Id') ?></th>
-                <th scope="col"><?= __('Player Id') ?></th>
+                <th scope="col"><?= __('Rank') ?></th>
                 <th scope="col" class="actions"><?= __('Actions') ?></th>
             </tr>
             <?php foreach ($player->ranks as $ranks): ?>
