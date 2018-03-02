@@ -83,9 +83,8 @@
             </tr>
             <?php foreach ($player->ranks as $ranks): ?>
             <tr>
-                <td><?= h($ranks->id) ?></td>
                 <td><?= h($ranks->competition_id) ?></td>
-                <td><?= h($ranks->player_id) ?></td>
+                <td><?= h($ranks->rank) ?></td>
                 <td class="actions">
                     <?= $this->Html->link(__('View'), ['controller' => 'Ranks', 'action' => 'view', $ranks->id]) ?>
                     <?= $this->Html->link(__('Edit'), ['controller' => 'Ranks', 'action' => 'edit', $ranks->id]) ?>
