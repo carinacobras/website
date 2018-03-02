@@ -1,22 +1,22 @@
 <?php
 namespace App\Test\TestCase\Model\Table;
 
-use App\Model\Table\UsersRolesTable;
+use App\Model\Table\RanksTable;
 use Cake\ORM\TableRegistry;
 use Cake\TestSuite\TestCase;
 
 /**
- * App\Model\Table\UsersRolesTable Test Case
+ * App\Model\Table\RanksTable Test Case
  */
-class UsersRolesTableTest extends TestCase
+class RanksTableTest extends TestCase
 {
 
     /**
      * Test subject
      *
-     * @var \App\Model\Table\UsersRolesTable
+     * @var \App\Model\Table\RanksTable
      */
-    public $UsersRoles;
+    public $Ranks;
 
     /**
      * Fixtures
@@ -24,31 +24,23 @@ class UsersRolesTableTest extends TestCase
      * @var array
      */
     public $fixtures = [
-        'app.users_roles',
-        'app.roles',
-        'app.users',
-        'app.phone_numbers',
-        'app.contacts',
-        'app.emails',
-        'app.relationships',
-        'app.players',
-        'app.teams',
-        'app.competitions',
         'app.Ranks',
+        'app.competitions',
         'app.courts',
         'app.locations',
         'app.training',
-        'app.uniforms',
-        'app.uniform_colours',
-        'app.teams_jerseys',
+        'app.teams',
         'app.coaches',
-        'app.teams_coaches',
+        'app.users',
+        'app.emails',
+        'app.managers',
+        'app.phone_numbers',
+        'app.contacts',
+        'app.players',
         'app.absences',
-        'app.transactions',
-        'app.fees',
-        'app.fees_types',
-        'app.players_fees',
-        'app.managers'
+        'app.relationships',
+        'app.roles',
+        'app.teams_jerseys'
     ];
 
     /**
@@ -59,8 +51,8 @@ class UsersRolesTableTest extends TestCase
     public function setUp()
     {
         parent::setUp();
-        $config = TableRegistry::exists('UsersRoles') ? [] : ['className' => UsersRolesTable::class];
-        $this->UsersRoles = TableRegistry::get('UsersRoles', $config);
+        $config = TableRegistry::exists('Ranks') ? [] : ['className' => RanksTable::class];
+        $this->Ranks = TableRegistry::get('Ranks', $config);
     }
 
     /**
@@ -70,7 +62,7 @@ class UsersRolesTableTest extends TestCase
      */
     public function tearDown()
     {
-        unset($this->UsersRoles);
+        unset($this->Ranks);
 
         parent::tearDown();
     }

@@ -28,7 +28,7 @@ class LocationsTableTest extends TestCase
         'app.training',
         'app.competitions',
         'app.courts',
-        'app.ladders',
+        'app.Ranks',
         'app.players',
         'app.users',
         'app.coaches',

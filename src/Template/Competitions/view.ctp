@@ -13,8 +13,8 @@
         <li><?= $this->Html->link(__('New Competition'), ['action' => 'add']) ?> </li>
         <li><?= $this->Html->link(__('List Courts'), ['controller' => 'Courts', 'action' => 'index']) ?> </li>
         <li><?= $this->Html->link(__('New Court'), ['controller' => 'Courts', 'action' => 'add']) ?> </li>
-        <li><?= $this->Html->link(__('List Ladders'), ['controller' => 'Ladders', 'action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('New Ladder'), ['controller' => 'Ladders', 'action' => 'add']) ?> </li>
+        <li><?= $this->Html->link(__('List Ranks'), ['controller' => 'Ranks', 'action' => 'index']) ?> </li>
+        <li><?= $this->Html->link(__('New Rank'), ['controller' => 'Ranks', 'action' => 'add']) ?> </li>
         <li><?= $this->Html->link(__('List Teams'), ['controller' => 'Teams', 'action' => 'index']) ?> </li>
         <li><?= $this->Html->link(__('New Team'), ['controller' => 'Teams', 'action' => 'add']) ?> </li>
         <li><?= $this->Html->link(__('List Training'), ['controller' => 'Training', 'action' => 'index']) ?> </li>
@@ -59,8 +59,8 @@
         <?php endif; ?>
     </div>
     <div class="related">
-        <h4><?= __('Related Ladders') ?></h4>
-        <?php if (!empty($competition->ladders)): ?>
+        <h4><?= __('Related Ranks') ?></h4>
+        <?php if (!empty($competition->Ranks)): ?>
         <table class="table">
             <tr>
                 <th scope="col"><?= __('Id') ?></th>
@@ -68,15 +68,15 @@
                 <th scope="col"><?= __('Player Id') ?></th>
                 <th scope="col" class="actions"><?= __('Actions') ?></th>
             </tr>
-            <?php foreach ($competition->ladders as $ladders): ?>
+            <?php foreach ($competition->Ranks as $Ranks): ?>
             <tr>
-                <td><?= h($ladders->id) ?></td>
-                <td><?= h($ladders->competition_id) ?></td>
-                <td><?= h($ladders->player_id) ?></td>
+                <td><?= h($Ranks->id) ?></td>
+                <td><?= h($Ranks->competition_id) ?></td>
+                <td><?= h($Ranks->player_id) ?></td>
                 <td class="actions">
-                    <?= $this->Html->link(__('View'), ['controller' => 'Ladders', 'action' => 'view', $ladders->id]) ?>
-                    <?= $this->Html->link(__('Edit'), ['controller' => 'Ladders', 'action' => 'edit', $ladders->id]) ?>
-                    <?= $this->Form->postLink(__('Delete'), ['controller' => 'Ladders', 'action' => 'delete', $ladders->id], ['confirm' => __('Are you sure you want to delete # {0}?', $ladders->id)]) ?>
+                    <?= $this->Html->link(__('View'), ['controller' => 'Ranks', 'action' => 'view', $Ranks->id]) ?>
+                    <?= $this->Html->link(__('Edit'), ['controller' => 'Ranks', 'action' => 'edit', $Ranks->id]) ?>
+                    <?= $this->Form->postLink(__('Delete'), ['controller' => 'Ranks', 'action' => 'delete', $Ranks->id], ['confirm' => __('Are you sure you want to delete # {0}?', $Ranks->id)]) ?>
                 </td>
             </tr>
             <?php endforeach; ?>

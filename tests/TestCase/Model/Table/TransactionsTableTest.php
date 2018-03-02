@@ -32,7 +32,7 @@ class TransactionsTableTest extends TestCase
         'app.teams',
         'app.coaches',
         'app.competitions',
-        'app.ladders',
+        'app.Ranks',
         'app.courts',
         'app.locations',
         'app.training',

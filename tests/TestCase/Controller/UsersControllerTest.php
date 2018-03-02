@@ -23,7 +23,7 @@ class UsersControllerTest extends IntegrationTestCase
         'app.courts',
         'app.locations',
         'app.training',
-        'app.ladders',
+        'app.Ranks',
         'app.players',
         'app.absences',
         'app.contacts',

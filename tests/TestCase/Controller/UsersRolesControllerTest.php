@@ -26,7 +26,7 @@ class UsersRolesControllerTest extends IntegrationTestCase
         'app.players',
         'app.teams',
         'app.competitions',
-        'app.ladders',
+        'app.Ranks',
         'app.courts',
         'app.locations',
         'app.training',

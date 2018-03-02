@@ -10,7 +10,7 @@ use Cake\Validation\Validator;
  * Competitions Model
  *
  * @property \App\Model\Table\CourtsTable|\Cake\ORM\Association\HasMany $Courts
- * @property \App\Model\Table\LaddersTable|\Cake\ORM\Association\HasMany $Ladders
+ * @property \App\Model\Table\RanksTable|\Cake\ORM\Association\HasMany $Ranks
  * @property \App\Model\Table\TeamsTable|\Cake\ORM\Association\HasMany $Teams
  * @property \App\Model\Table\TrainingTable|\Cake\ORM\Association\HasMany $Training
  *
@@ -42,7 +42,7 @@ class CompetitionsTable extends Table
         $this->hasMany('Courts', [
             'foreignKey' => 'competition_id'
         ]);
-        $this->hasMany('Ladders', [
+        $this->hasMany('Ranks', [
             'foreignKey' => 'competition_id'
         ]);
         $this->hasMany('Teams', [

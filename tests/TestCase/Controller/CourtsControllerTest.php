@@ -18,7 +18,7 @@ class CourtsControllerTest extends IntegrationTestCase
     public $fixtures = [
         'app.courts',
         'app.competitions',
-        'app.ladders',
+        'app.Ranks',
         'app.players',
         'app.users',
         'app.coaches',

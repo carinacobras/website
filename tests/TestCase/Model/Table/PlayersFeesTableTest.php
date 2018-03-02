@@ -37,7 +37,7 @@ class PlayersFeesTableTest extends TestCase
         'app.coaches',
         'app.teams',
         'app.competitions',
-        'app.ladders',
+        'app.Ranks',
         'app.courts',
         'app.locations',
         'app.training',

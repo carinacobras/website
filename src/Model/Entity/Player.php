@@ -14,7 +14,7 @@ use Cake\ORM\Entity;
  * @property \App\Model\Entity\Team $team
  * @property \App\Model\Entity\Absence[] $absences
  * @property \App\Model\Entity\Contact[] $contacts
- * @property \App\Model\Entity\Ladder[] $ladders
+ * @property \App\Model\Entity\Rank[] $Ranks
  */
 class Player extends Entity
 {

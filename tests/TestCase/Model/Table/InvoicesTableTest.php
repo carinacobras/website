@@ -34,7 +34,7 @@ class InvoicesTableTest extends TestCase
         'app.courts',
         'app.locations',
         'app.training',
-        'app.ladders',
+        'app.Ranks',
         'app.managers',
         'app.teams_jerseys',
         'app.emails',

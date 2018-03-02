@@ -29,7 +29,7 @@ class RanksTableTest extends TestCase
         'app.courts',
         'app.locations',
         'app.training',
-        'app.ladders',
+        'app.Ranks',
         'app.teams',
         'app.coaches',
         'app.users',

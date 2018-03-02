@@ -19,7 +19,7 @@ class TeamsCoachesControllerTest extends IntegrationTestCase
         'app.teams_coaches',
         'app.teams',
         'app.competitions',
-        'app.ladders',
+        'app.Ranks',
         'app.players',
         'app.users',
         'app.phone_numbers',
