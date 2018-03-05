@@ -3866,7 +3866,7 @@ tbody.collapse.show {
   display: block;
   padding: 0.5em 1em;
   font-variant: small-caps;
-  font-size: 25px;
+  font-size: 30px;
 }
 
 .nav-link:focus, .nav-link:hover {
@@ -3888,8 +3888,8 @@ tbody.collapse.show {
 
 .nav-tabs .nav-link {
   border: 1px solid transparent;
-  border-top-right-radius: 0.25rem;
-  border-top-left-radius: 0.25rem;
+  border-top-right-radius: 0.1rem;
+  border-top-left-radius: 0.1rem;
 }
 
 .nav-tabs .nav-link:focus, .nav-tabs .nav-link:hover {
@@ -3916,7 +3916,7 @@ tbody.collapse.show {
 }
 
 .nav-pills .nav-link {
-  border-radius: 0.25rem;
+  border-radius: 0.1rem;
 }
 
 .nav-pills .nav-link.active,
@@ -3966,8 +3966,8 @@ tbody.collapse.show {
 
 .navbar-brand {
   display: inline-block;
-  padding-top: .25rem;
-  padding-bottom: .25rem;
+  padding-top: .1rem;
+  padding-bottom: .1rem;
   margin-right: 1rem;
   font-size: 1.25rem;
   line-height: inherit;
@@ -4000,21 +4000,21 @@ tbody.collapse.show {
 
 .navbar-text {
   display: inline-block;
-  padding-top: .425rem;
-  padding-bottom: .425rem;
-  font-size:25px;
+  padding-top: .1rem;
+  padding-bottom: .1rem;
+  font-size:30px;
 }
 
 .navbar-toggler {
   -webkit-align-self: flex-start;
       -ms-flex-item-align: start;
           align-self: flex-start;
-  padding: 0.25rem 0.75rem;
+  padding: 0.1rem 0.2rem;
   font-size: 1.25rem;
   line-height: 1;
   background: transparent;
   border: 1px solid transparent;
-  border-radius: 0.25rem;
+  border-radius: 0.1rem;
 }
 
 .navbar-toggler:focus, .navbar-toggler:hover {
