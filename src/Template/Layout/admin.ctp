@@ -29,7 +29,7 @@ use Cake\Routing\Router;
 <body>
     <?=$this->element('user-nav') ?>
     <?=$this->element('main-nav') ?>
-    <?= $this->Flash->render() ?>
+   
     <div class="admin container-fluid clearfix">
         <div class="row">
             <div class="sidebar col-sm-2">
@@ -44,6 +44,7 @@ use Cake\Routing\Router;
                 </ul>
             </div>
             <div class="content col-sm-10">
+            <?= $this->Flash->render() ?>
                 <?= $this->fetch('content') ?>
             </div>
         </div>

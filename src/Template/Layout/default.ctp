@@ -26,9 +26,10 @@ use Cake\Routing\Router;
 <body>
     <?=$this->element('user-nav') ?>
     <?=$this->element('main-nav') ?>
-    <?= $this->Flash->render() ?>
+    
     <div class="container clearfix">
     <div class="content col-sm-12">
+    <?= $this->Flash->render() ?>
         <?= $this->fetch('content') ?>
     </div>
     </div>
