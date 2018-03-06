@@ -1,3 +1,14 @@
+<?html
+
+<form id='s' method='post'>
+  <select name="-- select --">
+  <option value="Uniform Query">Uniform Query</option>
+  <option value="Fees Query">Fees Query</option>
+  <option value="New Player">First Time Player</option>
+  <option value="General Query">General Query</option>
+  <option value="Change Contact Details">Change Contact Details</option>
+  </select>
+
 <?php
 namespace App\Controller;
 
@@ -52,13 +63,13 @@ class PagesController extends AppController
         if ($this->request->is('post')) {
             if ($contact->execute($this->request->getData())) {
 
-                $this->Flash->success(__('We will get back to you soon.'));
+                $this->Flash->success(__('We will contact you shortly.'));
                 $email = new Email('default');
                 $email->from([$this->request->data["email"] => $this->request->data["name"]])
                       ->to("tross_cobras@tysonross.com")
                       ->subject("Enquiry from ".$this->request->data["name"])
                       ->send($this->request->data["body"]);
-                      
+
             } else {
                 $this->Flash->error(__('There was a problem submitting your form.'));
             }
@@ -89,6 +100,12 @@ class PagesController extends AppController
         $this->set(compact('page'));
     }
 
+    if (isset($_POST['-- select --'])
+    	{
+    		echo "selected option: ".htmlspecialchars($_POST['-- select --'];
+    		$errorMessage = "";
+    	}
+      
     /**
      * Edit method
      *
