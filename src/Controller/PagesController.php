@@ -50,6 +50,7 @@ class PagesController extends AppController
 
         $this->set('page', $page);
         $this->set('posts', $posts);
+        $this->set('contact', $contact);
     }
 
     /**
