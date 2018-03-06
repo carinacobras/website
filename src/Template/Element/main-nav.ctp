@@ -25,12 +25,14 @@ $urls = array(
     );
 ?>
 
+
 <nav class="main-nav navbar navbar-toggleable-md navbar-inverse bg-primary">
 <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNav2" aria-controls="navbarNav2" aria-expanded="false" aria-label="Toggle navigation">
   <span class="navbar-toggler-icon"></span>
 </button>
 
-<a class="navbar-brand" href="#"><img src="/img/cobras-logo.png" alt="logo"/></a>
+<a class="navbar-brand-cobra" href="#"><img src="/img/cobras-logo.png" alt="logo"/></a>
+
 <div class="collapse navbar-collapse" id="navbarNav2">
   <ul class="navbar-nav nav-fill w-100">
 

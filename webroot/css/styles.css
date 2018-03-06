@@ -4,6 +4,7 @@ body {
 
 .content {
     background-color: #888;
+    background: linear-gradient(to bottom, rgba(187,187,187,1) 0%,rgba(136,136,136,1) 100%); 
     padding: 30px;
     margin-top: 30px;
     color: white;
@@ -74,4 +75,10 @@ body {
 
 .main-nav .navbar-brand {
     min-height:2em;
+}
+
+.navbar-brand-cobra {
+    position:fixed;
+    top:10px;
+    left:10px;
 }
