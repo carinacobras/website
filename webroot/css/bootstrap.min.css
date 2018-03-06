@@ -4457,6 +4457,7 @@ tbody.collapse.show {
   background-color: #fff;
   border: 1px solid rgba(0, 0, 0, 0.125);
   border-radius: 0.4rem;
+  opacity: 1;
 }
 
 .card-block {
@@ -4503,20 +4504,24 @@ tbody.collapse.show {
   margin-bottom: 0;
   background-color: #f7f7f9;
   border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+  opacity: 1;
 }
 
 .card-header:first-child {
   border-radius: calc(0.25rem - 1px) calc(0.25rem - 1px) 0 0;
+  opacity: 1;
 }
 
 .card-footer {
   padding: 0.75rem 1.25rem;
   background-color: #fff;
   border-top: 1px solid rgba(0, 0, 0, 0.125);
+  opacity: 1;
 }
 
 .card-footer:last-child {
   border-radius: 0 0 calc(0.25rem - 1px) calc(0.25rem - 1px);
+  opacity: 1
 }
 
 .card-header-tabs {
@@ -4532,7 +4537,7 @@ tbody.collapse.show {
 }
 
 .card-primary {
-  background-color: #d4d6d7;
+  background-color: #a9abac;
   border-color: #d4d6d7;
 }
 
@@ -4542,23 +4547,23 @@ tbody.collapse.show {
 }
 
 .card-success {
-  background-color: #d4d6d7;
+  background-color: #a9abac;
   border-color: #d4d6d7;
 }
 
 .card-success .card-header,
 .card-success .card-footer {
-  background-color: transparent;
+  background-color: #a9abac;
 }
 
 .card-info {
-  background-color: #d4d6d7;
+  background-color: #a9abac;
   border-color: #d4d6d7;
 }
 
 .card-info .card-header,
 .card-info .card-footer {
-  background-color: transparent;
+  background-color: #a9abac;
 }
 
 .card-warning {
@@ -4582,22 +4587,22 @@ tbody.collapse.show {
 }
 
 .card-outline-primary {
-  background-color: transparent;
+  background-color: #a9abac;
   border-color: #d4d6d7;
 }
 
 .card-outline-secondary {
-  background-color: transparent;
+  background-color: #a9abac;
   border-color: #ccc;
 }
 
 .card-outline-info {
-  background-color: transparent;
+  background-color: #a9abac;
   border-color: #d4d6d7;
 }
 
 .card-outline-success {
-  background-color: transparent;
+  background-color: #a9abac;
   border-color: #d4d6d7;
 }
 
