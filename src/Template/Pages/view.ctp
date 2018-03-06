@@ -5,7 +5,6 @@
  */
 ?>
     <h1><?= h($page->title) ?></h1>
-    <h2>Test</h2>
     <?php 
 
         if ($page->id == 3) {
