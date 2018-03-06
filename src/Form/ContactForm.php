@@ -15,7 +15,7 @@ class ContactForm extends Form
     {
         return $schema->addField('name', 'string')
             ->addField('email', ['type' => 'string'])
-            ->addField('enquirytype', ['type' => 'string'])
+            ->addField('enquirytype', [['options' => ['Uniform Query', 'Fees Query']]])
             ->addField('body', ['type' => 'text']);
     }
 
