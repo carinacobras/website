@@ -29,7 +29,7 @@ class ContactForm extends Form
                 'message' => 'A valid email address is required',
             ]);
     }
-
+		
     protected function _execute(array $data)
     {
         $email = new Email();
