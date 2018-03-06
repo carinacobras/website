@@ -51,15 +51,16 @@ class PagesController extends AppController
 
         if ($this->request->is('post')) {
             if ($contact->execute($this->request->getData())) {
-                $this->Flash->success('We will get back to you soon.');
+
+                $this->Flash->success(__('We will get back to you soon.'));
                 $email = new Email('default');
                 $email->from([$this->request->data["email"] => $this->request->data["name"]])
                       ->to("tross_cobras@tysonross.com")
-                      ->subject($this->request->data["body"])
-                      ->send();
+                      ->subject("Enquiry from ".$this->request->data["name"])
+                      ->send($this->request->data["body"]);
                       
             } else {
-                $this->Flash->error('There was a problem submitting your form.');
+                $this->Flash->error(__('There was a problem submitting your form.'));
             }
         }
 
