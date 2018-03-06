@@ -51,12 +51,10 @@ class PagesController extends AppController
 
         if ($this->request->is('post')) {
             if ($contact->execute($this->request->getData())) {
-
                 $this->Flash->success('Your message has been sent; we\'ll get back to you soon!');
                 $this->request->data['name'] = null;
                 $this->request->data['email'] = null;
                 $this->request->data['body'] = null;
-                      
             } else {
                 $this->Flash->error('There was a problem submitting your form.');
             }
@@ -85,8 +83,8 @@ class PagesController extends AppController
             $this->Flash->error(__('The page could not be saved. Please, try again.'));
         }
         $this->set(compact('page'));
-    }
-
+    	}
+      
     /**
      * Edit method
      *
