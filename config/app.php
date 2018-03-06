@@ -179,11 +179,11 @@ return [
         'default' => [
             'className' => 'Mail',
             // The following keys are used in SMTP transports
-            'host' => 'smtp-relay.sendinblue.com',
-            'port' => 587,
+            'host' => 'localhost',
+            'port' => 25,
             'timeout' => 30,
-            'username' => 'tross_cobras@tysonross.com',
-            'password' => 'ZzBPA91L2kqSbRj0',
+            'username' => 'user',
+            'password' => 'secret',
             'client' => null,
             'tls' => null,
             'url' => env('EMAIL_TRANSPORT_DEFAULT_URL', null),
@@ -202,9 +202,12 @@ return [
     'Email' => [
         'default' => [
             'transport' => 'default',
-            'from' => 'you@localhost',
-            //'charset' => 'utf-8',
-            //'headerCharset' => 'utf-8',
+            'from' => 'registrar@carinacobras.com.au',
+            'host' => 'smtp-relay.sendinblue.com',
+            'port' => 587,
+            'username' => 'tross_cobras@tysonross.com',
+            'password' => 'ZzBPA91L2kqSbRj0',
+            'className' => 'Smtp'
         ],
     ],
 
