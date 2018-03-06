@@ -27,10 +27,9 @@ use Cake\Routing\Router;
 
 <?=$this->element('head') ?>
 <body>
-    <?= $this->Flash->render() ?>
     <?=$this->element('user-nav') ?>
     <?=$this->element('main-nav') ?>
-
+    <?= $this->Flash->render() ?>
     <div class="admin container-fluid clearfix">
         <div class="row">
             <div class="sidebar col-sm-2">
