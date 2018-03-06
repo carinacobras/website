@@ -34,7 +34,8 @@ class ContactForm extends Form
     {
         $email = new Email();
         $email->profile('default');
-        debug($data['enquirytype']);
+        $enquiry_array = ['Uniform Query', 'Fees Query', 'First Time Player', 'General Query', 'Change Contact Details'];
+        debug($enquiry_array[$data['enquirytype']]);
         $email->from([$data['email']])
         ->to('tross_cobras@tysonross.com')
         ->subject("Enquiry")
