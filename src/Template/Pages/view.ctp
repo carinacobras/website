@@ -5,6 +5,7 @@
  */
 ?>
     <h1><?= h($page->title) ?></h1>
+    <div class="mb-5">
     <?php 
 
         if ($page->id == 3) {
@@ -17,6 +18,7 @@
             echo $this->Form->end();
         }
     ?>
+    </div>
     <div><?= $page->body ?></p>
    
     

@@ -50,12 +50,12 @@ line-height: 14px;
 }
 
 blockquote {
-font-size: 21px;
-font-style: italic;
-font-variant: normal;
-font-weight:400;
-line-height: 20px
-text-indent: 30px;
+  font-size: 21px;
+  font-style: italic;
+  font-variant: normal;
+  font-weight:400;
+  line-height: 20px;
+  text-indent: 30px;
 }
 
 .footer {
@@ -5025,7 +5025,7 @@ a.badge:focus, a.badge:hover {
 .alert-success {
   background-color: #d4d6d7;
   border-color: #d4d6d7;
-  color: #d0e9c6;
+  color: #58e421;
 }
 
 .alert-success hr {
