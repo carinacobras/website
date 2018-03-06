@@ -223,7 +223,7 @@ legend {
           box-sizing: border-box;
   color: inherit;
   display: table;
-  max-width: 100%;
+  max-width: 75%;
   padding: 0;
   white-space: normal;
 }
@@ -348,7 +348,7 @@ template {
   }
   .table-bordered th,
   .table-bordered td {
-    border: 1px solid #999 !important;
+    border: 0.5px solid #d4d6d7 !important;
   }
 }
 
@@ -491,7 +491,7 @@ textarea {
 
 table {
   border-collapse: collapse;
-  background-color: transparent;
+  background-color: #fff;
 }
 
 caption {
@@ -2114,8 +2114,8 @@ pre code {
 }
 
 .table {
-  width: 100%;
-  max-width: 100%;
+  width: 75%;
+  max-width: 75%;
   margin-bottom: 1rem;
 }
 
@@ -2282,13 +2282,13 @@ pre code {
   width: 100%;
   padding: 0.5rem 0.75rem;
   font-size: 1rem;
-  line-height: 1.25;
+  line-height: 0.75;
   color: #d4d6d7;
   background-color: #fff;
   background-image: none;
   -webkit-background-clip: padding-box;
           background-clip: padding-box;
-  border: 1px solid rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 0.25rem;
   -webkit-transition: border-color ease-in-out 0.15s, -webkit-box-shadow ease-in-out 0.15s;
   transition: border-color ease-in-out 0.15s, -webkit-box-shadow ease-in-out 0.15s;
@@ -2444,7 +2444,7 @@ select.form-control-lg:not([size]):not([multiple]), .input-group-lg > select.for
 }
 
 .form-check-label {
-  padding-left: 1.25rem;
+  padding-left: 1rem;
   margin-bottom: 0;
   cursor: pointer;
 }
@@ -2685,6 +2685,7 @@ select.form-control-lg:not([size]):not([multiple]), .input-group-lg > select.for
   padding: 0.5rem 1rem;
   font-size: 1rem;
   border-radius: 0.25rem;
+  font-style: small-caps;
   -webkit-transition: all 0.2s ease-in-out;
   -o-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
