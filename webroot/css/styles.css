@@ -24,8 +24,11 @@ body {
     background-color: #888;
     padding: 30px;
     margin-top: 30px;
-    color: white;
     border-radius: 0 10px 10px 0;
+}
+
+.admin .content > * {
+    color: white;
 }
 
 .admin .sidebar a:not(.btn) {
