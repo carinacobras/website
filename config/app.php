@@ -176,7 +176,7 @@ return [
      * 'YourTransport.php', where 'Your' is the name of the transport.
      */
     'EmailTransport' => [
-        'Stmp' => [
+        'default' => [
             'className' => 'Smtp',
             // The following keys are used in SMTP transports
             'host' => 'smtp-relay.sendinblue.com',
@@ -198,7 +198,7 @@ return [
      */
     'Email' => [
         'default' => [
-            'transport' => 'Smtp',
+            'transport' => 'default',
             'from' => 'registrar@carinacobras.com.au',
         ],
     ],

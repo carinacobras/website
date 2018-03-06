@@ -6,6 +6,7 @@ namespace App\Form;
 use Cake\Form\Form;
 use Cake\Form\Schema;
 use Cake\Validation\Validator;
+use Cake\Mailer\Email;
 
 class ContactForm extends Form
 {
@@ -30,7 +31,13 @@ class ContactForm extends Form
 
     protected function _execute(array $data)
     {
-        // Send an email.
+        $email = new Email();
+        $email->profile('default');
+
+        $email->from([$data['email']])
+        ->to('tross_cobras@tysonross.com')
+        ->subject('Web Site Contact Form')
+        ->send([$data['body']]);
         return true;
     }
 }
