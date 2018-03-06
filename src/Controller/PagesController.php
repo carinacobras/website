@@ -48,6 +48,14 @@ class PagesController extends AppController
             'order' => 'Posts.created DESC'
         ]);
 
+        if ($this->request->is('post')) {
+            if ($contact->execute($this->request->getData())) {
+                $this->Flash->success('We will get back to you soon.');
+            } else {
+                $this->Flash->error('There was a problem submitting your form.');
+            }
+        }
+
         $this->set('page', $page);
         $this->set('posts', $posts);
         $this->set('contact', $contact);
