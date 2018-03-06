@@ -15,7 +15,7 @@ class ContactForm extends Form
     {
         return $schema->addField('name', 'string')
             ->addField('email', ['type' => 'string'])
-            ->addField('enquirytype', ['type' => 'string'])
+            ->addField('enquirytype', ['type' => 'select'])
             ->addField('body', ['type' => 'text']);
     }
 
@@ -37,7 +37,7 @@ class ContactForm extends Form
 
         $email->from([$data['email']])
         ->to('tross_cobras@tysonross.com')
-        ->subject([$data['enquirytype']['selected']])
+        ->subject([$data['enquirytype']])
         ->send([$data['body']]);
         return true;
     }
