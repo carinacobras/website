@@ -14,6 +14,7 @@ class ContactForm extends Form
     {
         return $schema->addField('name', 'string')
             ->addField('email', ['type' => 'string'])
+			->addField('Enquiry Type - please select the most appropriate' => 'list')
             ->addField('body', ['type' => 'text']);
     }
 
@@ -27,7 +28,7 @@ class ContactForm extends Form
                 'message' => 'A valid email address is required',
             ]);
     }
-
+		
     protected function _execute(array $data)
     {
         // Send an email.
