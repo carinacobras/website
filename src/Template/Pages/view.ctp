@@ -11,9 +11,7 @@
             echo $this->Form->create($contact);
             echo $this->Form->control('name');
             echo $this->Form->control('email');
-            echo $this->Form->select('enquirytype', 
-            ['Uniform Query', 'Fees Query'],
-            ['empty' => '(choose one)']);
+            echo $this->Form->control('enquirytype', ['options' => ['Uniform Query', 'Fees Query']]);
             echo $this->Form->control('body');
             echo $this->Form->button('Submit');
             echo $this->Form->end();
