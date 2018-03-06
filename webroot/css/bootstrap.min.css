@@ -12,6 +12,7 @@ html {
   -webkit-text-size-adjust: 100%;
 }
 
+
 body {
   margin: 0;
 }
@@ -67,6 +68,16 @@ blockquote {
   color: #fff;
   text-align: center;
 }
+
+/* Background Gradient */
+.gradient {
+	background-color:#d4d6d7;
+	background-image:
+		linear-gradient(
+			to top left,
+			#d4d6d7, #fff
+			)
+			}
 
 figcaption,
 figure,
