@@ -7,8 +7,11 @@ body {
     background: linear-gradient(to bottom, rgba(187,187,187,1) 0%,rgba(136,136,136,1) 100%); 
     padding: 30px;
     margin-top: 30px;
-    color: white;
     border-radius: 10px;
+}
+
+.content > {
+    color: white;
 }
 
 .content a:not(.btn) {
