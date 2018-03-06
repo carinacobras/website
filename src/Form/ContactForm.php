@@ -34,10 +34,10 @@ class ContactForm extends Form
     {
         $email = new Email();
         $email->profile('default');
-
+        debug($data['enquirytype']);
         $email->from([$data['email']])
         ->to('tross_cobras@tysonross.com')
-        ->subject([$data['enquirytype']])
+        ->subject("Enquiry")
         ->send([$data['body']]);
         return true;
     }
