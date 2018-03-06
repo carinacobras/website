@@ -398,7 +398,7 @@ body {
   font-size: 1rem;
   font-weight: normal;
   line-height: 1.5;
-  color: #d4d6d7;
+  color: white;
   background-color: #fff;
 }
 
@@ -2137,6 +2137,7 @@ pre code {
   width: 75%;
   max-width: 75%;
   margin-bottom: 1rem;
+  color:#333;
 }
 
 .table th,

@@ -10,10 +10,6 @@ body {
     border-radius: 10px;
 }
 
-.content > * {
-    color: white;
-}
-
 .content a:not(.btn) {
     color: #b14021! important;
     text-decoration: none;
@@ -25,10 +21,6 @@ body {
     padding: 30px;
     margin-top: 30px;
     border-radius: 0 10px 10px 0;
-}
-
-.admin .content > * {
-    color: white;
 }
 
 .admin .sidebar a:not(.btn) {
