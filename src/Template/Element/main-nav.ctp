@@ -30,7 +30,7 @@ $urls = array(
   <span class="navbar-toggler-icon"></span>
 </button>
 
-<a class="navbar-brand" href="#"> </a>
+<a class="navbar-brand" href="#"><img src="/img/cobras-logo.png" alt="logo"/></a>
 <div class="collapse navbar-collapse" id="navbarNav2">
   <ul class="navbar-nav nav-fill w-100">
 
