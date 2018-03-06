@@ -6,6 +6,18 @@
 ?>
     <h1><?= h($page->title) ?></h1>
     <div><?= $page->body ?></p>
+    <?php 
+
+    if ($page->id == 3) {
+        echo $this->Form->create($contact);
+        echo $this->Form->control('name');
+        echo $this->Form->control('email');
+        echo $this->Form->control('body');
+        echo $this->Form->button('Submit');
+        echo $this->Form->end();
+    }
+    ?>
+    
     <?php if ($page->display_posts):?>
         <?php foreach($posts as $post): ?>
         <div class="card mt-5">

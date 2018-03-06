@@ -2,6 +2,7 @@
 namespace App\Controller;
 
 use App\Controller\AppController;
+use App\Form\ContactForm;
 
 /**
  * Pages Controller
@@ -37,6 +38,8 @@ class PagesController extends AppController
         $page = $this->Pages->get($id, [
             'contain' => []
         ]);
+
+        $contact = new ContactForm();
 
         $this->loadModel('Posts');
 
