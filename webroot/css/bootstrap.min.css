@@ -62,7 +62,7 @@ line-height: 30px
   left: 0;
   bottom: 0;
   width: 100%;
-  background-color: #d4d6d7;
+  background-color: #d8dadb;
   color: #fff;
   text-align: center;
 }
@@ -2283,7 +2283,7 @@ pre code {
   padding: 0.5rem 0.75rem;
   font-size: 1rem;
   line-height: 1.25;
-  color: #666666;
+  color: #d4d6d7;
   background-color: #fff;
   background-image: none;
   -webkit-background-clip: padding-box;
@@ -2718,6 +2718,8 @@ fieldset[disabled] a.btn {
   color: #fff;
   background-color: #d4d6d7;
   border-color: #d4d6d7;
+  position: center;
+  font-style: small-caps;
 }
 
 .btn-primary:hover {
