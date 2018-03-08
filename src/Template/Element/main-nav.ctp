@@ -26,13 +26,15 @@ $urls = array(
 		'label' => 'Player Information',
 		'url' => '/playerinformation',
 		'subMenu' => array(
-			'label' => 'Training',
-			'url' => '/training',
-			),
-			array(
-				'label' => 'Games'
-				'url'=> '/games',
-				),
+                array(
+                    'label' => 'Training',
+                    'url' => '/training',
+                ),
+                array(
+                    'label' => 'Games',
+                    'url'=> '/games',
+                ),
+        ),
 	),
     );
 ?>
@@ -50,9 +52,20 @@ $urls = array(
 
     <?php 
        foreach ($urls as $url) {
-           $base = Router::url(null, false);
+        $base = Router::url(null, false);
+        $has_submenu = array_key_exists('subMenu', $url);
         $active = ($base === Router::normalize($url['url'])) ? 'active' : '' ;
-        echo '<li class="nav-item text-center '.$active.'">'.$this->Html->link($url['label'], $url['url'], ['class' => 'nav-link']).'</li>' ;
+        $submenu_class = $has_submenu ? 'dropdown' : '';
+        echo '<li class="nav-item text-center '.$active. ' ' . $submenu_class.'">'.$this->Html->link($url['label'], $url['url'], ['class' => 'nav-link']);
+        if ($has_submenu) {
+            echo '<div class="dropdown-menu" aria-labelledby="navbarDropdown">';
+            $suburls = $url['subMenu'];
+            foreach ($suburls as $suburl) {
+                $this->Html->link($url['label'], $url['url'], ['class' => 'dropdown-item']);
+            }
+            echo '</div';
+        }
+        echo '</li>';
     }
     ?>
   </ul>
