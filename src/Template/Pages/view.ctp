@@ -29,7 +29,7 @@
                 <?php echo $post->title ?>
             </div>
             <div class="card-block">
-                <div class="card-text"><?php echo $post->body ?></div>
+                <p class="card-text"><?php echo $post->body ?></p>
             </div>
         </div>
         <?php endforeach; ?>
