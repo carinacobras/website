@@ -4,15 +4,15 @@ namespace App\Model\Entity;
 use Cake\ORM\Entity;
 
 /**
- * Location Entity
+ * Game Entity
  *
  * @property int $id
- * @property string $name
- * @property int $court_id
+ * @property \Cake\I18n\FrozenTime $time
+ * @property int $competition_id
  *
- * @property \App\Model\Entity\Court $court
+ * @property \App\Model\Entity\Competition $competition
  */
-class Location extends Entity
+class Game extends Entity
 {
 
     /**
@@ -25,7 +25,8 @@ class Location extends Entity
      * @var array
      */
     protected $_accessible = [
-        '*' => true,
-        'id' => false
+        'time' => true,
+        'competition_id' => true,
+        'competition' => true
     ];
 }

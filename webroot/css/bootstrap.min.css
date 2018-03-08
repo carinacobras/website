@@ -55,7 +55,7 @@ p {
 font-size: 16px;
 font-style: normal;
 font-weight: 400;
-line-height: 14px;
+line-height: normal;
 }
 
 blockquote {
@@ -4487,6 +4487,7 @@ tbody.collapse.show {
       -ms-flex: 1 1 auto;
           flex: 1 1 auto;
   padding: 1.25rem;
+  font-size:0.5rem;
 }
 
 .card-title {

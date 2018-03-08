@@ -25,10 +25,6 @@
             <td><?= h($location->name) ?></td>
         </tr>
         <tr>
-            <th scope="row"><?= __('Training') ?></th>
-            <td><?= $location->has('training') ? $this->Html->link($location->training->id, ['controller' => 'Training', 'action' => 'view', $location->training->id]) : '' ?></td>
-        </tr>
-        <tr>
             <th scope="row"><?= __('Court') ?></th>
             <td><?= $location->has('court') ? $this->Html->link($location->court->id, ['controller' => 'Courts', 'action' => 'view', $location->court->id]) : '' ?></td>
         </tr>
