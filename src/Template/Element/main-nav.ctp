@@ -56,14 +56,16 @@ $urls = array(
         $has_submenu = array_key_exists('subMenu', $url);
         $active = ($base === Router::normalize($url['url'])) ? 'active' : '' ;
         $submenu_class = $has_submenu ? 'dropdown' : '';
-        echo '<li class="nav-item text-center '.$active. ' ' . $submenu_class.'">'.$this->Html->link($url['label'], $url['url'], ['class' => 'nav-link']);
+        echo '<li class="nav-item text-center '.$active. ' ' . $submenu_class.'">';
         if ($has_submenu) {
             echo '<div class="dropdown-menu" aria-labelledby="navbarDropdown">';
             $suburls = $url['subMenu'];
             foreach ($suburls as $suburl) {
-                $this->Html->link($url['label'], $url['url'], ['class' => 'dropdown-item']);
+                echo $this->Html->link($url['label'], $url['url'], ['class' => 'dropdown-item']);
             }
             echo '</div';
+        } else {
+            echo $this->Html->link($url['label'], $url['url'], ['class' => 'nav-link']);
         }
         echo '</li>';
     }
