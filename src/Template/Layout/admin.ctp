@@ -33,7 +33,7 @@ use Cake\Routing\Router;
     <div class="admin container-fluid clearfix">
         <div class="row">
             <div class="sidebar col-sm-2">
-                <h2>Admin</h2>
+                <h2>Admin Tasks</h2>
                 <ul>
                     <li><a href="/posts/">Posts</a></li>
                     <li><a href="/players/">Players</a></li>
