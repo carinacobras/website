@@ -62,7 +62,7 @@ $urls = array(
             echo '<div class="dropdown-menu" aria-labelledby="navbarDropdown">';
             $suburls = $url['subMenu'];
             foreach ($suburls as $suburl) {
-                echo $this->Html->link($url['label'], $url['url'], ['class' => 'dropdown-item']);
+                echo $this->Html->link($suburl['label'], $suburl['url'], ['class' => 'dropdown-item']);
             }
             echo '</div';
         } else {
