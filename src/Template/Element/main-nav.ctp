@@ -20,8 +20,20 @@ $urls = array(
     ),
     array(
         'label' => 'Contact Us',
-        'url' => 'contact'
-    )
+        'url' => '/contact'
+    ),
+	array(
+		'label' => 'Player Information',
+		'url' => '/playerinformation'
+		'subMenu' => array(
+			'label' => 'Training',
+			'url' => '/training',
+			),
+			array(
+				'label' => 'Games'
+				'url'=> '/games',
+				),
+	),
     );
 ?>
 
