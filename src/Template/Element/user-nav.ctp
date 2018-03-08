@@ -1,4 +1,4 @@
-<nav class="navbar navbar-inverse navbar-toggleable-xl ">
+<nav class="navbar navbar-inverse bg-secondary mb-5 navbar-toggleable-xl ">
 <div class="collapse navbar-collapse">
 
     <ul class="navbar-nav nav-justified ml-auto">

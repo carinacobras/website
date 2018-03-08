@@ -58,11 +58,11 @@ $urls = array(
         $submenu_class = $has_submenu ? 'dropdown' : '';
         echo '<li class="nav-item text-center '.$active. ' ' . $submenu_class.'">';
         if ($has_submenu) {
-            echo $this->Html->link($url['label'], $url['url'], ['class' => 'nav-link dropdown-item', 'aria-expanded' => 'false', 'aria-haspopup' => 'true', 'data-toggle' => 'dropdown', 'role' => 'button', 'id'=>'navbarDropdown']);
+            echo $this->Html->link($url['label'], $url['url'], ['class' => 'nav-link dropdown-toggle', 'aria-expanded' => 'false', 'aria-haspopup' => 'true', 'data-toggle' => 'dropdown', 'role' => 'button', 'id'=>'navbarDropdown']);
             echo '<div class="dropdown-menu" aria-labelledby="navbarDropdown">';
             $suburls = $url['subMenu'];
             foreach ($suburls as $suburl) {
-                echo $this->Html->link($url['label'], $url['url'], ['class' => 'nav-link']);
+                echo $this->Html->link($url['label'], $url['url'], ['class' => 'dropdown-item']);
             }
             echo '</div';
         } else {
