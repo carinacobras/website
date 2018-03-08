@@ -24,7 +24,7 @@ $urls = array(
     ),
 	array(
 		'label' => 'Player Information',
-		'url' => '/playerinformation'
+		'url' => '/playerinformation',
 		'subMenu' => array(
 			'label' => 'Training',
 			'url' => '/training',
