@@ -59,7 +59,7 @@ $urls = array(
         echo '<li class="nav-item text-center '.$active. ' ' . $submenu_class.'">';
         if ($has_submenu) {
             echo $this->Html->link($url['label'], $url['url'], ['class' => 'nav-link dropdown-toggle', 'aria-expanded' => 'false', 'aria-haspopup' => 'true', 'data-toggle' => 'dropdown', 'role' => 'button', 'id'=>'navbarDropdown']);
-            echo '<div class="dropdown-menu bg-primary" aria-labelledby="navbarDropdown">';
+            echo '<div class="dropdown-menu w-100 bg-primary" aria-labelledby="navbarDropdown">';
             $suburls = $url['subMenu'];
             foreach ($suburls as $suburl) {
                 echo $this->Html->link($suburl['label'], $suburl['url'], ['class' => 'dropdown-item']);
