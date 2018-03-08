@@ -9,7 +9,6 @@ use Cake\Validation\Validator;
 /**
  * Locations Model
  *
- * @property \App\Model\Table\TrainingTable|\Cake\ORM\Association\BelongsTo $Training
  * @property \App\Model\Table\CourtsTable|\Cake\ORM\Association\BelongsTo $Courts
  *
  * @method \App\Model\Entity\Location get($primaryKey, $options = [])
@@ -37,9 +36,6 @@ class LocationsTable extends Table
         $this->setDisplayField('name');
         $this->setPrimaryKey('id');
 
-        $this->belongsTo('Training', [
-            'foreignKey' => 'training_id'
-        ]);
         $this->belongsTo('Courts', [
             'foreignKey' => 'court_id'
         ]);
@@ -74,7 +70,6 @@ class LocationsTable extends Table
      */
     public function buildRules(RulesChecker $rules)
     {
-        $rules->add($rules->existsIn(['training_id'], 'Training'));
         $rules->add($rules->existsIn(['court_id'], 'Courts'));
 
         return $rules;
