@@ -18,10 +18,6 @@ $urls = array(
         'label' => 'Payments',
         'url' => '/payments'
     ),
-    array(
-        'label' => 'Contact Us',
-        'url' => '/contact'
-    ),
 	array(
 		'label' => 'Player Information',
 		'url' => '#',
@@ -35,7 +31,11 @@ $urls = array(
                     'url'=> '/games',
                 ),
         ),
-	),
+      ),
+    array(
+      'label' => 'Contact Us',
+      'url' => '/contact',
+    ),
     );
 ?>
 
@@ -50,7 +50,7 @@ $urls = array(
 <div class="collapse navbar-collapse" id="navbarNav2">
   <ul class="navbar-nav nav-fill w-100">
 
-    <?php 
+    <?php
        foreach ($urls as $url) {
         $base = Router::url(null, false);
         $has_submenu = array_key_exists('subMenu', $url);
