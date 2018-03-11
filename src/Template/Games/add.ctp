@@ -24,8 +24,8 @@
                         <?php
                             echo $this->Form->text('time', ['class' => 'form-control datetimepicker-input']);
                         ?>
-                            <div class="input-group-append" data-target="#datetimepicker1" data-toggle="datetimepicker">
-                                <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                            <div class="input-group-addon" data-target="#datetimepicker1" data-toggle="datetimepicker">
+                                <i class="fa fa-calendar"></i>
                             </div>
                         </div>
                     </div>
@@ -37,6 +37,8 @@
         <?php
             echo $this->Form->control('competition_id', ['options' => $competitions]);
             echo $this->Form->control('location_id', ['options' => $locations]);
+            echo $this->Html->css('fontawesome.min.css');
+            echo $this->Html->css('tempusdominus-bootstrap-4.min.css');
             echo $this->Html->script('moment.js');
             echo $this->Html->script('tempusdominus-bootstrap-4.min.js');
         ?>
