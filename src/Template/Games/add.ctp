@@ -39,7 +39,7 @@
         <?php
             echo $this->Form->control('competition_id', ['options' => $competitions]);
             echo $this->Form->control('location_id', ['options' => $locations]);
-            echo $this->Html->css('fontawesome.min.css');
+            echo $this->Html->css('fontawesome-all.min.css');
             echo $this->Html->css('tempusdominus-bootstrap-4.min.css');
             echo $this->Html->script('moment.js');
             echo $this->Html->script('tempusdominus-bootstrap-4.min.js');
