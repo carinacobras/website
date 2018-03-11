@@ -36,7 +36,7 @@
     <div class="related">
         <h4><?= __('Related Games') ?></h4>
         <?php if (!empty($location->games)): ?>
-        <table cellpadding="0" cellspacing="0">
+        <table class="table">
             <tr>
                 <th scope="col"><?= __('Id') ?></th>
                 <th scope="col"><?= __('Time') ?></th>
@@ -63,7 +63,7 @@
     <div class="related">
         <h4><?= __('Related Training') ?></h4>
         <?php if (!empty($location->training)): ?>
-        <table cellpadding="0" cellspacing="0">
+        <table class="table">
             <tr>
                 <th scope="col"><?= __('Id') ?></th>
                 <th scope="col"><?= __('Time') ?></th>
