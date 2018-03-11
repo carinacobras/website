@@ -20,10 +20,11 @@
     <fieldset>
         <legend><?= __('Add Game') ?></legend>
         <?php
-            echo '<div class="input-group date" id="datetimepicker1">';
+        
+            echo '<div class="container"><div class="row"><div class="col-sm-6"><div class="form-group"><div class="input-group date" id="datetimepicker1">';
             echo $this->Form->text('time');
             echo '<span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>';
-            echo '</div>';
+            echo '</div></div></div></div></div>';
             echo $this->Form->control('competition_id', ['options' => $competitions]);
             echo $this->Form->control('location_id', ['options' => $locations]);
             echo $this->Html->css('bootstrap-datetimepicker.min.css');
