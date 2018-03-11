@@ -25,7 +25,10 @@
                         <div class="form-group">
                             <div class="input-group date" id="datetimepicker1" data-target-input="nearest">
                             <?php
-                                echo $this->Form->text('time', ['class' => 'form-control datetimepicker-input']);
+                            echo $this->Form->text('time', [
+                                'templates' => [
+                                    'input' => '<input class="form-control datetimepicker-input" type="{{type}}" name="{{name}}" {{attrs}} />'
+                                ]]);
                             ?>
                                 <div class="input-group-addon" data-target="#datetimepicker1" data-toggle="datetimepicker">
                                     <i class="fa fa-calendar"></i>
