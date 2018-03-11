@@ -19,23 +19,26 @@
     <?= $this->Form->create($game) ?>
     <fieldset>
         <legend><?= __('Add Game') ?></legend>
-                <div class="container">
-                    <div class="form-group">
-                        <div class="input-group date" id="datetimepicker1" data-target-input="nearest">
-                        <?php
-                            echo $this->Form->text('time', ['class' => 'form-control datetimepicker-input']);
-                        ?>
-                            <div class="input-group-addon" data-target="#datetimepicker1" data-toggle="datetimepicker">
-                                <i class="fa fa-calendar"></i>
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <div class="input-group date" id="datetimepicker1" data-target-input="nearest">
+                            <?php
+                                echo $this->Form->text('time', ['class' => 'form-control datetimepicker-input']);
+                            ?>
+                                <div class="input-group-addon" data-target="#datetimepicker1" data-toggle="datetimepicker">
+                                    <i class="fa fa-calendar"></i>
+                                </div>
                             </div>
                         </div>
                     </div>
-                <script type="text/javascript">
-                    $(function () {
-                        $('#datetimepicker1').datetimepicker({format: 'dddd, MMMM Do YYYY, h:mm a'});
-                    });
-                </script>
-                </div>
+                    <script type="text/javascript">
+                        $(function () {
+                            $('#datetimepicker1').datetimepicker({format: 'dddd, MMMM Do YYYY, h:mm a'});
+                        });
+                    </script>
+            </div>
         <?php
             echo $this->Form->control('competition_id', ['options' => $competitions]);
             echo $this->Form->control('location_id', ['options' => $locations]);
