@@ -19,9 +19,6 @@
     <?= $this->Form->create($game) ?>
     <fieldset>
         <legend><?= __('Add Game') ?></legend>
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm-6">
                             <?php
                             echo $this->Form->input('time', [
                                 'templates' => [
@@ -32,14 +29,11 @@
                                 "type" => "text"
                                 ]);
                             ?>
-                    </div>
-                    </div>
                     <script type="text/javascript">
                         $(function () {
                             $('#datetimepicker1').datetimepicker({format: 'dddd, MMMM Do YYYY, h:mm a'});
                         });
                     </script>
-            </div>
         <?php
             echo $this->Form->control('competition_id', ['options' => $competitions]);
             echo $this->Form->control('location_id', ['options' => $locations]);
