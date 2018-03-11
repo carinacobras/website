@@ -27,8 +27,6 @@ class GamesTableTest extends TestCase
         'app.games',
         'app.competitions',
         'app.courts',
-        'app.locations',
-        'app.training',
         'app.ranks',
         'app.players',
         'app.users',
@@ -41,7 +39,9 @@ class GamesTableTest extends TestCase
         'app.contacts',
         'app.relationships',
         'app.users_roles',
-        'app.absences'
+        'app.absences',
+        'app.training',
+        'app.locations'
     ];
 
     /**

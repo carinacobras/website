@@ -1,10 +1,10 @@
 <?php
 /**
-  * @var \App\View\AppView $this
-  * @var \App\Model\Entity\Training[]|\Cake\Collection\CollectionInterface $training
-  */
+ * @var \App\View\AppView $this
+ * @var \App\Model\Entity\Training[]|\Cake\Collection\CollectionInterface $training
+ */
 ?>
-<nav class="col-sm-12" id="actions-sidebar">
+<nav class="large-3 medium-4 columns" id="actions-sidebar">
     <ul class="side-nav">
         <li class="heading"><?= __('Actions') ?></li>
         <li><?= $this->Html->link(__('New Training'), ['action' => 'add']) ?></li>
@@ -14,14 +14,15 @@
         <li><?= $this->Html->link(__('New Location'), ['controller' => 'Locations', 'action' => 'add']) ?></li>
     </ul>
 </nav>
-<div class="training index col-sm-12">
+<div class="training index large-9 medium-8 columns content">
     <h3><?= __('Training') ?></h3>
-    <table class="table">
+    <table cellpadding="0" cellspacing="0">
         <thead>
             <tr>
                 <th scope="col"><?= $this->Paginator->sort('id') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('time') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('competition_id') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('location_id') ?></th>
                 <th scope="col" class="actions"><?= __('Actions') ?></th>
             </tr>
         </thead>
@@ -31,6 +32,7 @@
                 <td><?= $this->Number->format($training->id) ?></td>
                 <td><?= h($training->time) ?></td>
                 <td><?= $training->has('competition') ? $this->Html->link($training->competition->name, ['controller' => 'Competitions', 'action' => 'view', $training->competition->id]) : '' ?></td>
+                <td><?= $this->Number->format($training->location_id) ?></td>
                 <td class="actions">
                     <?= $this->Html->link(__('View'), ['action' => 'view', $training->id]) ?>
                     <?= $this->Html->link(__('Edit'), ['action' => 'edit', $training->id]) ?>

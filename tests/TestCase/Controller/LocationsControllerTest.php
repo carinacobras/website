@@ -17,10 +17,10 @@ class LocationsControllerTest extends IntegrationTestCase
      */
     public $fixtures = [
         'app.locations',
-        'app.training',
+        'app.games',
         'app.competitions',
         'app.courts',
-        'app.Ranks',
+        'app.ranks',
         'app.players',
         'app.users',
         'app.coaches',
@@ -31,8 +31,9 @@ class LocationsControllerTest extends IntegrationTestCase
         'app.phone_numbers',
         'app.contacts',
         'app.relationships',
-        'app.roles',
-        'app.absences'
+        'app.users_roles',
+        'app.absences',
+        'app.training'
     ];
 
     /**

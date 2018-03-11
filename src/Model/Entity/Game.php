@@ -9,8 +9,10 @@ use Cake\ORM\Entity;
  * @property int $id
  * @property \Cake\I18n\FrozenTime $time
  * @property int $competition_id
+ * @property int $location_id
  *
  * @property \App\Model\Entity\Competition $competition
+ * @property \App\Model\Entity\Location $location
  */
 class Game extends Entity
 {
@@ -27,6 +29,8 @@ class Game extends Entity
     protected $_accessible = [
         'time' => true,
         'competition_id' => true,
-        'competition' => true
+        'location_id' => true,
+        'competition' => true,
+        'location' => true
     ];
 }

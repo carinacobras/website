@@ -1,10 +1,10 @@
 <?php
 /**
-  * @var \App\View\AppView $this
-  * @var \App\Model\Entity\Training $training
-  */
+ * @var \App\View\AppView $this
+ * @var \App\Model\Entity\Training $training
+ */
 ?>
-<nav class="col-sm-12" id="actions-sidebar">
+<nav class="large-3 medium-4 columns" id="actions-sidebar">
     <ul class="side-nav">
         <li class="heading"><?= __('Actions') ?></li>
         <li><?= $this->Html->link(__('Edit Training'), ['action' => 'edit', $training->id]) ?> </li>
@@ -17,9 +17,9 @@
         <li><?= $this->Html->link(__('New Location'), ['controller' => 'Locations', 'action' => 'add']) ?> </li>
     </ul>
 </nav>
-<div class="training view col-sm-12">
+<div class="training view large-9 medium-8 columns content">
     <h3><?= h($training->id) ?></h3>
-    <table class="table">
+    <table class="vertical-table">
         <tr>
             <th scope="row"><?= __('Competition') ?></th>
             <td><?= $training->has('competition') ? $this->Html->link($training->competition->name, ['controller' => 'Competitions', 'action' => 'view', $training->competition->id]) : '' ?></td>
@@ -29,6 +29,10 @@
             <td><?= $this->Number->format($training->id) ?></td>
         </tr>
         <tr>
+            <th scope="row"><?= __('Location Id') ?></th>
+            <td><?= $this->Number->format($training->location_id) ?></td>
+        </tr>
+        <tr>
             <th scope="row"><?= __('Time') ?></th>
             <td><?= h($training->time) ?></td>
         </tr>
@@ -36,20 +40,18 @@
     <div class="related">
         <h4><?= __('Related Locations') ?></h4>
         <?php if (!empty($training->locations)): ?>
-        <table class="table">
+        <table cellpadding="0" cellspacing="0">
             <tr>
                 <th scope="col"><?= __('Id') ?></th>
                 <th scope="col"><?= __('Name') ?></th>
-                <th scope="col"><?= __('Training Id') ?></th>
-                <th scope="col"><?= __('Court Id') ?></th>
+                <th scope="col"><?= __('Court') ?></th>
                 <th scope="col" class="actions"><?= __('Actions') ?></th>
             </tr>
             <?php foreach ($training->locations as $locations): ?>
             <tr>
                 <td><?= h($locations->id) ?></td>
                 <td><?= h($locations->name) ?></td>
-                <td><?= h($locations->training_id) ?></td>
-                <td><?= h($locations->court_id) ?></td>
+                <td><?= h($locations->court) ?></td>
                 <td class="actions">
                     <?= $this->Html->link(__('View'), ['controller' => 'Locations', 'action' => 'view', $locations->id]) ?>
                     <?= $this->Html->link(__('Edit'), ['controller' => 'Locations', 'action' => 'edit', $locations->id]) ?>

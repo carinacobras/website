@@ -13,6 +13,8 @@
         <li><?= $this->Html->link(__('New Game'), ['action' => 'add']) ?> </li>
         <li><?= $this->Html->link(__('List Competitions'), ['controller' => 'Competitions', 'action' => 'index']) ?> </li>
         <li><?= $this->Html->link(__('New Competition'), ['controller' => 'Competitions', 'action' => 'add']) ?> </li>
+        <li><?= $this->Html->link(__('List Locations'), ['controller' => 'Locations', 'action' => 'index']) ?> </li>
+        <li><?= $this->Html->link(__('New Location'), ['controller' => 'Locations', 'action' => 'add']) ?> </li>
     </ul>
 </nav>
 <div class="games view large-9 medium-8 columns content">
@@ -21,6 +23,10 @@
         <tr>
             <th scope="row"><?= __('Competition') ?></th>
             <td><?= $game->has('competition') ? $this->Html->link($game->competition->name, ['controller' => 'Competitions', 'action' => 'view', $game->competition->id]) : '' ?></td>
+        </tr>
+        <tr>
+            <th scope="row"><?= __('Location') ?></th>
+            <td><?= $game->has('location') ? $this->Html->link($game->location->name, ['controller' => 'Locations', 'action' => 'view', $game->location->id]) : '' ?></td>
         </tr>
         <tr>
             <th scope="row"><?= __('Id') ?></th>

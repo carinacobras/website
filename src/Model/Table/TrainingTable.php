@@ -10,7 +10,7 @@ use Cake\Validation\Validator;
  * Training Model
  *
  * @property \App\Model\Table\CompetitionsTable|\Cake\ORM\Association\BelongsTo $Competitions
- * @property \App\Model\Table\LocationsTable|\Cake\ORM\Association\HasMany $Locations
+ * @property \App\Model\Table\LocationsTable|\Cake\ORM\Association\BelongsTo $Locations
  *
  * @method \App\Model\Entity\Training get($primaryKey, $options = [])
  * @method \App\Model\Entity\Training newEntity($data = null, array $options = [])
@@ -38,10 +38,12 @@ class TrainingTable extends Table
         $this->setPrimaryKey('id');
 
         $this->belongsTo('Competitions', [
-            'foreignKey' => 'competition_id'
+            'foreignKey' => 'competition_id',
+            'joinType' => 'INNER'
         ]);
-        $this->hasMany('Locations', [
-            'foreignKey' => 'training_id'
+        $this->belongsTo('Locations', [
+            'foreignKey' => 'location_id',
+            'joinType' => 'INNER'
         ]);
     }
 
@@ -59,7 +61,8 @@ class TrainingTable extends Table
 
         $validator
             ->dateTime('time')
-            ->allowEmpty('time');
+            ->requirePresence('time', 'create')
+            ->notEmpty('time');
 
         return $validator;
     }
@@ -74,6 +77,7 @@ class TrainingTable extends Table
     public function buildRules(RulesChecker $rules)
     {
         $rules->add($rules->existsIn(['competition_id'], 'Competitions'));
+        $rules->add($rules->existsIn(['location_id'], 'Locations'));
 
         return $rules;
     }

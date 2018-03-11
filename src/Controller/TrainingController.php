@@ -8,7 +8,7 @@ use App\Controller\AppController;
  *
  * @property \App\Model\Table\TrainingTable $Training
  *
- * @method \App\Model\Entity\Training[] paginate($object = null, array $settings = [])
+ * @method \App\Model\Entity\Training[]|\Cake\Datasource\ResultSetInterface paginate($object = null, array $settings = [])
  */
 class TrainingController extends AppController
 {
@@ -26,7 +26,6 @@ class TrainingController extends AppController
         $training = $this->paginate($this->Training);
 
         $this->set(compact('training'));
-        $this->set('_serialize', ['training']);
     }
 
     /**
@@ -43,7 +42,6 @@ class TrainingController extends AppController
         ]);
 
         $this->set('training', $training);
-        $this->set('_serialize', ['training']);
     }
 
     /**
@@ -65,7 +63,6 @@ class TrainingController extends AppController
         }
         $competitions = $this->Training->Competitions->find('list', ['limit' => 200]);
         $this->set(compact('training', 'competitions'));
-        $this->set('_serialize', ['training']);
     }
 
     /**
@@ -91,7 +88,6 @@ class TrainingController extends AppController
         }
         $competitions = $this->Training->Competitions->find('list', ['limit' => 200]);
         $this->set(compact('training', 'competitions'));
-        $this->set('_serialize', ['training']);
     }
 
     /**

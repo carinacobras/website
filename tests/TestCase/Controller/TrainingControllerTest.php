@@ -19,8 +19,7 @@ class TrainingControllerTest extends IntegrationTestCase
         'app.training',
         'app.competitions',
         'app.courts',
-        'app.locations',
-        'app.Ranks',
+        'app.ranks',
         'app.players',
         'app.users',
         'app.coaches',
@@ -31,8 +30,10 @@ class TrainingControllerTest extends IntegrationTestCase
         'app.phone_numbers',
         'app.contacts',
         'app.relationships',
-        'app.roles',
-        'app.absences'
+        'app.users_roles',
+        'app.absences',
+        'app.locations',
+        'app.games'
     ];
 
     /**

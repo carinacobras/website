@@ -25,10 +25,10 @@ class LocationsTableTest extends TestCase
      */
     public $fixtures = [
         'app.locations',
-        'app.training',
+        'app.games',
         'app.competitions',
         'app.courts',
-        'app.Ranks',
+        'app.ranks',
         'app.players',
         'app.users',
         'app.coaches',
@@ -39,8 +39,9 @@ class LocationsTableTest extends TestCase
         'app.phone_numbers',
         'app.contacts',
         'app.relationships',
-        'app.roles',
-        'app.absences'
+        'app.users_roles',
+        'app.absences',
+        'app.training'
     ];
 
     /**
@@ -83,16 +84,6 @@ class LocationsTableTest extends TestCase
      * @return void
      */
     public function testValidationDefault()
-    {
-        $this->markTestIncomplete('Not implemented yet.');
-    }
-
-    /**
-     * Test buildRules method
-     *
-     * @return void
-     */
-    public function testBuildRules()
     {
         $this->markTestIncomplete('Not implemented yet.');
     }

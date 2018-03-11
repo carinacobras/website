@@ -21,7 +21,7 @@ class GamesController extends AppController
     public function index()
     {
         $this->paginate = [
-            'contain' => ['Competitions']
+            'contain' => ['Competitions', 'Locations']
         ];
         $games = $this->paginate($this->Games);
 
@@ -38,7 +38,7 @@ class GamesController extends AppController
     public function view($id = null)
     {
         $game = $this->Games->get($id, [
-            'contain' => ['Competitions']
+            'contain' => ['Competitions', 'Locations']
         ]);
 
         $this->set('game', $game);
@@ -62,7 +62,8 @@ class GamesController extends AppController
             $this->Flash->error(__('The game could not be saved. Please, try again.'));
         }
         $competitions = $this->Games->Competitions->find('list', ['limit' => 200]);
-        $this->set(compact('game', 'competitions'));
+        $locations = $this->Games->Locations->find('list', ['limit' => 200]);
+        $this->set(compact('game', 'competitions', 'locations'));
     }
 
     /**
@@ -87,7 +88,8 @@ class GamesController extends AppController
             $this->Flash->error(__('The game could not be saved. Please, try again.'));
         }
         $competitions = $this->Games->Competitions->find('list', ['limit' => 200]);
-        $this->set(compact('game', 'competitions'));
+        $locations = $this->Games->Locations->find('list', ['limit' => 200]);
+        $this->set(compact('game', 'competitions', 'locations'));
     }
 
     /**

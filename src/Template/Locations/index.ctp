@@ -1,28 +1,27 @@
 <?php
 /**
-  * @var \App\View\AppView $this
-  * @var \App\Model\Entity\Location[]|\Cake\Collection\CollectionInterface $locations
-  */
+ * @var \App\View\AppView $this
+ * @var \App\Model\Entity\Location[]|\Cake\Collection\CollectionInterface $locations
+ */
 ?>
-<nav class="col-sm-12" id="actions-sidebar">
+<nav class="large-3 medium-4 columns" id="actions-sidebar">
     <ul class="side-nav">
         <li class="heading"><?= __('Actions') ?></li>
         <li><?= $this->Html->link(__('New Location'), ['action' => 'add']) ?></li>
+        <li><?= $this->Html->link(__('List Games'), ['controller' => 'Games', 'action' => 'index']) ?></li>
+        <li><?= $this->Html->link(__('New Game'), ['controller' => 'Games', 'action' => 'add']) ?></li>
         <li><?= $this->Html->link(__('List Training'), ['controller' => 'Training', 'action' => 'index']) ?></li>
         <li><?= $this->Html->link(__('New Training'), ['controller' => 'Training', 'action' => 'add']) ?></li>
-        <li><?= $this->Html->link(__('List Courts'), ['controller' => 'Courts', 'action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('New Court'), ['controller' => 'Courts', 'action' => 'add']) ?></li>
     </ul>
 </nav>
-<div class="locations index col-sm-12">
+<div class="locations index large-9 medium-8 columns content">
     <h3><?= __('Locations') ?></h3>
-    <table class="table">
+    <table cellpadding="0" cellspacing="0">
         <thead>
             <tr>
                 <th scope="col"><?= $this->Paginator->sort('id') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('name') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('training_id') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('court_id') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('court') ?></th>
                 <th scope="col" class="actions"><?= __('Actions') ?></th>
             </tr>
         </thead>
@@ -31,8 +30,7 @@
             <tr>
                 <td><?= $this->Number->format($location->id) ?></td>
                 <td><?= h($location->name) ?></td>
-                <td><?= $location->has('training') ? $this->Html->link($location->training->id, ['controller' => 'Training', 'action' => 'view', $location->training->id]) : '' ?></td>
-                <td><?= $location->has('court') ? $this->Html->link($location->court->id, ['controller' => 'Courts', 'action' => 'view', $location->court->id]) : '' ?></td>
+                <td><?= $this->Number->format($location->court) ?></td>
                 <td class="actions">
                     <?= $this->Html->link(__('View'), ['action' => 'view', $location->id]) ?>
                     <?= $this->Html->link(__('Edit'), ['action' => 'edit', $location->id]) ?>

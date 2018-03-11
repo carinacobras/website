@@ -8,11 +8,10 @@ use Cake\ORM\Entity;
  *
  * @property int $id
  * @property string $name
- * @property int $training_id
- * @property int $court_id
+ * @property int $court
  *
- * @property \App\Model\Entity\Training $training
- * @property \App\Model\Entity\Court $court
+ * @property \App\Model\Entity\Game[] $games
+ * @property \App\Model\Entity\Training[] $training
  */
 class Location extends Entity
 {
@@ -27,7 +26,9 @@ class Location extends Entity
      * @var array
      */
     protected $_accessible = [
-        '*' => true,
-        'id' => false
+        'name' => true,
+        'court' => true,
+        'games' => true,
+        'training' => true
     ];
 }

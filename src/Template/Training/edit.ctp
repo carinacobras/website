@@ -1,9 +1,10 @@
 <?php
 /**
-  * @var \App\View\AppView $this
-  */
+ * @var \App\View\AppView $this
+ * @var \App\Model\Entity\Training $training
+ */
 ?>
-<nav class="col-sm-12" id="actions-sidebar">
+<nav class="large-3 medium-4 columns" id="actions-sidebar">
     <ul class="side-nav">
         <li class="heading"><?= __('Actions') ?></li>
         <li><?= $this->Form->postLink(
@@ -19,13 +20,14 @@
         <li><?= $this->Html->link(__('New Location'), ['controller' => 'Locations', 'action' => 'add']) ?></li>
     </ul>
 </nav>
-<div class="training form col-sm-12">
+<div class="training form large-9 medium-8 columns content">
     <?= $this->Form->create($training) ?>
     <fieldset>
         <legend><?= __('Edit Training') ?></legend>
         <?php
-            echo $this->Form->control('time', ['empty' => true]);
-            echo $this->Form->control('competition_id', ['options' => $competitions, 'empty' => true]);
+            echo $this->Form->control('time');
+            echo $this->Form->control('competition_id', ['options' => $competitions]);
+            echo $this->Form->control('location_id');
         ?>
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>
