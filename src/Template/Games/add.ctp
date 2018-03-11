@@ -41,7 +41,6 @@
         <?php
             echo $this->Form->control('competition_id', ['options' => $competitions]);
             echo $this->Form->control('location_id', ['options' => $locations]);
-            echo $this->Html->css('bootstrap-datetimepicker.min.css');
             echo $this->Html->script('moment.js');
             echo $this->Html->script('bootstrap-datetimepicker.min.js');
         ?>
