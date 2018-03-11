@@ -22,21 +22,17 @@
             <div class="container">
                 <div class="row">
                     <div class="col-sm-6">
-                        <div class="form-group">
-                            <div class="input-group date" id="datetimepicker1" data-target-input="nearest">
                             <?php
                             echo $this->Form->input('time', [
                                 'templates' => [
-                                    'input' => '<input class="form-control datetimepicker-input" type="{{type}}" name="{{name}}" data-target="#datetimepicker1"/>'
+                                    'input' => '<input class="form-control datetimepicker-input" type="{{type}}" name="{{name}}" data-target="#datetimepicker1"/>',
+                                    'inputContainer' => '<div class="form-group"><div class="input-group date" id="datetimepicker1" data-target-input="nearest">{{content}}<div class="input-group-addon" data-target="#datetimepicker1" data-toggle="datetimepicker">
+                                    <div class="input-group-text"><i class="fa fa-calendar"></i></div></div></div></div>'
                                 ],
                                 "type" => "text"
                                 ]);
                             ?>
-                                <div class="input-group-addon" data-target="#datetimepicker1" data-toggle="datetimepicker">
-                                    <i class="fa fa-calendar"></i>
-                                </div>
-                            </div>
-                        </div>
+                    </div>
                     </div>
                     <script type="text/javascript">
                         $(function () {
