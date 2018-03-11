@@ -24,7 +24,7 @@
     <fieldset>
         <legend><?= __('Add Game') ?></legend>
         <?php
-            echo $this->Form->control('time', ['label'=>'Fecha de Nacimiento   .', 'id' => 'datetimepicker1', 'empty' => true]);
+            echo $this->Form->text('time', ['id' => 'datetimepicker1', 'empty' => true]);
             echo $this->Form->control('competition_id', ['options' => $competitions]);
             echo $this->Form->control('location_id', ['options' => $locations]);
         ?>
