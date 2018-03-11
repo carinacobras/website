@@ -15,10 +15,6 @@
     </ul>
 </nav>
 
-
-
-
-
 <div class="games form large-9 medium-8 columns content">
     <?= $this->Form->create($game) ?>
     <fieldset>
@@ -27,16 +23,16 @@
             echo $this->Form->text('time', ['id' => 'datetimepicker1', 'empty' => true]);
             echo $this->Form->control('competition_id', ['options' => $competitions]);
             echo $this->Form->control('location_id', ['options' => $locations]);
+            echo $this->Html->css('bootstrap-datetimepicker.min.css');
+            echo $this->Html->script('moment.js');
+            echo $this->Html->script('bootstrap-datetimepicker.min.js');
         ?>
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>
     <?= $this->Form->end() ?>
     <script type="text/javascript">
             $(function () {
-                $('#datetimepicker1').datetimepicker();
+                $('#datetimepicker1').datetimepicker({format: 'DDDD/MM/YYYY'});
             });
         </script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.21.0/moment.js"></script>
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/eonasdan-bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.min.css" rel="stylesheet">
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/eonasdan-bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js"></script>
 </div>
