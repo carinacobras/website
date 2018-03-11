@@ -19,6 +19,7 @@
     <?= $this->Form->create($game) ?>
     <fieldset>
         <legend><?= __('Add Game') ?></legend>
+                <div class="container">
                     <div class="form-group">
                         <div class="input-group date" id="datetimepicker1" data-target-input="nearest">
                         <?php
@@ -34,6 +35,7 @@
                         $('#datetimepicker1').datetimepicker({format: 'dddd, MMMM Do YYYY, h:mm a'});
                     });
                 </script>
+                </div>
         <?php
             echo $this->Form->control('competition_id', ['options' => $competitions]);
             echo $this->Form->control('location_id', ['options' => $locations]);
