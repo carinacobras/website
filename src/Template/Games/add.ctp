@@ -32,7 +32,7 @@
     <?= $this->Form->end() ?>
     <script type="text/javascript">
             $(function () {
-                $('#datetimepicker1').datetimepicker({format: 'DDDD/MM/YYYY'});
+                $('#datetimepicker1').datetimepicker({format: 'dddd, MMMM Do YYYY, h:mm a'});
             });
         </script>
 </div>
