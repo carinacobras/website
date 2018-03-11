@@ -19,12 +19,26 @@
     <?= $this->Form->create($game) ?>
     <fieldset>
         <legend><?= __('Add Game') ?></legend>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        <div class="input-group date" id="datetimepicker1">
+                        <?php
+                            echo $this->Form->text('time');
+                        ?>
+                        <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+                        </div>
+                    </div>
+                </div>
+                <script type="text/javascript">
+                    $(function () {
+                        $('#datetimepicker1').datetimepicker({format: 'dddd, MMMM Do YYYY, h:mm a'});
+                    });
+                </script>
+            </div>
+        </div>
         <?php
-        
-            echo '<div class="container"><div class="row"><div class="col-sm-6"><div class="form-group"><div class="input-group date" id="datetimepicker1">';
-            echo $this->Form->text('time');
-            echo '<span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>';
-            echo '</div></div></div></div></div>';
             echo $this->Form->control('competition_id', ['options' => $competitions]);
             echo $this->Form->control('location_id', ['options' => $locations]);
             echo $this->Html->css('bootstrap-datetimepicker.min.css');
@@ -34,9 +48,4 @@
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>
     <?= $this->Form->end() ?>
-    <script type="text/javascript">
-            $(function () {
-                $('#datetimepicker1').datetimepicker({format: 'dddd, MMMM Do YYYY, h:mm a'});
-            });
-        </script>
 </div>
