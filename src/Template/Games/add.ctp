@@ -19,30 +19,26 @@
     <?= $this->Form->create($game) ?>
     <fieldset>
         <legend><?= __('Add Game') ?></legend>
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-6">
                     <div class="form-group">
-                        <div class="input-group date" id="datetimepicker1">
+                        <div class="input-group date" id="datetimepicker1" data-target-input="nearest">
                         <?php
-                            echo $this->Form->text('time');
+                            echo $this->Form->text('time', ['class' => 'form-control datetimepicker-input']);
                         ?>
-                        <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+                            <div class="input-group-append" data-target="#datetimepicker1" data-toggle="datetimepicker">
+                                <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                            </div>
                         </div>
                     </div>
-                </div>
                 <script type="text/javascript">
                     $(function () {
                         $('#datetimepicker1').datetimepicker({format: 'dddd, MMMM Do YYYY, h:mm a'});
                     });
                 </script>
-            </div>
-        </div>
         <?php
             echo $this->Form->control('competition_id', ['options' => $competitions]);
             echo $this->Form->control('location_id', ['options' => $locations]);
             echo $this->Html->script('moment.js');
-            echo $this->Html->script('bootstrap-datetimepicker.min.js');
+            echo $this->Html->script('tempusdominus-bootstrap-4.min.js');
         ?>
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>
