@@ -27,7 +27,7 @@
                             <?php
                             echo $this->Form->text('time', [
                                 'templates' => [
-                                    'input' => '<input class="form-control datetimepicker-input" type="{{type}}" name="{{name}}" {{attrs}} />'
+                                    'input' => '<input class="form-control datetimepicker-input" type="{{type}}" name="{{name}}" data-target="#datetimepicker1"/>'
                                 ]]);
                             ?>
                                 <div class="input-group-addon" data-target="#datetimepicker1" data-toggle="datetimepicker">
