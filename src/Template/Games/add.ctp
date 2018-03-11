@@ -19,6 +19,7 @@
     <?= $this->Form->create($game) ?>
     <fieldset>
         <legend><?= __('Add Game') ?></legend>
+                <label for="time">Time</label>
                             <?php
                             echo $this->Form->input('time', [
                                 'templates' => [
@@ -26,7 +27,8 @@
                                     'inputContainer' => '<div class="form-group"><div class="input-group date" id="datetimepicker1" data-target-input="nearest">{{content}}<div class="input-group-addon" data-target="#datetimepicker1" data-toggle="datetimepicker">
                                     <div class="input-group-text"><i class="fa fa-calendar"></i></div></div></div></div>'
                                 ],
-                                "type" => "text"
+                                "type" => "text",
+                                'label' => false
                                 ]);
                             ?>
                     <script type="text/javascript">
