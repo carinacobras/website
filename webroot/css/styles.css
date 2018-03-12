@@ -76,9 +76,9 @@ body {
 }
 
 .navbar-brand-cobra {
-    position:fixed;
+    position:absolute;
     top:10px;
-    left:10px;
+    left:-120px;
     -webkit-filter: drop-shadow(2px 2px 2px #222 );
     filter: drop-shadow(2px 2px 2px #222);
 }
