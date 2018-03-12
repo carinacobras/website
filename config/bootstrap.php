@@ -231,10 +231,10 @@ Configure::write('TinymceElfinder', array(
     'static_files' => array(
         'js' => array(
             'jquery' => 'jquery.js',
-            'jquery_ui' => 'js/jquery-ui.min.js'
+            'jquery_ui' => 'jquery-ui.min.js'
         ),
         'css' => array(
-            'jquery_ui' => 'css/jquery-ui.min.css',
+            'jquery_ui' => 'jquery-ui.min.css',
             'jquery_ui_theme' => ''
         )
     ),
