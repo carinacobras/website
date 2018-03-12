@@ -32,17 +32,18 @@ use Cake\Routing\Router;
    
     <div class="admin container-fluid clearfix">
         <div class="row">
-            <div class="sidebar col-sm-2">
-                <h3>Admin Tasks</h3>
-                <ul>
-                    <li><a href="/posts/">Edit posts</a></li>
-                    <li><a href="/players/">Edit Players</a></li>
-                    <li><a href="/teams/">Edit Teams</a></li>
-                    <li><a href="/competitions/">Edit Competitions</a></li>
-                    <li><a href="/locations/">Edit Locations</a></li>
-                    <li><a href="/training/">Edit Training</a></li>
-                </ul>
-            </div>
+        <div class="col-sm-12 col-md-3">
+        <div class="sidebar col-sm-12 col-md-10">
+                    <h3>Admin Tasks</h3>
+                    <ul>
+                        <li><a href="/posts/">Edit posts</a></li>
+                        <li><a href="/players/">Edit Players</a></li>
+                        <li><a href="/teams/">Edit Teams</a></li>
+                        <li><a href="/competitions/">Edit Competitions</a></li>
+                        <li><a href="/locations/">Edit Locations</a></li>
+                        <li><a href="/training/">Edit Training</a></li>
+                    </ul>
+        </div></div>
             <div class="content col-sm-10">
             <?= $this->Flash->render() ?>
                 <?= $this->fetch('content') ?>
