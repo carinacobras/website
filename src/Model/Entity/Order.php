@@ -30,10 +30,4 @@ class Order extends Entity
         '*' => true,
         'id' => false
     ];
-
-    protected function _getCustomOrderName()
-    {
-        return $this->_properties['id'] . ' - ' .
-            $this->_properties['player_id'];
-    }
 }
