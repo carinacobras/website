@@ -15,7 +15,8 @@
         "sendgrid/sendgrid": "~6.0",
         "ext-pdo_sqlite": "*",
         "sendinblue/sendinblue-api-bundle": "^2.0",
-        "promisepay/promisepay-php": "2.*"        
+        "promisepay/promisepay-php": "2.*",
+        "hashmode/cakephp-tinymce-elfinder": "~1.0"      
     },
     "require-dev": {
         "psy/psysh": "@stable",
@@ -47,6 +48,7 @@
             "@test",
             "@cs-check"
         ],
+        "post-update-cmd": "CakephpTinymceElfinder\\Console\\Installer::postUpdate",
         "cs-check": "phpcs --colors -p --standard=vendor/cakephp/cakephp-codesniffer/CakePHP ./src ./tests",
         "cs-fix": "phpcbf --colors --standard=vendor/cakephp/cakephp-codesniffer/CakePHP ./src ./tests",
         "test": "phpunit --colors=always"

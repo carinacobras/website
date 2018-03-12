@@ -39,5 +39,6 @@ class AppView extends View
         $this->loadHelper('Form', [
             'templates' => 'form_templates',
         ]);
+        $this->loadHelper('CakephpTinymceElfinder.TinymceElfinder');
     }
 }

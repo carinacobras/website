@@ -215,3 +215,44 @@ Type::build('timestamp')
 if (Configure::read('debug')) {
     Plugin::load('DebugKit', ['bootstrap' => true]);
 }
+// load uploader plugin
+Plugin::load('CakephpTinymceElfinder', ['routes' => true]);
+
+Configure::write('TinymceElfinder', array(
+    'title' => __('Elfinder File Manager'),
+    'client_options' => array(
+        'width' => 900,
+        'height' => 500,
+        'resizable' => 'yes'
+    ),
+    'static_files' => array(
+        'js' => array(
+            'jquery' => 'jquery.js',
+            'jquery_ui' => 'js/jquery-ui.min.js'
+        ),
+        'css' => array(
+            'jquery_ui' => 'css/jquery-ui.min.css',
+            'jquery_ui_theme' => ''
+        )
+    ),
+    'options' => array(
+        // 'debug' => true,
+        'roots' => array(
+            array(
+                'driver' => 'LocalFileSystem',                  // driver for accessing file system (REQUIRED)
+                'URL' => Router::url('/uploads', true),         // upload main folder
+                'path' => WWW_ROOT . 'uploads',                 // path to files (REQUIRED)
+                'attributes' => array(
+                    array(
+                        'pattern' => '!(thumbnails)!',
+                        'hidden' => true
+                    )
+                ),
+                'tmbPath' => 'thumbnails',
+                'uploadOverwrite' => false,
+                'checkSubfolders' => false,
+                'disabled' => array()
+            )
+        ),
+    )
+));
