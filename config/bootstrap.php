@@ -43,6 +43,7 @@ use Cake\Log\Log;
 use Cake\Mailer\Email;
 use Cake\Utility\Inflector;
 use Cake\Utility\Security;
+use Cake\Routing\Router;
 
 /**
  * Read .env file if APP_NAME is not set.
@@ -215,6 +216,8 @@ Type::build('timestamp')
 if (Configure::read('debug')) {
     Plugin::load('DebugKit', ['bootstrap' => true]);
 }
+
+
 // load uploader plugin
 Plugin::load('CakephpTinymceElfinder', ['routes' => true]);
 
