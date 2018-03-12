@@ -44,7 +44,7 @@ use Cake\Routing\Router;
                         <li><a href="/training/">Edit Training</a></li>
                     </ul>
         </div></div>
-            <div class="content col-sm-10">
+            <div class="content col-sm-12 col-sm-9">
             <?= $this->Flash->render() ?>
                 <?= $this->fetch('content') ?>
             </div>
