@@ -22,6 +22,7 @@
                 <th scope="col"><?= $this->Paginator->sort('id') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('order_id') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('invoice_date') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('paid') ?></th>
                 <th scope="col" class="actions"><?= __('Actions') ?></th>
             </tr>
         </thead>
@@ -31,6 +32,7 @@
                 <td><?= $this->Number->format($invoice->id) ?></td>
                 <td><?= $invoice->has('order') ? $this->Html->link($invoice->order->id, ['controller' => 'Orders', 'action' => 'view', $invoice->order->id]) : '' ?></td>
                 <td><?= h($invoice->invoice_date) ?></td>
+                <td><?= h($invoice->paid) ?></td>
                 <td class="actions">
                     <?= $this->Html->link(__('View'), ['action' => 'view', $invoice->id]) ?>
                     <?= $this->Html->link(__('Edit'), ['action' => 'edit', $invoice->id]) ?>

@@ -32,6 +32,10 @@
             <th scope="row"><?= __('Invoice Date') ?></th>
             <td><?= h($invoice->invoice_date) ?></td>
         </tr>
+        <tr>
+            <th scope="row"><?= __('Paid') ?></th>
+            <td><?= h($invoice->paid) ?></td>
+        </tr>
     </table>
     <div class="related">
         <h4><?= __('Related Payments') ?></h4>
