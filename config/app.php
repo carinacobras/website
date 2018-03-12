@@ -177,6 +177,18 @@ return [
      */
     'EmailTransport' => [
         'default' => [
+            'className' => 'Mail',
+            // The following keys are used in SMTP transports
+            'host' => 'localhost',
+            'port' => 25,
+            'timeout' => 30,
+            'username' => 'user',
+            'password' => 'secret',
+            'client' => null,
+            'tls' => null,
+            'url' => env('EMAIL_TRANSPORT_DEFAULT_URL', null),
+        ],
+        'smtp' => [
             'className' => 'Smtp',
             // The following keys are used in SMTP transports
             'host' => 'smtp-relay.sendinblue.com',
