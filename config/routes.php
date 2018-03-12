@@ -62,6 +62,9 @@ Router::scope('/', function (RouteBuilder $routes) {
 
     $routes->connect('/pages/:action/*', ['controller' => 'Pages', 'action' => 'view']);
 
+    
+    $routes->connect('/cakephp-tinymce-elfinder/:action/*', ['controller' => 'CakephpTinymceElfinder', 'action' => 'view']);
+
     /**
      * Connect catchall routes for all controllers.
      *
