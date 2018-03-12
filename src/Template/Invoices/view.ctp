@@ -34,7 +34,7 @@
         </tr>
         <tr>
             <th scope="row"><?= __('Paid') ?></th>
-            <td><?= h($invoice->paid) ?></td>
+            <td><?= h($invoice->paid)?'Yes':'No' ?></td>
         </tr>
     </table>
     <div class="related">
