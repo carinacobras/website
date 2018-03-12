@@ -8,8 +8,6 @@
         { selector:'textarea',
         file_browser_callback : elFinderBrowser,
         theme: "modern",
-        menubar: "insert",
-        toolbar: "image",
         plugins: "code image"
         });
 </script>
