@@ -26,9 +26,7 @@ class OrderLine extends Entity
      * @var array
      */
     protected $_accessible = [
-        'order_id' => true,
-        'order_item_id' => true,
-        'order' => true,
-        'order_item' => true
+       '*' => true,
+        'id' => false
     ];
 }

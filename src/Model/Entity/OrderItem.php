@@ -25,8 +25,7 @@ class OrderItem extends Entity
      * @var array
      */
     protected $_accessible = [
-        'name' => true,
-        'price' => true,
-        'order_lines' => true
+        '*' => true,
+        'id' => false
     ];
 }

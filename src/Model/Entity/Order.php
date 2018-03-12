@@ -27,10 +27,13 @@ class Order extends Entity
      * @var array
      */
     protected $_accessible = [
-        'order_date' => true,
-        'player_id' => true,
-        'player' => true,
-        'invoices' => true,
-        'order_lines' => true
+        '*' => true,
+        'id' => false
     ];
+
+    protected function _getCustomOrderName()
+    {
+        return $this->_properties['id'] . ' - ' .
+            $this->_properties['player_id'];
+    }
 }
