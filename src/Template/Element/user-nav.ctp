@@ -19,7 +19,7 @@
         $loglink = $this->Html->link('Login', array('controller' => 'users', 'action' => 'login'), ['class' => 'nav-link']); 
         }
     ?>
-        <span class="navbar-text text-nowrap mr-3"><? if (isset($loggedusername)) echo $loggedusername; ?></span>
+        <span class="navbar-text text-nowrap mr-3 p-3"><? if (isset($loggedusername)) echo $loggedusername; ?></span>
     </li>
     
     <li class="nav-item">
