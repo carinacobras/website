@@ -36,7 +36,7 @@ class OrdersTable extends Table
 
         $this->setTable('orders');
         $this->setDisplayField('id');
-        $this->setPrimaryKey('id');
+        $this->setPrimaryKey('name');
 
         $this->belongsTo('Players', [
             'foreignKey' => 'player_id',
