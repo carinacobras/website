@@ -21,7 +21,7 @@ class TrainingController extends AppController
     public function index()
     {
         $this->paginate = [
-            'contain' => ['Competitions']
+            'contain' => ['Competitions', 'Locations']
         ];
         $training = $this->paginate($this->Training);
 
@@ -62,7 +62,8 @@ class TrainingController extends AppController
             $this->Flash->error(__('The training could not be saved. Please, try again.'));
         }
         $competitions = $this->Training->Competitions->find('list', ['limit' => 200]);
-        $this->set(compact('training', 'competitions'));
+        $locations = $this->Training->Locations->find('list', ['limit' => 200]);
+        $this->set(compact('training', 'competitions', 'locations'));
     }
 
     /**
@@ -87,7 +88,8 @@ class TrainingController extends AppController
             $this->Flash->error(__('The training could not be saved. Please, try again.'));
         }
         $competitions = $this->Training->Competitions->find('list', ['limit' => 200]);
-        $this->set(compact('training', 'competitions'));
+        $locations = $this->Training->Locations->find('list', ['limit' => 200]);
+        $this->set(compact('training', 'competitions', 'locations'));
     }
 
     /**

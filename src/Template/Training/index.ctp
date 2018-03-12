@@ -4,17 +4,8 @@
  * @var \App\Model\Entity\Training[]|\Cake\Collection\CollectionInterface $training
  */
 ?>
-<nav class="large-3 medium-4 columns" id="actions-sidebar">
-    <ul class="side-nav">
-        <li class="heading"><?= __('Actions') ?></li>
-        <li><?= $this->Html->link(__('New Training'), ['action' => 'add']) ?></li>
-        <li><?= $this->Html->link(__('List Competitions'), ['controller' => 'Competitions', 'action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('New Competition'), ['controller' => 'Competitions', 'action' => 'add']) ?></li>
-        <li><?= $this->Html->link(__('List Locations'), ['controller' => 'Locations', 'action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('New Location'), ['controller' => 'Locations', 'action' => 'add']) ?></li>
-    </ul>
-</nav>
-<div class="training index large-9 medium-8 columns content">
+
+<div class="col-sm-12">
     <h3><?= __('Training') ?></h3>
     <table class="table">
         <thead>
@@ -32,7 +23,7 @@
                 <td><?= $this->Number->format($training->id) ?></td>
                 <td><?= h($training->time) ?></td>
                 <td><?= $training->has('competition') ? $this->Html->link($training->competition->name, ['controller' => 'Competitions', 'action' => 'view', $training->competition->id]) : '' ?></td>
-                <td><?= $this->Number->format($training->location_id) ?></td>
+                <td><?= $training->has('location') ? $this->Html->link($training->location->name, ['controller' => 'Locations', 'action' => 'view', $training->location->id]) : '' ?></td>
                 <td class="actions">
                     <?= $this->Html->link(__('View'), ['action' => 'view', $training->id]) ?>
                     <?= $this->Html->link(__('Edit'), ['action' => 'edit', $training->id]) ?>

@@ -12,7 +12,7 @@ use Cake\ORM\Entity;
  * @property int $location_id
  *
  * @property \App\Model\Entity\Competition $competition
- * @property \App\Model\Entity\Location[] $locations
+ * @property \App\Model\Entity\Location $location
  */
 class Training extends Entity
 {
@@ -31,6 +31,6 @@ class Training extends Entity
         'competition_id' => true,
         'location_id' => true,
         'competition' => true,
-        'locations' => true
+        'location' => true
     ];
 }
