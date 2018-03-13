@@ -4,7 +4,7 @@
   * @var \App\Model\Entity\Competition[]|\Cake\Collection\CollectionInterface $competitions
   */
 ?>
-x
+
 <div class="competitions index col-sm-12">
     <h3><?= __('Competitions') ?></h3>
     <?= $this->Html->link(__('New Competition'), ['action' => 'add'], ['class' => 'btn btn-primary mt-3 mb-3']) ?>
