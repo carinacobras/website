@@ -27,18 +27,6 @@
                 <th scope="col"><?= __('Competition Id') ?></th>
                 <th scope="col" class="actions"><?= __('Actions') ?></th>
             </tr>
-            <?php foreach ($competition->courts as $courts): ?>
-            <tr>
-                <td><?= h($courts->id) ?></td>
-                <td><?= h($courts->number) ?></td>
-                <td><?= h($courts->competition_id) ?></td>
-                <td class="actions">
-                    <?= $this->Html->link(__('View'), ['controller' => 'Courts', 'action' => 'view', $courts->id]) ?>
-                    <?= $this->Html->link(__('Edit'), ['controller' => 'Courts', 'action' => 'edit', $courts->id]) ?>
-                    <?= $this->Form->postLink(__('Delete'), ['controller' => 'Courts', 'action' => 'delete', $courts->id], ['confirm' => __('Are you sure you want to delete # {0}?', $courts->id)]) ?>
-                </td>
-            </tr>
-            <?php endforeach; ?>
         </table>
         <?php endif; ?>
     </div>

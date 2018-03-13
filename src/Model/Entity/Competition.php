@@ -9,7 +9,6 @@ use Cake\ORM\Entity;
  * @property int $id
  * @property string $name
  *
- * @property \App\Model\Entity\Court[] $courts
  * @property \App\Model\Entity\Rank[] $Ranks
  * @property \App\Model\Entity\Team[] $teams
  * @property \App\Model\Entity\Training[] $training
