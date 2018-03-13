@@ -12,7 +12,8 @@
         <thead>
             <tr>
                 <th scope="col"><?= $this->Paginator->sort('id') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('name') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('Team Name') ?></th>
+				<th scope="col"><?= $this->Paginator->sort('Gender') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('competition_id') ?></th>
                 <th scope="col" class="actions"><?= __('Actions') ?></th>
             </tr>
@@ -21,8 +22,8 @@
             <?php foreach ($teams as $team): ?>
             <tr>
                 <td><?= $this->Number->format($team->id) ?></td>
-                <td><?= h($team->name) ?></td>
-                <td><?= $team->has('competition') ? $this->Html->link($team->competition->name, ['controller' => 'Competitions', 'action' => 'view', $team->competition->id]) : '' ?></td>
+                <td><?= h($team->Team Name) ?></td>
+                <td><?= $team->has('competition') ? $this->Html->link($team->competition->Team Name, ['controller' => 'Competitions', 'action' => 'view', $team->competition->id]) : '' ?></td>
                 <td class="actions">
                     <?= $this->Html->link(__('View'), ['action' => 'view', $team->id]) ?>
                     <?= $this->Html->link(__('Edit'), ['action' => 'edit', $team->id]) ?>
