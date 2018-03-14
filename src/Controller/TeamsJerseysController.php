@@ -22,10 +22,10 @@ class TeamsJerseysController extends AppController
     {
         $this->loadModel('Competitions');
 
-        $this->paginate = [
-            'contain' => ['Teams']
-        ];
-        $query = $this->TeamsJerseys->find('all', array('recursive' => 2));
+        // $this->paginate = [
+        //     'contain' => ['Teams', 'Competitions']
+        // ];
+        $query = $this->TeamsJerseys->find('all', array('recursive' => 3));
         $teamsJerseys = $this->paginate($query);
 
         $this->set(compact('teamsJerseys', 'competitions'));
