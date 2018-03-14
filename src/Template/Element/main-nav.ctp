@@ -13,10 +13,12 @@ $urls = array(
     array(
         'label' => 'Fee Information',
         'url' => '/fees'
+		'subMenu' => array(
+                array(
+                    'label' => 'Make a payment',
+                    'url' => '/payments',
+                ),
     ),
-    array(
-        'label' => 'Payments',
-        'url' => '/payments'
     ),
 	array(
 		'label' => 'Player Information',
