@@ -21,7 +21,7 @@ class TeamsJerseysController extends AppController
     public function index()
     {
         $this->paginate = [
-            'contain' => ['Teams']
+            'contain' => ['Teams', 'Competitions']
         ];
         $teamsJerseys = $this->paginate($this->TeamsJerseys);
 

@@ -12,6 +12,7 @@ use Cake\ORM\Entity;
  * @property string $colour
  *
  * @property \App\Model\Entity\Team $team
+ * @property \App\Model\Entity\Competition $competition
  */
 class TeamsJersey extends Entity
 {
