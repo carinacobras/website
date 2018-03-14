@@ -20,6 +20,8 @@ class TeamsJerseysController extends AppController
      */
     public function index()
     {
+        $this->loadModel('Competitions');
+
         $this->paginate = [
             'contain' => ['Teams', 'Competitions']
         ];
