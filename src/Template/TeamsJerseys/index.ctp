@@ -20,6 +20,7 @@
                 <th scope="col"><?= $this->Paginator->sort('id') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('number') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('team_id') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('competition_id') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('colour') ?></th>
                 <th scope="col" class="actions"><?= __('Actions') ?></th>
             </tr>
@@ -30,7 +31,7 @@
                 <td><?= $this->Number->format($teamsJersey->id) ?></td>
                 <td><?= $this->Number->format($teamsJersey->number) ?></td>
                 <td><?= $teamsJersey->has('team') ? $this->Html->link($teamsJersey->team->name, ['controller' => 'Teams', 'action' => 'view', $teamsJersey->team->id]) : '' ?></td>
-                <td><?= $teamsJersey->has('team') ? $this->Html->link($teamsJersey->team->competition->name, ['controller' => 'Teams', 'action' => 'view', $teamsJersey->team->id]) : '' ?></td>
+                <td><?= $teamsJersey->has('team') ? $this->Html->link($teamsJersey->team->competition->name, ['controller' => 'Competitions', 'action' => 'view', $teamsJersey->team->competition->id]) : '' ?></td>
                 <td><?= h($teamsJersey->colour) ?></td>
                 <td class="actions">
                     <?= $this->Html->link(__('View'), ['action' => 'view', $teamsJersey->id]) ?>
