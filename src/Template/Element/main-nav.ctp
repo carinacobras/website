@@ -11,13 +11,8 @@ $urls = array(
         'url' => '/about'
     ),
     array(
-<<<<<<< HEAD
-        'label' => 'Fees',
-        'url' => '/#'
-=======
         'label' => 'Fee Information',
         'url' => '/fees',
->>>>>>> e168805dab01056a7e98cb186b6a402f3d745270
 		'subMenu' => array(
                 array(
                     'label' => 'Fee Information',
