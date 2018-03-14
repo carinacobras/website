@@ -12,7 +12,7 @@ $urls = array(
     ),
     array(
         'label' => 'Fee Information',
-        'url' => '/fees'
+        'url' => '/fees',
 		'subMenu' => array(
                 array(
                     'label' => 'Make a payment',
