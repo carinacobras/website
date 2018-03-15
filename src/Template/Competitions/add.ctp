@@ -11,7 +11,7 @@
         <?php
             echo $this->Form->control('name');
             echo $this->Form->control('age');
-            echo $this->Form->control('gender');
+            echo $this->Form->control('gender',  ['options' => ['None', 'Male', 'Female', 'Mixed'], 'empty' => false]);
         ?>
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>

@@ -24,7 +24,22 @@
                 <td><?= $this->Number->format($competition->id) ?></td>
                 <td><?= h($competition->name) ?></td>
                 <td><?= $this->Number->format($competition->age) ?></td>
-                <td><?= h($competition->gender) ?></td>
+                <td>
+                    <?php 
+                    if ($team->gender == 0) {
+                        echo 'None';
+                    }
+                    if ($team->gender == 1) {
+                        echo 'Male';
+                    }
+                    if ($team->gender == 2) {
+                        echo 'Female';
+                    }
+                    if ($team->gender == 3) {
+                        echo 'Mixed';
+                    }
+                    ?>
+                </td>
                 <td class="actions">
                     <?= $this->Html->link(__('View'), ['action' => 'view', $competition->id]) ?>
                     <?= $this->Html->link(__('Edit'), ['action' => 'edit', $competition->id]) ?>
