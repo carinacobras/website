@@ -8,6 +8,8 @@ use Cake\ORM\Entity;
  *
  * @property int $id
  * @property string $name
+ * @property string $age
+ * @property string $gender
  *
  * @property \App\Model\Entity\Rank[] $Ranks
  * @property \App\Model\Entity\Team[] $teams

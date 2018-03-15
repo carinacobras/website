@@ -21,6 +21,10 @@
             <td><?= h($user->last_name) ?></td>
         </tr>
         <tr>
+            <th scope="row"><?= __('Gender') ?></th>
+            <td><?= h($user->gender) ?></td>
+        </tr>
+        <tr>
             <th scope="row"><?= __('Dob') ?></th>
             <td><?= h($user->dob) ?></td>
         </tr>

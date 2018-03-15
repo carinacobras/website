@@ -74,6 +74,11 @@ class TeamsTable extends Table
             ->requirePresence('name', 'create')
             ->notEmpty('name');
 
+        $validator
+            ->scalar('gender')
+            ->requirePresence('gender', 'create')
+            ->notEmpty('gender');
+
         return $validator;
     }
 

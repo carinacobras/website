@@ -8,6 +8,7 @@ use Cake\ORM\Entity;
  *
  * @property int $id
  * @property string $name
+* @property string $gender
  * @property int $competition_id
  *
  * @property \App\Model\Entity\Competition $competition

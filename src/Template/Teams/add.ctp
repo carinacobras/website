@@ -11,6 +11,7 @@
         <?php
             echo $this->Form->control('name');
             echo $this->Form->control('competition_id', ['options' => $competitions, 'empty' => true]);
+            echo $this->Form->control('gender');
         ?>
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>

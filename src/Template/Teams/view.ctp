@@ -31,6 +31,10 @@
             <td><?= h($team->name) ?></td>
         </tr>
         <tr>
+            <th scope="row"><?= __('Gender') ?></th>
+            <td><?= h($team->gender) ?></td>
+        </tr>
+        <tr>
             <th scope="row"><?= __('Competition') ?></th>
             <td><?= $team->has('competition') ? $this->Html->link($team->competition->name, ['controller' => 'Competitions', 'action' => 'view', $team->competition->id]) : '' ?></td>
         </tr>

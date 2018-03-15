@@ -23,6 +23,7 @@
             <tr>
                 <td><?= $this->Number->format($team->id) ?></td>
                 <td><?= h($team->name) ?></td>
+                <td><?= h($team->gender) ?></td>
                 <td><?= $team->has('competition') ? $this->Html->link($team->competition->team->name, ['controller' => 'Competitions', 'action' => 'view', $team->competition->id]) : '' ?></td>
                 <td class="actions">
                     <?= $this->Html->link(__('View'), ['action' => 'view', $team->id]) ?>

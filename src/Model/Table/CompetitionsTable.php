@@ -69,6 +69,16 @@ class CompetitionsTable extends Table
             ->requirePresence('name', 'create')
             ->notEmpty('name');
 
+        $validator
+            ->scalar('age')
+            ->requirePresence('age', 'create')
+            ->notEmpty('age');
+
+        $validator
+            ->scalar('gender')
+            ->requirePresence('gender', 'create')
+            ->notEmpty('gender');
+
         return $validator;
     }
 }

@@ -10,6 +10,8 @@
         <legend><?= __('Edit Competition') ?></legend>
         <?php
             echo $this->Form->control('name');
+            echo $this->Form->control('age');
+            echo $this->Form->control('gender');
         ?>
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>

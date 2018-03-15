@@ -12,6 +12,7 @@
             echo $this->Form->control('username');
             echo $this->Form->control('first_name');
             echo $this->Form->control('last_name');
+            echo $this->Form->control('gender');
             echo $this->Form->control('password');
             echo $this->Form->input('dob', 
             ['minYear' => date('Y') - 70,
