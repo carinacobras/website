@@ -26,16 +26,16 @@
                 <td><?= $this->Number->format($competition->age) ?></td>
                 <td>
                     <?php 
-                    if ($team->gender == 0) {
+                    if ($competition->gender == 0) {
                         echo 'None';
                     }
-                    if ($team->gender == 1) {
+                    if ($competition->gender == 1) {
                         echo 'Male';
                     }
-                    if ($team->gender == 2) {
+                    if ($competition->gender == 2) {
                         echo 'Female';
                     }
-                    if ($team->gender == 3) {
+                    if ($competition->gender == 3) {
                         echo 'Mixed';
                     }
                     ?>
