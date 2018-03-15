@@ -10,8 +10,8 @@
         <legend><?= __('Edit Team') ?></legend>
         <?php
             echo $this->Form->control('name');
-            echo $this->Form->control('gender');
             echo $this->Form->control('competition_id', ['options' => $competitions, 'empty' => true]);
+            echo $this->Form->control('gender',  ['options' => ['None', 'Male', 'Female', 'Mixed'], 'empty' => false]);
         ?>
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>

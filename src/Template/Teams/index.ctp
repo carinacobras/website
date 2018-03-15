@@ -23,7 +23,22 @@
             <tr>
                 <td><?= $this->Number->format($team->id) ?></td>
                 <td><?= h($team->name) ?></td>
-                <td><?= h($team->gender) ?></td>
+                <td>
+                    <?php 
+                    if ($team->gender == 0) {
+                        echo 'None';
+                    }
+                    if ($team->gender == 1) {
+                        echo 'Male';
+                    }
+                    if ($team->gender == 2) {
+                        echo 'Female';
+                    }
+                    if ($team->gender == 3) {
+                        echo 'Mixed';
+                    }
+                    ?>
+                </td>
                 <td><?= $team->has('competition') ? $this->Html->link($team->competition->team->name, ['controller' => 'Competitions', 'action' => 'view', $team->competition->id]) : '' ?></td>
                 <td class="actions">
                     <?= $this->Html->link(__('View'), ['action' => 'view', $team->id]) ?>
