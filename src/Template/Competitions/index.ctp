@@ -13,6 +13,7 @@
             <tr>
                 <th scope="col"><?= $this->Paginator->sort('id') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('Competition') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('Age') ?></th>
 				<th scope="col"><?= $this->Paginator->sort('Gender') ?></th>
                 <th scope="col" class="actions"><?= __('Actions') ?></th>
             </tr>
@@ -21,7 +22,9 @@
             <?php foreach ($competitions as $competition): ?>
             <tr>
                 <td><?= $this->Number->format($competition->id) ?></td>
-                <td><?= h($competition->Competition) ?></td>
+                <td><?= h($competition->name) ?></td>
+                <td><?= $this->Number->format($competition->age) ?></td>
+                <td><?= h($competition->gender) ?></td>
                 <td class="actions">
                     <?= $this->Html->link(__('View'), ['action' => 'view', $competition->id]) ?>
                     <?= $this->Html->link(__('Edit'), ['action' => 'edit', $competition->id]) ?>

@@ -22,8 +22,8 @@
             <?php foreach ($teams as $team): ?>
             <tr>
                 <td><?= $this->Number->format($team->id) ?></td>
-                <td><?= h($team->Team Name) ?></td>
-                <td><?= $team->has('competition') ? $this->Html->link($team->competition->Team Name, ['controller' => 'Competitions', 'action' => 'view', $team->competition->id]) : '' ?></td>
+                <td><?= h($team->name) ?></td>
+                <td><?= $team->has('competition') ? $this->Html->link($team->competition->team->name, ['controller' => 'Competitions', 'action' => 'view', $team->competition->id]) : '' ?></td>
                 <td class="actions">
                     <?= $this->Html->link(__('View'), ['action' => 'view', $team->id]) ?>
                     <?= $this->Html->link(__('Edit'), ['action' => 'edit', $team->id]) ?>
