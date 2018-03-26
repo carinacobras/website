@@ -11,7 +11,7 @@ $urls = array(
         'url' => '/about'
     ),
     array(
-        'label' => 'Fee Information',
+        'label' => 'Fees',
         'url' => '/fees',
 		'subMenu' => array(
                 array(
@@ -25,7 +25,7 @@ $urls = array(
 				    ),
     ),
 	array(
-		'label' => 'Player Information',
+		'label' => 'Team Information',
 		'url' => '#',
 		'subMenu' => array(
                 array(
@@ -33,8 +33,13 @@ $urls = array(
                     'url' => '/training',
                 ),
                 array(
-                    'label' => 'Games',
+                    'label' => 'Fixtures',
                     'url'=> '/games',
+                ),
+				array(
+                    'label' => 'Results',
+                    'url'=> '/results',
+					// Tyson, please make a /results page
                 ),
         ),
       ),
