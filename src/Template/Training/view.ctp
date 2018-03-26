@@ -7,6 +7,14 @@
 
 <div class="col-sm-12">
     <h3><?= h($training->id) ?></h3>
+	<p> The clubs junior teams training times, days and locations are listed in the table below. Please bring along a full water bottle, some sports shoes with non marking soles and preferably a basketball if you have one. 
+
+Some age groups have multiple training sessions. You can attend 1 or more sessions per week. Beginners are encouraged to attend more than once per week (** new players see note below). Most sessions are run as a squad doing skills training but teams may split off to half court for more specific team training. We cannot train as specific teams without a venue or a coach available. The club is willing to book additional venues if we can find coaches available weekday afternoons or early evening.
+
+Its important for you to check your emails each week as occasionally some venues are not available for training on certain dates throughout the year.
+
+Some teams have specific training sessions run by their coaches that are not indicated below.  These sessions are open only to the teams involved and will be advised by the coach.</p>
+
     <table class="table">
         <tr>
             <th scope="row"><?= __('Competition') ?></th>

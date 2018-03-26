@@ -9,7 +9,7 @@
     <?= $this->Form->create($training) ?>
     <fieldset>
         <legend><?= __('Edit Training') ?></legend>
-        <label for="time">Time</label>
+        <label for="time">Start Time</label>
                             <?php
                             echo $this->Form->input('time', [
                                 'templates' => [
@@ -23,7 +23,8 @@
                             ?>
                     <script type="text/javascript">
                         $(function () {
-                            $('#datetimepicker1').datetimepicker({format: 'dddd, MMMM Do YYYY, h:mm a'});
+                            $('#datetimepicker1').datetimepicker({format: 'dddd, MMMM Do YYYY, h:mm a'});]
+							// Change to Start Time: Day of Week and Time and Finish Time: Day of Week and Time
                         });
                     </script>
         <?php
