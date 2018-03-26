@@ -60,7 +60,6 @@ class TrainingTable extends Table
             ->allowEmpty('id', 'create');
 
         $validator
-            ->dateTime('time')
             ->requirePresence('time', 'create')
             ->notEmpty('time');
 
