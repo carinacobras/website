@@ -16,6 +16,17 @@
             <th scope="row"><?= __('Team') ?></th>
             <td><?= $player->has('team') ? $this->Html->link($player->team->name, ['controller' => 'Teams', 'action' => 'view', $player->team->id]) : '' ?></td>
         </tr>
+        <tr>
+            <th scope="row"><?= __('Height') ?></th>
+            <td><?= $player->height ?></td>
+        </tr>
+    </table>
+    <table class="table">
+        <tr>
+            <td><?= $player->experience ?>
+            </td>
+        </tr>
+        
     </table>
     <div class="related">
         <h4><?= __('Absences') ?></h4>

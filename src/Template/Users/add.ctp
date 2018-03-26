@@ -22,16 +22,13 @@
 				'day' => true,
 				'month' => true,
 				'year' => true
-				]
+				]);
             echo $this->Form->control('gender');
-            echo $this->Form->control('height');
 			// add drop-down options
 			echo $this->Form>control('current school');
 			echo $this->Form->control('postal_address');
 			echo $this->Form->control('playing experience');
 			echo $this->Form->control('team_jersey');
-			
-        );
         
         ?>
     </fieldset>
