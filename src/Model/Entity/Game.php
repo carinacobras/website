@@ -7,7 +7,7 @@ use Cake\ORM\Entity;
  * Game Entity
  *
  * @property int $id
- * @property \Cake\I18n\FrozenTime $time
+ * @property string $time
  * @property int $competition_id
  * @property int $location_id
  *
