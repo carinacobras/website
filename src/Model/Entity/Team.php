@@ -8,10 +8,12 @@ use Cake\ORM\Entity;
  *
  * @property int $id
  * @property string $name
-* @property string $gender
+ * @property string $gender
  * @property int $competition_id
- *
+ 
  * @property \App\Model\Entity\Competition $competition
+ * @property \App\Model\Entity\Games[] $games
+ * @property \App\Model\Entity\Training[] $training
  * @property \App\Model\Entity\Coach[] $coaches
  * @property \App\Model\Entity\Manager[] $managers
  * @property \App\Model\Entity\Player[] $players

@@ -10,7 +10,9 @@ use Cake\ORM\Entity;
  * @property string $time
  * @property int $competition_id
  * @property int $location_id
- *
+ * @property int $team_id
+ 
+ * @property \App\Model\Entity\Team $team
  * @property \App\Model\Entity\Competition $competition
  * @property \App\Model\Entity\Location $location
  */
@@ -28,6 +30,7 @@ class Game extends Entity
      */
     protected $_accessible = [
         'time' => true,
+        'team_id' => true,
         'competition_id' => true,
         'location_id' => true,
         'competition' => true,

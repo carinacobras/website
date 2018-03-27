@@ -9,6 +9,7 @@ use Cake\Validation\Validator;
 /**
  * Training Model
  *
+ * @property \App\Model\Table\TeamsTable|\Cake\ORM\Association\BelongsTo $Teams
  * @property \App\Model\Table\CompetitionsTable|\Cake\ORM\Association\BelongsTo $Competitions
  * @property \App\Model\Table\LocationsTable|\Cake\ORM\Association\BelongsTo $Locations
  *
@@ -37,6 +38,10 @@ class TrainingTable extends Table
         $this->setDisplayField('id');
         $this->setPrimaryKey('id');
 
+        $this->belongsTo('Teams', [
+            'foreignKey' => 'competition_id',
+            'joinType' => 'INNER'
+        ]);
         $this->belongsTo('Competitions', [
             'foreignKey' => 'competition_id',
             'joinType' => 'INNER'

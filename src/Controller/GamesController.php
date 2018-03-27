@@ -21,7 +21,7 @@ class GamesController extends AppController
     public function index()
     {
         $this->paginate = [
-            'contain' => ['Competitions', 'Locations']
+            'contain' => ['Teams', 'Competitions', 'Locations']
         ];
         $games = $this->paginate($this->Games);
 
@@ -38,7 +38,7 @@ class GamesController extends AppController
     public function view($id = null)
     {
         $game = $this->Games->get($id, [
-            'contain' => ['Competitions', 'Locations']
+            'contain' => ['Teams', 'Competitions', 'Locations']
         ]);
 
         $this->set('game', $game);

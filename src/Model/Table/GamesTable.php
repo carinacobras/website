@@ -8,7 +8,8 @@ use Cake\Validation\Validator;
 
 /**
  * Games Model
- *
+ * 
+ * @property \App\Model\Table\TeamsTable|\Cake\ORM\Association\BelongsTo $Teams
  * @property \App\Model\Table\CompetitionsTable|\Cake\ORM\Association\BelongsTo $Competitions
  * @property \App\Model\Table\LocationsTable|\Cake\ORM\Association\BelongsTo $Locations
  *
@@ -41,8 +42,14 @@ class GamesTable extends Table
             'foreignKey' => 'competition_id',
             'joinType' => 'INNER'
         ]);
+
         $this->belongsTo('Locations', [
             'foreignKey' => 'location_id',
+            'joinType' => 'INNER'
+        ]);
+
+        $this->belongsTo('Teams', [
+            'foreignKey' => 'team_id',
             'joinType' => 'INNER'
         ]);
     }
@@ -75,6 +82,7 @@ class GamesTable extends Table
      */
     public function buildRules(RulesChecker $rules)
     {
+        $rules->add($rules->existsIn(['team_id'], 'Teams'));
         $rules->add($rules->existsIn(['competition_id'], 'Competitions'));
         $rules->add($rules->existsIn(['location_id'], 'Locations'));
 

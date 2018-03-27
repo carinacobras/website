@@ -21,7 +21,7 @@ class TrainingController extends AppController
     public function index()
     {
         $this->paginate = [
-            'contain' => ['Competitions', 'Locations']
+            'contain' => ['Teams', 'Competitions', 'Locations']
         ];
         $training = $this->paginate($this->Training);
 
@@ -38,7 +38,7 @@ class TrainingController extends AppController
     public function view($id = null)
     {
         $training = $this->Training->get($id, [
-            'contain' => ['Competitions', 'Locations']
+            'contain' => ['Teams', 'Competitions', 'Locations']
         ]);
 
         $this->set('training', $training);

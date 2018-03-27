@@ -21,7 +21,7 @@
             <?php foreach ($training as $training): ?>
             <tr>
                 <td><?= $this->Number->format($training->id) ?></td>
-                <td><?= $training->time ?></td>
+                <td><?= h($training->time) ?></td>
                 <td><?= $training->has('competition') ? $this->Html->link($training->competition->name, ['controller' => 'Competitions', 'action' => 'view', $training->competition->id]) : '' ?></td>
                 <td><?= $training->has('location') ? $this->Html->link($training->location->name, ['controller' => 'Locations', 'action' => 'view', $training->location->id]) : '' ?></td>
                 <td class="actions">
