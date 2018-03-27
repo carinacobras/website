@@ -63,6 +63,7 @@ class TrainingController extends AppController
         }
         $competitions = $this->Training->Competitions->find('list', ['limit' => 200]);
         $locations = $this->Training->Locations->find('list', ['limit' => 200]);
+        $teams = $this->Training->Teams->find('list', ['limit' => 200]);
         $this->set(compact('training', 'teams', 'competitions', 'locations'));
     }
 
@@ -89,6 +90,8 @@ class TrainingController extends AppController
         }
         $competitions = $this->Training->Competitions->find('list', ['limit' => 200]);
         $locations = $this->Training->Locations->find('list', ['limit' => 200]);
+        $teams = $this->Training->Teams->find('list', ['limit' => 200]);
+        
         $this->set(compact('training',  'teams', 'competitions', 'locations'));
     }
 
