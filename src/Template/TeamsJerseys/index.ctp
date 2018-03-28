@@ -31,7 +31,7 @@
                 <td><?= $this->Number->format($teamsJersey->id) ?></td>
                 <td><?= $this->Number->format($teamsJersey->number) ?></td>
                 <td><?= $teamsJersey->has('team') ? $this->Html->link($teamsJersey->team->name, ['controller' => 'Teams', 'action' => 'view', $teamsJersey->team->id]) : '' ?></td>
-                <td><?= $teamsJersey->has('team') ? $this->Html->link($competitions[$teamsJersey->team->competition_id], ['controller' => 'Competitions', 'action' => 'view', $teamsJersey->team->competition_id]) : '' ?></td>
+                <td><?= $teamsJersey->has('team') ? $this->Html->link($competitions[$teamsJersey->team->competition_id], ['controller' => 'Competitions', 'action' => 'view', $teamsJersey->team->id]) : '' ?></td>
                 <td><?= h($teamsJersey->colour) ?></td>
                 <td class="actions">
                     <?= $this->Html->link(__('View'), ['action' => 'view', $teamsJersey->id]) ?>
