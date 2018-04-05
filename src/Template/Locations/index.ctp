@@ -9,9 +9,7 @@
     <table class="table">
         <thead>
             <tr>
-                <th scope="col"><?= $this->Paginator->sort('id') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('name') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('court') ?></th>
                 <th scope="col" class="actions"><?= __('Actions') ?></th>
             </tr>
         </thead>
@@ -30,14 +28,19 @@
             <?php endforeach; ?>
         </tbody>
     </table>
-    <div class="paginator">
-        <ul class="pagination">
-            <?= $this->Paginator->first('<< ' . __('first')) ?>
-            <?= $this->Paginator->prev('< ' . __('previous')) ?>
-            <?= $this->Paginator->numbers() ?>
-            <?= $this->Paginator->next(__('next') . ' >') ?>
-            <?= $this->Paginator->last(__('last') . ' >>') ?>
-        </ul>
-        <p><?= $this->Paginator->counter(['format' => __('Page {{page}} of {{pages}}, showing {{current}} record(s) out of {{count}} total')]) ?></p>
-    </div>
+    <p class="scroll">
+<?php
+   $result = mysql_query("SELECT * FROM this ORDER BY name ASC");
+
+    while ($row = mysql_fetch_array($result)) {
+        echo "<div style='margin: 0 auto;'>
+                    <span style='display:inline-block; width:200px; text-align:left;'>" . ucwords($row['name']) . "</span>
+                    <span style='display:inline-block; text-align:left;'>" . ucwords($row['number']) . "</span>
+                </div>
+                <br>";
+   }
+?>
+   </p>
+ </font>
+</div>
 </div>
