@@ -23,7 +23,9 @@ class TeamsController extends AppController
         $this->paginate = [
             'contain' => ['Competitions']
         ];
-        $teams = $this->Teams->find('all');
+        $teams = $this->Teams->find('all',[
+            'contain' => ['Competitions']
+        ]);
 
         $this->set(compact('teams'));
         $this->set('_serialize', ['teams']);
