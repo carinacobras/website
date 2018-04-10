@@ -22,7 +22,7 @@ class PagesController extends AppController
      */
     public function index()
     {
-        $pages = $this->paginate($this->Pages);
+        $pages = $this->Pages->find('all');
 
         $this->set(compact('pages'));
     }

@@ -23,7 +23,7 @@ class TeamsJerseysController extends AppController
         $this->paginate = [
             'contain' => ['Teams']
         ];
-        $teamsJerseys = $this->paginate($this->TeamsJerseys);
+        $teamsJerseys = $this->TeamsJerseys->find('all');
         $competitions = [
 "Under 7s",
 "Under 9s",

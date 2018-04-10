@@ -23,7 +23,7 @@ class GamesController extends AppController
         $this->paginate = [
             'contain' => ['Teams', 'Competitions', 'Locations']
         ];
-        $games = $this->paginate($this->Games);
+        $games = $this->Games->find('all');
 
         $this->set(compact('games'));
     }

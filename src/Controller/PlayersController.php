@@ -23,7 +23,7 @@ class PlayersController extends AppController
         $this->paginate = [
             'contain' => ['Users', 'Teams', 'Ranks', 'Contacts', 'Absences']
         ];
-        $players = $this->paginate($this->Players);
+        $players = $this->Players->find('all');
 
         $this->set(compact('players'));
         $this->set('_serialize', ['players']);

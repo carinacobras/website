@@ -23,7 +23,7 @@ class ContactsController extends AppController
         $this->paginate = [
             'contain' => ['Players', 'PhoneNumbers', 'Emails', 'Relationships']
         ];
-        $contacts = $this->paginate($this->Contacts);
+        $contacts = $this->Contacts->find('all');
 
         $this->set(compact('contacts'));
         $this->set('_serialize', ['contacts']);

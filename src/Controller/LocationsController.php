@@ -20,7 +20,7 @@ class LocationsController extends AppController
      */
     public function index()
     {
-        $locations = $this->paginate($this->Locations);
+        $locations = $this->Locations->find('all');
 
         $this->set(compact('locations'));
     }
