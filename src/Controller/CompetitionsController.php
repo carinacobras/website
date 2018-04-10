@@ -20,7 +20,11 @@ class CompetitionsController extends AppController
      */
     public function index()
     {
-        $competitions = $this->Competitions->find('all');
+        $this->paginate = [
+            'limit' => 100000
+        ];
+        
+        $competitions = $this->paginate($this->Competitions);
 
         $this->set(compact('competitions'));
         $this->set('_serialize', ['competitions']);

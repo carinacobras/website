@@ -21,9 +21,10 @@ class PostsController extends AppController
     public function index()
     {
         $this->paginate = [
+            'limit' => 100000,
             'contain' => ['Categories']
         ];
-        $posts = $this->Posts->find('all');
+        $posts = $this->paginate($this->Posts);
 
         $this->set(compact('posts'));
     }

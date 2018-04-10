@@ -21,11 +21,10 @@ class GamesController extends AppController
     public function index()
     {
         $this->paginate = [
+            'limit' => 100000,
             'contain' => ['Teams', 'Competitions', 'Locations']
         ];
-        $games = $this->Games->find('all', [
-            'contain' => ['Teams', 'Competitions', 'Locations']
-        ]);
+        $games = $this->paginate($this->Games);
 
         $this->set(compact('games'));
     }

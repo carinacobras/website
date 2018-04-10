@@ -21,11 +21,10 @@ class TeamsController extends AppController
     public function index()
     {
         $this->paginate = [
+            'limit' => 100000,
             'contain' => ['Competitions']
         ];
-        $teams = $this->Teams->find('all',[
-            'contain' => ['Competitions']
-        ]);
+        $teams = $this->paginate($this->Teams);
 
         $this->set(compact('teams'));
         $this->set('_serialize', ['teams']);

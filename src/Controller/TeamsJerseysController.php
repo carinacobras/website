@@ -21,9 +21,10 @@ class TeamsJerseysController extends AppController
     public function index()
     {
         $this->paginate = [
+            'limit' => 100000,
             'contain' => ['Teams']
         ];
-        $teamsJerseys = $this->TeamsJerseys->find('all');
+        $teamsJerseys = $this->paginate($this->TeamsJerseys);
         $competitions = [
 "Under 7s",
 "Under 9s",

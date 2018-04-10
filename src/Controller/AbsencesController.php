@@ -21,6 +21,7 @@ class AbsencesController extends AppController
     public function index()
     {
         $this->paginate = [
+            'limit' => 100000,
             'contain' => ['Players']
         ];
         $absences = $this->paginate($this->Absences);

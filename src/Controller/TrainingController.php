@@ -20,7 +20,11 @@ class TrainingController extends AppController
      */
     public function index()
     {
-        $training = $this->Training->find('all');
+        $this->paginate = [
+            'limit' => 100000,
+            'contain' => ['Teams', 'Competitions', 'Locations']
+        ];
+        $training = $this->paginate($this->Training);
 
         $this->set(compact('training'));
     }

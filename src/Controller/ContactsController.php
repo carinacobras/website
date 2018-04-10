@@ -21,9 +21,10 @@ class ContactsController extends AppController
     public function index()
     {
         $this->paginate = [
+            'limit' => 100000,
             'contain' => ['Players', 'PhoneNumbers', 'Emails', 'Relationships']
         ];
-        $contacts = $this->Contacts->find('all');
+        $contacts = $this->paginate($this->Contacts);
 
         $this->set(compact('contacts'));
         $this->set('_serialize', ['contacts']);
