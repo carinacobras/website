@@ -21,11 +21,14 @@ class PlayersController extends AppController
     public function index()
     {
         $this->paginate = [
+            'limit' => 100000,
+            'sortWhitelist' => [
+                'Users.id',
+                'Teams.id',
+            ],
             'contain' => ['Users', 'Teams', 'Ranks', 'Contacts', 'Absences']
         ];
-        $players = $this->Players->find('all', [
-            'contain' => ['Users', 'Teams', 'Ranks', 'Contacts', 'Absences']
-        ]);
+        $players = $this->paginate($this->Players);
 
         $this->set(compact('players'));
         $this->set('_serialize', ['players']);
