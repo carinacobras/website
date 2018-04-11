@@ -11,10 +11,9 @@
     <table class="table">
         <thead>
             <tr>
-                <th scope="col"><?= $this->Paginator->sort('id') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('Team Name') ?></th>
-				<th scope="col"><?= $this->Paginator->sort('Gender') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('competition_id') ?></th>
+				<th scope="col"><?= $this->Paginator->sort('Gender') ?></th>
                 <th scope="col" class="actions"><?= __('Actions') ?></th>
             </tr>
         </thead>

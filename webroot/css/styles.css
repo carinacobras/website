@@ -15,7 +15,11 @@ body {
     text-decoration: none;
 }
 
-
+.scroll{
+	overflow: scroll;
+	width: 500px;
+	height: 500 px;
+}
 .admin .content {
     background-color: #888;
     padding: 30px;
@@ -26,10 +30,6 @@ body {
 .admin .sidebar a:not(.btn) {
     color: #b14021;
 }
-
-/*
- Overridden Bootstrap styles 
-*/
 
 .bg-primary {
     background-color: #137c00 !important;

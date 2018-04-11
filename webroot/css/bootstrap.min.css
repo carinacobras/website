@@ -6,12 +6,11 @@
  */
 /*! normalize.css v5.0.0 | MIT License | github.com/necolas/normalize.css */
 html {
-  font-family: "Segoe UI", Frutiger, "Frutiger Lintoype", "Dejavu Sans", "Helvetica Neue", Arial, sans-serif;
-  line-height: 1.15;
+  font-family: Tahoma, Geneva, sans-serif;
+  line-height: 1;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
 }
-
 
 body {
   margin: 0;
@@ -32,7 +31,7 @@ h1 {
   font-weight: 500;
   line-height: 14px;
   margin: 0.5em 0;
-  font-variant: small-caps;
+  font-variant: caps;
 }
 
 h2 {
@@ -40,7 +39,7 @@ font-size: 18px;
 font-style: normal;
 font-weight:500;
 line-height: 14px;
-font-variant: small-caps;
+font-variant: caps;
 }
 
 h3 {
@@ -48,7 +47,7 @@ h3 {
 	font-style: normal;	
 	font-weight:500;
 	line-height: 5px;
-	font-variant: small-caps;
+	font-variant: caps;
 }
 
 p {

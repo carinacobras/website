@@ -26,7 +26,7 @@
             <td><?= $player->experience ?>
             </td>
         </tr>
-        
+
     </table>
     <div class="related">
         <h4><?= __('Absences') ?></h4>
@@ -36,6 +36,7 @@
                 <th scope="col"><?= __('Id') ?></th>
                 <th scope="col"><?= __('Date') ?></th>
                 <th scope="col"><?= __('Player Id') ?></th>
+                <th scope="col"><?=__('Gender') ?></th>
                 <th scope="col" class="actions"><?= __('Actions') ?></th>
             </tr>
             <?php foreach ($player->absences as $absences): ?>
