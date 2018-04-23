@@ -11,15 +11,15 @@ use Cake\Validation\Validator;
  *
  * @property \App\Model\Table\OrderlinesTable|\Cake\ORM\Association\HasMany $orderlines
  *
- * @method \App\Model\Entity\OrderItem get($primaryKey, $options = [])
- * @method \App\Model\Entity\OrderItem newEntity($data = null, array $options = [])
- * @method \App\Model\Entity\OrderItem[] newEntities(array $data, array $options = [])
- * @method \App\Model\Entity\OrderItem|bool save(\Cake\Datasource\EntityInterface $entity, $options = [])
- * @method \App\Model\Entity\OrderItem patchEntity(\Cake\Datasource\EntityInterface $entity, array $data, array $options = [])
- * @method \App\Model\Entity\OrderItem[] patchEntities($entities, array $data, array $options = [])
- * @method \App\Model\Entity\OrderItem findOrCreate($search, callable $callback = null, $options = [])
+ * @method \App\Model\Entity\Orderitem get($primaryKey, $options = [])
+ * @method \App\Model\Entity\Orderitem newEntity($data = null, array $options = [])
+ * @method \App\Model\Entity\Orderitem[] newEntities(array $data, array $options = [])
+ * @method \App\Model\Entity\Orderitem|bool save(\Cake\Datasource\EntityInterface $entity, $options = [])
+ * @method \App\Model\Entity\Orderitem patchEntity(\Cake\Datasource\EntityInterface $entity, array $data, array $options = [])
+ * @method \App\Model\Entity\Orderitem[] patchEntities($entities, array $data, array $options = [])
+ * @method \App\Model\Entity\Orderitem findOrCreate($search, callable $callback = null, $options = [])
  */
-class OrderItemsTable extends Table
+class OrderitemsTable extends Table
 {
 
     /**

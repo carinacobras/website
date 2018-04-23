@@ -10,7 +10,7 @@ use Cake\Validation\Validator;
  * orderlines Model
  *
  * @property \App\Model\Table\OrdersTable|\Cake\ORM\Association\BelongsTo $Orders
- * @property \App\Model\Table\OrderItemsTable|\Cake\ORM\Association\BelongsTo $Orderitems
+ * @property \App\Model\Table\OrderitemsTable|\Cake\ORM\Association\BelongsTo $Orderitems
  *
  * @method \App\Model\Entity\orderline get($primaryKey, $options = [])
  * @method \App\Model\Entity\orderline newEntity($data = null, array $options = [])

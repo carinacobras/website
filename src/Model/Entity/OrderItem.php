@@ -12,7 +12,7 @@ use Cake\ORM\Entity;
  *
  * @property \App\Model\Entity\orderline[] $order_lines
  */
-class OrderItem extends Entity
+class Orderitem extends Entity
 {
 
     /**
