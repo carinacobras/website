@@ -23,26 +23,32 @@
             <? endif; ?>
             </tr>
         </thead>
-        <?
-            $session = $this->request->getSession();
-            $user_data = $session->read('Auth.User');
-            if($user_data):
-        ?>
+
 
         <tbody>
             <?php foreach ($training as $training): ?>
             <tr>
-                <td><?= h($training->time) ?></td>
+                <td><?
+                $date = new DateTime($training->time);
+                $newDate = $date->format('l H:i a'); 
+                echo $newDate;
+                ?></td>
                 <td><?= $training->has('competition') ? $this->Html->link($training->competition->name, ['controller' => 'Competitions', 'action' => 'view', $training->competition->id]) : '' ?></td>
                 <td><?= $training->has('location') ? $this->Html->link($training->location->name, ['controller' => 'Locations', 'action' => 'view', $training->location->id]) : '' ?></td>
+                <?
+                    $session = $this->request->getSession();
+                    $user_data = $session->read('Auth.User');
+                    if($user_data):
+                ?>
                 <td class="actions">
                     <?= $this->Html->link(__('View'), ['action' => 'view', $training->id]) ?>
                     <?= $this->Html->link(__('Edit'), ['action' => 'edit', $training->id]) ?>
                     <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $training->id], ['confirm' => __('Are you sure you want to delete # {0}?', $training->id)]) ?>
                 </td>
+                <?php endif; ?>
             </tr>
-            <?php endforeach; ?>
-            <?php endif; ?>
+                <?php endforeach; ?>
+         
         </tbody>
     </table>
 </div>
