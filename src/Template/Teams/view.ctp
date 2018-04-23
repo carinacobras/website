@@ -19,8 +19,8 @@
         <li><?= $this->Html->link(__('New Manager'), ['controller' => 'Managers', 'action' => 'add']) ?> </li>
         <li><?= $this->Html->link(__('List Players'), ['controller' => 'Players', 'action' => 'index']) ?> </li>
         <li><?= $this->Html->link(__('New Player'), ['controller' => 'Players', 'action' => 'add']) ?> </li>
-        <li><?= $this->Html->link(__('List Teams Jerseys'), ['controller' => 'TeamsJerseys', 'action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('New Teams Jersey'), ['controller' => 'TeamsJerseys', 'action' => 'add']) ?> </li>
+        <li><?= $this->Html->link(__('List Teams Jerseys'), ['controller' => 'Teamjerseys', 'action' => 'index']) ?> </li>
+        <li><?= $this->Html->link(__('New Teams Jersey'), ['controller' => 'Teamjerseys', 'action' => 'add']) ?> </li>
     </ul>
 </nav>
 <div class="teams view col-sm-12">
@@ -136,9 +136,9 @@
                 <td><?= h($teamsJerseys->team_id) ?></td>
                 <td><?= h($teamsJerseys->colour) ?></td>
                 <td class="actions">
-                    <?= $this->Html->link(__('View'), ['controller' => 'TeamsJerseys', 'action' => 'view', $teamsJerseys->id]) ?>
-                    <?= $this->Html->link(__('Edit'), ['controller' => 'TeamsJerseys', 'action' => 'edit', $teamsJerseys->id]) ?>
-                    <?= $this->Form->postLink(__('Delete'), ['controller' => 'TeamsJerseys', 'action' => 'delete', $teamsJerseys->id], ['confirm' => __('Are you sure you want to delete # {0}?', $teamsJerseys->id)]) ?>
+                    <?= $this->Html->link(__('View'), ['controller' => 'Teamjerseys', 'action' => 'view', $teamsJerseys->id]) ?>
+                    <?= $this->Html->link(__('Edit'), ['controller' => 'Teamjerseys', 'action' => 'edit', $teamsJerseys->id]) ?>
+                    <?= $this->Form->postLink(__('Delete'), ['controller' => 'Teamjerseys', 'action' => 'delete', $teamsJerseys->id], ['confirm' => __('Are you sure you want to delete # {0}?', $teamsJerseys->id)]) ?>
                 </td>
             </tr>
             <?php endforeach; ?>

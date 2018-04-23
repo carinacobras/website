@@ -7,9 +7,9 @@ use Cake\ORM\Table;
 use Cake\Validation\Validator;
 
 /**
- * OrderItems Model
+ * Orderitems Model
  *
- * @property \App\Model\Table\OrderLinesTable|\Cake\ORM\Association\HasMany $OrderLines
+ * @property \App\Model\Table\OrderlinesTable|\Cake\ORM\Association\HasMany $orderlines
  *
  * @method \App\Model\Entity\OrderItem get($primaryKey, $options = [])
  * @method \App\Model\Entity\OrderItem newEntity($data = null, array $options = [])
@@ -36,7 +36,7 @@ class OrderItemsTable extends Table
         $this->setDisplayField('name');
         $this->setPrimaryKey('id');
 
-        $this->hasMany('OrderLines', [
+        $this->hasMany('orderlines', [
             'foreignKey' => 'order_item_id'
         ]);
     }

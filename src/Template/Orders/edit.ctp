@@ -17,8 +17,8 @@
         <li><?= $this->Html->link(__('New Player'), ['controller' => 'Players', 'action' => 'add']) ?></li>
         <li><?= $this->Html->link(__('List Invoices'), ['controller' => 'Invoices', 'action' => 'index']) ?></li>
         <li><?= $this->Html->link(__('New Invoice'), ['controller' => 'Invoices', 'action' => 'add']) ?></li>
-        <li><?= $this->Html->link(__('List Order Lines'), ['controller' => 'OrderLines', 'action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('New Order Line'), ['controller' => 'OrderLines', 'action' => 'add']) ?></li>
+        <li><?= $this->Html->link(__('List Order Lines'), ['controller' => 'orderlines', 'action' => 'index']) ?></li>
+        <li><?= $this->Html->link(__('New Order Line'), ['controller' => 'orderlines', 'action' => 'add']) ?></li>
     </ul>
 </nav>
 <div class="orders form col-sm-12">

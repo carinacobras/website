@@ -7,20 +7,20 @@ use Cake\ORM\Table;
 use Cake\Validation\Validator;
 
 /**
- * OrderLines Model
+ * orderlines Model
  *
  * @property \App\Model\Table\OrdersTable|\Cake\ORM\Association\BelongsTo $Orders
- * @property \App\Model\Table\OrderItemsTable|\Cake\ORM\Association\BelongsTo $OrderItems
+ * @property \App\Model\Table\OrderItemsTable|\Cake\ORM\Association\BelongsTo $Orderitems
  *
- * @method \App\Model\Entity\OrderLine get($primaryKey, $options = [])
- * @method \App\Model\Entity\OrderLine newEntity($data = null, array $options = [])
- * @method \App\Model\Entity\OrderLine[] newEntities(array $data, array $options = [])
- * @method \App\Model\Entity\OrderLine|bool save(\Cake\Datasource\EntityInterface $entity, $options = [])
- * @method \App\Model\Entity\OrderLine patchEntity(\Cake\Datasource\EntityInterface $entity, array $data, array $options = [])
- * @method \App\Model\Entity\OrderLine[] patchEntities($entities, array $data, array $options = [])
- * @method \App\Model\Entity\OrderLine findOrCreate($search, callable $callback = null, $options = [])
+ * @method \App\Model\Entity\orderline get($primaryKey, $options = [])
+ * @method \App\Model\Entity\orderline newEntity($data = null, array $options = [])
+ * @method \App\Model\Entity\orderline[] newEntities(array $data, array $options = [])
+ * @method \App\Model\Entity\orderline|bool save(\Cake\Datasource\EntityInterface $entity, $options = [])
+ * @method \App\Model\Entity\orderline patchEntity(\Cake\Datasource\EntityInterface $entity, array $data, array $options = [])
+ * @method \App\Model\Entity\orderline[] patchEntities($entities, array $data, array $options = [])
+ * @method \App\Model\Entity\orderline findOrCreate($search, callable $callback = null, $options = [])
  */
-class OrderLinesTable extends Table
+class OrderlinesTable extends Table
 {
 
     /**
@@ -41,7 +41,7 @@ class OrderLinesTable extends Table
             'foreignKey' => 'order_id',
             'joinType' => 'INNER'
         ]);
-        $this->belongsTo('OrderItems', [
+        $this->belongsTo('Orderitems', [
             'foreignKey' => 'order_item_id',
             'joinType' => 'INNER'
         ]);
@@ -72,7 +72,7 @@ class OrderLinesTable extends Table
     public function buildRules(RulesChecker $rules)
     {
         $rules->add($rules->existsIn(['order_id'], 'Orders'));
-        $rules->add($rules->existsIn(['order_item_id'], 'OrderItems'));
+        $rules->add($rules->existsIn(['order_item_id'], 'Orderitems'));
 
         return $rules;
     }

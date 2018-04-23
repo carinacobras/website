@@ -4,13 +4,13 @@ namespace App\Controller;
 use App\Controller\AppController;
 
 /**
- * OrderLines Controller
+ * orderlines Controller
  *
- * @property \App\Model\Table\OrderLinesTable $OrderLines
+ * @property \App\Model\Table\OrderlinesTable $orderlines
  *
- * @method \App\Model\Entity\OrderLine[] paginate($object = null, array $settings = [])
+ * @method \App\Model\Entity\orderline[] paginate($object = null, array $settings = [])
  */
-class OrderLinesController extends AppController
+class OrderlinesController extends AppController
 {
 
     /**
@@ -21,12 +21,12 @@ class OrderLinesController extends AppController
     public function index()
     {
         $this->paginate = [
-            'contain' => ['Orders', 'OrderItems']
+            'contain' => ['Orders', 'Orderitems']
         ];
-        $orderLines = $this->paginate($this->OrderLines);
+        $orderlines = $this->paginate($this->Orderlines);
 
-        $this->set(compact('orderLines'));
-        $this->set('_serialize', ['orderLines']);
+        $this->set(compact('orderlines'));
+        $this->set('_serialize', ['orderlines']);
     }
 
     /**
@@ -38,12 +38,12 @@ class OrderLinesController extends AppController
      */
     public function view($id = null)
     {
-        $orderLine = $this->OrderLines->get($id, [
-            'contain' => ['Orders', 'OrderItems']
+        $orderline = $this->Orderlines->get($id, [
+            'contain' => ['Orders', 'Orderitems']
         ]);
 
-        $this->set('orderLine', $orderLine);
-        $this->set('_serialize', ['orderLine']);
+        $this->set('orderline', $orderline);
+        $this->set('_serialize', ['orderline']);
     }
 
     /**
@@ -53,20 +53,20 @@ class OrderLinesController extends AppController
      */
     public function add()
     {
-        $orderLine = $this->OrderLines->newEntity();
+        $orderline = $this->Orderlines->newEntity();
         if ($this->request->is('post')) {
-            $orderLine = $this->OrderLines->patchEntity($orderLine, $this->request->getData());
-            if ($this->OrderLines->save($orderLine)) {
+            $orderline = $this->Orderlines->patchEntity($orderline, $this->request->getData());
+            if ($this->Orderlines->save($orderline)) {
                 $this->Flash->success(__('The order line has been saved.'));
 
                 return $this->redirect(['action' => 'index']);
             }
             $this->Flash->error(__('The order line could not be saved. Please, try again.'));
         }
-        $orders = $this->OrderLines->Orders->find('list', ['limit' => 200]);
-        $orderItems = $this->OrderLines->OrderItems->find('list', ['limit' => 200]);
-        $this->set(compact('orderLine', 'orders', 'orderItems'));
-        $this->set('_serialize', ['orderLine']);
+        $orders = $this->Orderlines->Orders->find('list', ['limit' => 200]);
+        $Orderitems = $this->Orderlines->Orderitems->find('list', ['limit' => 200]);
+        $this->set(compact('orderline', 'orders', 'Orderitems'));
+        $this->set('_serialize', ['orderline']);
     }
 
     /**
@@ -78,22 +78,22 @@ class OrderLinesController extends AppController
      */
     public function edit($id = null)
     {
-        $orderLine = $this->OrderLines->get($id, [
+        $orderline = $this->Orderlines->get($id, [
             'contain' => []
         ]);
         if ($this->request->is(['patch', 'post', 'put'])) {
-            $orderLine = $this->OrderLines->patchEntity($orderLine, $this->request->getData());
-            if ($this->OrderLines->save($orderLine)) {
+            $orderline = $this->Orderlines->patchEntity($orderline, $this->request->getData());
+            if ($this->Orderlines->save($orderline)) {
                 $this->Flash->success(__('The order line has been saved.'));
 
                 return $this->redirect(['action' => 'index']);
             }
             $this->Flash->error(__('The order line could not be saved. Please, try again.'));
         }
-        $orders = $this->OrderLines->Orders->find('list', ['limit' => 200]);
-        $orderItems = $this->OrderLines->OrderItems->find('list', ['limit' => 200]);
-        $this->set(compact('orderLine', 'orders', 'orderItems'));
-        $this->set('_serialize', ['orderLine']);
+        $orders = $this->Orderlines->Orders->find('list', ['limit' => 200]);
+        $Orderitems = $this->Orderlines->Orderitems->find('list', ['limit' => 200]);
+        $this->set(compact('orderline', 'orders', 'Orderitems'));
+        $this->set('_serialize', ['orderline']);
     }
 
     /**
@@ -106,8 +106,8 @@ class OrderLinesController extends AppController
     public function delete($id = null)
     {
         $this->request->allowMethod(['post', 'delete']);
-        $orderLine = $this->OrderLines->get($id);
-        if ($this->OrderLines->delete($orderLine)) {
+        $orderline = $this->Orderlines->get($id);
+        if ($this->Orderlines->delete($orderline)) {
             $this->Flash->success(__('The order line has been deleted.'));
         } else {
             $this->Flash->error(__('The order line could not be deleted. Please, try again.'));

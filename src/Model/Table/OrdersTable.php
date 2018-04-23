@@ -11,7 +11,7 @@ use Cake\Validation\Validator;
  *
  * @property \App\Model\Table\PlayersTable|\Cake\ORM\Association\BelongsTo $Players
  * @property \App\Model\Table\InvoicesTable|\Cake\ORM\Association\HasMany $Invoices
- * @property \App\Model\Table\OrderLinesTable|\Cake\ORM\Association\HasMany $OrderLines
+ * @property \App\Model\Table\OrderlinesTable|\Cake\ORM\Association\HasMany $orderlines
  *
  * @method \App\Model\Entity\Order get($primaryKey, $options = [])
  * @method \App\Model\Entity\Order newEntity($data = null, array $options = [])
@@ -45,7 +45,7 @@ class OrdersTable extends Table
         $this->hasMany('Invoices', [
             'foreignKey' => 'order_id'
         ]);
-        $this->hasMany('OrderLines', [
+        $this->hasMany('orderlines', [
             'foreignKey' => 'order_id'
         ]);
     }

@@ -39,7 +39,7 @@ class OrdersController extends AppController
     public function view($id = null)
     {
         $order = $this->Orders->get($id, [
-            'contain' => ['Players', 'Invoices', 'OrderLines']
+            'contain' => ['Players', 'Invoices', 'orderlines']
         ]);
 
         $this->set('order', $order);

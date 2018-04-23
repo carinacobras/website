@@ -89,6 +89,9 @@ class AppController extends Controller
         
         if ($this->Auth->user('role_id') === 2) {
             $this->viewBuilder()->setLayout('admin');
+            $this->set('is_admin', true);
+        } else {
+            $this->set('is_admin', false);
         }
     }
 

@@ -4,10 +4,10 @@ namespace App\Test\Fixture;
 use Cake\TestSuite\Fixture\TestFixture;
 
 /**
- * TeamsJerseysFixture
+ * TeamjerseysFixture
  *
  */
-class TeamsJerseysFixture extends TestFixture
+class TeamjerseysFixture extends TestFixture
 {
 
     /**

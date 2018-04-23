@@ -4,13 +4,13 @@ namespace App\Controller;
 use App\Controller\AppController;
 
 /**
- * TeamsJerseys Controller
+ * Teamjerseys Controller
  *
- * @property \App\Model\Table\TeamsJerseysTable $TeamsJerseys
+ * @property \App\Model\Table\TeamjerseysTable $Teamjerseys
  *
  * @method \App\Model\Entity\TeamsJersey[] paginate($object = null, array $settings = [])
  */
-class TeamsJerseysController extends AppController
+class TeamjerseysController extends AppController
 {
 
     /**
@@ -24,7 +24,7 @@ class TeamsJerseysController extends AppController
             'limit' => 100000,
             'contain' => ['Teams']
         ];
-        $teamsJerseys = $this->paginate($this->TeamsJerseys);
+        $teamsJerseys = $this->paginate($this->Teamjerseys);
         $competitions = [
 "Under 7s",
 "Under 9s",
@@ -56,7 +56,7 @@ class TeamsJerseysController extends AppController
      */
     public function view($id = null)
     {
-        $teamsJersey = $this->TeamsJerseys->get($id, [
+        $teamsJersey = $this->Teamjerseys->get($id, [
             'contain' => ['Teams']
         ]);
 
@@ -71,17 +71,17 @@ class TeamsJerseysController extends AppController
      */
     public function add()
     {
-        $teamsJersey = $this->TeamsJerseys->newEntity();
+        $teamsJersey = $this->Teamjerseys->newEntity();
         if ($this->request->is('post')) {
-            $teamsJersey = $this->TeamsJerseys->patchEntity($teamsJersey, $this->request->getData());
-            if ($this->TeamsJerseys->save($teamsJersey)) {
+            $teamsJersey = $this->Teamjerseys->patchEntity($teamsJersey, $this->request->getData());
+            if ($this->Teamjerseys->save($teamsJersey)) {
                 $this->Flash->success(__('The teams jersey has been saved.'));
 
                 return $this->redirect(['action' => 'index']);
             }
             $this->Flash->error(__('The teams jersey could not be saved. Please, try again.'));
         }
-        $teams = $this->TeamsJerseys->Teams->find('list', ['limit' => 200]);
+        $teams = $this->Teamjerseys->Teams->find('list', ['limit' => 200]);
         $this->set(compact('teamsJersey', 'teams'));
         $this->set('_serialize', ['teamsJersey']);
     }
@@ -95,19 +95,19 @@ class TeamsJerseysController extends AppController
      */
     public function edit($id = null)
     {
-        $teamsJersey = $this->TeamsJerseys->get($id, [
+        $teamsJersey = $this->Teamjerseys->get($id, [
             'contain' => []
         ]);
         if ($this->request->is(['patch', 'post', 'put'])) {
-            $teamsJersey = $this->TeamsJerseys->patchEntity($teamsJersey, $this->request->getData());
-            if ($this->TeamsJerseys->save($teamsJersey)) {
+            $teamsJersey = $this->Teamjerseys->patchEntity($teamsJersey, $this->request->getData());
+            if ($this->Teamjerseys->save($teamsJersey)) {
                 $this->Flash->success(__('The teams jersey has been saved.'));
 
                 return $this->redirect(['action' => 'index']);
             }
             $this->Flash->error(__('The teams jersey could not be saved. Please, try again.'));
         }
-        $teams = $this->TeamsJerseys->Teams->find('list', ['limit' => 200]);
+        $teams = $this->Teamjerseys->Teams->find('list', ['limit' => 200]);
         $this->set(compact('teamsJersey', 'teams'));
         $this->set('_serialize', ['teamsJersey']);
     }
@@ -122,8 +122,8 @@ class TeamsJerseysController extends AppController
     public function delete($id = null)
     {
         $this->request->allowMethod(['post', 'delete']);
-        $teamsJersey = $this->TeamsJerseys->get($id);
-        if ($this->TeamsJerseys->delete($teamsJersey)) {
+        $teamsJersey = $this->Teamjerseys->get($id);
+        if ($this->Teamjerseys->delete($teamsJersey)) {
             $this->Flash->success(__('The teams jersey has been deleted.'));
         } else {
             $this->Flash->error(__('The teams jersey could not be deleted. Please, try again.'));

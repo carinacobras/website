@@ -12,7 +12,7 @@
             echo $this->Form->create($contact);
             echo $this->Form->control('name');
             echo $this->Form->control('email');
-            echo $this->Form->control('enquirytype', ['options' => ['Uniform Query', 'Fees Query', 'First Time Player', 'General Query', 'Change Contact Details']]);
+            echo $this->Form->control('enquirytype', ['label' => 'Enquiry Type', 'options' => ['Uniform Query', 'Fees Query', 'First Time Player', 'General Query', 'Change Contact Details']]);
             echo $this->Form->control('body');
             echo $this->Form->button('Submit');
             echo $this->Form->end();

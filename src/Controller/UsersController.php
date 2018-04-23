@@ -3,6 +3,8 @@ namespace App\Controller;
 
 use App\Controller\AppController;
 use Cake\Event\Event;
+use Cake\ORM\TableRegistry;
+
 /**
  * Users Controller
  *
@@ -40,7 +42,7 @@ class UsersController extends AppController
     public function view($id = null)
     {
         $user = $this->Users->get($id, [
-            'contain' => ['Coaches', 'Emails', 'Managers', 'PhoneNumbers', 'Players', 'UsersRoles']
+            'contain' => ['Coaches', 'Emails', 'Managers', 'Phonenumbers', 'Players', 'UsersRoles']
         ]);
 
         $this->set('user', $user);
@@ -55,17 +57,87 @@ class UsersController extends AppController
     public function add()
     {
         $user = $this->Users->newEntity();
+
+        $this->Phonenumbers = TableRegistry::get('Phonenumbers');
+        $this->Emails = TableRegistry::get('Emails');
+        
+        $this->Players = TableRegistry::get('Players');
+        $this->Teams = TableRegistry::get('Teams');
+        $teams_list = $this->Teams->find('list', array(
+            // 'conditions' => ['Competitions.age <' => 10],
+            'contain' => ['Competitions'],
+            'fields' => ['id', 'full_title']
+        ));
+
         if ($this->request->is('post')) {
+
             $user = $this->Users->patchEntity($user, $this->request->getData());
-            if ($this->Users->save($user)) {
+            $saveuser = $this->Users->save($user);
+            if ($saveuser) {
+                $phonenumbers = $this->request->data('phonenumbers');
+
+                foreach ($phonenumbers as $phonenumber) {
+                    $data = [
+                    'user_id'    => $user->id,
+                    'number'    => $phonenumber
+                    ];
+                    $phonenumberEntity = $this->Users->Phonenumbers->newEntity();
+                    $this->Phonenumbers->patchEntity($phonenumberEntity, $data);
+                    $this->Phonenumbers->save($phonenumberEntity);
+                }
+
+                $emails = $this->request->data('Emails');
+
+                foreach ($emails as $email) {
+                    $data = [
+                    'user_id'    => $user->id,
+                    'email_address'    => $email
+                    ];
+                    $emailEntity = $this->Users->Emails->newEntity();
+                    $this->Emails->patchEntity($emailEntity, $data);
+                    $this->Emails->save($emailEntity);
+                }
+                
+
+                if ($this->request->data["is_player"] == 1) {
+                    $player = $this->Players->newEntity();
+                    $this->loadModel('PlayersTeams');
+
+                    $playerdata = [
+                        'user_id'    => $saveuser->id,
+                        'height'    => $this->request->data["height"],
+                        'experience'    => $this->request->data["experience"],
+                    ];
+                    $this->Players->patchEntity($player, $playerdata);
+                    $saveplayer = $this->Players->save($player);
+
+                    if ($saveplayer) {
+                        $teams = $this->request->data('teams');
+
+                        foreach ($teams as $team) {
+                            $data = [
+                            'player_id'    => $saveplayer->id,
+                            'team_id'    => $team
+                            ];
+                            $playerteamEntity = $this->PlayersTeams->newEntity();
+                            $this->PlayersTeams->patchEntity($playerteamEntity, $data);
+                            $this->PlayersTeams->save($playerteamEntity);
+                        }
+                    }
+         
+                }
+
                 $this->Flash->success(__('The user has been saved.'));
 
                 return $this->redirect(['action' => 'index']);
+                
             }
             $this->Flash->error(__('The user could not be saved. Please, try again.'));
         }
+
         $this->set(compact('user'));
         $this->set('_serialize', ['user']);
+        $this->set('teams', $teams_list);
     }
 
     /**
@@ -78,10 +150,13 @@ class UsersController extends AppController
     public function edit($id = null)
     {
         $user = $this->Users->get($id, [
-            'contain' => []
+            'contain' => ['Coaches', 'Emails', 'Managers', 'Phonenumbers', 'Players', 'UsersRoles']
         ]);
+
         if ($this->request->is(['patch', 'post', 'put'])) {
-            $user = $this->Users->patchEntity($user, $this->request->getData());
+            $user = $this->Users->patchEntity($user, $this->request->getData(), [
+                'associated' => ['Emails', 'Phonenumbers']
+                ]);
             if ($this->Users->save($user)) {
                 $this->Flash->success(__('The user has been saved.'));
 

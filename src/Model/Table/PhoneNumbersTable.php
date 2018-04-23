@@ -7,7 +7,7 @@ use Cake\ORM\Table;
 use Cake\Validation\Validator;
 
 /**
- * PhoneNumbers Model
+ * Phonenumbers Model
  *
  * @property \App\Model\Table\UsersTable|\Cake\ORM\Association\BelongsTo $Users
  * @property \App\Model\Table\ContactsTable|\Cake\ORM\Association\HasMany $Contacts
@@ -20,7 +20,7 @@ use Cake\Validation\Validator;
  * @method \App\Model\Entity\PhoneNumber[] patchEntities($entities, array $data, array $options = [])
  * @method \App\Model\Entity\PhoneNumber findOrCreate($search, callable $callback = null, $options = [])
  */
-class PhoneNumbersTable extends Table
+class PhonenumbersTable extends Table
 {
 
     /**

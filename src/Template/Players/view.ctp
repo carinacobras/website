@@ -13,10 +13,6 @@
             <td><?= $player->has('user') ? $this->Html->link($player->user->first_name . ' ' . $player->user->last_name, ['controller' => 'Users', 'action' => 'view', $player->user->id]) : '' ?></td>
         </tr>
         <tr>
-            <th scope="row"><?= __('Team') ?></th>
-            <td><?= $player->has('team') ? $this->Html->link($player->team->name, ['controller' => 'Teams', 'action' => 'view', $player->team->id]) : '' ?></td>
-        </tr>
-        <tr>
             <th scope="row"><?= __('Height') ?></th>
             <td><?= $player->height ?></td>
         </tr>
@@ -104,6 +100,18 @@
             </tr>
             <?php endforeach; ?>
         </table>
+        <?php endif; ?>
+    </div>
+    <div class="related">
+        <h4><?= __('Teams') ?></h4>
+        <?php if (!empty($player->players_teams)): ?>
+            <?php foreach ($teams as $team): ?>
+                <?php foreach ($player->players_teams as $player_teams): ?>
+                    <p><? if ($team->id === $player_teams->team_id) {
+                        echo $team->full_title;
+                    } ?></p>
+                <?php endforeach; ?>
+            <?php endforeach; ?>
         <?php endif; ?>
     </div>
 </div>

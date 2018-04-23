@@ -12,7 +12,7 @@ use Cake\ORM\Entity;
  *
  * @property \App\Model\Entity\Player $player
  * @property \App\Model\Entity\Invoice[] $invoices
- * @property \App\Model\Entity\OrderLine[] $order_lines
+ * @property \App\Model\Entity\orderline[] $order_lines
  */
 class Order extends Entity
 {

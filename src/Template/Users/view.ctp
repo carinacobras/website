@@ -114,7 +114,7 @@
     </div>
     <div class="related">
         <h4><?= __('Phone Numbers') ?></h4>
-        <?php if (!empty($user->phone_numbers)): ?>
+        <?php if (!empty($user->phonenumbers)): ?>
         <table class="table">
             <tr>
                 <th scope="col"><?= __('Id') ?></th>
@@ -122,15 +122,15 @@
                 <th scope="col"><?= __('User Id') ?></th>
                 <th scope="col" class="actions"><?= __('Actions') ?></th>
             </tr>
-            <?php foreach ($user->phone_numbers as $phoneNumbers): ?>
+            <?php foreach ($user->phonenumbers as $phonenumber): ?>
             <tr>
-                <td><?= h($phoneNumbers->id) ?></td>
-                <td><?= h($phoneNumbers->number) ?></td>
-                <td><?= h($phoneNumbers->user_id) ?></td>
+                <td><?= h($phonenumber->id) ?></td>
+                <td><?= h($phonenumber->number) ?></td>
+                <td><?= h($phonenumber->user_id) ?></td>
                 <td class="actions">
-                    <?= $this->Html->link(__('View'), ['controller' => 'PhoneNumbers', 'action' => 'view', $phoneNumbers->id]) ?>
-                    <?= $this->Html->link(__('Edit'), ['controller' => 'PhoneNumbers', 'action' => 'edit', $phoneNumbers->id]) ?>
-                    <?= $this->Form->postLink(__('Delete'), ['controller' => 'PhoneNumbers', 'action' => 'delete', $phoneNumbers->id], ['confirm' => __('Are you sure you want to delete # {0}?', $phoneNumbers->id)]) ?>
+                    <?= $this->Html->link(__('View'), ['controller' => 'Phonenumbers', 'action' => 'view', $phonenumber->id]) ?>
+                    <?= $this->Html->link(__('Edit'), ['controller' => 'Phonenumbers', 'action' => 'edit', $phonenumber->id]) ?>
+                    <?= $this->Form->postLink(__('Delete'), ['controller' => 'Phonenumbers', 'action' => 'delete', $phonenumber->id], ['confirm' => __('Are you sure you want to delete # {0}?', $phonenumber->id)]) ?>
                 </td>
             </tr>
             <?php endforeach; ?>

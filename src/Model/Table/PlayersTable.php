@@ -13,6 +13,7 @@ use Cake\Validation\Validator;
  * @property \App\Model\Table\TeamsTable|\Cake\ORM\Association\BelongsTo $Teams
  * @property \App\Model\Table\AbsencesTable|\Cake\ORM\Association\HasMany $Absences
  * @property \App\Model\Table\ContactsTable|\Cake\ORM\Association\HasMany $Contacts
+ * @property \App\Model\Table\PlayersTeamsTable|\Cake\ORM\Association\HasMany $PlayersTeams
  * @property \App\Model\Table\RanksTable|\Cake\ORM\Association\HasMany $Ranks
  *
  * @method \App\Model\Entity\Player get($primaryKey, $options = [])
@@ -44,9 +45,7 @@ class PlayersTable extends Table
             'foreignKey' => 'user_id',
             'joinType' => 'INNER'
         ]);
-        $this->belongsTo('Teams', [
-            'foreignKey' => 'team_id'
-        ]);
+
         $this->hasMany('Absences', [
             'foreignKey' => 'player_id'
         ]);
@@ -54,6 +53,10 @@ class PlayersTable extends Table
             'foreignKey' => 'player_id'
         ]);
         $this->hasMany('Ranks', [
+            'foreignKey' => 'player_id'
+        ]);
+
+        $this->hasMany('PlayersTeams', [
             'foreignKey' => 'player_id'
         ]);
     }
@@ -80,11 +83,11 @@ class PlayersTable extends Table
      * @param \Cake\ORM\RulesChecker $rules The rules object to be modified.
      * @return \Cake\ORM\RulesChecker
      */
-    public function buildRules(RulesChecker $rules)
-    {
-        $rules->add($rules->existsIn(['user_id'], 'Users'));
-        $rules->add($rules->existsIn(['team_id'], 'Teams'));
+    // public function buildRules(RulesChecker $rules)
+    // {
+    //     $rules->add($rules->existsIn(['user_id'], 'Users'));
+    //     $rules->add($rules->existsIn(['team_id'], 'Teams'));
 
-        return $rules;
-    }
+    //     return $rules;
+    // }
 }

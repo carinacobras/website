@@ -4,10 +4,10 @@ namespace App\Test\Fixture;
 use Cake\TestSuite\Fixture\TestFixture;
 
 /**
- * OrderLinesFixture
+ * orderlinesFixture
  *
  */
-class OrderLinesFixture extends TestFixture
+class orderlinesFixture extends TestFixture
 {
 
     /**

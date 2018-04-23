@@ -1,22 +1,22 @@
 <?php
 namespace App\Test\TestCase\Model\Table;
 
-use App\Model\Table\TeamsJerseysTable;
+use App\Model\Table\TeamjerseysTable;
 use Cake\ORM\TableRegistry;
 use Cake\TestSuite\TestCase;
 
 /**
- * App\Model\Table\TeamsJerseysTable Test Case
+ * App\Model\Table\TeamjerseysTable Test Case
  */
-class TeamsJerseysTableTest extends TestCase
+class TeamjerseysTableTest extends TestCase
 {
 
     /**
      * Test subject
      *
-     * @var \App\Model\Table\TeamsJerseysTable
+     * @var \App\Model\Table\TeamjerseysTable
      */
-    public $TeamsJerseys;
+    public $Teamjerseys;
 
     /**
      * Fixtures
@@ -51,8 +51,8 @@ class TeamsJerseysTableTest extends TestCase
     public function setUp()
     {
         parent::setUp();
-        $config = TableRegistry::exists('TeamsJerseys') ? [] : ['className' => TeamsJerseysTable::class];
-        $this->TeamsJerseys = TableRegistry::get('TeamsJerseys', $config);
+        $config = TableRegistry::exists('Teamjerseys') ? [] : ['className' => TeamjerseysTable::class];
+        $this->Teamjerseys = TableRegistry::get('Teamjerseys', $config);
     }
 
     /**
@@ -62,7 +62,7 @@ class TeamsJerseysTableTest extends TestCase
      */
     public function tearDown()
     {
-        unset($this->TeamsJerseys);
+        unset($this->Teamjerseys);
 
         parent::tearDown();
     }

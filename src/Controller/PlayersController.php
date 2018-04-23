@@ -21,12 +21,12 @@ class PlayersController extends AppController
     public function index()
     {
         $this->paginate = [
-            'limit' => 100000,
+            'limit' => 10000,
+            'maxLimit' => 10000,
             'sortWhitelist' => [
                 'Users.id',
-                'Teams.id',
             ],
-            'contain' => ['Users', 'Teams', 'Ranks', 'Contacts', 'Absences']
+            'contain' => ['Users', 'PlayersTeams', 'Ranks', 'Contacts', 'Absences']
         ];
         $players = $this->paginate($this->Players);
 
@@ -44,10 +44,13 @@ class PlayersController extends AppController
     public function view($id = null)
     {
         $player = $this->Players->get($id, [
-            'contain' => ['Users', 'Teams', 'Absences', 'Contacts', 'Ranks', 'Contacts.PhoneNumbers', 'Contacts.Relationships']
-        ]);
-
+            'contain' => ['Users', 'PlayersTeams', 'Absences', 'Contacts', 'Ranks', 'Contacts.Phonenumbers', 'Contacts.Relationships']
+            ]);
+ 
+        $this->loadModel('Teams');
+        $teams = $this->Teams->find('all');
         $this->set('player', $player);
+        $this->set('teams', $teams);
         $this->set('_serialize', ['player']);
     }
 

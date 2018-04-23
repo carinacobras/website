@@ -10,7 +10,7 @@ use Cake\Validation\Validator;
  * Contacts Model
  *
  * @property \App\Model\Table\PlayersTable|\Cake\ORM\Association\BelongsTo $Players
- * @property \App\Model\Table\PhoneNumbersTable|\Cake\ORM\Association\BelongsTo $PhoneNumbers
+ * @property \App\Model\Table\PhonenumbersTable|\Cake\ORM\Association\BelongsTo $Phonenumbers
  * @property \App\Model\Table\EmailsTable|\Cake\ORM\Association\BelongsTo $Emails
  * @property \App\Model\Table\RelationshipsTable|\Cake\ORM\Association\BelongsTo $Relationships
  *
@@ -43,7 +43,7 @@ class ContactsTable extends Table
             'foreignKey' => 'player_id',
             'joinType' => 'INNER'
         ]);
-        $this->belongsTo('PhoneNumbers', [
+        $this->belongsTo('Phonenumbers', [
             'foreignKey' => 'phone_number_id'
         ]);
         $this->belongsTo('Emails', [
@@ -90,7 +90,7 @@ class ContactsTable extends Table
     public function buildRules(RulesChecker $rules)
     {
         $rules->add($rules->existsIn(['player_id'], 'Players'));
-        $rules->add($rules->existsIn(['phone_number_id'], 'PhoneNumbers'));
+        $rules->add($rules->existsIn(['phone_number_id'], 'Phonenumbers'));
         $rules->add($rules->existsIn(['emails_id'], 'Emails'));
         $rules->add($rules->existsIn(['relationship_id'], 'Relationships'));
 

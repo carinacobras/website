@@ -15,8 +15,8 @@
         <li><?= $this->Html->link(__('New Player'), ['controller' => 'Players', 'action' => 'add']) ?> </li>
         <li><?= $this->Html->link(__('List Invoices'), ['controller' => 'Invoices', 'action' => 'index']) ?> </li>
         <li><?= $this->Html->link(__('New Invoice'), ['controller' => 'Invoices', 'action' => 'add']) ?> </li>
-        <li><?= $this->Html->link(__('List Order Lines'), ['controller' => 'OrderLines', 'action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('New Order Line'), ['controller' => 'OrderLines', 'action' => 'add']) ?> </li>
+        <li><?= $this->Html->link(__('List Order Lines'), ['controller' => 'orderlines', 'action' => 'index']) ?> </li>
+        <li><?= $this->Html->link(__('New Order Line'), ['controller' => 'orderlines', 'action' => 'add']) ?> </li>
     </ul>
 </nav>
 <div class="orders view col-sm-12">
@@ -70,15 +70,15 @@
                 <th scope="col"><?= __('Order Item') ?></th>
                 <th scope="col" class="actions"><?= __('Actions') ?></th>
             </tr>
-            <?php foreach ($order->order_lines as $orderLines): ?>
+            <?php foreach ($order->order_lines as $orderlines): ?>
             <tr>
-                <td><?= h($orderLines->id) ?></td>
-                <td><?= h($orderLines->order_id) ?></td>
-                <td><?= h($orderLines->order_item) ?></td>
+                <td><?= h($orderlines->id) ?></td>
+                <td><?= h($orderlines->order_id) ?></td>
+                <td><?= h($orderlines->order_item) ?></td>
                 <td class="actions">
-                    <?= $this->Html->link(__('View'), ['controller' => 'OrderLines', 'action' => 'view', $orderLines->id]) ?>
-                    <?= $this->Html->link(__('Edit'), ['controller' => 'OrderLines', 'action' => 'edit', $orderLines->id]) ?>
-                    <?= $this->Form->postLink(__('Delete'), ['controller' => 'OrderLines', 'action' => 'delete', $orderLines->id], ['confirm' => __('Are you sure you want to delete # {0}?', $orderLines->id)]) ?>
+                    <?= $this->Html->link(__('View'), ['controller' => 'orderlines', 'action' => 'view', $orderlines->id]) ?>
+                    <?= $this->Html->link(__('Edit'), ['controller' => 'orderlines', 'action' => 'edit', $orderlines->id]) ?>
+                    <?= $this->Form->postLink(__('Delete'), ['controller' => 'orderlines', 'action' => 'delete', $orderlines->id], ['confirm' => __('Are you sure you want to delete # {0}?', $orderlines->id)]) ?>
                 </td>
             </tr>
             <?php endforeach; ?>

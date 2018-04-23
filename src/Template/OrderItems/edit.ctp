@@ -8,17 +8,17 @@
         <li class="heading"><?= __('Actions') ?></li>
         <li><?= $this->Form->postLink(
                 __('Delete'),
-                ['action' => 'delete', $orderItem->id],
-                ['confirm' => __('Are you sure you want to delete # {0}?', $orderItem->id)]
+                ['action' => 'delete', $orderitem->id],
+                ['confirm' => __('Are you sure you want to delete # {0}?', $orderitem->id)]
             )
         ?></li>
         <li><?= $this->Html->link(__('List Order Items'), ['action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('List Order Lines'), ['controller' => 'OrderLines', 'action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('New Order Line'), ['controller' => 'OrderLines', 'action' => 'add']) ?></li>
+        <li><?= $this->Html->link(__('List Order Lines'), ['controller' => 'orderlines', 'action' => 'index']) ?></li>
+        <li><?= $this->Html->link(__('New Order Line'), ['controller' => 'orderlines', 'action' => 'add']) ?></li>
     </ul>
 </nav>
-<div class="orderItems form col-sm-12">
-    <?= $this->Form->create($orderItem) ?>
+<div class="Orderitems form col-sm-12">
+    <?= $this->Form->create($orderitem) ?>
     <fieldset>
         <legend><?= __('Edit Order Item') ?></legend>
         <?php

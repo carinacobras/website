@@ -1,13 +1,13 @@
 <?php
 namespace App\Test\TestCase\Controller;
 
-use App\Controller\OrderLinesController;
+use App\Controller\OrderlinesController;
 use Cake\TestSuite\IntegrationTestCase;
 
 /**
- * App\Controller\OrderLinesController Test Case
+ * App\Controller\OrderlinesController Test Case
  */
-class OrderLinesControllerTest extends IntegrationTestCase
+class OrderlinesControllerTest extends IntegrationTestCase
 {
 
     /**

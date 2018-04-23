@@ -4,10 +4,10 @@ namespace App\Test\Fixture;
 use Cake\TestSuite\Fixture\TestFixture;
 
 /**
- * PhoneNumbersFixture
+ * PhonenumbersFixture
  *
  */
-class PhoneNumbersFixture extends TestFixture
+class PhonenumbersFixture extends TestFixture
 {
 
     /**

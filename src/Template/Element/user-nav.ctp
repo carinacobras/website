@@ -7,9 +7,6 @@
 
     $session = $this->request->getSession(); // 3.5 or more
     $user_data = $session->read('Auth.User');
-
-    //$loguser = $this->request->getSession()->read('Auth');
-
     if($user_data) {
         $loggedusername = $user_data['first_name'].' '.$user_data['last_name'];
         // user is logged in, show logout..user menu etc     

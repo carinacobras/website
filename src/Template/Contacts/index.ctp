@@ -10,8 +10,8 @@
         <li><?= $this->Html->link(__('New Contact'), ['action' => 'add']) ?></li>
         <li><?= $this->Html->link(__('List Players'), ['controller' => 'Players', 'action' => 'index']) ?></li>
         <li><?= $this->Html->link(__('New Player'), ['controller' => 'Players', 'action' => 'add']) ?></li>
-        <li><?= $this->Html->link(__('List Phone Numbers'), ['controller' => 'PhoneNumbers', 'action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('New Phone Number'), ['controller' => 'PhoneNumbers', 'action' => 'add']) ?></li>
+        <li><?= $this->Html->link(__('List Phone Numbers'), ['controller' => 'Phonenumbers', 'action' => 'index']) ?></li>
+        <li><?= $this->Html->link(__('New Phone Number'), ['controller' => 'Phonenumbers', 'action' => 'add']) ?></li>
         <li><?= $this->Html->link(__('List Emails'), ['controller' => 'Emails', 'action' => 'index']) ?></li>
         <li><?= $this->Html->link(__('New Email'), ['controller' => 'Emails', 'action' => 'add']) ?></li>
         <li><?= $this->Html->link(__('List Relationships'), ['controller' => 'Relationships', 'action' => 'index']) ?></li>
@@ -40,7 +40,7 @@
                 <td><?= $contact->has('player') ? $this->Html->link($contact->player->id, ['controller' => 'Players', 'action' => 'view', $contact->player->id]) : '' ?></td>
                 <td><?= h($contact->first_name) ?></td>
                 <td><?= h($contact->last_name) ?></td>
-                <td><?= $contact->has('phone_number') ? $this->Html->link($contact->phone_number->number, ['controller' => 'PhoneNumbers', 'action' => 'view', $contact->phone_number->id]) : '' ?></td>
+                <td><?= $contact->has('phone_number') ? $this->Html->link($contact->phone_number->number, ['controller' => 'Phonenumbers', 'action' => 'view', $contact->phone_number->id]) : '' ?></td>
                 <td><?= $contact->has('email') ? $this->Html->link($contact->email->id, ['controller' => 'Emails', 'action' => 'view', $contact->email->id]) : '' ?></td>
                 <td><?= $contact->has('relationship') ? $this->Html->link($contact->relationship->title, ['controller' => 'Relationships', 'action' => 'view', $contact->relationship->id]) : '' ?></td>
                 <td class="actions">

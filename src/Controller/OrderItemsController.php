@@ -4,13 +4,13 @@ namespace App\Controller;
 use App\Controller\AppController;
 
 /**
- * OrderItems Controller
+ * Orderitems Controller
  *
- * @property \App\Model\Table\OrderItemsTable $OrderItems
+ * @property \App\Model\Table\OrderItemsTable $Orderitems
  *
  * @method \App\Model\Entity\OrderItem[] paginate($object = null, array $settings = [])
  */
-class OrderItemsController extends AppController
+class OrderitemsController extends AppController
 {
 
     /**
@@ -20,10 +20,10 @@ class OrderItemsController extends AppController
      */
     public function index()
     {
-        $orderItems = $this->paginate($this->OrderItems);
+        $Orderitems = $this->paginate($this->Orderitems);
 
-        $this->set(compact('orderItems'));
-        $this->set('_serialize', ['orderItems']);
+        $this->set(compact('Orderitems'));
+        $this->set('_serialize', ['Orderitems']);
     }
 
     /**
@@ -35,12 +35,12 @@ class OrderItemsController extends AppController
      */
     public function view($id = null)
     {
-        $orderItem = $this->OrderItems->get($id, [
-            'contain' => ['OrderLines']
+        $orderitem = $this->Orderitems->get($id, [
+            'contain' => ['orderlines']
         ]);
 
-        $this->set('orderItem', $orderItem);
-        $this->set('_serialize', ['orderItem']);
+        $this->set('orderitem', $orderitem);
+        $this->set('_serialize', ['orderitem']);
     }
 
     /**
@@ -50,18 +50,18 @@ class OrderItemsController extends AppController
      */
     public function add()
     {
-        $orderItem = $this->OrderItems->newEntity();
+        $orderitem = $this->Orderitems->newEntity();
         if ($this->request->is('post')) {
-            $orderItem = $this->OrderItems->patchEntity($orderItem, $this->request->getData());
-            if ($this->OrderItems->save($orderItem)) {
+            $orderitem = $this->Orderitems->patchEntity($orderitem, $this->request->getData());
+            if ($this->Orderitems->save($orderitem)) {
                 $this->Flash->success(__('The order item has been saved.'));
 
                 return $this->redirect(['action' => 'index']);
             }
             $this->Flash->error(__('The order item could not be saved. Please, try again.'));
         }
-        $this->set(compact('orderItem'));
-        $this->set('_serialize', ['orderItem']);
+        $this->set(compact('orderitem'));
+        $this->set('_serialize', ['orderitem']);
     }
 
     /**
@@ -73,20 +73,20 @@ class OrderItemsController extends AppController
      */
     public function edit($id = null)
     {
-        $orderItem = $this->OrderItems->get($id, [
+        $orderitem = $this->Orderitems->get($id, [
             'contain' => []
         ]);
         if ($this->request->is(['patch', 'post', 'put'])) {
-            $orderItem = $this->OrderItems->patchEntity($orderItem, $this->request->getData());
-            if ($this->OrderItems->save($orderItem)) {
+            $orderitem = $this->Orderitems->patchEntity($orderitem, $this->request->getData());
+            if ($this->Orderitems->save($orderitem)) {
                 $this->Flash->success(__('The order item has been saved.'));
 
                 return $this->redirect(['action' => 'index']);
             }
             $this->Flash->error(__('The order item could not be saved. Please, try again.'));
         }
-        $this->set(compact('orderItem'));
-        $this->set('_serialize', ['orderItem']);
+        $this->set(compact('orderitem'));
+        $this->set('_serialize', ['orderitem']);
     }
 
     /**
@@ -99,8 +99,8 @@ class OrderItemsController extends AppController
     public function delete($id = null)
     {
         $this->request->allowMethod(['post', 'delete']);
-        $orderItem = $this->OrderItems->get($id);
-        if ($this->OrderItems->delete($orderItem)) {
+        $orderitem = $this->Orderitems->get($id);
+        if ($this->Orderitems->delete($orderitem)) {
             $this->Flash->success(__('The order item has been deleted.'));
         } else {
             $this->Flash->error(__('The order item could not be deleted. Please, try again.'));

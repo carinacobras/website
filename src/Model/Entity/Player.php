@@ -14,6 +14,7 @@ use Cake\ORM\Entity;
  * @property \App\Model\Entity\Team $team
  * @property \App\Model\Entity\Absence[] $absence
  * @property \App\Model\Entity\Contact[] $contact
+ * @property \App\Model\Entity\PlayersTeams[] $playersteams
  * @property \App\Model\Entity\Rank[] $rank
  */
 class Player extends Entity
@@ -30,6 +31,6 @@ class Player extends Entity
      */
     protected $_accessible = [
         '*' => true,
-        'id' => false
+        'id' => true
     ];
 }

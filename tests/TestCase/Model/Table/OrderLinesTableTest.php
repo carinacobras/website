@@ -1,22 +1,22 @@
 <?php
 namespace App\Test\TestCase\Model\Table;
 
-use App\Model\Table\OrderLinesTable;
+use App\Model\Table\OrderlinesTable;
 use Cake\ORM\TableRegistry;
 use Cake\TestSuite\TestCase;
 
 /**
- * App\Model\Table\OrderLinesTable Test Case
+ * App\Model\Table\OrderlinesTable Test Case
  */
-class OrderLinesTableTest extends TestCase
+class OrderlinesTableTest extends TestCase
 {
 
     /**
      * Test subject
      *
-     * @var \App\Model\Table\OrderLinesTable
+     * @var \App\Model\Table\OrderlinesTable
      */
-    public $OrderLines;
+    public $orderlines;
 
     /**
      * Fixtures
@@ -56,8 +56,8 @@ class OrderLinesTableTest extends TestCase
     public function setUp()
     {
         parent::setUp();
-        $config = TableRegistry::exists('OrderLines') ? [] : ['className' => OrderLinesTable::class];
-        $this->OrderLines = TableRegistry::get('OrderLines', $config);
+        $config = TableRegistry::exists('orderlines') ? [] : ['className' => OrderlinesTable::class];
+        $this->orderlines = TableRegistry::get('orderlines', $config);
     }
 
     /**
@@ -67,7 +67,7 @@ class OrderLinesTableTest extends TestCase
      */
     public function tearDown()
     {
-        unset($this->OrderLines);
+        unset($this->orderlines);
 
         parent::tearDown();
     }

@@ -9,12 +9,35 @@
     <fieldset>
         <legend><?= __('Edit User') ?></legend>
         <?php
-            echo $this->Form->control('first_name');
+            echo $this->Form->control('role', [
+            'options' => ['user' => 'User', 'admin' => 'Admin']
+            ]);
+            echo $this->Form->control('username');
+			echo $this->Form->control('password');
             echo $this->Form->control('first_name');
             echo $this->Form->control('last_name');
-            echo $this->Form->control('gender');
-            echo $this->Form->control('dob');
-        ?>
+            if (!empty($user->emails)) {
+                foreach ($user->emails as $key => $value) {
+                    echo $this->Form->hidden("emails.".$key.".id");
+                    echo $this->Form->control("emails.".$key.".email_address", array('value' => $key['email_address']));
+                }
+            }
+			echo $this->Form->input('dob', 
+				['minYear' => date('Y') - 70,
+				'maxYear' => date("Y") - 5,
+				'day' => true,
+				'month' => true,
+				'year' => true
+                ]);
+            echo $this->Form->control('gender', array('type' => 'radio', 'options' => ['Male', 'Female', 'No answer'] ));
+            if (!empty($user->phonenumbers)) {
+                foreach ($user->phonenumbers as $key => $value) {
+                    echo $this->Form->hidden("phonenumbers.".$key.".id");
+                    echo $this->Form->control("phonenumbers.".$key.".number", array('value' => $key['number']));
+                }
+            }
+
+            ?>
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>
     <?= $this->Form->postLink(

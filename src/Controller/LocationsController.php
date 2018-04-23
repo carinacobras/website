@@ -2,6 +2,7 @@
 namespace App\Controller;
 
 use App\Controller\AppController;
+use Cake\Event\Event;
 
 /**
  * Locations Controller
@@ -107,5 +108,12 @@ class LocationsController extends AppController
         }
 
         return $this->redirect(['action' => 'index']);
+    }
+
+
+    public function beforeFilter(Event $event)
+    {
+        parent::beforeFilter($event);
+        $this->Auth->allow(['index']);
     }
 }

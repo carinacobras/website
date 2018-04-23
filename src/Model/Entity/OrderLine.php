@@ -4,7 +4,7 @@ namespace App\Model\Entity;
 use Cake\ORM\Entity;
 
 /**
- * OrderLine Entity
+ * orderline Entity
  *
  * @property int $id
  * @property int $order_id
@@ -13,7 +13,7 @@ use Cake\ORM\Entity;
  * @property \App\Model\Entity\Order $order
  * @property \App\Model\Entity\OrderItem $order_item
  */
-class OrderLine extends Entity
+class orderline extends Entity
 {
 
     /**

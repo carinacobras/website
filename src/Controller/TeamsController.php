@@ -40,7 +40,7 @@ class TeamsController extends AppController
     public function view($id = null)
     {
         $team = $this->Teams->get($id, [
-            'contain' => ['Competitions', 'Coaches', 'Managers', 'Players', 'TeamsJerseys', 'Training', 'Games']
+            'contain' => ['Competitions', 'Coaches', 'Managers', 'Players', 'Teamjerseys', 'Training', 'Games']
         ]);
 
         $this->set('team', $team);

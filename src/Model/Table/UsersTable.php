@@ -12,7 +12,7 @@ use Cake\ORM\Rule\IsUnique;
  * @property \App\Model\Table\CoachesTable|\Cake\ORM\Association\HasMany $Coaches
  * @property \App\Model\Table\EmailsTable|\Cake\ORM\Association\HasMany $Emails
  * @property \App\Model\Table\ManagersTable|\Cake\ORM\Association\HasMany $Managers
- * @property \App\Model\Table\PhoneNumbersTable|\Cake\ORM\Association\HasMany $PhoneNumbers
+ * @property \App\Model\Table\PhonenumbersTable|\Cake\ORM\Association\HasMany $Phonenumbers
  * @property \App\Model\Table\PlayersTable|\Cake\ORM\Association\HasMany $Players
  * @property \App\Model\Table\RolesTable|\Cake\ORM\Association\HasMany $Roles
  *
@@ -54,7 +54,7 @@ class UsersTable extends Table
         $this->hasMany('Managers', [
             'foreignKey' => 'user_id'
         ]);
-        $this->hasMany('PhoneNumbers', [
+        $this->hasMany('Phonenumbers', [
             'foreignKey' => 'user_id'
         ]);
         $this->hasMany('Players', [
@@ -92,7 +92,6 @@ class UsersTable extends Table
         ->notEmpty('password');
 
         $validator
-            ->date('dob')
             ->requirePresence('dob', 'create')
             ->notEmpty('dob');
         $validator

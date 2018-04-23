@@ -7,19 +7,20 @@ use Cake\ORM\Table;
 use Cake\Validation\Validator;
 
 /**
- * TeamsJerseys Model
+ * PlayersTeams Model
  *
+ * @property \App\Model\Table\PlayersTable|\Cake\ORM\Association\BelongsTo $Players
  * @property \App\Model\Table\TeamsTable|\Cake\ORM\Association\BelongsTo $Teams
  *
- * @method \App\Model\Entity\TeamsJersey get($primaryKey, $options = [])
- * @method \App\Model\Entity\TeamsJersey newEntity($data = null, array $options = [])
- * @method \App\Model\Entity\TeamsJersey[] newEntities(array $data, array $options = [])
- * @method \App\Model\Entity\TeamsJersey|bool save(\Cake\Datasource\EntityInterface $entity, $options = [])
- * @method \App\Model\Entity\TeamsJersey patchEntity(\Cake\Datasource\EntityInterface $entity, array $data, array $options = [])
- * @method \App\Model\Entity\TeamsJersey[] patchEntities($entities, array $data, array $options = [])
- * @method \App\Model\Entity\TeamsJersey findOrCreate($search, callable $callback = null, $options = [])
+ * @method \App\Model\Entity\PlayersTeam get($primaryKey, $options = [])
+ * @method \App\Model\Entity\PlayersTeam newEntity($data = null, array $options = [])
+ * @method \App\Model\Entity\PlayersTeam[] newEntities(array $data, array $options = [])
+ * @method \App\Model\Entity\PlayersTeam|bool save(\Cake\Datasource\EntityInterface $entity, $options = [])
+ * @method \App\Model\Entity\PlayersTeam patchEntity(\Cake\Datasource\EntityInterface $entity, array $data, array $options = [])
+ * @method \App\Model\Entity\PlayersTeam[] patchEntities($entities, array $data, array $options = [])
+ * @method \App\Model\Entity\PlayersTeam findOrCreate($search, callable $callback = null, $options = [])
  */
-class TeamsJerseysTable extends Table
+class PlayersTeamsTable extends Table
 {
 
     /**
@@ -32,10 +33,14 @@ class TeamsJerseysTable extends Table
     {
         parent::initialize($config);
 
-        $this->setTable('teams_jerseys');
+        $this->setTable('players_teams');
         $this->setDisplayField('id');
         $this->setPrimaryKey('id');
 
+        $this->belongsTo('Players', [
+            'foreignKey' => 'player_id',
+            'joinType' => 'INNER'
+        ]);
         $this->belongsTo('Teams', [
             'foreignKey' => 'team_id',
             'joinType' => 'INNER'
@@ -54,16 +59,6 @@ class TeamsJerseysTable extends Table
             ->integer('id')
             ->allowEmpty('id', 'create');
 
-        $validator
-            ->integer('number')
-            ->requirePresence('number', 'create')
-            ->notEmpty('number');
-
-        $validator
-            ->scalar('colour')
-            ->requirePresence('colour', 'create')
-            ->notEmpty('colour');
-
         return $validator;
     }
 
@@ -76,6 +71,7 @@ class TeamsJerseysTable extends Table
      */
     public function buildRules(RulesChecker $rules)
     {
+        $rules->add($rules->existsIn(['player_id'], 'Players'));
         $rules->add($rules->existsIn(['team_id'], 'Teams'));
 
         return $rules;

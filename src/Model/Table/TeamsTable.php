@@ -13,8 +13,8 @@ use Cake\Validation\Validator;
  * @property \App\Model\Table\TrainingTable|\Cake\ORM\Association\HasMany $Training
  * @property \App\Model\Table\CoachesTable|\Cake\ORM\Association\HasMany $Coaches
  * @property \App\Model\Table\ManagersTable|\Cake\ORM\Association\HasMany $Managers
- * @property \App\Model\Table\PlayersTable|\Cake\ORM\Association\HasMany $Players
- * @property \App\Model\Table\TeamsJerseysTable|\Cake\ORM\Association\HasMany $TeamsJerseys
+ * @property \App\Model\Table\PlayersTeamsTable|\Cake\ORM\Association\HasMany $PlayersTeams
+ * @property \App\Model\Table\TeamjerseysTable|\Cake\ORM\Association\HasMany $Teamjerseys
  *
  * @method \App\Model\Entity\Team get($primaryKey, $options = [])
  * @method \App\Model\Entity\Team newEntity($data = null, array $options = [])
@@ -38,7 +38,7 @@ class TeamsTable extends Table
         parent::initialize($config);
 
         $this->setTable('teams');
-        $this->setDisplayField('name');
+        $this->setDisplayField('full_title');
         $this->setPrimaryKey('id');
 
         $this->belongsTo('Competitions', [
@@ -50,13 +50,13 @@ class TeamsTable extends Table
         $this->hasMany('Managers', [
             'foreignKey' => 'team_id'
         ]);
-        $this->hasMany('Players', [
+        $this->hasMany('PlayersTeams', [
             'foreignKey' => 'team_id'
         ]);
         $this->hasMany('Training', [
             'foreignKey' => 'team_id'
         ]);
-        $this->hasMany('TeamsJerseys', [
+        $this->hasMany('Teamjerseys', [
             'foreignKey' => 'team_id'
         ]);
     }

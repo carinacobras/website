@@ -16,7 +16,7 @@ class OrderItemsTableTest extends TestCase
      *
      * @var \App\Model\Table\OrderItemsTable
      */
-    public $OrderItems;
+    public $Orderitems;
 
     /**
      * Fixtures
@@ -56,8 +56,8 @@ class OrderItemsTableTest extends TestCase
     public function setUp()
     {
         parent::setUp();
-        $config = TableRegistry::exists('OrderItems') ? [] : ['className' => OrderItemsTable::class];
-        $this->OrderItems = TableRegistry::get('OrderItems', $config);
+        $config = TableRegistry::exists('Orderitems') ? [] : ['className' => OrderItemsTable::class];
+        $this->Orderitems = TableRegistry::get('Orderitems', $config);
     }
 
     /**
@@ -67,7 +67,7 @@ class OrderItemsTableTest extends TestCase
      */
     public function tearDown()
     {
-        unset($this->OrderItems);
+        unset($this->Orderitems);
 
         parent::tearDown();
     }

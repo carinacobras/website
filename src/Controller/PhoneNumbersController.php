@@ -4,13 +4,13 @@ namespace App\Controller;
 use App\Controller\AppController;
 
 /**
- * PhoneNumbers Controller
+ * Phonenumbers Controller
  *
- * @property \App\Model\Table\PhoneNumbersTable $PhoneNumbers
+ * @property \App\Model\Table\PhonenumbersTable $Phonenumbers
  *
  * @method \App\Model\Entity\PhoneNumber[] paginate($object = null, array $settings = [])
  */
-class PhoneNumbersController extends AppController
+class PhonenumbersController extends AppController
 {
 
     /**
@@ -23,7 +23,7 @@ class PhoneNumbersController extends AppController
         $this->paginate = [
             'contain' => ['Users']
         ];
-        $phoneNumbers = $this->paginate($this->PhoneNumbers);
+        $phoneNumbers = $this->paginate($this->Phonenumbers);
 
         $this->set(compact('phoneNumbers'));
         $this->set('_serialize', ['phoneNumbers']);
@@ -38,7 +38,7 @@ class PhoneNumbersController extends AppController
      */
     public function view($id = null)
     {
-        $phoneNumber = $this->PhoneNumbers->get($id, [
+        $phoneNumber = $this->Phonenumbers->get($id, [
             'contain' => ['Users', 'Contacts']
         ]);
 
@@ -53,17 +53,17 @@ class PhoneNumbersController extends AppController
      */
     public function add()
     {
-        $phoneNumber = $this->PhoneNumbers->newEntity();
+        $phoneNumber = $this->Phonenumbers->newEntity();
         if ($this->request->is('post')) {
-            $phoneNumber = $this->PhoneNumbers->patchEntity($phoneNumber, $this->request->getData());
-            if ($this->PhoneNumbers->save($phoneNumber)) {
+            $phoneNumber = $this->Phonenumbers->patchEntity($phoneNumber, $this->request->getData());
+            if ($this->Phonenumbers->save($phoneNumber)) {
                 $this->Flash->success(__('The phone number has been saved.'));
 
                 return $this->redirect(['action' => 'index']);
             }
             $this->Flash->error(__('The phone number could not be saved. Please, try again.'));
         }
-        $users = $this->PhoneNumbers->Users->find('list', ['limit' => 200]);
+        $users = $this->Phonenumbers->Users->find('list', ['limit' => 200]);
         $this->set(compact('phoneNumber', 'users'));
         $this->set('_serialize', ['phoneNumber']);
     }
@@ -77,19 +77,19 @@ class PhoneNumbersController extends AppController
      */
     public function edit($id = null)
     {
-        $phoneNumber = $this->PhoneNumbers->get($id, [
+        $phoneNumber = $this->Phonenumbers->get($id, [
             'contain' => []
         ]);
         if ($this->request->is(['patch', 'post', 'put'])) {
-            $phoneNumber = $this->PhoneNumbers->patchEntity($phoneNumber, $this->request->getData());
-            if ($this->PhoneNumbers->save($phoneNumber)) {
+            $phoneNumber = $this->Phonenumbers->patchEntity($phoneNumber, $this->request->getData());
+            if ($this->Phonenumbers->save($phoneNumber)) {
                 $this->Flash->success(__('The phone number has been saved.'));
 
                 return $this->redirect(['action' => 'index']);
             }
             $this->Flash->error(__('The phone number could not be saved. Please, try again.'));
         }
-        $users = $this->PhoneNumbers->Users->find('list', ['limit' => 200]);
+        $users = $this->Phonenumbers->Users->find('list', ['limit' => 200]);
         $this->set(compact('phoneNumber', 'users'));
         $this->set('_serialize', ['phoneNumber']);
     }
@@ -104,8 +104,8 @@ class PhoneNumbersController extends AppController
     public function delete($id = null)
     {
         $this->request->allowMethod(['post', 'delete']);
-        $phoneNumber = $this->PhoneNumbers->get($id);
-        if ($this->PhoneNumbers->delete($phoneNumber)) {
+        $phoneNumber = $this->Phonenumbers->get($id);
+        if ($this->Phonenumbers->delete($phoneNumber)) {
             $this->Flash->success(__('The phone number has been deleted.'));
         } else {
             $this->Flash->error(__('The phone number could not be deleted. Please, try again.'));

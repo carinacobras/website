@@ -1,22 +1,22 @@
 <?php
 namespace App\Test\TestCase\Model\Table;
 
-use App\Model\Table\PhoneNumbersTable;
+use App\Model\Table\PhonenumbersTable;
 use Cake\ORM\TableRegistry;
 use Cake\TestSuite\TestCase;
 
 /**
- * App\Model\Table\PhoneNumbersTable Test Case
+ * App\Model\Table\PhonenumbersTable Test Case
  */
-class PhoneNumbersTableTest extends TestCase
+class PhonenumbersTableTest extends TestCase
 {
 
     /**
      * Test subject
      *
-     * @var \App\Model\Table\PhoneNumbersTable
+     * @var \App\Model\Table\PhonenumbersTable
      */
-    public $PhoneNumbers;
+    public $Phonenumbers;
 
     /**
      * Fixtures
@@ -51,8 +51,8 @@ class PhoneNumbersTableTest extends TestCase
     public function setUp()
     {
         parent::setUp();
-        $config = TableRegistry::exists('PhoneNumbers') ? [] : ['className' => PhoneNumbersTable::class];
-        $this->PhoneNumbers = TableRegistry::get('PhoneNumbers', $config);
+        $config = TableRegistry::exists('Phonenumbers') ? [] : ['className' => PhonenumbersTable::class];
+        $this->Phonenumbers = TableRegistry::get('Phonenumbers', $config);
     }
 
     /**
@@ -62,7 +62,7 @@ class PhoneNumbersTableTest extends TestCase
      */
     public function tearDown()
     {
-        unset($this->PhoneNumbers);
+        unset($this->Phonenumbers);
 
         parent::tearDown();
     }

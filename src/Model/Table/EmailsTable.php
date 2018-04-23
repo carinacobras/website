@@ -33,7 +33,7 @@ class EmailsTable extends Table
         parent::initialize($config);
 
         $this->setTable('emails');
-        $this->setDisplayField('address');
+        $this->setDisplayField('email_address');
         $this->setPrimaryKey('id');
 
         $this->belongsTo('Users', [
@@ -55,9 +55,9 @@ class EmailsTable extends Table
             ->allowEmpty('id', 'create');
 
         $validator
-            ->scalar('address')
-            ->requirePresence('address', 'create')
-            ->notEmpty('address');
+            ->scalar('email_address')
+            ->requirePresence('email_address', 'create')
+            ->notEmpty('email_address');
 
         return $validator;
     }
