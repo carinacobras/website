@@ -42,6 +42,10 @@ use Cake\Routing\Router;
                         <li><a href="/competitions/">Edit Competitions</a></li>
                         <li><a href="/locations/">Edit Locations</a></li>
                         <li><a href="/training/">Edit Training</a></li>
+                        <li><a href="/orders/">Edit Orders</a></li>
+                        <li><a href="/orderlines/">Edit Orders Lines</a></li>
+                        <li><a href="/orderitems/">Edit Orders Items</a></li>
+                        <li><a href="/payments/">Edit Payments</a></li>
                     </ul>
         </div></div>
             <div class="content col-sm-12 col-md-9">
