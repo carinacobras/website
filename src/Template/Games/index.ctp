@@ -4,22 +4,12 @@
  * @var \App\Model\Entity\Game[]|\Cake\Collection\CollectionInterface $games
  */
 ?>
-<nav class="large-3 medium-4 columns" id="actions-sidebar">
-    <ul class="side-nav">
-        <li class="heading"><?= __('Actions') ?></li>
-        <li><?= $this->Html->link(__('New Game'), ['action' => 'add']) ?></li>
-        <li><?= $this->Html->link(__('List Competitions'), ['controller' => 'Competitions', 'action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('New Competition'), ['controller' => 'Competitions', 'action' => 'add']) ?></li>
-        <li><?= $this->Html->link(__('List Locations'), ['controller' => 'Locations', 'action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('New Location'), ['controller' => 'Locations', 'action' => 'add']) ?></li>
-    </ul>
-</nav>
+
 <div class="games index large-9 medium-8 columns content">
     <h3><?= __('Games') ?></h3>
     <table class="table">
         <thead>
             <tr>
-                <th scope="col"><?= $this->Paginator->sort('id') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('time') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('competition_id') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('location_id') ?></th>
@@ -29,7 +19,6 @@
         <tbody>
             <?php foreach ($games as $game): ?>
             <tr>
-                <td><?= $this->Number->format($game->id) ?></td>
                 <td><?= h($game->time) ?></td>
                 <td><?= $game->has('competition') ? $this->Html->link($game->competition->name, ['controller' => 'Competitions', 'action' => 'view', $game->competition->id]) : '' ?></td>
                 <td><?= $game->has('location') ? $this->Html->link($game->location->name, ['controller' => 'Locations', 'action' => 'view', $game->location->id]) : '' ?></td>

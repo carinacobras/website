@@ -7,20 +7,31 @@
 
 <div class="col-sm-12">
     <h3><?= __('Training') ?></h3>
+    <?= $this->Html->link(__('New Training'), ['action' => 'add'], ['class' => 'btn btn-primary mt-3 mb-3']) ?>
     <table class="table">
         <thead>
             <tr>
-                <th scope="col"><?= $this->Paginator->sort('id') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('time') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('competition_id') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('location_id') ?></th>
+                <?
+            $session = $this->request->getSession();
+            $user_data = $session->read('Auth.User');
+            if($user_data):
+        ?>
                 <th scope="col" class="actions"><?= __('Actions') ?></th>
+            <? endif; ?>
             </tr>
         </thead>
+        <?
+            $session = $this->request->getSession();
+            $user_data = $session->read('Auth.User');
+            if($user_data):
+        ?>
+
         <tbody>
             <?php foreach ($training as $training): ?>
             <tr>
-                <td><?= $this->Number->format($training->id) ?></td>
                 <td><?= h($training->time) ?></td>
                 <td><?= $training->has('competition') ? $this->Html->link($training->competition->name, ['controller' => 'Competitions', 'action' => 'view', $training->competition->id]) : '' ?></td>
                 <td><?= $training->has('location') ? $this->Html->link($training->location->name, ['controller' => 'Locations', 'action' => 'view', $training->location->id]) : '' ?></td>
@@ -31,6 +42,7 @@
                 </td>
             </tr>
             <?php endforeach; ?>
+            <?php endif; ?>
         </tbody>
     </table>
 </div>

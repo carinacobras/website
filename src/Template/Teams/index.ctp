@@ -20,7 +20,6 @@
         <tbody>
             <?php foreach ($teams as $team): ?>
             <tr>
-                <td><?= $this->Number->format($team->id) ?></td>
                 <td><?= h($team->name) ?></td>
                 <td>
                     <?php 
