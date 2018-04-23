@@ -6,7 +6,7 @@ use App\Controller\AppController;
 /**
  * Orderitems Controller
  *
- * @property \App\Model\Table\OrderItemsTable $Orderitems
+ * @property \App\Model\Table\OrderitemsTable $Orderitems
  *
  * @method \App\Model\Entity\OrderItem[] paginate($object = null, array $settings = [])
  */

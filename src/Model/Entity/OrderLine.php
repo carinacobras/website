@@ -13,7 +13,7 @@ use Cake\ORM\Entity;
  * @property \App\Model\Entity\Order $order
  * @property \App\Model\Entity\OrderItem $order_item
  */
-class orderline extends Entity
+class Orderline extends Entity
 {
 
     /**
