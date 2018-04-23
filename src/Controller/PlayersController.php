@@ -73,8 +73,7 @@ class PlayersController extends AppController
             $this->Flash->error(__('The player could not be saved. Please, try again.'));
         }
         $users = $this->Players->Users->find('list', ['limit' => 200]);
-        $teams = $this->Players->Teams->find('list', ['limit' => 200]);
-        $this->set(compact('player', 'users', 'teams'));
+        $this->set(compact('player', 'users'));
         $this->set('_serialize', ['player']);
     }
 
