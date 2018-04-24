@@ -30,7 +30,6 @@
         <?php
             echo $this->Form->control('team_id', ['options' => $teams]);
             echo $this->Form->control('competition_id', ['options' => $competitions]);
-            echo $this->Form->control('team_id', ['options' => $teams]);
             echo $this->Form->control('location_id', ['options' => $locations]);
             echo $this->Html->css('font-awesome.min.css');
             echo $this->Html->css('tempusdominus-bootstrap-4.min.css');
