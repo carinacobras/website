@@ -27,8 +27,8 @@
                 <th scope="col"><?= $this->Paginator->sort('player_id') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('first_name') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('last_name') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('phone_number_id') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('emails_id') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('phone_number') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('email_address') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('relationship_id') ?></th>
                 <th scope="col" class="actions"><?= __('Actions') ?></th>
             </tr>
@@ -40,8 +40,8 @@
                 <td><?= $contact->has('player') ? $this->Html->link($contact->player->id, ['controller' => 'Players', 'action' => 'view', $contact->player->id]) : '' ?></td>
                 <td><?= h($contact->first_name) ?></td>
                 <td><?= h($contact->last_name) ?></td>
-                <td><?= $contact->has('phone_number') ? $this->Html->link($contact->phone_number->number, ['controller' => 'Phonenumbers', 'action' => 'view', $contact->phone_number->id]) : '' ?></td>
-                <td><?= $contact->has('email') ? $this->Html->link($contact->email->id, ['controller' => 'Emails', 'action' => 'view', $contact->email->id]) : '' ?></td>
+                <td><?= $contact->has('phone_number') ? $this->Html->link($contact->phone_number, ['controller' => 'Contacts', 'action' => 'view', $contact->phone_number]) : '' ?></td>
+                <td><?= $contact->has('email_address') ? $this->Html->link($contact->email_address, ['controller' => 'Contacts', 'action' => 'view', $contact->email_address]) : '' ?></td>
                 <td><?= $contact->has('relationship') ? $this->Html->link($contact->relationship->title, ['controller' => 'Relationships', 'action' => 'view', $contact->relationship->id]) : '' ?></td>
                 <td class="actions">
                     <?= $this->Html->link(__('View'), ['action' => 'view', $contact->id]) ?>

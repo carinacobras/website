@@ -22,7 +22,7 @@ class ContactsController extends AppController
     {
         $this->paginate = [
             'limit' => 100000,
-            'contain' => ['Players', 'Phonenumbers', 'Emails', 'Relationships']
+            'contain' => ['Players', 'Relationships']
         ];
         $contacts = $this->paginate($this->Contacts);
 
@@ -40,7 +40,7 @@ class ContactsController extends AppController
     public function view($id = null)
     {
         $contact = $this->Contacts->get($id, [
-            'contain' => ['Players', 'Phonenumbers', 'Emails', 'Relationships']
+            'contain' => ['Players', 'Relationships']
         ]);
 
         $this->set('contact', $contact);
@@ -77,11 +77,8 @@ class ContactsController extends AppController
 
        $players = $players->combine('id', 'full_name');
               
-       // $players = $this->Contacts->Players->find('list', ['fields', 'limit' => 200]);
-        $phoneNumbers = $this->Contacts->Phonenumbers->find('list', ['limit' => 200]);
-        $emails = $this->Contacts->Emails->find('list', ['limit' => 200]);
         $relationships = $this->Contacts->Relationships->find('list', ['limit' => 200]);
-        $this->set(compact('contact', 'players', 'phoneNumbers', 'emails', 'relationships'));
+        $this->set(compact('contact', 'players', 'relationships'));
         $this->set('_serialize', ['contact']);
     }
 

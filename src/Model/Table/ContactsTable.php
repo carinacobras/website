@@ -43,12 +43,7 @@ class ContactsTable extends Table
             'foreignKey' => 'player_id',
             'joinType' => 'INNER'
         ]);
-        $this->belongsTo('Phonenumbers', [
-            'foreignKey' => 'phone_number_id'
-        ]);
-        $this->belongsTo('Emails', [
-            'foreignKey' => 'emails_id'
-        ]);
+
         $this->belongsTo('Relationships', [
             'foreignKey' => 'relationship_id',
             'joinType' => 'INNER'
@@ -72,11 +67,6 @@ class ContactsTable extends Table
             ->requirePresence('first_name', 'create')
             ->notEmpty('first_name');
 
-        $validator
-            ->scalar('last_name')
-            ->requirePresence('last_name', 'create')
-            ->notEmpty('last_name');
-
         return $validator;
     }
 
@@ -90,8 +80,6 @@ class ContactsTable extends Table
     public function buildRules(RulesChecker $rules)
     {
         $rules->add($rules->existsIn(['player_id'], 'Players'));
-        $rules->add($rules->existsIn(['phone_number_id'], 'Phonenumbers'));
-        $rules->add($rules->existsIn(['emails_id'], 'Emails'));
         $rules->add($rules->existsIn(['relationship_id'], 'Relationships'));
 
         return $rules;

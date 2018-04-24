@@ -38,11 +38,11 @@
         </tr>
         <tr>
             <th scope="row"><?= __('Phone Number') ?></th>
-            <td><?= $contact->has('phone_number') ? $this->Html->link($contact->phone_number->id, ['controller' => 'Phonenumbers', 'action' => 'view', $contact->phone_number->id]) : '' ?></td>
+            <td><?= $contact->has('phone_number') ? $this->Html->link($contact->phone_number, ['controller' => 'Contacts', 'action' => 'view', $contact->phone_number]) : '' ?></td>
         </tr>
         <tr>
             <th scope="row"><?= __('Email') ?></th>
-            <td><?= $contact->has('email') ? $this->Html->link($contact->email->id, ['controller' => 'Emails', 'action' => 'view', $contact->email->id]) : '' ?></td>
+            <td><?= $contact->has('email') ? $this->Html->link($contact->email_address, ['controller' => 'Contacts', 'action' => 'view', $contact->email_address]) : '' ?></td>
         </tr>
         <tr>
             <th scope="row"><?= __('Relationship') ?></th>
