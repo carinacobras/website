@@ -4484,7 +4484,7 @@ tbody.collapse.show {
           flex-direction: column;
   background-color: #fff;
   border: 1px solid rgba(0, 0, 0, 0.125);
-  border-radius: 0.4rem;
+  border-radius: 0.6rem;
   opacity: 1;
 }
 
