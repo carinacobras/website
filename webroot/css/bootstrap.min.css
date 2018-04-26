@@ -4486,6 +4486,7 @@ tbody.collapse.show {
   border: 1px solid rgba(0, 0, 0, 0.125);
   border-radius: 0.6rem;
   opacity: 1;
+  text-align: wrap;
 }
 
 .card-block {
