@@ -55,7 +55,6 @@ class NewslettersTable extends Table
 
         $validator
             ->scalar('body')
-            ->requirePresence('body', 'create')
             ->notEmpty('body');
 
         return $validator;
