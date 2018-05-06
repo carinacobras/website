@@ -31,7 +31,7 @@ class NewslettersTable extends Table
         parent::initialize($config);
 
         $this->setTable('newsletters');
-        $this->setDisplayField('id');
+        $this->setDisplayField('subject');
         $this->setPrimaryKey('id');
     }
 

@@ -23,7 +23,7 @@ class Newsletter extends Entity
      * @var array
      */
     protected $_accessible = [
-        'subject' => true,
-        'body' => true
+        '*' => true,
+        'id' => false
     ];
 }
