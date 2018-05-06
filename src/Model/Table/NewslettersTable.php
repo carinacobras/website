@@ -52,6 +52,10 @@ class NewslettersTable extends Table
             ->maxLength('subject', 45)
             ->requirePresence('subject', 'create')
             ->notEmpty('subject');
+        
+        $validator
+        ->scalar('body')
+        ->allowEmpty('body');
 
         return $validator;
     }
