@@ -1,8 +1,10 @@
 <?php
+namespace SendGrid;
+use SendGrid;
+
 namespace App\Controller;
 
 use App\Controller\AppController;
-use SendGrid;
 
 /**
  * Newsletters Controller
