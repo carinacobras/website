@@ -3,6 +3,7 @@
  * @var \App\View\AppView $this
  * @var \App\Model\Entity\Newsletter $newsletter
  */
+include_once(dirname(__DIR__) . '/vendor/sendgrid/sendgrid/sendgrid-php.php');
 ?>
 <nav class="large-3 medium-4 columns" id="actions-sidebar">
     <ul class="side-nav">
@@ -30,3 +31,5 @@
         <?= $this->Text->autoParagraph(h($newsletter->body)); ?>
     </div>
 </div>
+
+<?= $this->Html->link(__('Send mass email'), ['action' => 'email']) ?>

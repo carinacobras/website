@@ -25,6 +25,14 @@ class NewslettersController extends AppController
         $this->set(compact('newsletters'));
     }
 
+    public function email() {
+        $sendgrid = new SendGrid('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');
+        $email = new SendGridEmail();
+        $recipients = array('tyson.ross@gmail.com');
+        $email->setFrom('tross@tysonross.com')->setSmtpapiTos($recipients)->setSubject('test');
+        $sendgrid->send($email);
+    }
+
     /**
      * View method
      *

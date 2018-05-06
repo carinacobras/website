@@ -53,10 +53,6 @@ class NewslettersTable extends Table
             ->requirePresence('subject', 'create')
             ->notEmpty('subject');
 
-        $validator
-            ->scalar('body')
-            ->notEmpty('body');
-
         return $validator;
     }
 }
