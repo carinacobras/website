@@ -32,4 +32,4 @@
     </div>
 </div>
 
-<?= $this->Html->link(__('Send mass email'), ['action' => 'email']) ?>
+<?= $this->Html->link(__('Send mass email'), ['action' => 'email', $newsletter->id]) ?>

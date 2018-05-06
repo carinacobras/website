@@ -2,7 +2,7 @@
 namespace App\Controller;
 
 use App\Controller\AppController;
-require dirname(__DIR__) . '/vendor/autoload.php';
+require dirname(__DIR__) . '../vendor/autoload.php';
 
 /**
  * Newsletters Controller
@@ -26,11 +26,16 @@ class NewslettersController extends AppController
         $this->set(compact('newsletters'));
     }
 
-    public function email() {
+    public function email($id = null) {
+
+        $newsletter = $this->Newsletters->get($id, [
+            'contain' => []
+        ]);
+
         $sendgrid = new SendGrid('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');
         $email = new SendGridEmail();
         $recipients = array('tyson.ross@gmail.com');
-        $email->setFrom('tross@tysonross.com')->setSmtpapiTos($recipients)->setSubject('test');
+        $email->setFrom('tross@tysonross.com')->setSmtpapiTos($recipients)->setSubject('test')->setHtml($newsletter->body);
         $sendgrid->send($email);
     }
 
