@@ -2,7 +2,7 @@
 namespace App\Controller;
 
 use App\Controller\AppController;
-require dirname(__DIR__) . '/../vendor/autoload.php';
+use SendGrid;
 
 /**
  * Newsletters Controller
