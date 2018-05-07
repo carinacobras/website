@@ -32,6 +32,7 @@ h1 {
   line-height: 14px;
   margin: 0.5em 0;
   font-variant: caps;
+  color: white;
 }
 
 h2 {
@@ -40,6 +41,7 @@ font-style: normal;
 font-weight:500;
 line-height: 14px;
 font-variant: caps;
+color: white;
 }
 
 h3 {
@@ -48,6 +50,7 @@ h3 {
 	font-weight:500;
 	line-height: 5px;
 	font-variant: caps;
+	color: white;
 }
 
 p {
@@ -55,6 +58,7 @@ font-size: 16px;
 font-style: normal;
 font-weight: 400;
 line-height: 14px;
+color: white;
 }
 
 blockquote {
@@ -64,6 +68,7 @@ blockquote {
   font-weight:400;
   line-height: 20px;
   text-indent: 30px;
+  color: white;
 }
 
 .footer {
@@ -4479,8 +4484,9 @@ tbody.collapse.show {
           flex-direction: column;
   background-color: #fff;
   border: 1px solid rgba(0, 0, 0, 0.125);
-  border-radius: 0.4rem;
+  border-radius: 0.6rem;
   opacity: 1;
+  text-align: wrap;
 }
 
 .card-block {
