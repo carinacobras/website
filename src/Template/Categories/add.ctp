@@ -4,15 +4,8 @@
  * @var \App\Model\Entity\Category $category
  */
 ?>
-<nav class="col-sm-12" id="actions-sidebar">
-    <ul class="side-nav">
-        <li class="heading"><?= __('Actions') ?></li>
-        <li><?= $this->Html->link(__('List Categories'), ['action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('List Posts'), ['controller' => 'Posts', 'action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('New Post'), ['controller' => 'Posts', 'action' => 'add']) ?></li>
-    </ul>
-</nav>
-<div class="categories form col-sm-12">
+
+<div class="col-sm-12">
     <?= $this->Form->create($category) ?>
     <fieldset>
         <legend><?= __('Add Category') ?></legend>

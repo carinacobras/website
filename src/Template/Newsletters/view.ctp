@@ -32,4 +32,6 @@
     </div>
 </div>
 
-<?= $this->Html->link(__('Send mass email'), ['action' => 'email', $newsletter->id]) ?>
+<?= $this->Form->create($newsletter) ?>
+<?= $this->Form->button(__('Submit')) ?>
+<?= $this->Form->end() ?>

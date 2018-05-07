@@ -4,7 +4,7 @@
  * @var \App\Model\Entity\Location[]|\Cake\Collection\CollectionInterface $locations
  */
 ?>
-<div class="locations index large-9 medium-8 columns content">
+<div class="col-sm-12">
     <h3><?= __('Locations') ?></h3>
     <?= $this->Html->link(__('New Location'), ['action' => 'add'], ['class' => 'btn btn-primary mt-3 mb-3']) ?>
     <table class="table">
