@@ -136,3 +136,7 @@ input[name='is_player'][value='1']:checked + div {
 .card-columns > .card {
     min-height:400px;
 }
+
+table span {
+    color: black !important;
+}

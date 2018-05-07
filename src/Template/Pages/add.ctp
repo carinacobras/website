@@ -5,7 +5,7 @@
  */
 ?>
 
-<div class="pages form col-sm-12">
+<div class="col-sm-12">
     <?= $this->Form->create($page) ?>
     <fieldset>
         <legend><?= __('Add Page') ?></legend>

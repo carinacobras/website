@@ -4,17 +4,7 @@
  * @var \App\Model\Entity\OrderItem $orderitem
  */
 ?>
-<nav class="col-sm-12" id="actions-sidebar">
-    <ul class="side-nav">
-        <li class="heading"><?= __('Actions') ?></li>
-        <li><?= $this->Html->link(__('Edit Order Item'), ['action' => 'edit', $orderitem->id]) ?> </li>
-        <li><?= $this->Form->postLink(__('Delete Order Item'), ['action' => 'delete', $orderitem->id], ['confirm' => __('Are you sure you want to delete # {0}?', $orderitem->id)]) ?> </li>
-        <li><?= $this->Html->link(__('List Order Items'), ['action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('New Order Item'), ['action' => 'add']) ?> </li>
-        <li><?= $this->Html->link(__('List Order Lines'), ['controller' => 'orderlines', 'action' => 'index']) ?> </li>
-        <li><?= $this->Html->link(__('New Order Line'), ['controller' => 'orderlines', 'action' => 'add']) ?> </li>
-    </ul>
-</nav>
+
 <div class="Orderitems view col-sm-12">
     <h3><?= h($orderitem->name) ?></h3>
     <table class="table">

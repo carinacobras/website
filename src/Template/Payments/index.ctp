@@ -4,18 +4,10 @@
  * @var \App\Model\Entity\Payment[]|\Cake\Collection\CollectionInterface $payments
  */
 ?>
-<nav class="col-sm-12" id="actions-sidebar">
-    <ul class="side-nav">
-        <li class="heading"><?= __('Actions') ?></li>
-        <li><?= $this->Html->link(__('New Payment'), ['action' => 'add']) ?></li>
-        <li><?= $this->Html->link(__('List Players'), ['controller' => 'Players', 'action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('New Player'), ['controller' => 'Players', 'action' => 'add']) ?></li>
-        <li><?= $this->Html->link(__('List Invoices'), ['controller' => 'Invoices', 'action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('New Invoice'), ['controller' => 'Invoices', 'action' => 'add']) ?></li>
-    </ul>
-</nav>
-<div class="payments index col-sm-12">
+
+<div class="col-sm-12">
     <h3><?= __('Payments') ?></h3>
+    <?= $this->Html->link(__('New Payment'), ['action' => 'add'], ['class' => 'btn btn-primary mt-3 mb-3']) ?>
     <table class="table">
         <thead>
             <tr>

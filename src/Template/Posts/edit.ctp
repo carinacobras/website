@@ -12,7 +12,7 @@
         <?php
             echo $this->Form->control('title');
             echo $this->Form->control('body');
-            echo $this->Form->control('category_id');
+            echo $this->Form->hidden('category_id', ['value' => '1']);
         ?>
     </fieldset>
     <?= $this->Form->button(__('Submit'), ['class' => 'btn btn-primary']) ?>

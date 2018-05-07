@@ -4,14 +4,10 @@
  * @var \App\Model\Entity\Page[]|\Cake\Collection\CollectionInterface $pages
  */
 ?>
-<nav class="col-sm-12" id="actions-sidebar">
-    <ul class="side-nav">
-        <li class="heading"><?= __('Actions') ?></li>
-        <li><?= $this->Html->link(__('New Page'), ['action' => 'add']) ?></li>
-    </ul>
-</nav>
-<div class="pages index col-sm-12">
+
+<div class="col-sm-12">
     <h3><?= __('Pages') ?></h3>
+    <?= $this->Html->link(__('New Page'), ['action' => 'add'], ['class' => 'btn btn-primary mt-3 mb-3']) ?>
     <table class="table">
         <thead>
             <tr>
