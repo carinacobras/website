@@ -11,7 +11,8 @@
         <legend><?= __('Edit Newsletter') ?></legend>
         <?php
             echo $this->Form->control('subject');
-            echo $this->Form->control('body');
+            echo $this->Form->control('body', array(
+                'rows' => 50));
         ?>
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>
