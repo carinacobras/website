@@ -7,20 +7,11 @@
 ?>
 
 <div class="col-sm-12">
-    <h3><?= h($newsletter->id) ?></h3>
-    <table class="vertical-table">
-        <tr>
-            <th scope="row"><?= __('Subject') ?></th>
-            <td><?= h($newsletter->subject) ?></td>
-        </tr>
-        <tr>
-            <th scope="row"><?= __('Id') ?></th>
-            <td><?= $this->Number->format($newsletter->id) ?></td>
-        </tr>
-    </table>
+    <h3><?= h($newsletter->id) ?> : <?= $newsletter->subject ?></h3>
     <div class="row">
-        <h4><?= __('Body') ?></h4>
-        <? echo html_entity_decode($newsletter->body); ?>
+        <div class="col-sm-12 mt-4 mb-4 newsletter">
+            <? echo html_entity_decode($newsletter->body); ?>
+        </div>
     </div>
 </div>
 
