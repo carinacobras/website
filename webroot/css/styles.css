@@ -140,3 +140,7 @@ input[name='is_player'][value='1']:checked + div {
 table span {
     color: black !important;
 }
+
+.content > span, .content p span {
+    color: white !important;
+}

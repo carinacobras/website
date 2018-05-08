@@ -34,7 +34,8 @@ Some teams have specific training sessions run by their coaches that are not ind
         </tr>
         <tr>
             <th scope="row"><?=__('Team') ?></th>
-            <td><?= has('team') ? $this->Html->link($training->team->name, ['controller' = 'Teams', 'action' => 'view', $training->team->id]) : ''?></td>
+            <td>
+                <?= $training->has('team') ? $this->Html->link($training->team->name, ['controller' => 'Teams', 'action' => 'view', $training->team->id]) : ''?></td>
         </tr>  
     </table>
 </div>
