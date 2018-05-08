@@ -46,6 +46,7 @@ use Cake\Routing\Router;
                         <li><a href="/orders/">Edit Orders</a></li>
                         <li><a href="/orderlines/">Edit Orders Lines</a></li>
                         <li><a href="/orderitems/">Edit Orders Items</a></li>
+                        <li><a href="/invoices/">Edit Invoices</a></li>
                         <li><a href="/payments/">Edit Payments</a></li>
                     </ul>
         </div></div>

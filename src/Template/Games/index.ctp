@@ -7,6 +7,7 @@
 
 <div class="col-sm-12">
     <h3><?= __('Games') ?></h3>
+    <?= $this->Html->link(__('New Game'), ['action' => 'add'], ['class' => 'btn btn-primary mt-3 mb-3']) ?>
     <table class="table">
         <thead>
             <tr>
