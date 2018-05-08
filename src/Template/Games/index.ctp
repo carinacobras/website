@@ -13,6 +13,7 @@
                 <th scope="col"><?= $this->Paginator->sort('time') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('competition_id') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('location_id') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('court') ?></th>
                 <?
             $session = $this->request->getSession();
             $user_data = $session->read('Auth.User');
@@ -32,6 +33,7 @@
                 ?></td>
                 <td><?= $game->has('competition') ? $this->Html->link($game->competition->name, ['controller' => 'Competitions', 'action' => 'view', $game->competition->id]) : '' ?></td>
                 <td><?= $game->has('location') ? $this->Html->link($game->location->name, ['controller' => 'Locations', 'action' => 'view', $game->location->id]) : '' ?></td>
+                <td><?= $game->has('location') ? $game->location->court : '' ?></td>
                 <?
                     $session = $this->request->getSession();
                     $user_data = $session->read('Auth.User');
