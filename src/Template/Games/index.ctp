@@ -29,7 +29,7 @@
             <tr>
                 <td><?
                 $date = new DateTime($game->time);
-                $newDate = $date->format('l H:i a'); 
+                $newDate = $date->format('l M Y H:i a'); 
                 echo $newDate;
                 ?></td>
                 <td><?= $game->has('competition') ? $this->Html->link($game->competition->name, ['controller' => 'Competitions', 'action' => 'view', $game->competition->id]) : '' ?></td>
