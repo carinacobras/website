@@ -10,8 +10,6 @@ use Cake\Validation\Validator;
  * Contacts Model
  *
  * @property \App\Model\Table\PlayersTable|\Cake\ORM\Association\BelongsTo $Players
- * @property \App\Model\Table\PhonenumbersTable|\Cake\ORM\Association\BelongsTo $Phonenumbers
- * @property \App\Model\Table\EmailsTable|\Cake\ORM\Association\BelongsTo $Emails
  * @property \App\Model\Table\RelationshipsTable|\Cake\ORM\Association\BelongsTo $Relationships
  *
  * @method \App\Model\Entity\Contact get($primaryKey, $options = [])

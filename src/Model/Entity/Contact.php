@@ -10,13 +10,9 @@ use Cake\ORM\Entity;
  * @property int $player_id
  * @property string $first_name
  * @property string $last_name
- * @property int $phone_number_id
- * @property int $emails_id
  * @property int $relationship_id
  *
  * @property \App\Model\Entity\Player $player
- * @property \App\Model\Entity\PhoneNumber $phone_number
- * @property \App\Model\Entity\Email $email
  * @property \App\Model\Entity\Relationship $relationship
  */
 class Contact extends Entity

@@ -39,7 +39,7 @@ class PhonenumbersController extends AppController
     public function view($id = null)
     {
         $phoneNumber = $this->Phonenumbers->get($id, [
-            'contain' => ['Users', 'Contacts']
+            'contain' => ['Users']
         ]);
 
         $this->set('phoneNumber', $phoneNumber);
