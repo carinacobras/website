@@ -10,6 +10,26 @@ $urls = array(
         'label' => 'About Us',
         'url' => '/about'
     ),
+	
+	array(
+		'label' => 'Playing for Us',
+		'url' => '/playing',
+		'subMenu' => array (
+			array(
+				'label' => 'New Players'
+				'url' => '/newplayer'
+				),
+			array (
+				'label' => 'Uniforms'
+				'url' => '/uniforms'
+				),
+			array (
+				'label' => 'Sport Information'
+				'url' => '/generalinformation'
+				),
+		),
+		
+)		
     array(
         'label' => 'Fees',
         'url' => '/fees',
@@ -39,21 +59,11 @@ $urls = array(
 				array(
                     'label' => 'Results',
                     'url'=> '/results',
-					// Tyson, please make a /results page
+			
                 ),
-				array(
-                    'label' => 'Locations',
-                    'url'=> '/locations',
-					// Tyson, please make a /locations page
-                ),
-        ),
+				        ),
       ),
-    array(
-      'label' => 'General Information',
-      'url' => '/generalinformation',
-    ),
-	// Tyson, please make a /generalinformation page
-	array(
+   	array(
       'label' => 'Contact Us',
       'url' => '/contact',
     ),
@@ -65,7 +75,7 @@ $urls = array(
 <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNav2" aria-controls="navbarNav2" aria-expanded="false" aria-label="Toggle navigation">
   <span class="navbar-toggler-icon"></span>
 </button>
-<a class="navbar-brand navbar-brand-cobra" href="#"><img src="/img/large-cobras-logo.png" alt="logo"/></a>
+<a class="navbar-brand navbar-brand-cobra" href="#"><img src="/img/carina-logo.jpg" alt="logo"/></a>
 
 <div class="collapse navbar-collapse" id="navbarNav2">
   <ul class="navbar-nav nav-fill w-100">
