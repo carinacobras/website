@@ -236,14 +236,14 @@ class UsersController extends AppController
                                 ]
                             );
             $user = $query->first();
-            
+
             if (is_null($user)) {
                 $this->Flash->error('Email address does not exist. Please try again');
             } else {
                 $passkey = uniqid();
                 $url = Router::Url(['controller' => 'users', 'action' => 'reset'], true) . '/' . $passkey;
                 $timeout = time() + DAY;
-                 if ($this->Users->updateAll(['passkey' => $passkey, 'timeout' => $timeout], ['id' => $user->id])){
+                 if ($this->Users->updateAll(['passkey' => $passkey, 'timeout' => $timeout], ['id' => $user->user_id])){
                     $this->sendResetEmail($url, $user);
                     $this->redirect(['action' => 'login']);
                 } else {
