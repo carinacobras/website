@@ -183,7 +183,7 @@ return [
             'port' => 587,
             'timeout' => 30,
             'username' => 'apikey',
-            'password' => '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',
+            'password' => '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',
         ],
     ],
 
