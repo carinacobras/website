@@ -236,6 +236,7 @@ class UsersController extends AppController
                                 ]
                             );
             $user = $query->first();
+            
             if (is_null($user)) {
                 $this->Flash->error('Email address does not exist. Please try again');
             } else {
