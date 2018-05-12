@@ -16,20 +16,20 @@ $urls = array(
 		'url' => '/playing',
 		'subMenu' => array (
 			array(
-				'label' => 'New Players'
+				'label' => 'New Players',
 				'url' => '/newplayer'
 				),
 			array (
-				'label' => 'Uniforms'
+				'label' => 'Uniforms',
 				'url' => '/uniforms'
 				),
 			array (
-				'label' => 'Sport Information'
+				'label' => 'Sport Information',
 				'url' => '/generalinformation'
 				),
 		),
 		
-)		
+    ),
     array(
         'label' => 'Fees',
         'url' => '/fees',

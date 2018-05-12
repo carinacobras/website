@@ -84,9 +84,7 @@ body {
 }
 
 .navbar-brand-cobra img {
-    position:absolute;
-    top:-120px;
-    left:10px;
+    width: 80px;
 }
 
 input[name='is_player'][value='1']:checked + div {

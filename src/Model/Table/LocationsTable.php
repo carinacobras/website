@@ -68,6 +68,10 @@ class LocationsTable extends Table
             ->requirePresence('court', 'create')
             ->notEmpty('court');
 
+        $validator
+            ->requirePresence('court', 'create')
+            ->notEmpty('court');
+
         return $validator;
     }
 }
