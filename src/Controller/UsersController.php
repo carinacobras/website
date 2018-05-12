@@ -231,7 +231,7 @@ class UsersController extends AppController
                                 [
                                     'contain' => ['Users'],
                                     'conditions' => [
-                                        'emails.email_address =' => $this->request->data['email']
+                                        'email_address =' => $this->request->data['email']
                                     ]
                                 ]
                             );
