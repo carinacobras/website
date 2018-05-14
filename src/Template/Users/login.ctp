@@ -10,7 +10,7 @@
     </fieldset>
 <?= $this->Form->button(__('Login'), array("class" => "btn btn-primary")); ?>
 
-<?= $this->Html->link('Forgot Password', ['controller' => 'Users', 'action' => 'password'])?>
+<?= $this->Html->link('Forgot Password', ['controller' => 'Users', 'action' => 'password'], array("class" => "btn btn-primary"))?>
 
 <?= $this->Form->end() ?>
 </div>

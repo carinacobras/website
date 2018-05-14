@@ -36,6 +36,19 @@ use Cake\Routing\Router;
         <div class="sidebar col-sm-12 col-md-10">
                     <h3>Admin Tasks</h3>
                     <ul>
+                        <li>Pages
+                        <ul>
+                        <li><a href="/pages/edit/1">Edit Home</a></li>
+                        <li><a href="/pages/edit/2">Edit About</a></li>
+                        <li><a href="/pages/edit/3">Edit Contact</a></li>
+                        <li><a href="/pages/edit/4">Edit Fees</a></li>
+                        <li><a href="/pages/edit/5">Edit Payments</a></li>
+                        <li><a href="/pages/edit/6">Edit General Information</a></li>
+                        <li><a href="/pages/edit/7">Edit General Results</a></li>
+                        <li><a href="/pages/edit/8">Edit Training</a></li>
+                        <li><a href="/pages/edit/9">Edit Uniforms</a></li>
+                        </ul>
+                        </li>
                         <li><a href="/posts/">Edit Posts</a></li>
                         <li><a href="/players/">Edit Players</a></li>
                         <li><a href="/teams/">Edit Teams</a></li>
