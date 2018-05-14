@@ -44,7 +44,7 @@ use Cake\Routing\Router;
                         <li><a href="/pages/edit/4">Edit Fees</a></li>
                         <li><a href="/pages/edit/5">Edit Payments</a></li>
                         <li><a href="/pages/edit/6">Edit General Information</a></li>
-                        <li><a href="/pages/edit/7">Edit General Results</a></li>
+                        <li><a href="/pages/edit/7">Edit Results</a></li>
                         <li><a href="/pages/edit/8">Edit Training</a></li>
                         <li><a href="/pages/edit/9">Edit Uniforms</a></li>
                         </ul>
