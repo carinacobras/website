@@ -2,6 +2,28 @@ body {
     background-color:#333333;
 }
 
+#nav_home{
+	width: 60%;
+	display: inline-block;
+	text-align: right;
+	float: right;
+}
+	#nav_home ul{}
+		#nav_home ul li{
+			display: inline-block;
+			height: 62px;
+		}
+			#nav_home ul li a{
+				padding: 20px;
+				background: orange;
+				color: white;
+			}
+			#nav_home ul li a:hover{
+				background-color: #ffb424;
+				box-shadow: 0px 1px 1px #666;
+			}
+			#nav_home ul li a:active{ background-color: #ff8f00; }
+			
 .content {
     background-color: #888;
     background: linear-gradient(to bottom, rgba(187,187,187,1) 0%,rgba(136,136,136,1) 100%); 
