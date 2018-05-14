@@ -55,9 +55,15 @@ Router::scope('/', function (RouteBuilder $routes) {
 
     $routes->connect('/players/add', ['controller' => 'Users', 'action' => 'add']);
 
+    $routes->connect('/newplayer', ['controller' => 'Users', 'action' => 'add']);
+
     $routes->connect('/generalinformation', ['controller' => 'Pages', 'action' => 'view', 6]);
 
     $routes->connect('/results', ['controller' => 'Pages', 'action' => 'view', 7]);
+
+    $routes->connect('/training', ['controller' => 'Pages', 'action' => 'view', 8]);
+
+    $routes->connect('/uniforms', ['controller' => 'Pages', 'action' => 'view', 9]);
 
     /**
      * ...and connect the rest of 'Pages' controller's URLs.
