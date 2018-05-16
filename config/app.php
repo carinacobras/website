@@ -223,9 +223,9 @@ return [
              * the following line and set the port accordingly
              */
             //'port' => 'non_standard_port_number',
-            'username' => 'my_app',
-            'password' => 'secret',
-            'database' => 'my_app',
+            'username' => parse_url(getenv('DATABASE_URL'))['user'],
+            'password' => parse_url(getenv('DATABASE_URL'))['host'],
+            'database' => parse_url(getenv('DATABASE_URL'))['pass'],
             'encoding' => 'utf8',
             'timezone' => 'UTC',
             'flags' => [],
