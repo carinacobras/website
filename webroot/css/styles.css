@@ -15,14 +15,14 @@ body {
 		}
 			#nav_home ul li a{
 				padding: 20px;
-				background: orange;
+				background: #ae1920;
 				color: white;
 			}
 			#nav_home ul li a:hover{
-				background-color: #ffb424;
-				box-shadow: 0px 1px 1px #666;
+				background-color: #ae1920;
+				box-shadow: 0px 0.5px 0.5px #450a0c;
 			}
-			#nav_home ul li a:active{ background-color: #ff8f00; }
+			#nav_home ul li a:active{ background-color: #ae1920; }
 			
 .content {
     background-color: #888;
