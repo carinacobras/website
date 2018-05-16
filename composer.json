@@ -15,8 +15,8 @@
         "sendgrid/sendgrid": "~6.0",
         "ext-pdo_sqlite": "*",
         "ext-pdo_mysql": "*",
+        "ext-pdo_pgsql": "*",
         "ext-gettext": "*",
-        "sendinblue/sendinblue-api-bundle": "^2.0",
         "promisepay/promisepay-php": "2.*",
         "hashmode/cakephp-tinymce-elfinder": "~1.0"      
     },
