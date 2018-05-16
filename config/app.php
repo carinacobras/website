@@ -222,7 +222,7 @@ return [
              * MySQL on MAMP uses port 8889, MAMP usersS will want to uncomment
              * the following line and set the port accordingly
              */
-            //'port' => 'non_standard_port_number',
+            'port' => '2719',
             'username' => parse_url(getenv('DATABASE_URL'))['user'],
             'password' => parse_url(getenv('DATABASE_URL'))['pass'],
             'database' => substr(parse_url(getenv('DATABASE_URL'))['path'], 1),
