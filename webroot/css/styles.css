@@ -135,8 +135,22 @@ input[name='is_player'][value='1']:checked + div {
     min-height:400px;
 }
 
-table span {
+table span, table p {
     color: black !important;
+}
+
+table {
+    margin-top:0;
+    margin-left: 0 !important;
+    margin-right: 0;
+    margin-bottom: 1rem;
+    width: 100%;
+    max-width: 100%;
+    color: #333;
+}
+
+table td {
+    width: auto;
 }
 
 .content > span, .content p span {
