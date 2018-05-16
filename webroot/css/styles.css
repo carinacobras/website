@@ -2,7 +2,7 @@ body {
     background-color:#333333;
 }
 
-#nav_home{
+/* #nav_home{
 	width: 60%;
 	display: inline-block;
 	text-align: right;
@@ -11,19 +11,61 @@ body {
 	#nav_home ul{}
 		#nav_home ul li{
 			display: inline-block;
-			height: 62px;
+			height: 100px;
+			width: 100px;
 		}
 			#nav_home ul li a{
 				padding: 20px;
-				background: orange;
+				background: #ae1920;
 				color: white;
 			}
 			#nav_home ul li a:hover{
-				background-color: #ffb424;
-				box-shadow: 0px 1px 1px #666;
+				background-color: #ae1920;
+				box-shadow: 0px 0.5px 0.5px #450a0c;
 			}
-			#nav_home ul li a:active{ background-color: #ff8f00; }
-			
+			#nav_home ul li a:active{ background-color: #ae1920; } */
+
+			/*  SECTIONS  */
+.section {
+	clear: both;
+	padding: 0px;
+	margin: 0px;
+}
+
+/*  COLUMN SETUP  */
+.col {
+	display: block;
+	float:left;
+	margin: 1% 0 1% 1.6%;
+}
+.col:first-child { margin-left: 0; }
+
+/*  GROUPING  */
+.group:before,
+.group:after { content:""; display:table; }
+.group:after { clear:both;}
+.group { zoom:1; /* For IE 6/7 */ }
+
+/*  GRID OF TWO  */
+.span_2_of_2 {
+	width: 100%;
+}
+.span_1_of_2 {
+	width: 49.2%;
+}
+
+/*  GO FULL WIDTH AT LESS THAN 480 PIXELS */
+
+@media only screen and (max-width: 480px) {
+	.col { 
+		margin: 1% 0 1% 0%;
+	}
+}
+
+@media only screen and (max-width: 480px) {
+	.span_2_of_2, .span_1_of_2 { width: 100%; }
+}
+
 .content {
     background-color: #888;
     background: linear-gradient(to bottom, rgba(187,187,187,1) 0%,rgba(136,136,136,1) 100%); 
