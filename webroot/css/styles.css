@@ -2,28 +2,18 @@ body {
     background-color:#333333;
 }
 
-#nav_home{
-	width: 60%;
-	display: inline-block;
-	text-align: right;
-	float: right;
+.btn-home {
+    padding: 20px;
+    background: #ae1920;
+    color: white;
 }
-	#nav_home ul{}
-		#nav_home ul li{
-			display: inline-block;
-			height: 100px;
-			width: 100px;
-		}
-			#nav_home ul li a{
-				padding: 20px;
-				background: #ae1920;
-				color: white;
-			}
-			#nav_home ul li a:hover{
-				background-color: #ae1920;
-				box-shadow: 0px 0.5px 0.5px #450a0c;
-			}
-			#nav_home ul li a:active{ background-color: #ae1920; }
+.btn-home:hover{
+    background-color: #ae1920;
+    box-shadow: 0px 0.5px 0.5px #450a0c;
+}
+.btn-home:active {
+     background-color: #ae1920; 
+}
 
 @import "compass/css3";
 
