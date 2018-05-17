@@ -14,14 +14,17 @@
         "cakephp/debug_kit": "~3.2",
         "sendgrid/sendgrid": "~6.0",
         "ext-pdo_sqlite": "*",
-        "sendinblue/sendinblue-api-bundle": "^2.0",
+        "ext-pdo_mysql": "*",
+        "ext-pdo_pgsql": "*",
+        "ext-gettext": "*",
         "promisepay/promisepay-php": "2.*",
         "hashmode/cakephp-tinymce-elfinder": "~1.0"      
     },
     "require-dev": {
         "psy/psysh": "@stable",
         "cakephp/bake": "~1.1",
-        "cakephp/cakephp-codesniffer": "^3.0"
+        "cakephp/cakephp-codesniffer": "^3.0",
+        "heroku/heroku-buildpack-php": "*"
     },
     "suggest": {
         "markstory/asset_compress": "An asset compression plugin which provides file concatenation and a flexible filter system for preprocessing and minification.",
