@@ -2,7 +2,7 @@ body {
     background-color:#333333;
 }
 
-/* #nav_home{
+#nav_home{
 	width: 60%;
 	display: inline-block;
 	text-align: right;
@@ -23,7 +23,7 @@ body {
 				background-color: #ae1920;
 				box-shadow: 0px 0.5px 0.5px #450a0c;
 			}
-			#nav_home ul li a:active{ background-color: #ae1920; } */
+			#nav_home ul li a:active{ background-color: #ae1920; }
 
 			/*  SECTIONS  */
 .section {
