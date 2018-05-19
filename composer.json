@@ -18,7 +18,8 @@
         "ext-pdo_pgsql": "*",
         "ext-gettext": "*",
         "promisepay/promisepay-php": "2.*",
-        "hashmode/cakephp-tinymce-elfinder": "~1.0"      
+        "hashmode/cakephp-tinymce-elfinder": "~1.0",
+        "fabpot/goutte": "^3.2"      
     },
     "require-dev": {
         "psy/psysh": "@stable",

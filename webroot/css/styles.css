@@ -208,3 +208,54 @@ table td {
 .content > span, .content p span {
     color: white !important;
 }
+
+
+.club-team-row {
+    float: left;
+    padding: 15px 10px;
+    width: 100%;
+}
+
+.club-team-list .even {
+    background: none repeat scroll 0 0 #f2f2f2;
+}
+
+.club-team-row .even, .club-team-row .odd {
+    background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
+}
+
+.previous-comps {
+    border-bottom: 0 none;
+    margin: 0 0 0 10px;
+    padding: 0;
+    width: 95%;
+}
+.club-team-row h3 {
+    float: left;
+    font-size: 15px;
+    font-weight: 400;
+    width: 60%;
+}
+.club-team-row h3 a {
+    margin: 0 10px 0 0;
+}
+.previous-comps h3 {
+    clear: both;
+    font-size: 11px;
+    font-weight: 400;
+    width: auto;
+}
+.previous-comps h5 {
+    clear: both;
+    font-weight: 400;
+    margin: 0;
+}
+.club-team-frl {
+    float: right;
+}
+.club-team-frl a {
+    font-size: 12px;
+    font-weight: 400;
+    padding: 5px 10px;
+    text-transform: uppercase;
+}
