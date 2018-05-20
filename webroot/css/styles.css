@@ -12,8 +12,9 @@ img {
 	border: 0.5px;
 	border-color: #ae1920;
     color: #ae1920;
-	width: 200px;
+	width: 500px;
 	height: 150px;
+	opacity: 0.75;
 }
 .btn-home:hover{
     background-color: #ae1920;
