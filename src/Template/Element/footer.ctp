@@ -1,4 +1,3 @@
-@@ -1,39 +0,0 @@
 <!--Footer-->
 <footer class="page-footer font-small pt-4 mt-4">
 
@@ -16,31 +15,14 @@
             <!--Second column-->
             <!-- <div class="col-md-6"> -->
                 <!-- <h5 class="text-uppercase">Links</h5> -->
+				
                 <!-- <ul class="list-unstyled"> -->
                     <!-- <li><a href="#!">Link 1</a></li> -->
                     <!-- <li><a href="#!">Link 2</a></li> -->
                     <!-- <li><a href="#!">Link 3</a></li> -->
                     <!-- <li><a href="#!">Link 4</a></li> -->
                 <!-- </ul> -->
-            <!-- </div> -->
-            <!--/.Second column-->
-        <!-- </div> -->
-    <!-- </div> -->
-    <!--/.Footer Links -->
-
-    <!--Copyright-->
-    <div class="footer-copyright py-3 text-center">
-        <div class="container-fluid">
-            <? echo "<p>Copyright " . date("Y") . " </p>";?>
-        </div>
-    </div>
-	
-	<!DOCTYPE html>
-<html>
-<head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<style>
+				<style>
 .fa {
   padding: 20px;
   font-size: 30px;
@@ -62,15 +44,18 @@
 
 
 </style>
-</head>
-<body>
+            <!-- </div> -->
+            <!--/.Second column-->
+        <!-- </div> -->
+    <!-- </div> -->
+    <!--/.Footer Links -->
 
-<!-- Add font awesome icons -->
-<a href="https://www.facebook.com/carinacobras/" class="fa fa-facebook"></a>
-
-      
-</body>
-</html> 
+    <!--Copyright-->
+    <div class="footer-copyright py-3 text-center">
+        <div class="container-fluid">
+            <? echo "<p>Copyright " . date("Y") . " </p>";?>
+        </div>
+    </div>
 
     <!--/.Copyright-->
 
