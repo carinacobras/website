@@ -53,14 +53,10 @@ $urls = array(
                     'url' => '/training',
                 ),
                 array(
-                    'label' => 'Fixtures',
+                    'label' => 'Fixtures & Results',
                     'url'=> '/games',
                 ),
-				array(
-                    'label' => 'Results',
-                    'url'=> '/results',
-			
-                ),
+
 				        ),
       ),
    	array(

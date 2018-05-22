@@ -9,11 +9,12 @@ img {
 .btn-home {
     padding: 20px;
     background: white;
-	border: 0.5px;
+	border: 5px;
 	border-color: #ae1920;
     color: #ae1920;
-	width: 200px;
-	height: 150px;
+	width: 500px;
+	height: 100px;
+	opacity: 0.75;
 }
 .btn-home:hover{
     background-color: #ae1920;
