@@ -1,6 +1,6 @@
 <?php
 namespace App\Controller;
-
+use Cake\ORM\TableRegistry;
 use SendGrid;
 use SendGrid\Email;
 use Smtpapi;
@@ -44,23 +44,39 @@ class NewslettersController extends AppController
         $newsletter = $this->Newsletters->get($id, [
             'contain' => []
         ]);
+        $this->Emails = TableRegistry::get('Emails');
+        $this->Users = TableRegistry::get('Users');
 
-        // if ($this->request->is(['patch', 'post', 'put'])) {
-        //     $this->Flash->success(__('The newsletter has been sent.'));
 
-        //     $from = new SendGrid\Email("Example User", "tross@tysonross.com");
-        //     $subject = "Sending with SendGrid is Fun";
-        //     $to = new SendGrid\Email("Example User", "tyson.ross@gmail.com");
-        //     $content = new SendGrid\Content("text/plain", "and easy to do anywhere, even with PHP");
-        //     $mail = new SendGrid\Mail($from, $subject, $to, $content);
-        //     $email2 = new Email("Example User", "tross_test2@tysonross.com");
-        //     $mail->personalization[0]->addTo($email2);
-        //     $email3 = new Email("Example User", "tyson.ross@connect.qut.edu.au");
-        //     $mail->personalization[0]->addTo($email3);
-        //     $apiKey = getenv('SENDGRID_API_KEY');
-        //     $sg = new \SendGrid($apiKey);
-        //     $response = $sg->client->mail()->send()->post($mail);
-        // }
+
+        if ($this->request->is(['patch', 'post', 'put'])) {
+            $this->Flash->success(__('The newsletter has been sent.'));
+
+
+            $emails = $this->Emails->find('all',
+            [
+                'contain' => ['Users'],
+                'fields' => ['Users.first_name', 'Users.last_name', 'Emails.email_address']
+            ]
+            );
+
+            $from = new SendGrid\Email("Carina Cobras", "registrar@carinacobras.com.au");
+            $subject = $newsletter->subject;
+            $to = new SendGrid\Email("Registrar", "registrar@carinacobras.com.au");
+           
+            $content = new SendGrid\Content("text/plain", $newsletter->body);
+            $mail = new SendGrid\Mail($from, $subject, $to, $content);
+            
+            foreach ($emails as $email) {
+                $sg_email = new Email($email['user']['first_name'] . ' ' . $email['user']['last_name'], $email['email_address']);
+                $mail->personalization[0]->addTo($sg_email);
+            }
+
+            // $apiKey = getenv('SENDGRID_API_KEY');
+
+            // $sg = new \SendGrid($apiKey);
+            // $response = $sg->client->mail()->send()->post($mail);
+        }
 
         $this->set('newsletter', $newsletter);
     }
