@@ -32,8 +32,9 @@ use Cake\Routing\Router;
     <?= $this->Flash->render() ?>
         <?= $this->fetch('content') ?>
     </div>
-    </div>
     <?=$this->element('footer') ?>
+    </div>
+    
     <?=$this->element('richtexteditor') ?>
 </body>
 </html>

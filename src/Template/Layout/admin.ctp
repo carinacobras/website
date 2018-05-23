@@ -68,8 +68,8 @@ use Cake\Routing\Router;
                 <?= $this->fetch('content') ?>
             </div>
         </div>
+        <?=$this->element('footer') ?>
     </div>
-<?=$this->element('footer') ?>
 <?=$this->element('richtexteditor') ?>
 </body>
 </html>

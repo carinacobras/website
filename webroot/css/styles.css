@@ -260,3 +260,10 @@ table td {
     padding: 5px 10px;
     text-transform: uppercase;
 }
+
+.fa-facebook {
+	background: #3B5998;
+	color: #FFFFFF;
+    padding: 0.05em 0.3em;
+    font-size: 4em;
+}

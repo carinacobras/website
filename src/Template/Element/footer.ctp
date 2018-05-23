@@ -1,6 +1,5 @@
-@@ -1,39 +0,0 @@
 <!--Footer-->
-<footer class="page-footer font-small pt-4 mt-4">
+<footer class="page-footer font-small">
 
     <!-- Footer Links-->
     <!-- <div class="container-fluid text-center text-md-left"> -->
@@ -27,50 +26,16 @@
         <!-- </div> -->
     <!-- </div> -->
     <!--/.Footer Links -->
-
     <!--Copyright-->
-    <div class="footer-copyright py-3 text-center">
+    <div class="py-3 text-left">
         <div class="container-fluid">
-            <? echo "<p>Copyright " . date("Y") . " </p>";?>
+        <div class="col-sm-12 fa-stack fa-lg">
+            <a href="https://www.facebook.com/carinacobras/" class="fa fa-facebook fa-stack-2x"></a>
+        </div>
+            <p class="mt-2"><? echo "Copyright " . date("Y") . "";?></p>
         </div>
     </div>
-	
-	<!DOCTYPE html>
-<html>
-<head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<style>
-.fa {
-  padding: 20px;
-  font-size: 30px;
-  width: 30px;
-  text-align: center;
-  text-decoration: none;
-  margin: 5px 2px;
-  border-radius: 50%;
-}
 
-.fa:hover {
-    opacity: 0.7;
-}
-
-.fa-facebook {
-  background: #3B5998;
-  color: white;
-}
-
-
-</style>
-</head>
-<body>
-
-<!-- Add font awesome icons -->
-<a href="https://www.facebook.com/carinacobras/" class="fa fa-facebook"></a>
-
-      
-</body>
-</html> 
 
     <!--/.Copyright-->
 
