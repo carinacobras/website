@@ -267,3 +267,16 @@ table td {
     padding: 0.05em 0.3em;
     font-size: 4em;
 }
+.fa .fa-facebook {
+    padding: 20px;
+    font-size: 30px;
+    width: 30px;
+    text-align: center;
+    text-decoration: none;
+    margin: 5px 2px;
+    border-radius: 50%;
+}
+
+.fa .fa-facebook {
+    opacity: 0.7;
+}
