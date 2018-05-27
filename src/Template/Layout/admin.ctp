@@ -47,6 +47,8 @@ use Cake\Routing\Router;
                         </ul>
                         </li>
                         <li><a href="/players/">Edit Players</a></li>
+                        <li><a href="/players-teams/">Edit Players-Teams</a></li>
+                        <li><a href="/contacts/">Edit Contacts</a></li>
                         <li><a href="/teams/">Edit Teams</a></li>
                         <li><a href="/competitions/">Edit Competitions</a></li>
                         <li><a href="/newsletters/">Edit Newsletters</a></li>

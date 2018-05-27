@@ -29,7 +29,19 @@
                 <td><?= $player->user->gender == 1 ? 'Male' : 'Female'  ?></td>
                 <td><?= $this->Number->format($player->height) ?></td>
                 <td><?= $player->experience ?></td>
-                <td><?= $player->has('team') ? $this->Html->link($player->team->full_title, ['controller' => 'Teams', 'action' => 'view', $player->team->id]) : '' ?></td>
+                <td><?
+                
+                if (!empty($player->players_teams)) {
+                    foreach ($teams as $team):
+                        foreach ($player->players_teams as $player_teams):
+                            if ($team->id === $player_teams->team_id):
+                                echo "<p>" . $this->Html->link($team->full_title, ['controller' => 'Teams', 'action' => 'view', $team->id]) . "</p>";
+                            endif;
+                        endforeach;
+                    endforeach;
+                }
+
+                ?></td>
                 <td class="actions">
                     <?= $this->Html->link(__('View'), ['action' => 'view', $player->id]) ?>
                     <?= $this->Html->link(__('Edit'), ['action' => 'edit', $player->id]) ?>

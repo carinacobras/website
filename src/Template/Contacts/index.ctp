@@ -4,22 +4,10 @@
   * @var \App\Model\Entity\Contact[]|\Cake\Collection\CollectionInterface $contacts
   */
 ?>
-<nav class="col-sm-12" id="actions-sidebar">
-    <ul class="side-nav">
-        <li class="heading"><?= __('Actions') ?></li>
-        <li><?= $this->Html->link(__('New Contact'), ['action' => 'add']) ?></li>
-        <li><?= $this->Html->link(__('List Players'), ['controller' => 'Players', 'action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('New Player'), ['controller' => 'Players', 'action' => 'add']) ?></li>
-        <li><?= $this->Html->link(__('List Phone Numbers'), ['controller' => 'Phonenumbers', 'action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('New Phone Number'), ['controller' => 'Phonenumbers', 'action' => 'add']) ?></li>
-        <li><?= $this->Html->link(__('List Emails'), ['controller' => 'Emails', 'action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('New Email'), ['controller' => 'Emails', 'action' => 'add']) ?></li>
-        <li><?= $this->Html->link(__('List Relationships'), ['controller' => 'Relationships', 'action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('New Relationship'), ['controller' => 'Relationships', 'action' => 'add']) ?></li>
-    </ul>
-</nav>
+
 <div class="contacts index col-sm-12">
     <h3><?= __('Contacts') ?></h3>
+    <?= $this->Html->link(__('New Contact'), ['action' => 'add'], ['class' => 'btn btn-primary mt-3 mb-3']) ?>
     <table class="table">
         <thead>
             <tr>
@@ -27,8 +15,6 @@
                 <th scope="col"><?= $this->Paginator->sort('player_id') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('first_name') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('last_name') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('phone_number') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('email_address') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('relationship_id') ?></th>
                 <th scope="col" class="actions"><?= __('Actions') ?></th>
             </tr>
@@ -40,8 +26,6 @@
                 <td><?= $contact->has('player') ? $this->Html->link($contact->player->id, ['controller' => 'Players', 'action' => 'view', $contact->player->id]) : '' ?></td>
                 <td><?= h($contact->first_name) ?></td>
                 <td><?= h($contact->last_name) ?></td>
-                <td><?= $contact->has('phone_number') ? $this->Html->link($contact->phone_number, ['controller' => 'Contacts', 'action' => 'view', $contact->phone_number]) : '' ?></td>
-                <td><?= $contact->has('email_address') ? $this->Html->link($contact->email_address, ['controller' => 'Contacts', 'action' => 'view', $contact->email_address]) : '' ?></td>
                 <td><?= $contact->has('relationship') ? $this->Html->link($contact->relationship->title, ['controller' => 'Relationships', 'action' => 'view', $contact->relationship->id]) : '' ?></td>
                 <td class="actions">
                     <?= $this->Html->link(__('View'), ['action' => 'view', $contact->id]) ?>
