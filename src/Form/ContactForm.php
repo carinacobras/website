@@ -15,6 +15,7 @@ class ContactForm extends Form
     {
         return $schema->addField('name', 'string')
             ->addField('email', ['type' => 'string'])
+			->addField('phonenumber', ['type' => 'string'])
             ->addField('enquirytype', ['type' => 'select'])
             ->addField('body', ['type' => 'text']);
     }
@@ -34,7 +35,7 @@ class ContactForm extends Form
     {
         $email = new Email();
         $email->profile('default');
-        $enquiry_array = ['Uniform Query', 'Fees Query', 'First Time Player', 'General Query', 'Change Contact Details'];
+        $enquiry_array = ['Uniform Query', 'Fees Query', 'General Query', 'Update my details'];
         $email->from([$data['email']])
         ->to('carinacobras@gmail.com')
         ->subject($enquiry_array[$data['enquirytype']])

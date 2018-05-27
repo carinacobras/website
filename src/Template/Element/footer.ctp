@@ -15,6 +15,7 @@
             <!--Second column-->
             <!-- <div class="col-md-6"> -->
                 <!-- <h5 class="text-uppercase">Links</h5> -->
+				
                 <!-- <ul class="list-unstyled"> -->
                     <!-- <li><a href="#!">Link 1</a></li> -->
                     <!-- <li><a href="#!">Link 2</a></li> -->
@@ -27,7 +28,7 @@
     <!-- </div> -->
     <!--/.Footer Links -->
     <!--Copyright-->
-    <div class="py-3 text-left">
+    <div class="py-3 text-center">
         <div class="container-fluid">
         <div class="col-sm-12 fa-stack fa-lg">
             <a href="https://www.facebook.com/carinacobras/" class="fa fa-facebook fa-stack-2x"></a>

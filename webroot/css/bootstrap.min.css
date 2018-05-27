@@ -32,7 +32,7 @@ h1 {
   line-height: 14px;
   margin: 0.5em 0;
   font-variant: caps;
-  color: white;
+  color: #ae1920;
 }
 
 h2 {
@@ -58,7 +58,7 @@ font-size: 16px;
 font-style: normal;
 font-weight: 400;
 line-height: 14px;
-color: white;
+color: black;
 }
 
 blockquote {
@@ -68,7 +68,7 @@ blockquote {
   font-weight:400;
   line-height: 20px;
   text-indent: 30px;
-  color: white;
+  color: black;
 }
 
 .footer {
@@ -4480,7 +4480,6 @@ tbody.collapse.show {
       -ms-flex-direction: column;
           flex-direction: column;
   background-color: #fff;
-  border: 1px solid rgba(0, 0, 0, 0.125);
   border-radius: 0.6rem;
   opacity: 1;
   text-align: wrap;
@@ -4529,8 +4528,8 @@ tbody.collapse.show {
   padding: 0.75rem 1.25rem;
   margin-bottom: 0;
   background-color: #f7f7f9;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.125);
   opacity: 1;
+  border-radius: 0.6rem;
 }
 
 .card-header:first-child {
@@ -4541,8 +4540,8 @@ tbody.collapse.show {
 .card-footer {
   padding: 0.75rem 1.25rem;
   background-color: #fff;
-  border-top: 1px solid rgba(0, 0, 0, 0.125);
   opacity: 1;
+  border-radius: 0.6rem;
 }
 
 .card-footer:last-child {

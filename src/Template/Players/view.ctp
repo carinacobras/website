@@ -35,17 +35,7 @@
                 <th scope="col"><?=__('Gender') ?></th>
                 <th scope="col" class="actions"><?= __('Actions') ?></th>
             </tr>
-            <?php foreach ($player->absences as $absences): ?>
-            <tr>
-                <td><?= h($absences->id) ?></td>
-                <td><?= h($absences->date) ?></td>
-                <td><?= h($absences->player_id) ?></td>
-                <td class="actions">
-                    <?= $this->Html->link(__('View'), ['controller' => 'Absences', 'action' => 'view', $absences->id]) ?>
-                    <?= $this->Html->link(__('Edit'), ['controller' => 'Absences', 'action' => 'edit', $absences->id]) ?>
-                    <?= $this->Form->postLink(__('Delete'), ['controller' => 'Absences', 'action' => 'delete', $absences->id], ['confirm' => __('Are you sure you want to delete # {0}?', $absences->id)]) ?>
-                </td>
-            </tr>
+
             <?php endforeach; ?>
         </table>
         <?php endif; ?>
@@ -79,25 +69,7 @@
         </table>
         <?php endif; ?>
     </div>
-    <div class="related">
-        <h4><?= __('Ranks') ?></h4>
-        <?php if (!empty($player->ranks)): ?>
-        <table class="table">
-            <tr>
-                <th scope="col"><?= __('Competition Id') ?></th>
-                <th scope="col"><?= __('Rank') ?></th>
-                <th scope="col" class="actions"><?= __('Actions') ?></th>
-            </tr>
-            <?php foreach ($player->ranks as $ranks): ?>
-            <tr>
-                <td><?= h($ranks->competition_id) ?></td>
-                <td><?= h($ranks->rank) ?></td>
-                <td class="actions">
-                    <?= $this->Html->link(__('View'), ['controller' => 'Ranks', 'action' => 'view', $ranks->id]) ?>
-                    <?= $this->Html->link(__('Edit'), ['controller' => 'Ranks', 'action' => 'edit', $ranks->id]) ?>
-                    <?= $this->Form->postLink(__('Delete'), ['controller' => 'Ranks', 'action' => 'delete', $ranks->id], ['confirm' => __('Are you sure you want to delete # {0}?', $ranks->id)]) ?>
-                </td>
-            </tr>
+
             <?php endforeach; ?>
         </table>
         <?php endif; ?>
