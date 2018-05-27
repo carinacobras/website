@@ -47,10 +47,18 @@ class PagesController extends AppController
 
         $this->loadModel('Posts');
 
+        $this->loadModel('Training');
+
         $posts = $this->Posts->find('all', [
             'limit' => 5,
             'order' => 'Posts.created DESC'
         ]);
+
+        $training = $this->Training->find('all', [
+            'limit' => 100000,
+            'contain' => ['Teams', 'Competitions', 'Locations']
+        ]);
+        
 
         if ($this->request->is('post')) {
             if ($contact->execute($this->request->getData())) {
@@ -66,6 +74,7 @@ class PagesController extends AppController
         $this->set('page', $page);
         $this->set('posts', $posts);
         $this->set('contact', $contact);
+        $this->set('training', $training);
     }
 
     /**

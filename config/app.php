@@ -179,11 +179,11 @@ return [
         'default' => [
             'className' => 'Smtp',
             // The following keys are used in SMTP transports
-            'host' => 'smtp.sendgrid.net',
+            'host' => 'smtp-relay.sendinblue.com',
             'port' => 587,
             'timeout' => 30,
-            'username' => 'apikey',
-            'password' => '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',
+            'username' => 'tross_cobras@tysonross.com',
+            'password' => 'ZzBPA91L2kqSbRj0',
         ],
     ],
 

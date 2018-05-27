@@ -5,34 +5,9 @@
  */
 ?>
 
-<div class="locations view large-9 medium-8 columns content">
+<div class="col-sm-12">
     <h3><?= h($location->name) ?></h3>
     <? echo html_entity_decode($location->map) ?>
-    <div class="related">
-        <h4><?= __('Related Games') ?></h4>
-        <?php if (!empty($location->games)): ?>
-        <table class="table">
-            <tr>
-                <th scope="col"><?= __('Time') ?></th>
-                <th scope="col"><?= __('Competition Id') ?></th>
-                <th scope="col"><?= __('Location Id') ?></th>
-                <th scope="col" class="actions"><?= __('Actions') ?></th>
-            </tr>
-            <?php foreach ($location->games as $games): ?>
-            <tr>
-                <td><?= h($games->time) ?></td>
-                <td><?= h($games->competition_id) ?></td>
-                <td><?= h($games->location_id) ?></td>
-                <td class="actions">
-                    <?= $this->Html->link(__('View'), ['controller' => 'Games', 'action' => 'view', $games->id]) ?>
-                    <!-- <?= $this->Html->link(__('Edit'), ['controller' => 'Games', 'action' => 'edit', $games->id]) ?> -->
-                    <!-- <?= $this->Form->postLink(__('Delete'), ['controller' => 'Games', 'action' => 'delete', $games->id], ['confirm' => __('Are you sure you want to delete # {0}?', $games->id)]) ?> -->
-                </td>
-            </tr>
-            <?php endforeach; ?>
-        </table>
-        <?php endif; ?>
-    </div>
     <div class="related">
         <h4><?= __('Related Training') ?></h4>
         <?php if (!empty($location->training)): ?>
