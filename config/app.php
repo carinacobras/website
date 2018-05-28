@@ -222,6 +222,7 @@ return [
             'log' => false,
             'quoteIdentifiers' => false,
             'url' => env('DATABASE_URL', null),
+            'schema' => 'cobras',
         ],
 
         /**
