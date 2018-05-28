@@ -50,8 +50,19 @@ class NewslettersController extends AppController
 
 
         if ($this->request->is(['patch', 'post', 'put'])) {
-            $this->Flash->success(__('The newsletter has been sent.'));
+           
+            $data = $this->request->getData();
+                
+            $data['status'] = 1;
 
+            $newsletter = $this->Newsletters->patchEntity($newsletter, $data);
+            if ($this->Newsletters->save($newsletter)) {
+                $this->Flash->success(__('The newsletter has been sent.'));
+
+            } else {
+                $this->Flash->error(__('The newsletter could not be saved. Please, try again.'));
+            }
+         
 
             // $emails = $this->Emails->find('all',
             // [
@@ -68,12 +79,6 @@ class NewslettersController extends AppController
             // $mail = new SendGrid\Mail($from, $subject, $to, $content);
 
             // $mail = new \SendGrid\Mail\Mail();
-
-            $mail = new Email();
-
-            $mail->from("registrar@carinacobras.com.au");
-            $mail->to('tross1@tysonross.com');
-            $mail->subject('test');
 
             // $mail->setFrom("Carina Cobras", "registrar@carinacobras.com.au");
             // $mail->setSubject($newsletter->subject);
@@ -115,7 +120,13 @@ class NewslettersController extends AppController
 
             //$mail->setHeaders(array('x-smtpapi' => $header->jsonString()));
            
+
            
+            // $mail = new Email();
+
+            // $mail->from("registrar@carinacobras.com.au");
+            // $mail->to('tross1@tysonross.com');
+            // $mail->subject('test');
            // $response = $mail->send();
         }
 
