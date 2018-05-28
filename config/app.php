@@ -214,7 +214,7 @@ return [
     'Datasources' => [
         'default' => [
             'className' => 'Cake\Database\Connection',
-            'driver' => 'Cake\Database\Driver\Mysql',
+            'driver' => 'Cake\Database\Driver\Postgres',
             'persistent' => false,
             'host' => parse_url(getenv('DATABASE_URL'))['host'],
             /**
@@ -222,7 +222,7 @@ return [
              * MySQL on MAMP uses port 8889, MAMP usersS will want to uncomment
              * the following line and set the port accordingly
              */
-            'port' => '2719',
+            'port' => '5432',
             'username' => parse_url(getenv('DATABASE_URL'))['user'],
             'password' => parse_url(getenv('DATABASE_URL'))['pass'],
             'database' => substr(parse_url(getenv('DATABASE_URL'))['path'], 1),
@@ -231,7 +231,6 @@ return [
             'flags' => [],
             'cacheMetadata' => true,
             'log' => false,
-
             /**
              * Set identifier quoting to true if you are using reserved words or
              * special characters in your table or column names. Enabling this
