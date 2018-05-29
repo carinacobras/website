@@ -37,7 +37,7 @@ class ContactForm extends Form
         $email->profile('default');
         $enquiry_array = ['Uniform Query', 'Fees Query', 'General Query', 'Update my details'];
         $email->from([$data['email']])
-        ->to('carinacobras@gmail.com')
+        ->to('registrar@carinacobras.com.au')
         ->subject($enquiry_array[$data['enquirytype']])
         ->send([$data['body']]);
         return true;
