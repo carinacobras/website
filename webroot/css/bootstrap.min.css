@@ -4495,6 +4495,7 @@ tbody.collapse.show {
 
 .card-title {
   margin-bottom: 0.75rem;
+  font-colour: white;
 }
 
 .card-subtitle {
