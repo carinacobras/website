@@ -1,5 +1,3 @@
-/* Background Gradient */
-$enable-gradient: true
 
 background{
 	background: rgb(2,0,36);
@@ -222,7 +220,7 @@ table td {
 }
 
 .club-team-list .even {
-    background: none repeat scroll 0 0 #f2f2f2;
+    background: none repeat scroll 0 0 #a9abac;
 }
 
 .club-team-row .even, .club-team-row .odd {
