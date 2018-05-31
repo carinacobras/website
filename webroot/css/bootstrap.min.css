@@ -60,6 +60,7 @@ font-style: normal;
 font-weight: 400;
 line-height: 20px;
 color: white;
+padding: 5px
 }
 
 blockquote {
@@ -4682,6 +4683,7 @@ tbody.collapse.show {
 
 .card-text{
 	color: black;
+	padding: 5px;
 }
 .card-img-overlay {
   position: absolute;
