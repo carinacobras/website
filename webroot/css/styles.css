@@ -9,8 +9,6 @@ body {
 }
 }
 
-background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(192,192,192,1) 0%, rgba(212,214,215,1) 100%);
-
 img {
     border-radius: 8px;
 }
