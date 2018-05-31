@@ -131,7 +131,7 @@ img {
 }
 
 .main-nav .nav-link, .main-nav nav-link:hover, .nav-link.disabled {
-    color: white;
+    color: white !important;
 }
 
 .navbar-brand-cobra {
