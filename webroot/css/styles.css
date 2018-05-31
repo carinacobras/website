@@ -1,4 +1,5 @@
 /* Background Gradient */
+$enable-gradient: true
 
 background{
 	background: rgb(2,0,36);
