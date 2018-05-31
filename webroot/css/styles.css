@@ -1,8 +1,7 @@
 /* Background Gradient */
 
-background{
-
 $enable-gradient: true;
+background{
 @mixin gradient-vertical($start-color: #d4d6d7, $end-color: #fff, $start-percent: 0%, $end-percent: 100%) {
   background-image: linear-gradient(to bottom, $start-color $start-percent, $end-color $end-percent);
   background-repeat: repeat-x;
