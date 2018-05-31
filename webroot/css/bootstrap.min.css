@@ -4445,15 +4445,15 @@ tbody.collapse.show {
 }
 
 .navbar-inverse .navbar-nav .nav-link {
-  color: gray
+  color: white;
 }
 
 .navbar-inverse .navbar-nav .nav-link:focus, .navbar-inverse .navbar-nav .nav-link:hover {
-  color: gray;
+  color: white;
 }
 
 .navbar-inverse .navbar-nav .nav-link.disabled {
-  color: gray;
+  color: white;
 }
 
 .navbar-inverse .navbar-nav .open > .nav-link,
