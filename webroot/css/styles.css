@@ -1,11 +1,8 @@
 /* Background Gradient */
 
 $enable-gradient: true
-
-
-
 background {
-	@mixin gradient-vertical($start-color: #d4d6d7, $end-color: #fff, $start-percent: 0%, $end-percent: 100%) {
+	@mixin gradient-vertical($start-color: #d4d6d7, $end-color: #fff, $start-percent: 50%, $end-percent: 100%) {
   background-image: linear-gradient(to bottom, $start-color $start-percent, $end-color $end-percent);
   background-repeat: repeat-x;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#{ie-hex-str($start-color)}', endColorstr='#{ie-hex-str($end-color)}', GradientType=0);
