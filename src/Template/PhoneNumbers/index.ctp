@@ -1,7 +1,7 @@
 <?php
 /**
   * @var \App\View\AppView $this
-  * @var \App\Model\Entity\Phonenumber[]|\Cake\Collection\CollectionInterface $phoneNumbers
+  * @var \App\Model\Entity\PhoneNumber[]|\Cake\Collection\CollectionInterface $phoneNumbers
   */
 ?>
 
