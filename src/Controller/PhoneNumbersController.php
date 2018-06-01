@@ -6,7 +6,7 @@ use App\Controller\AppController;
 /**
  * Phonenumbers Controller
  *
- * @property \App\Model\Table\PhonenumbersTable $Phonenumbers
+ * @property \App\Model\Table\PhonenumbersTable $phonenumbers
  *
  * @method \App\Model\Entity\Phonenumber[] paginate($object = null, array $settings = [])
  */
