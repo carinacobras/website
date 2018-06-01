@@ -19,7 +19,7 @@ use Cake\Validation\Validator;
  * @method \App\Model\Entity\PhoneNumber[] patchEntities($entities, array $data, array $options = [])
  * @method \App\Model\Entity\PhoneNumber findOrCreate($search, callable $callback = null, $options = [])
  */
-class PhoneNumbersTable extends Table
+class PhonenumbersTable extends Table
 {
 
     /**
