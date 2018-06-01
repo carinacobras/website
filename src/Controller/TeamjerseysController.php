@@ -22,6 +22,7 @@ class TeamjerseysController extends AppController
     {
         $this->paginate = [
             'limit' => 100000,
+            'maxLimit' => 10000,
             'contain' => ['Teams']
         ];
         $teamsJerseys = $this->paginate($this->Teamjerseys);

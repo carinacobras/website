@@ -22,6 +22,7 @@ class TrainingController extends AppController
     {
         $this->paginate = [
             'limit' => 100000,
+            'maxLimit' => 10000,
             'contain' => ['Teams', 'Competitions', 'Locations']
         ];
         $training = $this->paginate($this->Training);

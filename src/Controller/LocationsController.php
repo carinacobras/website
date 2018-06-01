@@ -23,6 +23,7 @@ class LocationsController extends AppController
     {
         $this->paginate = [
             'limit' => 100000,
+            'maxLimit' => 10000,
         ];
 
         $locations = $this->paginate($this->Locations);
