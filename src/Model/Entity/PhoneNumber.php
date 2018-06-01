@@ -12,7 +12,7 @@ use Cake\ORM\Entity;
  *
  * @property \App\Model\Entity\User $user
  */
-class PhoneNumber extends Entity
+class Phonenumber extends Entity
 {
 
     /**
