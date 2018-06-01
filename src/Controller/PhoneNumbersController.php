@@ -2,7 +2,7 @@
 namespace App\Controller;
 
 use App\Controller\AppController;
-
+use Cake\Event\Event;
 /**
  * Phonenumbers Controller
  *
@@ -47,7 +47,6 @@ class PhonenumbersController extends AppController
     public function beforeFilter(Event $event)
     {
         parent::beforeFilter($event);
-
 
         if ($this->Auth->user('role_id') != 2) {
             $this->Auth->deny('index');
