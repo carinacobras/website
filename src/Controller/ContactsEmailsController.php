@@ -30,6 +30,18 @@ class ContactsEmailsController extends AppController
         $this->set(compact('contactsEmails'));
     }
 
+    public function beforeFilter(Event $event)
+    {
+        parent::beforeFilter($event);
+
+        if ($this->Auth->user('role_id') != 2) {
+            $this->Auth->deny('index');
+            $this->Auth->deny('add');
+            $this->Auth->deny('view');
+            $this->Auth->deny('delete');
+        }
+    }
+
     /**
      * View method
      *
