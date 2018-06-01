@@ -10,7 +10,7 @@ use Cake\Validation\Validator;
  * ContactsPhonenumbers Model
  *
  * @property \App\Model\Table\ContactsTable|\Cake\ORM\Association\BelongsTo $Contacts
- * @property \App\Model\Table\PhonenumbersTable|\Cake\ORM\Association\BelongsTo $Phonenumbers
+ * @property |\Cake\ORM\Association\BelongsTo $Phonenumbers
  *
  * @method \App\Model\Entity\ContactsPhonenumber get($primaryKey, $options = [])
  * @method \App\Model\Entity\ContactsPhonenumber newEntity($data = null, array $options = [])
@@ -35,7 +35,7 @@ class ContactsPhonenumbersTable extends Table
 
         $this->setTable('contacts_phonenumbers');
         $this->setDisplayField('contact_id');
-        $this->setPrimaryKey(['id']);
+        $this->setPrimaryKey('id');
 
         $this->belongsTo('Contacts', [
             'foreignKey' => 'contact_id',
@@ -45,6 +45,21 @@ class ContactsPhonenumbersTable extends Table
             'foreignKey' => 'phonenumber_id',
             'joinType' => 'INNER'
         ]);
+    }
+
+    /**
+     * Default validation rules.
+     *
+     * @param \Cake\Validation\Validator $validator Validator instance.
+     * @return \Cake\Validation\Validator
+     */
+    public function validationDefault(Validator $validator)
+    {
+        $validator
+            ->integer('id')
+            ->allowEmpty('id', 'create');
+
+        return $validator;
     }
 
     /**

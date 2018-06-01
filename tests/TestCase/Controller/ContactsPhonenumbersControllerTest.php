@@ -18,7 +18,7 @@ class ContactsPhonenumbersControllerTest extends IntegrationTestCase
     public $fixtures = [
         'app.contacts_phonenumbers',
         'app.contacts',
-        'app.phonenumbers'
+        'app.phone_numbers'
     ];
 
     /**

@@ -1,22 +1,22 @@
 <?php
 namespace App\Test\TestCase\Model\Table;
 
-use App\Model\Table\PhonenumbersTable;
+use App\Model\Table\PhoneNumbersTable;
 use Cake\ORM\TableRegistry;
 use Cake\TestSuite\TestCase;
 
 /**
- * App\Model\Table\PhonenumbersTable Test Case
+ * App\Model\Table\PhoneNumbersTable Test Case
  */
-class PhonenumbersTableTest extends TestCase
+class PhoneNumbersTableTest extends TestCase
 {
 
     /**
      * Test subject
      *
-     * @var \App\Model\Table\PhonenumbersTable
+     * @var \App\Model\Table\PhoneNumbersTable
      */
-    public $Phonenumbers;
+    public $PhoneNumbers;
 
     /**
      * Fixtures
@@ -25,22 +25,7 @@ class PhonenumbersTableTest extends TestCase
      */
     public $fixtures = [
         'app.phone_numbers',
-        'app.users',
-        'app.coaches',
-        'app.teams',
-        'app.competitions',
-        'app.courts',
-        'app.locations',
-        'app.training',
-        'app.Ranks',
-        'app.players',
-        'app.absences',
-        'app.contacts',
-        'app.emails',
-        'app.relationships',
-        'app.managers',
-        'app.teams_jerseys',
-        'app.roles'
+        'app.users'
     ];
 
     /**
@@ -51,8 +36,8 @@ class PhonenumbersTableTest extends TestCase
     public function setUp()
     {
         parent::setUp();
-        $config = TableRegistry::exists('Phonenumbers') ? [] : ['className' => PhonenumbersTable::class];
-        $this->Phonenumbers = TableRegistry::get('Phonenumbers', $config);
+        $config = TableRegistry::exists('PhoneNumbers') ? [] : ['className' => PhoneNumbersTable::class];
+        $this->PhoneNumbers = TableRegistry::get('PhoneNumbers', $config);
     }
 
     /**
@@ -62,7 +47,7 @@ class PhonenumbersTableTest extends TestCase
      */
     public function tearDown()
     {
-        unset($this->Phonenumbers);
+        unset($this->PhoneNumbers);
 
         parent::tearDown();
     }

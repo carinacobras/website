@@ -7,17 +7,17 @@ use Cake\ORM\Table;
 use Cake\Validation\Validator;
 
 /**
- * Phonenumbers Model
+ * PhoneNumbers Model
  *
  * @property \App\Model\Table\UsersTable|\Cake\ORM\Association\BelongsTo $Users
  *
- * @method \App\Model\Entity\Phonenumber get($primaryKey, $options = [])
- * @method \App\Model\Entity\Phonenumber newEntity($data = null, array $options = [])
- * @method \App\Model\Entity\Phonenumber[] newEntities(array $data, array $options = [])
- * @method \App\Model\Entity\Phonenumber|bool save(\Cake\Datasource\EntityInterface $entity, $options = [])
- * @method \App\Model\Entity\Phonenumber patchEntity(\Cake\Datasource\EntityInterface $entity, array $data, array $options = [])
- * @method \App\Model\Entity\Phonenumber[] patchEntities($entities, array $data, array $options = [])
- * @method \App\Model\Entity\Phonenumber findOrCreate($search, callable $callback = null, $options = [])
+ * @method \App\Model\Entity\PhoneNumber get($primaryKey, $options = [])
+ * @method \App\Model\Entity\PhoneNumber newEntity($data = null, array $options = [])
+ * @method \App\Model\Entity\PhoneNumber[] newEntities(array $data, array $options = [])
+ * @method \App\Model\Entity\PhoneNumber|bool save(\Cake\Datasource\EntityInterface $entity, $options = [])
+ * @method \App\Model\Entity\PhoneNumber patchEntity(\Cake\Datasource\EntityInterface $entity, array $data, array $options = [])
+ * @method \App\Model\Entity\PhoneNumber[] patchEntities($entities, array $data, array $options = [])
+ * @method \App\Model\Entity\PhoneNumber findOrCreate($search, callable $callback = null, $options = [])
  */
 class PhonenumbersTable extends Table
 {
@@ -33,7 +33,7 @@ class PhonenumbersTable extends Table
         parent::initialize($config);
 
         $this->setTable('phone_numbers');
-        $this->setDisplayField('number');
+        $this->setDisplayField('id');
         $this->setPrimaryKey('id');
 
         $this->belongsTo('Users', [

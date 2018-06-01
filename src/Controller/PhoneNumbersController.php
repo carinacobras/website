@@ -8,7 +8,7 @@ use App\Controller\AppController;
  *
  * @property \App\Model\Table\PhonenumbersTable $Phonenumbers
  *
- * @method \App\Model\Entity\Phonenumber[] paginate($object = null, array $settings = [])
+ * @method \App\Model\Entity\PhoneNumber[]|\Cake\Datasource\ResultSetInterface paginate($object = null, array $settings = [])
  */
 class PhonenumbersController extends AppController
 {
@@ -21,14 +21,11 @@ class PhonenumbersController extends AppController
     public function index()
     {
         $this->paginate = [
-            'limit' => 100000,
-            'maxLimit' => 10000,
             'contain' => ['Users']
         ];
         $phoneNumbers = $this->paginate($this->Phonenumbers);
 
         $this->set(compact('phoneNumbers'));
-        $this->set('_serialize', ['phoneNumbers']);
     }
 
     /**
@@ -45,7 +42,6 @@ class PhonenumbersController extends AppController
         ]);
 
         $this->set('phoneNumber', $phoneNumber);
-        $this->set('_serialize', ['phoneNumber']);
     }
 
     /**
@@ -67,7 +63,6 @@ class PhonenumbersController extends AppController
         }
         $users = $this->Phonenumbers->Users->find('list', ['limit' => 200]);
         $this->set(compact('phoneNumber', 'users'));
-        $this->set('_serialize', ['phoneNumber']);
     }
 
     /**
@@ -93,7 +88,6 @@ class PhonenumbersController extends AppController
         }
         $users = $this->Phonenumbers->Users->find('list', ['limit' => 200]);
         $this->set(compact('phoneNumber', 'users'));
-        $this->set('_serialize', ['phoneNumber']);
     }
 
     /**

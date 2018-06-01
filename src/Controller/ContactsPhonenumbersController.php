@@ -21,9 +21,7 @@ class ContactsPhonenumbersController extends AppController
     public function index()
     {
         $this->paginate = [
-            'limit' => 100000,
-            'maxLimit' => 10000,
-            'contain' => ['Contacts', 'Phonenumbers']
+            'contain' => ['Contacts', 'PhoneNumbers']
         ];
         $contactsPhonenumbers = $this->paginate($this->ContactsPhonenumbers);
 
@@ -40,7 +38,7 @@ class ContactsPhonenumbersController extends AppController
     public function view($id = null)
     {
         $contactsPhonenumber = $this->ContactsPhonenumbers->get($id, [
-            'contain' => ['Contacts', 'Phonenumbers']
+            'contain' => ['Contacts', 'PhoneNumbers']
         ]);
 
         $this->set('contactsPhonenumber', $contactsPhonenumber);
@@ -64,8 +62,8 @@ class ContactsPhonenumbersController extends AppController
             $this->Flash->error(__('The contacts phonenumber could not be saved. Please, try again.'));
         }
         $contacts = $this->ContactsPhonenumbers->Contacts->find('list', ['limit' => 200]);
-        $phonenumbers = $this->ContactsPhonenumbers->Phonenumbers->find('list', ['limit' => 200]);
-        $this->set(compact('contactsPhonenumber', 'contacts', 'phonenumbers'));
+        $phoneNumbers = $this->ContactsPhonenumbers->PhoneNumbers->find('list', ['limit' => 200]);
+        $this->set(compact('contactsPhonenumber', 'contacts', 'phoneNumbers'));
     }
 
     /**
@@ -90,8 +88,8 @@ class ContactsPhonenumbersController extends AppController
             $this->Flash->error(__('The contacts phonenumber could not be saved. Please, try again.'));
         }
         $contacts = $this->ContactsPhonenumbers->Contacts->find('list', ['limit' => 200]);
-        $phonenumbers = $this->ContactsPhonenumbers->Phonenumbers->find('list', ['limit' => 200]);
-        $this->set(compact('contactsPhonenumber', 'contacts', 'phonenumbers'));
+        $phoneNumbers = $this->ContactsPhonenumbers->PhoneNumbers->find('list', ['limit' => 200]);
+        $this->set(compact('contactsPhonenumber', 'contacts', 'phoneNumbers'));
     }
 
     /**

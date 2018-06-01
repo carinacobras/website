@@ -4,10 +4,10 @@ namespace App\Test\Fixture;
 use Cake\TestSuite\Fixture\TestFixture;
 
 /**
- * PhonenumbersFixture
+ * PhoneNumbersFixture
  *
  */
-class PhonenumbersFixture extends TestFixture
+class PhoneNumbersFixture extends TestFixture
 {
 
     /**
@@ -35,15 +35,19 @@ class PhonenumbersFixture extends TestFixture
     // @codingStandardsIgnoreEnd
 
     /**
-     * Records
+     * Init method
      *
-     * @var array
+     * @return void
      */
-    public $records = [
-        [
-            'id' => 1,
-            'number' => 1,
-            'user_id' => 1
-        ],
-    ];
+    public function init()
+    {
+        $this->records = [
+            [
+                'id' => 1,
+                'number' => 1,
+                'user_id' => 1
+            ],
+        ];
+        parent::init();
+    }
 }

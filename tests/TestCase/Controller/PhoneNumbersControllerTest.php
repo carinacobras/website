@@ -1,13 +1,13 @@
 <?php
 namespace App\Test\TestCase\Controller;
 
-use App\Controller\PhonenumbersController;
+use App\Controller\PhoneNumbersController;
 use Cake\TestSuite\IntegrationTestCase;
 
 /**
- * App\Controller\PhonenumbersController Test Case
+ * App\Controller\PhoneNumbersController Test Case
  */
-class PhonenumbersControllerTest extends IntegrationTestCase
+class PhoneNumbersControllerTest extends IntegrationTestCase
 {
 
     /**
@@ -17,22 +17,7 @@ class PhonenumbersControllerTest extends IntegrationTestCase
      */
     public $fixtures = [
         'app.phone_numbers',
-        'app.users',
-        'app.coaches',
-        'app.teams',
-        'app.competitions',
-        'app.courts',
-        'app.locations',
-        'app.training',
-        'app.Ranks',
-        'app.players',
-        'app.absences',
-        'app.contacts',
-        'app.emails',
-        'app.relationships',
-        'app.managers',
-        'app.teams_jerseys',
-        'app.roles'
+        'app.users'
     ];
 
     /**

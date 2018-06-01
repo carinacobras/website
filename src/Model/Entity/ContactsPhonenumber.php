@@ -6,11 +6,12 @@ use Cake\ORM\Entity;
 /**
  * ContactsPhonenumber Entity
  *
+ * @property int $id
  * @property int $contact_id
  * @property int $phonenumber_id
  *
  * @property \App\Model\Entity\Contact $contact
- * @property \App\Model\Entity\Phonenumber $phonenumber
+ * @property \App\Model\Entity\Phonenumber $phone_number
  */
 class ContactsPhonenumber extends Entity
 {
@@ -25,7 +26,9 @@ class ContactsPhonenumber extends Entity
      * @var array
      */
     protected $_accessible = [
-        '*' => true,
-        'id' => true
+        'contact_id' => true,
+        'phonenumber_id' => true,
+        'contact' => true,
+        'phone_number' => true
     ];
 }

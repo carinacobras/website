@@ -26,7 +26,7 @@ class ContactsPhonenumbersTableTest extends TestCase
     public $fixtures = [
         'app.contacts_phonenumbers',
         'app.contacts',
-        'app.phonenumbers'
+        'app.phone_numbers'
     ];
 
     /**
