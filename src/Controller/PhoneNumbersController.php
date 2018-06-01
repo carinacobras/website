@@ -8,7 +8,7 @@ use App\Controller\AppController;
  *
  * @property \App\Model\Table\PhonenumbersTable $Phonenumbers
  *
- * @method \App\Model\Entity\PhoneNumber[] paginate($object = null, array $settings = [])
+ * @method \App\Model\Entity\Phonenumber[] paginate($object = null, array $settings = [])
  */
 class PhonenumbersController extends AppController
 {
