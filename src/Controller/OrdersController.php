@@ -21,6 +21,8 @@ class OrdersController extends AppController
     public function index()
     {
         $this->paginate = [
+            'limit' => 100000,
+            'maxLimit' => 10000,
             'contain' => ['Players']
         ];
         $orders = $this->paginate($this->Orders);

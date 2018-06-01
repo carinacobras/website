@@ -21,6 +21,8 @@ class CoachesController extends AppController
     public function index()
     {
         $this->paginate = [
+            'limit' => 100000,
+            'maxLimit' => 10000,
             'contain' => ['Users', 'Teams']
         ];
         $coaches = $this->paginate($this->Coaches);

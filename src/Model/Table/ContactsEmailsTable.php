@@ -35,7 +35,7 @@ class ContactsEmailsTable extends Table
 
         $this->setTable('contacts_emails');
         $this->setDisplayField('contact_id');
-        $this->setPrimaryKey(['contact_id', 'email_id']);
+        $this->setPrimaryKey(['id']);
 
         $this->belongsTo('Contacts', [
             'foreignKey' => 'contact_id',

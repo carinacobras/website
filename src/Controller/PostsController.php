@@ -22,6 +22,7 @@ class PostsController extends AppController
     {
         $this->paginate = [
             'limit' => 100000,
+            'maxLimit' => 10000,
             'contain' => ['Categories']
         ];
         $posts = $this->paginate($this->Posts);

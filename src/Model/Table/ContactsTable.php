@@ -46,6 +46,14 @@ class ContactsTable extends Table
             'foreignKey' => 'relationship_id',
             'joinType' => 'INNER'
         ]);
+
+        $this->hasMany('ContactsEmails', [
+            'foreignKey' => 'email_id'
+        ]);
+
+        $this->hasMany('ContactsPhonenumbers', [
+            'foreignKey' => 'phonenumber_id'
+        ]);
     }
 
     /**

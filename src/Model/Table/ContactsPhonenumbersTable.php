@@ -35,7 +35,7 @@ class ContactsPhonenumbersTable extends Table
 
         $this->setTable('contacts_phonenumbers');
         $this->setDisplayField('contact_id');
-        $this->setPrimaryKey(['contact_id', 'phonenumber_id']);
+        $this->setPrimaryKey(['id']);
 
         $this->belongsTo('Contacts', [
             'foreignKey' => 'contact_id',

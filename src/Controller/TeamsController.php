@@ -22,6 +22,7 @@ class TeamsController extends AppController
     {
         $this->paginate = [
             'limit' => 100000,
+            'maxLimit' => 10000,
             'contain' => ['Competitions']
         ];
         $teams = $this->paginate($this->Teams);

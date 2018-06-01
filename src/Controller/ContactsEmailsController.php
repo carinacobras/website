@@ -21,6 +21,8 @@ class ContactsEmailsController extends AppController
     public function index()
     {
         $this->paginate = [
+            'limit' => 100000,
+            'maxLimit' => 10000,
             'contain' => ['Contacts', 'Emails']
         ];
         $contactsEmails = $this->paginate($this->ContactsEmails);
