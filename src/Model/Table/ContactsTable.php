@@ -37,6 +37,7 @@ class ContactsTable extends Table
         $this->setDisplayField('full_name');
         $this->setPrimaryKey('id');
 
+        
         $this->belongsTo('Players', [
             'foreignKey' => 'player_id',
             'joinType' => 'INNER'
