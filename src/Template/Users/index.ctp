@@ -4,27 +4,13 @@
   * @var \App\Model\Entity\User[]|\Cake\Collection\CollectionInterface $users
   */
 ?>
-<nav class="col-sm-12" id="actions-sidebar">
-    <ul class="side-nav">
-        <li class="heading"><?= __('Actions') ?></li>
-        <li><?= $this->Html->link(__('New User'), ['action' => 'add']) ?></li>
-        <li><?= $this->Html->link(__('List Coaches'), ['controller' => 'Coaches', 'action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('New Coach'), ['controller' => 'Coaches', 'action' => 'add']) ?></li>
-        <li><?= $this->Html->link(__('List Emails'), ['controller' => 'Emails', 'action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('New Email'), ['controller' => 'Emails', 'action' => 'add']) ?></li>
-        <li><?= $this->Html->link(__('List Managers'), ['controller' => 'Managers', 'action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('New Manager'), ['controller' => 'Managers', 'action' => 'add']) ?></li>
-        <li><?= $this->Html->link(__('List Phone Numbers'), ['controller' => 'Phonenumbers', 'action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('New Phone Number'), ['controller' => 'Phonenumbers', 'action' => 'add']) ?></li>
-        <li><?= $this->Html->link(__('List Players'), ['controller' => 'Players', 'action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('New Player'), ['controller' => 'Players', 'action' => 'add']) ?></li>
-        <li><?= $this->Html->link(__('List Roles'), ['controller' => 'Roles', 'action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('New Role'), ['controller' => 'Roles', 'action' => 'add']) ?></li>
-    </ul>
-</nav>
+
 <div class="users index col-sm-12">
     <h3><?= __('Users') ?></h3>
-    <table class="table">
+    <?= $this->Html->link(__('New User'), ['action' => 'add'], ['class' => 'btn btn-primary mt-3 mb-3']) ?>
+    <input id="search" type="text" class="search form-control mb-3" placeholder="What you looking for?">
+   <div class="table-responsive">
+    <table id="searchabletable" class="table w-100 d-block d-md-table">
         <thead>
             <tr>
                 <th scope="col"><?= $this->Paginator->sort('id') ?></th>
@@ -57,5 +43,7 @@
             </tr>
             <?php endforeach; ?>
         </tbody>
-    </table>
+        </table>
 </div>
+</div>
+<?= $this->Html->script('table') ?>
