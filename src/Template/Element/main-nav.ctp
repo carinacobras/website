@@ -56,6 +56,10 @@ $urls = array(
                     'label' => 'Fixtures & Results',
                     'url'=> '/games',
                 ),
+                array(
+                    'label' => 'Newsletters',
+                    'url'=> '/newsletters',
+                ),
 
 				        ),
       ),
