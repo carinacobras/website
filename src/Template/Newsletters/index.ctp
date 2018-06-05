@@ -7,7 +7,13 @@
 
 <div class="col-sm-12">
     <h3><?= __('Newsletters') ?></h3>
+    <?
+            $session = $this->request->getSession();
+            $user_data = $session->read('Auth.User');
+            if($user_data && $user_data['role_id'] == 2):
+        ?>
     <?= $this->Html->link(__('New Newsletter'), ['action' => 'add'], ['class' => 'btn btn-primary mt-3 mb-3']) ?>
+    <? endif; ?>
     <table class="table">
         <thead>
             <tr>
