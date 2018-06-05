@@ -23,7 +23,7 @@ class ContactForm extends Form
     protected function _buildValidator(Validator $validator)
     {
         return $validator->add('name', 'length', [
-                'rule' => ['minLength', 10],
+                'rule' => ['minLength', 1],
                 'message' => 'A name is required'
             ])->add('email', 'format', [
                 'rule' => 'email',
@@ -35,11 +35,16 @@ class ContactForm extends Form
     {
         $email = new Email();
         $email->profile('default');
-        $enquiry_array = ['Uniform Query', 'Fees Query', 'General Query', 'Update my details'];
-        $email->from([$data['email']])
-        ->to('registrar@carinacobras.com.au')
-        ->subject($enquiry_array[$data['enquirytype']])
-        ->send([$data['body']]);
+        $enquiry_array = ['Uniform Query', 'Fees Query', 'First Time Player - Boys', 'First Time Player - Girls', 'General Query', 'Update my details'];
+        $email_address = 'registrar@carinacobras.com.au';
+        if ($data['enquirytype'] == 3) {
+            $email_address = 'girlsregistrar@carinacobras.com.au';
+        }
+            $email->from([$data['email']])
+            ->to($email_address)
+            ->subject($enquiry_array[$data['enquirytype']])
+            ->send([$data['body']]);
+
         return true;
     }
 }

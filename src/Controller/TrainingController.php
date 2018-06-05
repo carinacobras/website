@@ -1,6 +1,7 @@
 <?php
 namespace App\Controller;
 
+use Cake\Event\Event;
 use App\Controller\AppController;
 
 /**
@@ -44,6 +45,20 @@ class TrainingController extends AppController
         ]);
 
         $this->set('training', $training);
+    }
+
+    public function beforeFilter(Event $event)
+    {
+        parent::beforeFilter($event);
+        // Allow users to register and logout.
+        // You should not add the "login" action to allow list. Doing so would
+        // cause problems with normal functioning of AuthComponent.
+        $this->Auth->allow(['index']);
+        
+
+        // if ($this->Auth->user('role_id') != 2) {
+        //     $this->Auth->deny('index');
+        // }
     }
 
     /**

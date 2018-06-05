@@ -12,7 +12,7 @@
             echo $this->Form->create($contact);
             echo $this->Form->control('name');
             echo $this->Form->control('email');
-            echo $this->Form->control('enquirytype', ['label' => 'Enquiry Type', 'options' => ['Uniform Query', 'Fees Query', 'First Time Player', 'General Query', 'Change Contact Details']]);
+            echo $this->Form->control('enquirytype', ['label' => 'Enquiry Type', 'options' => ['Uniform Query', 'Fees Query', 'First Time Player - Boys', 'First Time Player - Girls', 'General Query', 'Change Contact Details']]);
             echo $this->Form->control('body');
             echo $this->Form->button('Submit');
             echo $this->Form->end();
@@ -35,9 +35,13 @@
         <?php endforeach; ?>
     <?php endif;?>
 
- <?php if ($page->id == 8): ?>
+ <?php if ($page->id == 8):
 
-    <?= $this->Html->link(__('New Training'), ['action' => 'add'], ['class' => 'btn btn-primary mt-3 mb-3']) ?>
+        $session = $this->request->getSession();
+        $user_data = $session->read('Auth.User');
+        if($user_data && $user_data['role_id'] == 2): ?>
+            <?= $this->Html->link(__('New Training'), ['action' => 'add'], ['class' => 'btn btn-primary mt-3 mb-3']) ?>
+        <? endif; ?>
     <table class="table">
         <thead>
             <tr>

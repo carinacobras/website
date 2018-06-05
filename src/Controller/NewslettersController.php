@@ -5,6 +5,7 @@ use Cake\Mailer\Email;
 use SendGrid;
 use Smtpapi;
 
+use Cake\Event\Event;
 use App\Controller\AppController;
 
 require dirname(__DIR__) . '/../vendor/autoload.php';
@@ -131,6 +132,20 @@ class NewslettersController extends AppController
         }
 
         $this->set('newsletter', $newsletter);
+    }
+
+    public function beforeFilter(Event $event)
+    {
+        parent::beforeFilter($event);
+        // Allow users to register and logout.
+        // You should not add the "login" action to allow list. Doing so would
+        // cause problems with normal functioning of AuthComponent.
+        $this->Auth->allow(['index']);
+        
+
+        // if ($this->Auth->user('role_id') != 2) {
+        //     $this->Auth->deny('index');
+        // }
     }
 
     /**

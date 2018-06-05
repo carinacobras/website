@@ -25,7 +25,8 @@ class UsersController extends AppController
     public function index()
     {
         $this->paginate = [
-            'limit' => 100000
+            'limit' => 100000,
+            'maxLimit' => 100000
         ];
         
         $users = $this->paginate($this->Users);
