@@ -32,7 +32,7 @@
                 'label' => false
                 ]);
                 
-            echo $this->Form->control('gender', array('type' => 'radio', 'options' => ['Male', 'Female', 'No answer'] ));
+            echo $this->Form->control('gender', array('type' => 'radio', 'options' => ['No answer', 'Male', 'Female'] ));
             ?>
                  <script type="text/javascript">
                         $(function () {

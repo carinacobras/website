@@ -29,7 +29,7 @@
 				'month' => true,
 				'year' => true
                 ]);
-            echo $this->Form->control('gender', array('type' => 'radio', 'options' => ['Male', 'Female', 'No answer'] ));
+            echo $this->Form->control('gender', array('type' => 'radio', 'options' => ['No answer', 'Male', 'Female'] ));
             if (!empty($user->phonenumbers)) {
                 foreach ($user->phonenumbers as $key => $value) {
                     echo $this->Form->hidden("phonenumbers.".$key.".id");
