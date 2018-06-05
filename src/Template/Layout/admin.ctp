@@ -42,6 +42,7 @@ use Cake\Routing\Router;
                         <li><a href="/pages/edit/2">Edit About</a></li>
                         <li><a href="/pages/edit/3">Edit Contact</a></li>
                         <li><a href="/pages/edit/4">Edit Fees</a></li>
+                        <li><a href="/pages/edit/8">Edit Training</a></li>
                         <li><a href="/pages/edit/6">Edit General Information</a></li>
                         <li><a href="/pages/edit/9">Edit Uniforms</a></li>
                         </ul>
@@ -53,6 +54,7 @@ use Cake\Routing\Router;
                         <li><a href="/contacts-emails/">Edit Contacts Emails</a></li>
                         <li><a href="/teams/">Edit Teams</a></li>
                         <li><a href="/competitions/">Edit Competitions</a></li>
+                        <li><a href="/training/">Edit Training</a></li>
                         <li><a href="/newsletters/">Edit Newsletters</a></li>
                         <li><a href="/locations/">Edit Locations</a></li>
                         <li><a href="/orders/">Edit Orders</a></li>
@@ -60,6 +62,7 @@ use Cake\Routing\Router;
                         <li><a href="/orderitems/">Edit Orders Items</a></li>
                         <li><a href="/invoices/">Edit Invoices</a></li>
                         <li><a href="/payments/">Edit Payments</a></li>
+                        <li><a href="/TeamJerseys/">Edit Jerseys</a></li>
                     </ul>
         </div></div>
             <div class="content col-sm-12 col-md-9">
