@@ -31,7 +31,17 @@
                 <td><?= h($user->username) ?></td>
                 <td><?= h($user->first_name) ?></td>
                 <td><?= h($user->last_name) ?></td>
-                <td><?= h($user->gender) ?></td>
+                <td><? 
+                    if ($user->gender === 0) {
+                        echo 'Unspecified';
+                    }
+                    if ($user->gender === 1) {
+                        echo 'Male';
+                    }
+                    if ($user->gender === 2) {
+                        echo 'Female';
+                    }
+                ?></td>
                 <td><?= h($user->dob) ?></td>
                 <td><?= h($user->created) ?></td>
                 <td><?= h($user->modified) ?></td>
