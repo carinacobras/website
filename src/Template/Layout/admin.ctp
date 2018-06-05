@@ -47,6 +47,7 @@ use Cake\Routing\Router;
                         <li><a href="/pages/edit/9">Edit Uniforms</a></li>
                         </ul>
                         </li>
+                        <li><a href="/users/">Edit Users</a></li>
                         <li><a href="/players/">Edit Players</a></li>
                         <li><a href="/players-teams/">Edit Players-Teams</a></li>
                         <li><a href="/contacts/">Edit Contacts</a></li>
@@ -62,7 +63,7 @@ use Cake\Routing\Router;
                         <li><a href="/orderitems/">Edit Orders Items</a></li>
                         <li><a href="/invoices/">Edit Invoices</a></li>
                         <li><a href="/payments/">Edit Payments</a></li>
-                        <li><a href="/TeamJerseys/">Edit Jerseys</a></li>
+                        <li><a href="/teamjerseys/">Edit Jerseys</a></li>
                     </ul>
         </div></div>
             <div class="content col-sm-12 col-md-9">
