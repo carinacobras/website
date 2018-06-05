@@ -9,8 +9,8 @@
     <fieldset>
         <legend><?= __('Add User') ?></legend>
         <?php
-            echo $this->Form->control('role', [
-            'options' => ['user' => 'User', 'admin' => 'Admin']
+            echo $this->Form->control('role_id', [
+            'options' => [1 => 'User', 2 => 'Admin']
             ]);
             echo $this->Form->control('username');
 			echo $this->Form->control('password');
