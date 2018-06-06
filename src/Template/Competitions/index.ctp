@@ -8,7 +8,7 @@
 <div class="competitions index col-sm-12">
     <h3><?= __('Competitions') ?></h3>
     <?= $this->Html->link(__('New Competition'), ['action' => 'add'], ['class' => 'btn btn-primary mt-3 mb-3']) ?>
-     <h3>Search players</h3>
+     <h3>Search competition</h3>
     <input id="search" type="text" class="search form-control mb-3" placeholder="What you looking for?">
    <div class="table-responsive">
     <table id="searchabletable" class="table w-100 d-block d-md-table">
