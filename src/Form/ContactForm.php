@@ -37,8 +37,14 @@ class ContactForm extends Form
         $email->profile('default');
         $enquiry_array = ['Uniform Query', 'Fees Query', 'First Time Player - Boys', 'First Time Player - Girls', 'General Query', 'Update my details'];
         $email_address = 'registrar@carinacobras.com.au';
-        if ($data['enquirytype'] == 3) {
+        if ($data['enquirytype'] == 4) {
             $email_address = 'girlsregistrar@carinacobras.com.au';
+        }
+	 if ($data['enquirytype'] == 1) {
+            $email_address = 'joseph19roque@yahoo.com';
+        }
+	 if ($data['enquirytype'] == 2) {
+            $email_address = 'treasurer@carinacobras.com.au';
         }
             $email->from([$data['email']])
             ->to($email_address)
