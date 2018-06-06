@@ -13,8 +13,6 @@
     <input id="search" type="text" class="search form-control mb-3" placeholder="What you looking for?">
    <div class="table-responsive">
     <table id="searchabletable" class="table w-100 d-block d-md-table">
-     </div>
-    <table class="table">
         <thead>
             <tr>
                 <th scope="col"><?= $this->Paginator->sort('first_name') ?></th>
