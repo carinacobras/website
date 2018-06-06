@@ -4,14 +4,7 @@
   * @var \App\Model\Entity\TeamsJersey[]|\Cake\Collection\CollectionInterface $teamsJerseys
   */
 ?>
-<nav class="col-sm-12" id="actions-sidebar">
-    <ul class="side-nav">
-        <li class="heading"><?= __('Actions') ?></li>
-        <li><?= $this->Html->link(__('New Teams Jersey'), ['action' => 'add']) ?></li>
-        <li><?= $this->Html->link(__('List Teams'), ['controller' => 'Teams', 'action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('New Team'), ['controller' => 'Teams', 'action' => 'add']) ?></li>
-    </ul>
-</nav>
+
 <div class="teamsJerseys index col-sm-12">
     <h3><?= __('Teams Jerseys') ?></h3>
     <table class="table">
