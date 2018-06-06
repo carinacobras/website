@@ -5,8 +5,9 @@
   */
 ?>
 
-<div class="teamsJerseys index col-sm-12">
+<div class="col-sm-12">
     <h3><?= __('Teams Jerseys') ?></h3>
+    <?= $this->Html->link(__('New Jersey'), ['action' => 'add'], ['class' => 'btn btn-primary mt-3 mb-3']) ?>
  <h3>Search jerseys</h3>
  <input id="search" type="text" class="search form-control mb-3" placeholder="What you looking for?">
    <div class="table-responsive">

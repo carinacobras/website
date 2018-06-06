@@ -21,27 +21,38 @@ class TeamjerseysController extends AppController
     public function index()
     {
         $this->paginate = [
-            'limit' => 100000,
+            'limit' => 10000,
             'maxLimit' => 10000,
             'contain' => ['Teams']
         ];
         $teamsJerseys = $this->paginate($this->Teamjerseys);
         $competitions = [
-"Under 7s",
-"Under 9s",
-"Under 11s Gold",
-"Under 11s Silver",
-"Under 11s Bronze",
-"Under 13 Gold",
-"Under 13 Silver",
-"Under 13 Bronze",
-"Under 15 Gold",
-"Under 15 Silver",
-"Under 15 Bronze",
-"Under 17 Gold",
-"Under 17 Silver",
-"Under 17 Bronze",
-"Under 20"];
+            "Under 7s",
+            "Under 9s",
+            "Under 11s Gold",
+            "Under 11s Silver",
+            "Under 11s Bronze",
+            "Under 13 Gold",
+            "Under 13 Silver",
+            "Under 13 Bronze",
+            "Under 15 Gold",
+            "Under 15 Silver",
+            "Under 15 Bronze",
+            "Under 17 Gold",
+            "Under 17 Silver",
+            "Under 17 Bronze",
+            "Under 20",
+            "Under 19 Gold",
+            "Under 19 Silver",
+            "Under 9s",
+            "Under 11s",
+            "Under 13 Gold",
+            "Under 13 Silver",
+            "Under 15 Gold",
+            "Under 15 Silver",
+            "Under 19 Gold",
+            "Under 19 Silver"
+];
 
 
         $this->set(compact('teamsJerseys', 'competitions'));
