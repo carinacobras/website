@@ -22,7 +22,13 @@ $options = array(
     'id' => 'btn_newsletter_submit',
     'onclick' => 'newsLetterBtndisable()'
 );
-echo $this->Form->button(__('Email everyone'), $options);
+
+$session = $this->request->getSession();
+$user_data = $session->read('Auth.User');
+if($user_data && $user_data['role_id'] == 2) {
+
+    echo $this->Form->button(__('Email everyone'), $options);
+}
 echo $this->Form->end() ?>
 
 <?= $this->Html->scriptBlock("
