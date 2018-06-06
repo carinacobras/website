@@ -53,82 +53,28 @@ class NewslettersController extends AppController
         if ($this->request->is(['patch', 'post', 'put'])) {
            
             $data = $this->request->getData();
-                
-            $data['status'] = 1;
 
             $newsletter = $this->Newsletters->patchEntity($newsletter, $data);
             if ($this->Newsletters->save($newsletter)) {
-                $this->Flash->success(__('The newsletter has been sent.'));
+    
+                $emails = $this->Emails->find('all', array(
+                    'field' => array('Email.email_address')
+                ));
+                foreach ($emails as $email) {
+                    $emailSender = new Email();
+                    $emailSender->profile('default');
+                    $from_address = 'registrar@carinacobras.com.au';
+    
+                    $emailSender->from($from_address)
+                    ->to($email->email_address)
+                    ->subject($newsletter['subject'])
+                    ->send([$newsletter['body']]);
+                }
 
+                $this->Flash->success(__('The newsletter has been sent.'));
             } else {
                 $this->Flash->error(__('The newsletter could not be saved. Please, try again.'));
             }
-         
-
-            // $emails = $this->Emails->find('all',
-            // [
-            //     'contain' => ['Users'],
-            //     'fields' => ['Users.first_name', 'Users.last_name', 'Emails.email_address']
-            // ]
-            // );
-
-            // $from = new SendGrid\Email("Carina Cobras", "registrar@carinacobras.com.au");
-            // $subject = $newsletter->subject;
-            // $to = new SendGrid\Email("Registrar", "carinacobras@gmail.com");
-           
-            // $content = new SendGrid\Content("text/html", $newsletter->body);
-            // $mail = new SendGrid\Mail($from, $subject, $to, $content);
-
-            // $mail = new \SendGrid\Mail\Mail();
-
-            // $mail->setFrom("Carina Cobras", "registrar@carinacobras.com.au");
-            // $mail->setSubject($newsletter->subject);
-            // $mail->addTo("Registrar", "carinacobras@gmail.com");
-            // $mail->addContent("text/html", $newsletter->body);
-
-            // $header = new Smtpapi\Header();
-
-            // $header->addTo('tross1@tysonross.com');
-            // $header->addTo('tross2@tysonross.com');
-
-            // $header->addSendEachAt( strtotime('+5 minutes'));
-            // $header->addSendEachAt( strtotime('+10 minutes'));
-            
-            // echo $header->jsonString();
-            //$mail->addHeader($header->jsonString());
-            
-            // foreach ($emails as $email) {
-            //     $sg_email = new Email($email['user']['first_name'] . ' ' . $email['user']['last_name'], $email['email_address']);
-            //     $mail->personalization[0]->addTo($sg_email);
-            // }
-
-            // $mail->personalization[0]->addTo(new Email('Tyson Ross', 'tross1@tysonross.com'));
-            // $mail->personalization[0]->addTo(new Email('Tyson Ross', 'tross2@tysonross.com'));
-
-            // $json = json_encode( $mail);
-
-            // $arr = json_decode($json, true);
-
-            // $mail->set
-
-            // $arr['personalizations']['send_each_at'] = [strtotime('+5 minutes'), strtotime('+10 minutes')];
-
-            // echo json_encode( $arr);
-
-           // $apiKey = getenv('SENDGRID_API_KEY');
-
-            // $sg = new \SendGrid($apiKey);
-
-            //$mail->setHeaders(array('x-smtpapi' => $header->jsonString()));
-           
-
-           
-            // $mail = new Email();
-
-            // $mail->from("registrar@carinacobras.com.au");
-            // $mail->to('tross1@tysonross.com');
-            // $mail->subject('test');
-           // $response = $mail->send();
         }
 
         $this->set('newsletter', $newsletter);
@@ -159,6 +105,7 @@ class NewslettersController extends AppController
         if ($this->request->is('post')) {
             $newsletter = $this->Newsletters->patchEntity($newsletter, $this->request->getData());
             if ($this->Newsletters->save($newsletter)) {
+
                 $this->Flash->success(__('The newsletter has been saved.'));
 
                 return $this->redirect(['action' => 'index']);

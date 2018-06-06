@@ -16,5 +16,17 @@
 </div>
 
 <?= $this->Form->create($newsletter) ?>
-<?= $this->Form->button(__('Email everyone')) ?>
-<?= $this->Form->end() ?>
+<? 
+$options = array(
+    'label' => 'Submit',
+    'id' => 'btn_newsletter_submit',
+    'onclick' => 'newsLetterBtndisable()'
+);
+echo $this->Form->button(__('Email everyone'), $options);
+echo $this->Form->end() ?>
+
+<?= $this->Html->scriptBlock("
+    function newsLetterBtndisable() {
+        $('#btn_newsletter_submit').text('Sending');
+    }
+");
