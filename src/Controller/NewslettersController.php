@@ -64,11 +64,12 @@ class NewslettersController extends AppController
                     $emailSender = new Email();
                     $emailSender->profile('default');
                     $from_address = 'registrar@carinacobras.com.au';
+                    $body = $newsletter['body'] . '<p><a href="[UNSUBSCRIBE]">Unsubscribe here</a></p>';
     
                     $emailSender->from($from_address)
                     ->to($email->email_address)
                     ->subject($newsletter['subject'])
-                    ->send([$newsletter['body']]);
+                    ->send($body);
                 }
 
                 $this->Flash->success(__('The newsletter has been sent.'));
