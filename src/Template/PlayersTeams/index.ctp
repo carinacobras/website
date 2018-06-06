@@ -4,16 +4,21 @@
  * @var \App\Model\Entity\PlayersTeam[]|\Cake\Collection\CollectionInterface $playersTeams
  */
 ?>
-<nav class="large-3 medium-4 columns" id="actions-sidebar">
-    <ul class="side-nav">
-        <li class="heading"><?= __('Actions') ?></li>
-        <li><?= $this->Html->link(__('New Players Team'), ['action' => 'add']) ?></li>
-        <li><?= $this->Html->link(__('List Players'), ['controller' => 'Players', 'action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('New Player'), ['controller' => 'Players', 'action' => 'add']) ?></li>
-        <li><?= $this->Html->link(__('List Teams'), ['controller' => 'Teams', 'action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('New Team'), ['controller' => 'Teams', 'action' => 'add']) ?></li>
-    </ul>
-</nav>
+<h3>Search players</h3>
+    <input id="search" type="text" class="search form-control mb-3" placeholder="What you looking for?">
+   <div class="table-responsive">
+    <table id="searchabletable" class="table w-100 d-block d-md-table">
+        <thead>
+            <tr>
+            <th scope="col"><?= $this->Paginator->sort('full_name') ?></th>
+            <th scope="col"><?= $this->Paginator->sort('gender') ?></th>
+            <th scope="col"><?= $this->Paginator->sort('height') ?></th>
+            <th scope="col"><?= $this->Paginator->sort('experience') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('team_id') ?></th>
+                <th scope="col" class="actions"><?= __('Actions') ?></th>
+            </tr>
+        </thead>
+        
 <div class="playersTeams index large-9 medium-8 columns content">
     <h3><?= __('Players Teams') ?></h3>
     <table cellpadding="0" cellspacing="0">
