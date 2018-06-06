@@ -7,7 +7,10 @@
 
 <div class="teamsJerseys index col-sm-12">
     <h3><?= __('Teams Jerseys') ?></h3>
-    <table class="table">
+ <h3>Search jerseys</h3>
+ <input id="search" type="text" class="search form-control mb-3" placeholder="What you looking for?">
+   <div class="table-responsive">
+   <table id="searchabletable" class="table w-100 d-block d-md-table">
         <thead>
             <tr>
                 <th scope="col"><?= $this->Paginator->sort('id') ?></th>
@@ -36,3 +39,5 @@
         </tbody>
     </table>
 </div>
+</div>
+<?= $this->Html->script('table') ?>
