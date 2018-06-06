@@ -7,7 +7,10 @@
 
 <div class="contactsEmails index large-9 medium-8 columns content">
     <h3><?= __('Contacts Emails') ?></h3>
-    <table cellpadding="0" cellspacing="0">
+    <h3>Search contact emails</h3>
+    <input id="search" type="text" class="search form-control mb-3" placeholder="What you looking for?">
+   <div class="table-responsive">
+    <table id="searchabletable" class="table w-100 d-block d-md-table">
         <thead>
             <tr>
                 <th scope="col"><?= $this->Paginator->sort('contact_id') ?></th>
@@ -29,14 +32,6 @@
             <?php endforeach; ?>
         </tbody>
     </table>
-    <div class="paginator">
-        <ul class="pagination">
-            <?= $this->Paginator->first('<< ' . __('first')) ?>
-            <?= $this->Paginator->prev('< ' . __('previous')) ?>
-            <?= $this->Paginator->numbers() ?>
-            <?= $this->Paginator->next(__('next') . ' >') ?>
-            <?= $this->Paginator->last(__('last') . ' >>') ?>
-        </ul>
-        <p><?= $this->Paginator->counter(['format' => __('Page {{page}} of {{pages}}, showing {{current}} record(s) out of {{count}} total')]) ?></p>
-    </div>
 </div>
+</div>
+<?= $this->Html->script('table') ?>
