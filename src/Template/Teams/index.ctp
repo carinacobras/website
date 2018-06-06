@@ -10,7 +10,7 @@
     <?= $this->Html->link(__('New Team'), ['action' => 'add'], ['class' => 'btn btn-primary mt-3 mb-3']) ?>
     <table class="table">
         <thead>
-    <h3>Search players</h3>
+    <h3>Search teams</h3>
     <input id="search" type="text" class="search form-control mb-3" placeholder="What you looking for?">
    <div class="table-responsive">
     <table id="searchabletable" class="table w-100 d-block d-md-table">
