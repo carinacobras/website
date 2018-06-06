@@ -1,6 +1,6 @@
 <?php
 namespace App\Controller;
-
+use Cake\ORM\TableRegistry;
 use App\Controller\AppController;
 
 /**
@@ -55,18 +55,50 @@ class OrdersController extends AppController
      */
     public function add()
     {
+        $this->Orderlines = TableRegistry::get('Orderlines');
+        $this->Orderitems = TableRegistry::get('Orderitems');
+
+        $players = $this->Orders->Players->find('list', ['limit' => 10000, 'maxLimit' => 10000]);
+        $orderitems = $this->Orderitems->find('list');
+
         $order = $this->Orders->newEntity();
+
         if ($this->request->is('post')) {
-            $order = $this->Orders->patchEntity($order, $this->request->getData());
-            if ($this->Orders->save($order)) {
+
+            $player = $this->Orders->Players->find('all', [
+                'conditions' => ['id =' => $this->request->data['player_id']]
+                ])->first();
+
+            $data = $this->request->getData();
+            $data['name'] = $player->full_name;
+
+            $order = $this->Orders->patchEntity($order, $data);
+
+       
+
+            $saveorder = $this->Orders->save($order);
+            if ( $saveorder ) {
                 $this->Flash->success(__('The order has been saved.'));
 
-                return $this->redirect(['action' => 'index']);
-            }
-            $this->Flash->error(__('The order could not be saved. Please, try again.'));
+                $o =  $this->Orderitems->find('all');
+
+                foreach ($o as $orderitem) {
+                    $data = [
+                    'order_id'    => $order->id,
+                    'order_item_id'    => $orderitem->id,
+                    'player_name'    => $player->full_name
+                    ];
+                    $orderline = $this->Orderlines->newEntity();
+                    $this->Orderlines->patchEntity($orderline, $data);
+                    $this->Orderlines->save($orderline);
+                }
+                
+               return $this->redirect(['action' => 'index']);
+           }
+           $this->Flash->error(__('The order could not be saved. Please, try again.'));
         }
-        $players = $this->Orders->Players->find('list', ['limit' => 200]);
-        $this->set(compact('order', 'players'));
+
+        $this->set(compact('order', 'players', 'orderitems'));
         $this->set('_serialize', ['order']);
     }
 

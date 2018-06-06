@@ -32,7 +32,7 @@
             <tr>
                 <td><?= $this->Number->format($order->id) ?></td>
                 <td><?= h($order->order_date) ?></td>
-                <td><?= $order->has('player') ? $this->Html->link($order->player->id, ['controller' => 'Players', 'action' => 'view', $order->player->id]) : '' ?></td>
+                <td><?= $order->has('player') ? $this->Html->link($order->player->full_name, ['controller' => 'Players', 'action' => 'view', $order->player->id]) : '' ?></td>
                 <td class="actions">
                     <?= $this->Html->link(__('View'), ['action' => 'view', $order->id]) ?>
                     <?= $this->Html->link(__('Edit'), ['action' => 'edit', $order->id]) ?>

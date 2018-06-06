@@ -41,15 +41,15 @@
                         });
                     </script>
             <div class="form-users-ph">
-            <input id="ph-add" class="float-right mt-4 btn btn-primary" name="ph-add" type="button" value="Add more"/>
-           
-            <div class="row">
-            <div class="col-sm-6 my-auto">
-            <? echo $this->Form->control('phonenumbers.0', array('label' => 'Phone number', 'class' => 'col-sm-10')); ?>
-            </div>
-            <div class="col-sm-4 my-auto">
-            </div>
-            </div>
+                <input id="ph-add" class="float-right mt-4 btn btn-primary" name="ph-add" type="button" value="Add more"/>
+            
+                <div class="row">
+                    <div class="col-sm-6 my-auto">
+                    <? echo $this->Form->control('phonenumbers.0', array('label' => 'Phone number', 'class' => 'col-sm-10')); ?>
+                    </div>
+                    <div class="col-sm-4 my-auto">
+                    </div>
+                </div>
             </div>
                
                     <div class="player-form-container">  

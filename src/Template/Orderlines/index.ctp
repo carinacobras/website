@@ -19,7 +19,7 @@
     <table class="table">
         <thead>
             <tr>
-                <th scope="col"><?= $this->Paginator->sort('id') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('player_name') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('order_id') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('order_item_id') ?></th>
                 <th scope="col" class="actions"><?= __('Actions') ?></th>
@@ -28,9 +28,9 @@
         <tbody>
             <?php foreach ($orderlines as $orderline): ?>
             <tr>
-                <td><?= $this->Number->format($orderline->id) ?></td>
+                <td><?= h($orderline->player_name)?></td>
                 <td><?= $orderline->has('order') ? $this->Html->link($orderline->order->id, ['controller' => 'Orders', 'action' => 'view', $orderline->order->id]) : '' ?></td>
-                <td><?= $orderline->has('order_item') ? $this->Html->link($orderline->order_item->name, ['controller' => 'Orderitems', 'action' => 'view', $orderline->order_item->id]) : '' ?></td>
+                <td><?= $this->Html->link($orderline->order_item_id, ['controller' => 'Orderitems', 'action' => 'view', $orderline->order_item_id]) ?></td>
                 <td class="actions">
                     <?= $this->Html->link(__('View'), ['action' => 'view', $orderline->id]) ?>
                     <?= $this->Html->link(__('Edit'), ['action' => 'edit', $orderline->id]) ?>

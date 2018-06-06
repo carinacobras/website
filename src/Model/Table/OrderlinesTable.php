@@ -34,7 +34,7 @@ class OrderlinesTable extends Table
         parent::initialize($config);
 
         $this->setTable('order_lines');
-        $this->setDisplayField('id');
+        $this->setDisplayField('player_name');
         $this->setPrimaryKey('id');
 
         $this->belongsTo('Orders', [

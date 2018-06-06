@@ -62,11 +62,6 @@ class OrdersTable extends Table
             ->integer('id')
             ->allowEmpty('id', 'create');
 
-        $validator
-            ->dateTime('order_date')
-            ->requirePresence('order_date', 'create')
-            ->notEmpty('order_date');
-
         return $validator;
     }
 
