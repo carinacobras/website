@@ -4,7 +4,12 @@
   * @var \App\Model\Entity\Contact[]|\Cake\Collection\CollectionInterface $contacts
   */
 ?>
-
+<h3>Search players</h3>
+    <input id="search" type="text" class="search form-control mb-3" placeholder="What you looking for?">
+   <div class="table-responsive">
+    <table id="searchabletable" class="table w-100 d-block d-md-table">
+     </div>
+     
 <div class="contacts index col-sm-12">
     <h3><?= __('Contacts') ?></h3>
     <?= $this->Html->link(__('New Contact'), ['action' => 'add'], ['class' => 'btn btn-primary mt-3 mb-3']) ?>
