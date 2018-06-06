@@ -8,7 +8,8 @@
 <div class="users index col-sm-12">
     <h3><?= __('Users') ?></h3>
     <?= $this->Html->link(__('New User'), ['action' => 'add'], ['class' => 'btn btn-primary mt-3 mb-3']) ?>
-    <input id="search" type="text" class="search form-control mb-3" placeholder="What you looking for?">
+ <h3>Search users</h3>   
+ <input id="search" type="text" class="search form-control mb-3" placeholder="What you looking for?">
    <div class="table-responsive">
     <table id="searchabletable" class="table w-100 d-block d-md-table">
         <thead>
