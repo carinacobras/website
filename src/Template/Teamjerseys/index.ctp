@@ -18,7 +18,13 @@
                 <th scope="col"><?= $this->Paginator->sort('team_id') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('competition_id') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('colour') ?></th>
+                <?
+                    $session = $this->request->getSession();
+                    $user_data = $session->read('Auth.User');
+                    if($user_data && $user_data['role_id'] == 2):
+                ?>
                 <th scope="col" class="actions"><?= __('Actions') ?></th>
+                    <? endif; ?>
             </tr>
         </thead>
         <tbody>
@@ -29,11 +35,17 @@
                 <td><?= $teamsJersey->has('team') ? $this->Html->link($teamsJersey->team->name, ['controller' => 'Teams', 'action' => 'view', $teamsJersey->team->id]) : '' ?></td>
                 <td><?= $teamsJersey->has('team') ? $this->Html->link($competitions[$teamsJersey->team->competition_id], ['controller' => 'Competitions', 'action' => 'view', $teamsJersey->team->id]) : '' ?></td>
                 <td><?= h($teamsJersey->colour) ?></td>
+                <?
+                    $session = $this->request->getSession();
+                    $user_data = $session->read('Auth.User');
+                    if($user_data && $user_data['role_id'] == 2):
+                ?>
                 <td class="actions">
                     <?= $this->Html->link(__('View'), ['action' => 'view', $teamsJersey->id]) ?>
                     <?= $this->Html->link(__('Edit'), ['action' => 'edit', $teamsJersey->id]) ?>
                     <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $teamsJersey->id], ['confirm' => __('Are you sure you want to delete # {0}?', $teamsJersey->id)]) ?>
                 </td>
+                    <? endif; ?>
             </tr>
             <?php endforeach; ?>
         </tbody>
