@@ -54,3 +54,5 @@
         </tbody>
     </table>
 </div>
+</div>
+<?= $this->Html->script('table') ?>
