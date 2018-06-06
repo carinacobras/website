@@ -8,16 +8,7 @@
     <input id="search" type="text" class="search form-control mb-3" placeholder="What you looking for?">
    <div class="table-responsive">
     <table id="searchabletable" class="table w-100 d-block d-md-table">
-        <thead>
-            <tr>
-            <th scope="col"><?= $this->Paginator->sort('full_name') ?></th>
-            <th scope="col"><?= $this->Paginator->sort('gender') ?></th>
-            <th scope="col"><?= $this->Paginator->sort('height') ?></th>
-            <th scope="col"><?= $this->Paginator->sort('experience') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('team_id') ?></th>
-                <th scope="col" class="actions"><?= __('Actions') ?></th>
-            </tr>
-        </thead>
+</div>
         
 <div class="playersTeams index large-9 medium-8 columns content">
     <h3><?= __('Players Teams') ?></h3>
