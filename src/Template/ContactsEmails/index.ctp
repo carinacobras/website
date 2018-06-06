@@ -24,9 +24,9 @@
                 <td><?= $contactsEmail->has('contact') ? $this->Html->link($contactsEmail->contact->full_name, ['controller' => 'Contacts', 'action' => 'view', $contactsEmail->contact->id]) : '' ?></td>
                 <td><?= $contactsEmail->has('email') ? $this->Html->link($contactsEmail->email->email_address, ['controller' => 'Emails', 'action' => 'view', $contactsEmail->email->id]) : '' ?></td>
                 <td class="actions">
-                    <?= $this->Html->link(__('View'), ['action' => 'view', $contactsEmail->contact_id]) ?>
-                    <?= $this->Html->link(__('Edit'), ['action' => 'edit', $contactsEmail->contact_id]) ?>
-                    <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $contactsEmail->contact_id], ['confirm' => __('Are you sure you want to delete # {0}?', $contactsEmail->contact_id)]) ?>
+                    <?= $this->Html->link(__('View'), ['action' => 'view', $contactsEmail->id]) ?>
+                    <?= $this->Html->link(__('Edit'), ['action' => 'edit', $contactsEmail->id]) ?>
+                    <?= $this->Form->postLink(__('Delete'), ['action' => 'delete', $contactsEmail->id], ['confirm' => __('Are you sure you want to delete # {0}?', $contactsEmail->id)]) ?>
                 </td>
             </tr>
             <?php endforeach; ?>
