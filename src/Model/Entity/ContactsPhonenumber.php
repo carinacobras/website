@@ -26,9 +26,7 @@ class ContactsPhonenumber extends Entity
      * @var array
      */
     protected $_accessible = [
-        'contact_id' => true,
-        'phonenumber_id' => true,
-        'contact' => true,
-        'phone_number' => true
+        '*' => true,
+        'id' => false
     ];
 }
