@@ -7,7 +7,10 @@
 <div class="col-sm-12">
     <h3><?= __('Locations') ?></h3>
     <?= $this->Html->link(__('New Location'), ['action' => 'add'], ['class' => 'btn btn-primary mt-3 mb-3']) ?>
-    <table class="table">
+    <h3>Search locations</h3>
+    <input id="search" type="text" class="search form-control mb-3" placeholder="What you looking for?">
+   <div class="table-responsive">
+    <table id="searchabletable" class="table w-100 d-block d-md-table">
         <thead>
             <tr>
                 <th scope="col"><?= $this->Paginator->sort('name') ?></th>
@@ -36,3 +39,5 @@
         </tbody>
     </table>
 </div>
+</div>
+<?= $this->Html->script('table') ?>
