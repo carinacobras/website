@@ -10,13 +10,19 @@
     <?= $this->Html->link(__('New Team'), ['action' => 'add'], ['class' => 'btn btn-primary mt-3 mb-3']) ?>
     <table class="table">
         <thead>
+    <h3>Search players</h3>
+    <input id="search" type="text" class="search form-control mb-3" placeholder="What you looking for?">
+   <div class="table-responsive">
+    <table id="searchabletable" class="table w-100 d-block d-md-table">
+        <thead>
             <tr>
-                <th scope="col"><?= $this->Paginator->sort('Team Name') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('competition_id') ?></th>
-				<th scope="col"><?= $this->Paginator->sort('Gender') ?></th>
+            <th scope="col"><?= $this->Paginator->sort('Team Name') ?></th>
+            <th scope="col"><?= $this->Paginator->sort('competition_id') ?></th>
+		    <th scope="col"><?= $this->Paginator->sort('Gender') ?></th>
                 <th scope="col" class="actions"><?= __('Actions') ?></th>
             </tr>
         </thead>
+	    
         <tbody>
             <?php foreach ($teams as $team): ?>
             <tr>
