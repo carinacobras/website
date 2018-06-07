@@ -3,7 +3,8 @@
  * @var \App\View\AppView $this
  */
 ?>
-
+<h3>Team Fixtures, Results and Ladders</h3>
+<p>The below links will direct you to the Sporting Pulse website. You can access fixture, results and ladders here.</p>
 <div class="col-sm-12">
 <div class="club-team-list clearfix">
 <?php
