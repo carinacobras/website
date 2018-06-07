@@ -7,6 +7,7 @@
 
 <div class="col-sm-12">
     <h3><?= __('Newsletters') ?></h3>
+    <p>You can access Newsletters from Carina Cobras by pressing 'view' in the table below. We send these to all our players and their contacts automatically.</p>
     <?
             $session = $this->request->getSession();
             $user_data = $session->read('Auth.User');
