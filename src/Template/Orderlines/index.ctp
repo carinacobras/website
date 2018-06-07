@@ -4,16 +4,6 @@
  * @var \App\Model\Entity\orderline[]|\Cake\Collection\CollectionInterface $orderlines
  */
 ?>
-<nav class="col-sm-12" id="actions-sidebar">
-    <ul class="side-nav">
-        <li class="heading"><?= __('Actions') ?></li>
-        <li><?= $this->Html->link(__('New Order Line'), ['action' => 'add']) ?></li>
-        <li><?= $this->Html->link(__('List Orders'), ['controller' => 'Orders', 'action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('New Order'), ['controller' => 'Orders', 'action' => 'add']) ?></li>
-        <li><?= $this->Html->link(__('List Order Items'), ['controller' => 'Orderitems', 'action' => 'index']) ?></li>
-        <li><?= $this->Html->link(__('New Order Item'), ['controller' => 'Orderitems', 'action' => 'add']) ?></li>
-    </ul>
-</nav>
 <div class="orderlines index col-sm-12">
     <h3><?= __('Order Lines') ?></h3>
     <table class="table">
