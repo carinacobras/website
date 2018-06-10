@@ -3,7 +3,8 @@
   * @var \App\View\AppView $this
   */
 ?>
-<h2> Please use the below form if you are a new player wanting to join Carina Cobras! We understand if you can't answer everything, but answering every question to the best of your ability will help allocate you a team </h2>
+<h2> New Player Forms</h2>
+<h3> Please use the below form if you are a new player wanting to join Carina Cobras! We understand if you can't answer everything, but answering every question to the best of your ability will help allocate you a team </h3>
 <div class="col-sm-12">
     <?= $this->Form->create($user) ?>
     <fieldset>
