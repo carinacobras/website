@@ -21,6 +21,8 @@ class OrderlinesController extends AppController
     public function index()
     {
         $this->paginate = [
+            'limit' => 10000,
+            'maxLimit' => 10000,
             'contain' => ['Orders', 'Orderitems']
         ];
         $orderlines = $this->paginate($this->Orderlines);

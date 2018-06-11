@@ -20,6 +20,12 @@ class OrderitemsController extends AppController
      */
     public function index()
     {
+        $this->paginate = [
+            'limit' => 10000,
+            'maxLimit' => 10000,
+            'contain' => ['Orderitems']
+        ];
+
         $Orderitems = $this->paginate($this->Orderitems);
 
         $this->set(compact('Orderitems'));
