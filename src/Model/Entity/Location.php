@@ -26,10 +26,7 @@ class Location extends Entity
      * @var array
      */
     protected $_accessible = [
-        'name' => true,
-        'map' => true,
-        'court' => true,
-        'games' => true,
-        'training' => true
+        '*' => true,
+        'id' => false
     ];
 }

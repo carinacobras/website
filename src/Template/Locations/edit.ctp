@@ -12,6 +12,7 @@
         <?php
             echo $this->Form->control('name');
             echo $this->Form->control('court');
+            echo $this->Form->control('map');
         ?>
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>

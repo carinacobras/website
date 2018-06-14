@@ -10,7 +10,7 @@
         
             echo $this->Form->control('title');
             echo $this->Form->control('display_posts');
-            echo $this->Form->control('body', ['rows' => '10']);
+            echo $this->Form->control('body', ['rows' => '50']);
         ?>
     <?= $this->Form->button(__('Submit')) ?>
     <?= $this->Form->end() ?>
