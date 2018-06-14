@@ -14,7 +14,7 @@
         </tr>
         <tr>
             <th scope="row"><?= __('Phone Number') ?></th>
-            <td><?= $contactsPhonenumber->has('phone_number') ? $this->Html->link($contactsPhonenumber->phone_number->id, ['controller' => 'Phonenumbers', 'action' => 'view', $contactsPhonenumber->phone_number->id]) : '' ?></td>
+            <td><?= $contactsPhonenumber->has('phone_number') ? $this->Html->link($contactsPhonenumber->phone_number->number, ['controller' => 'Phonenumbers', 'action' => 'view', $contactsPhonenumber->phone_number->id]) : '' ?></td>
         </tr>
         <tr>
             <th scope="row"><?= __('Id') ?></th>

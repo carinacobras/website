@@ -8,7 +8,7 @@
 <div class="col-sm-12">
     <h3><?= __('Phone Numbers') ?></h3>
     <?= $this->Html->link(__('New Phone Number'), ['action' => 'add'], ['class' => 'btn btn-primary mt-3 mb-3']) ?>
-    <table cellpadding="0" cellspacing="0">
+    <table class="table">
         <thead>
             <tr>
                 <th scope="col"><?= $this->Paginator->sort('number') ?></th>
