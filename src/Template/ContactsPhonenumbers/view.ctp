@@ -5,7 +5,7 @@
  */
 ?>
 
-<div class="contactsPhonenumbers view large-9 medium-8 columns content">
+<div class="col-sm-12">
     <h3><?= h($contactsPhonenumber->contact_id) ?></h3>
     <table class="vertical-table">
         <tr>

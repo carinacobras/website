@@ -5,7 +5,7 @@
  */
 ?>
 
-<div class="phoneNumbers form large-9 medium-8 columns content">
+<div class="col-sm-12">
     <?= $this->Form->create($phoneNumber) ?>
     <fieldset>
         <legend><?= __('Add Phone Number') ?></legend>
