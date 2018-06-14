@@ -23,6 +23,9 @@ class PlayersTeamsController extends AppController
         $this->paginate = [
             'limit' => 10000,
             'maxLimit' => 10000,
+            'sortWhitelist' => [
+                'Players.id',
+            ],
             'contain' => ['Players', 'Teams']
         ];
         $playersTeams = $this->paginate($this->PlayersTeams);
