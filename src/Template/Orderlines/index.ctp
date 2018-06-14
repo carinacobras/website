@@ -4,7 +4,10 @@
  * @var \App\Model\Entity\orderline[]|\Cake\Collection\CollectionInterface $orderlines
  */
 ?>
+<<<<<<< HEAD
 
+=======
+>>>>>>> 9b519c0af56cf69ca60ba726855c565b3d74b764
 <div class="orderlines index col-sm-12">
     <h3><?= __('Order Lines') ?></h3>
     <?= $this->Html->link(__('New Order Line'), ['action' => 'add'], ['class' => 'btn btn-primary mt-3 mb-3']) ?>

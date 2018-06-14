@@ -7,6 +7,7 @@
 
 <div class="col-sm-12">
     <h3><?= __('Payments') ?></h3>
+    <p>Please use the 'new payment' button to notify Carina Cobras that you have paid an invoice we sent to you via email.</p>
     <?= $this->Html->link(__('New Payment'), ['action' => 'add'], ['class' => 'btn btn-primary mt-3 mb-3']) ?>
     <table class="table">
         <thead>

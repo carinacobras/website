@@ -4,7 +4,10 @@
  * @var \App\Model\Entity\Order[]|\Cake\Collection\CollectionInterface $orders
  */
 ?>
+<<<<<<< HEAD
 
+=======
+>>>>>>> 9b519c0af56cf69ca60ba726855c565b3d74b764
 <div class="orders index col-sm-12">
     <h3><?= __('Orders') ?></h3>
     <?= $this->Html->link(__('New Order'), ['action' => 'add'], ['class' => 'btn btn-primary mt-3 mb-3']) ?>
