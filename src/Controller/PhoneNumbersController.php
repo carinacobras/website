@@ -21,6 +21,11 @@ class PhonenumbersController extends AppController
     public function index()
     {
         $this->paginate = [
+            'limit' => 10000,
+            'maxLimit' => 10000,
+            'sortWhitelist' => [
+                'Phonenumber.id',
+            ],
             'contain' => ['Users']
         ];
         $phoneNumbers = $this->paginate($this->Phonenumbers);

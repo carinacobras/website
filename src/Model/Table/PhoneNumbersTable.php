@@ -33,7 +33,7 @@ class PhonenumbersTable extends Table
         parent::initialize($config);
 
         $this->setTable('phone_numbers');
-        $this->setDisplayField('id');
+        $this->setDisplayField('number');
         $this->setPrimaryKey('id');
 
         $this->belongsTo('Users', [

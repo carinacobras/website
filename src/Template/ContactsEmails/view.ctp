@@ -5,9 +5,9 @@
  */
 ?>
 
-<div class="contactsEmails view large-9 medium-8 columns content">
+<div class="col-sm-12">
     <h3><?= h($contactsEmail->contact_id) ?></h3>
-    <table class="vertical-table">
+    <table class="table">
         <tr>
             <th scope="row"><?= __('Contact') ?></th>
             <td><?= $contactsEmail->has('contact') ? $this->Html->link($contactsEmail->contact->full_name, ['controller' => 'Contacts', 'action' => 'view', $contactsEmail->contact->id]) : '' ?></td>
