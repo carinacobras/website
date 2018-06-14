@@ -6,7 +6,7 @@
 ?>
 
         
-<div class="playersTeams index large-9 medium-8 columns content">
+<div class="col-sm-12">
     <h3><?= __('Players & Teams') ?></h3>
     <h3>Search players</h3>
     <input id="search" type="text" class="search form-control mb-3" placeholder="What you looking for?">

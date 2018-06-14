@@ -21,7 +21,7 @@ class TeamsController extends AppController
     public function index()
     {
         $this->paginate = [
-            'limit' => 100000,
+            'limit' => 10000,
             'maxLimit' => 10000,
             'contain' => ['Competitions']
         ];

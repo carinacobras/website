@@ -5,9 +5,10 @@
  */
 ?>
 
-<div class="contactsEmails index large-9 medium-8 columns content">
+<div class="col-sm-12">
     <h3><?= __('Contacts Emails') ?></h3>
     <h3>Search contact emails</h3>
+    <?= $this->Html->link(__('New Contact Email'), ['action' => 'add'], ['class' => 'btn btn-primary mt-3 mb-3']) ?>
     <input id="search" type="text" class="search form-control mb-3" placeholder="What you looking for?">
    <div class="table-responsive">
     <table id="searchabletable" class="table w-100 d-block d-md-table">
