@@ -34,7 +34,7 @@ class ContactsPhonenumbersTable extends Table
         parent::initialize($config);
 
         $this->setTable('contacts_phonenumbers');
-        $this->setDisplayField('contact_id');
+        $this->setDisplayField('name');
         $this->setPrimaryKey('id');
 
         $this->belongsTo('Contacts', [
