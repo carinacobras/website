@@ -75,7 +75,7 @@
             <?php foreach ($user->emails as $emails): ?>
             <tr>
                 <td><?= h($emails->id) ?></td>
-                <td><?= h($emails->address) ?></td>
+                <td><?= h($emails->email_address) ?></td>
                 <td><?= h($emails->user_id) ?></td>
                 <td class="actions">
                     <?= $this->Html->link(__('View'), ['controller' => 'Emails', 'action' => 'view', $emails->id]) ?>
