@@ -25,7 +25,7 @@
             <tr>
                 <td><?= $this->Number->format($contactsPhonenumber->id) ?></td>
                 <td><?= $contactsPhonenumber->has('contact') ? $this->Html->link($contactsPhonenumber->contact->full_name, ['controller' => 'Contacts', 'action' => 'view', $contactsPhonenumber->contact->id]) : '' ?></td>
-                <td><?= $contactsPhonenumber->has('phone_number') ? $this->Html->link($contactsPhonenumber->phone_number->number, ['controller' => 'Phonenumbers', 'action' => 'view', $contactsPhonenumber->phone_number->id]) : '' ?></td>
+                <td><?=$this->Html->link($contactsPhonenumber->phone_number->number, ['controller' => 'Phonenumbers', 'action' => 'view', $contactsPhonenumber->phone_number->id]) ?></td>
                 <td class="actions">
                     <?= $this->Html->link(__('View'), ['action' => 'view', $contactsPhonenumber->id]) ?>
                     <?= $this->Html->link(__('Edit'), ['action' => 'edit', $contactsPhonenumber->id]) ?>

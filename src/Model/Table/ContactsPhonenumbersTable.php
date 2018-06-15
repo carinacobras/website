@@ -41,7 +41,7 @@ class ContactsPhonenumbersTable extends Table
             'foreignKey' => 'contact_id',
             'joinType' => 'INNER'
         ]);
-        $this->belongsTo('Phonenumbers', [
+        $this->belongsTo('PhoneNumbers', [
             'foreignKey' => 'phonenumber_id',
             'joinType' => 'INNER'
         ]);
