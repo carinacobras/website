@@ -53,8 +53,6 @@ Router::scope('/', function (RouteBuilder $routes) {
 
     $routes->connect('/fees', ['controller' => 'Pages', 'action' => 'view', 4]);
 
-    $routes->connect('/players/add', ['controller' => 'Users', 'action' => 'add']);
-
     $routes->connect('/newplayer', ['controller' => 'Users', 'action' => 'add']);
 
     $routes->connect('/generalinformation', ['controller' => 'Pages', 'action' => 'view', 6]);
