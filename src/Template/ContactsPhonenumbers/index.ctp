@@ -14,7 +14,7 @@
     <table id="searchabletable" class="table w-100 d-block d-md-table">
         <thead>
             <tr>
-                <th scope="col"><?= $this->Paginator->sort('id') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('player_id') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('contact_id') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('phonenumber_id') ?></th>
                 <th scope="col" class="actions"><?= __('Actions') ?></th>
@@ -23,7 +23,7 @@
         <tbody>
             <?php foreach ($contactsPhonenumbers as $contactsPhonenumber): ?>
             <tr>
-                <td><?= $this->Number->format($contactsPhonenumber->id) ?></td>
+                <td><?= $contactsPhonenumber->contact->player->full_name ?></td>
                 <td><?= $contactsPhonenumber->has('contact') ? $this->Html->link($contactsPhonenumber->contact->full_name, ['controller' => 'Contacts', 'action' => 'view', $contactsPhonenumber->contact->id]) : '' ?></td>
                 <td><?=$this->Html->link($contactsPhonenumber->phone_number->number, ['controller' => 'Phonenumbers', 'action' => 'view', $contactsPhonenumber->phone_number->id]) ?></td>
                 <td class="actions">

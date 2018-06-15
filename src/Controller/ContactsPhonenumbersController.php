@@ -23,7 +23,7 @@ class ContactsPhonenumbersController extends AppController
         $this->paginate = [
             'limit' => 100000,
             'maxLimit' => 10000,
-            'contain' => ['Contacts', 'PhoneNumbers']
+            'contain' => ['Contacts' => ['Players'], 'PhoneNumbers']
         ];
         $contactsPhonenumbers = $this->paginate($this->ContactsPhonenumbers);
 

@@ -22,6 +22,7 @@
         <tbody>
             <?php foreach ($contactsEmails as $contactsEmail): ?>
             <tr>
+                <td><?= $contactsEmail->contact->player->full_name ?></td>
                 <td><?= $contactsEmail->has('contact') ? $this->Html->link($contactsEmail->contact->full_name, ['controller' => 'Contacts', 'action' => 'view', $contactsEmail->contact->id]) : '' ?></td>
                 <td><?= $contactsEmail->has('email') ? $this->Html->link($contactsEmail->email->email_address, ['controller' => 'Emails', 'action' => 'view', $contactsEmail->email->id]) : '' ?></td>
                 <td class="actions">
