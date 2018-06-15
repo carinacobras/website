@@ -10,7 +10,7 @@
     <table class="table">
         <tr>
             <th scope="row"><?= __('Player') ?></th>
-            <td><?= $contact->has('player') ? $this->Html->link($contact->player->id, ['controller' => 'Players', 'action' => 'view', $contact->player->id]) : '' ?></td>
+            <td><?= $contact->has('player') ? $this->Html->link($contact->player->full_name, ['controller' => 'Players', 'action' => 'view', $contact->player->id]) : '' ?></td>
         </tr>
         <tr>
             <th scope="row"><?= __('First Name') ?></th>
