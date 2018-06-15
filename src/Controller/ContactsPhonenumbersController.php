@@ -100,8 +100,8 @@ class ContactsPhonenumbersController extends AppController
             }
             $this->Flash->error(__('The contacts phonenumber could not be saved. Please, try again.'));
         }
-        $contacts = $this->ContactsPhonenumbers->Contacts->find('list', ['limit' => 200]);
-        $phoneNumbers = $this->ContactsPhonenumbers->PhoneNumbers->find('list', ['limit' => 200]);
+        $contacts = $this->ContactsPhonenumbers->Contacts->find('list', ['limit' => 10000]);
+        $phoneNumbers = $this->ContactsPhonenumbers->PhoneNumbers->find('list', ['limit' => 10000]);
         $this->set(compact('contactsPhonenumber', 'contacts', 'phoneNumbers'));
     }
 

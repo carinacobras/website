@@ -101,8 +101,8 @@ class ContactsEmailsController extends AppController
             }
             $this->Flash->error(__('The contacts email could not be saved. Please, try again.'));
         }
-        $contacts = $this->ContactsEmails->Contacts->find('list', ['limit' => 200]);
-        $emails = $this->ContactsEmails->Emails->find('list', ['limit' => 200]);
+        $contacts = $this->ContactsEmails->Contacts->find('list', ['limit' => 10000]);
+        $emails = $this->ContactsEmails->Emails->find('list', ['limit' => 10000]);
         $this->set(compact('contactsEmail', 'contacts', 'emails'));
     }
 
