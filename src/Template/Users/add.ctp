@@ -10,9 +10,17 @@
     <fieldset>
         <legend><?= __('Add User') ?></legend>
         <?php
-            echo $this->Form->control('role_id', [
-            'options' => [1 => 'User', 2 => 'Admin']
-            ]);
+                $session = $this->request->getSession();
+                $user_data = $session->read('Auth.User');
+                if($user_data && $user_data['role_id'] == 2) {
+                    echo $this->Form->control('role_id', [
+                    'options' => [1 => 'User', 2 => 'Admin']
+                    ]);
+                } else {
+                    echo $this->Form->control('role_id', [
+                        'options' => [1 => 'User']
+                        ]);
+                }
             echo $this->Form->control('username');
 			echo $this->Form->control('password');
             echo $this->Form->control('first_name');
@@ -52,21 +60,30 @@
                     </div>
                 </div>
             </div>
-               
-                    <div class="player-form-container">  
+               <?
+                         $session = $this->request->getSession();
+                         $user_data = $session->read('Auth.User');
+                         if($user_data && $user_data['role_id'] == 2):
+                ?>
+
+                <div class="player-form-container">  
                     <label class="form-check-label"><? echo $this->Form->checkbox('is_player') ?> Create player?             <div class="player-form-hidden">
                     <?php 
                         echo $this->Form->control('teams', ['options' => $teams, 'empty' => true, 'class' => 'form-control', 'multiple' => 'multiple', 'type' => 'select', 'style' => 'height:400px;']);
                         echo $this->Form->control('height');
                         echo $this->Form->control('experience');
-                        echo $this->Html->css('font-awesome.min.css');
-                        echo $this->Html->css('tempusdominus-bootstrap-4.min.css');
-                        echo $this->Html->script('moment.js');
-                        echo $this->Html->script('tempusdominus-bootstrap-4.min.js');
                     ?>
                     </div></label>
         
                 </div>
+                         <? endif; ?>
+                         <?
+                            echo $this->Html->css('font-awesome.min.css');
+                            echo $this->Html->css('tempusdominus-bootstrap-4.min.css');
+                            echo $this->Html->script('moment.js');
+                            echo $this->Html->script('tempusdominus-bootstrap-4.min.js');
+                        ?>
+
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>
     <?= $this->Form->end() ?>
