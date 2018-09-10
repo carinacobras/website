@@ -182,7 +182,7 @@ return [
             'host' => 'smtp-relay.sendinblue.com',
             'port' => 587,
             'timeout' => 30,
-            'username' => 'carinacobras@gmail.com',
+            'username' => env('SENDINBLUE_KEY', null),
             'password' => env('SENDINBLUE_KEY', null),
         ],
     ],
