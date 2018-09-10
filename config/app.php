@@ -182,7 +182,7 @@ return [
             'host' => 'smtp-relay.sendinblue.com',
             'port' => 587,
             'timeout' => 30,
-            'username' => env('SENDINBLUE_KEY', null),
+            'username' => env('SENDINBLUE_LOGIN', null),
             'password' => env('SENDINBLUE_KEY', null),
         ],
     ],
