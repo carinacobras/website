@@ -182,8 +182,8 @@ return [
             'host' => 'smtp-relay.sendinblue.com',
             'port' => 587,
             'timeout' => 30,
-            'username' => 'tross_cobras@tysonross.com',
-            'password' => 'ZzBPA91L2kqSbRj0',
+            'username' => 'carinacobras@gmail.com',
+            'password' => env('SENDINBLUE_KEY', null),
         ],
     ],
 
